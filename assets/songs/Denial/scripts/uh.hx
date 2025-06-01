@@ -19,7 +19,7 @@ function postCreate()
     {
         shit ++;
 
-        items = new FlxSprite(-150,0).loadGraphic(Paths.image(arrayPath[shit]));
+        items = new FlxSprite((shit == 0) ? -150 : 0, (shit == 0) ? 30 : -10).loadGraphic(Paths.image(arrayPath[shit]));
         items.scrollFactor.set(1.1,1);
         items.scale.set(0.8,0.8);
         items.alpha = 0;

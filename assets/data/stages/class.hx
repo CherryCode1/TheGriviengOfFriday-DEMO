@@ -318,26 +318,35 @@ public static function setBg_2(){
  angleMoveSpeed = 0; 
 }
 public static function setBg_1(){
-    score_Txt.color = time_Txt.color = FlxColor.fromRGB(61, 122, 191);
+    if(PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") {
+        score_Txt.color = time_Txt.color = FlxColor.fromRGB(61, 122, 191);
+        camGame.addShader(grieveSh);
+        camHUD.addShader(grieveSh);
+        camOverlay.addShader(grieveSh);
+
+        for (items2 in items_) items2.visible = false;
+        bg_2.visible = false;
+
+        boyfriend.x += 280;
+   
+        boyfriend.cameraOffset.set(-120, 150);
+         dad.cameraOffset.set(0, 50);   
+         angleMoveSpeed = 0.025; 
+         gf.visible = true;
+         FlxG.camera.bgColor = FlxColor.BLACK;
+         my_family.visible = false;
+
+    }
+    if (PlayState.SONG.meta.name == "Denial" || PlayState.SONG.meta.name == "denial"){
+        for (bg in denial_bg) bg.visible = false;
+        gf.visible = true;
+    }
+     defaultCamZoom = 0.75;
     comboGroup.setPosition(1300,600);
-    defaultCamZoom = 0.75;
+  
 
     for (items in class_bg) items.visible = true;
-    for (items2 in items_) items2.visible = false;
-    bg_2.visible = false;
-    camGame.addShader(grieveSh);
-    camHUD.addShader(grieveSh);
-    camOverlay.addShader(grieveSh);
-    boyfriend.x += 280;
-   
-
-    boyfriend.cameraOffset.set(-120, 150);
-    dad.cameraOffset.set(0, 50);   
-    angleMoveSpeed = 0.025; 
-    gf.visible = true;
-    FlxG.camera.bgColor = FlxColor.BLACK;
-    my_family.visible = false;
-
+  
  
 
     for (hudsito in [healthBar,healthBarBG_1,iconP1,iconP2,missesTxt])
@@ -363,13 +372,13 @@ public static function hideGhosts(){
 }
 public static function bgDenial(){
   
-    if (PlayState.SONG.meta.name == "Denial" || PlayState.SONG.meta.name == "denial"){
-        for (items in class_bg) items.visible = false;
-        for (bg in denial_bg) bg.visible = true;
-        gf.visible = false;
+  
+    for (items in class_bg) items.visible = false;
+    for (bg in denial_bg) bg.visible = true;
+    gf.visible = false;
 
-        defaultCamZoom = 0.68;
-    }
+    defaultCamZoom = 0.68;
+    
 }
 public static function gumballcolgado(){
     var pathThing = "characters/Gumball_is_dead";

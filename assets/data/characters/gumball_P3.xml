@@ -5,5 +5,5 @@
 	<anim x="-16" loop="false" y="-6" fps="24" anim="Right" name="singRIGHT"/>
 	<anim x="0" loop="false" y="-43" fps="24" anim="Down" name="singDOWN"/>
 	<anim x="72" loop="false" y="42" fps="24" anim="Up" name="singUP"/>
-	<anim x="50" loop="false" y="15" fps="24" anim="Idle-alt" name="idle-alt"/>
+	<anim x="50" loop="true" y="15" fps="24" anim="Idle-alt" name="idle-alt"/>
 </character>
