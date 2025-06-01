@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Caja.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Caja0000" x="0" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0001" x="0" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0002" x="0" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0003" x="215" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0004" x="215" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0005" x="215" y="0" width="210" height="198"/>
+	<SubTexture name="Caja0006" x="0" y="203" width="210" height="198"/>
+	<SubTexture name="Caja0007" x="0" y="203" width="210" height="198"/>
+	<SubTexture name="Caja0008" x="0" y="203" width="210" height="198"/>
+	<SubTexture name="Caja0009" x="215" y="203" width="210" height="198"/>
+	<SubTexture name="Caja0010" x="215" y="203" width="210" height="198"/>
+	<SubTexture name="Caja0011" x="215" y="203" width="210" height="198"/>
+</TextureAtlas>

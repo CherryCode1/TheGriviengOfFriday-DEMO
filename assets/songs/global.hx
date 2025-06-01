@@ -1,0 +1,350 @@
+import flixel.math.FlxBasePoint;
+import funkin.backend.FunkinText;
+import flixel.util.FlxStringUtil;
+import flixel.util.FlxAxes;
+import flixel.text.FlxTextAlign;
+import hxvlc.flixel.FlxVideoSprite;
+import funkin.editors.charter.Charter;
+
+public static var hudAssets:Array<Dynamic> = [];
+
+public var camOverlay:FlxCamera = new FlxCamera();
+public var defaultOpponentStrum:Array<FlxBasePoint> = [];
+public var defaultPlayerStrum:Array<FlxBasePoint> = [];
+public var healthBarDefault:Bool = false;
+public var barrVisible = true;
+public var healthBarBG_1:FlxSprite;
+public var showNotesStart:Bool = true;
+public var dispHudInStart:Bool = true;
+public var distortion_Croma:Float = 0.0;
+public var score_Txt:FunkinText;
+public var time_Txt:FunkinText;
+public var songStarted:Bool = false;
+public var respectMouseVisibility:Bool = false; //Determines if the cursor is hidden during a song -TBar
+
+var healthBarBG_Offset:Array<Float> = [];
+var creditsArray:Array<String> = [];
+var songsArray:Array<String> = [];
+var curSong_:Int = 0;
+var prevStrAlpha:Map<Int, Float> = [];
+var warpCroma_Shader:CustomShader = new CustomShader("chromaticWarp");
+var songLength:Float = 0.0;
+
+function create() { 
+    allowGitaroo = false;
+
+    score_Txt = new FunkinText(0, 0, FlxG.width, "Score: 0 Misses: 0 Accurracy:  % 0 [Fc]", 20, true);
+    score_Txt.alignment = FlxTextAlign.CENTER;
+    score_Txt.screenCenter(FlxAxes.X);
+    score_Txt.camera = camHUD;
+	score_Txt.font = getFont("Gumball.ttf");
+    score_Txt.borderSize = 1.4;
+    if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") score_Txt.color = FlxColor.fromRGB(61, 122, 191);
+  
+    time_Txt = new FunkinText(0, 80, FlxG.width/2, "0:00", 30, true);
+    time_Txt.alignment = FlxTextAlign.CENTER;
+    time_Txt.screenCenter(FlxAxes.X);
+    time_Txt.camera = camHUD;
+	time_Txt.font = getFont("Gumball.ttf");
+    time_Txt.borderSize = 1.4;
+
+    if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") time_Txt.color = FlxColor.fromRGB(61, 122, 191);
+    add(time_Txt);
+
+    if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 Years") healthBarDefault = true;
+
+    camOverlay.bgColor = 0x00000000;
+    FlxG.cameras.add(camOverlay, false);
+}
+function getFont(key:String = "Gumball.ttf")
+	return Paths.font(key);
+function onStrumCreation(event:StrumCreationEvent){
+    event.__doAnimation = false;
+}
+
+function onNoteHit(event){
+    if (event.note.isSustainNote) return;
+
+    if (!event.animCancelled)
+        for(char in event.characters)
+			if (char == dad) iconP2.scale.set(1.2,1.2);
+}
+
+function onPlayerHit(event){
+    if (event.note.isSustainNote) return;
+    iconP1.scale.set(1.2,1.2);
+
+	score_Txt.scale.set(1.1,1);
+}
+
+function postCreate() {
+	if (PlayState.instance.isStoryMode) trace(PlayState.instance.storyPlaylist);
+
+    add(score_Txt);
+
+    for (i in [0,1,2,3]) {
+        var strum = strumLines.members[0].members[i];
+        defaultOpponentStrum.push(new FlxBasePoint().set(strum.x,strum.y));
+
+        var strum = strumLines.members[1].members[i];
+        defaultPlayerStrum.push(new FlxBasePoint().set(strum.x,strum.y));
+    }
+
+    for (i in [scoreTxt, accuracyTxt,missesTxt]) remove(i);
+
+    creditsArray = getCredits();
+    songsArray = getSongs();
+    for (i in 0...songsArray.length){
+        if (PlayState.SONG.meta.name == songsArray[i]) curSong_ = i;
+    }
+
+    doIconBop = false;
+	if(!respectMouseVisibility) FlxG.mouse.visible = false;
+
+    if (!healthBarDefault){
+        remove(healthBarBG);
+
+        healthBarBG_1 = new FlxSprite();
+        healthBarBG_1.loadGraphic(getBarrPath());
+        healthBarBG_1.offset.set(healthBarBG_Offset[0],healthBarBG_Offset[1]);
+        healthBarBG_1.camera = camHUD;
+        healthBarBG_1.setPosition(healthBar.x,healthBar.y);
+        insert(members.indexOf(healthBar) + 1,healthBarBG_1);
+      
+    }
+  
+    score_Txt.y = healthBar.y + 35;
+    dispHud(false,true,0.1,true);
+
+    changePrefix(PlayState.SONG.meta.name + ' - by: ' + creditsArray.get(PlayState.SONG.meta.name.toLowerCase()));
+	PauseSubState.script = "data/substates/pauseSubState";
+
+    FlxG.game.addShader(warpCroma_Shader);
+}
+	 
+function getBarrPath():Void{
+    var path:String = "default";
+	switch(songsArray[curSong_]){
+		case "Mistery": 
+			path = "Mistery";
+			healthBar.scale.set(1.05,4.04);
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 95;
+				healthBarBG_Offset[1] = -32;
+			} else {
+				healthBarBG_Offset[0] = 95;
+				healthBarBG_Offset[1] = 32;
+			}
+		case "Enigma": 
+			path = "enigma";
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 95;
+				healthBarBG_Offset[1] = -32;
+			} else {
+				healthBarBG_Offset[0] = 95;
+				healthBarBG_Offset[1] = 32;
+			}
+			healthBar.scale.set(1.05,4.04);
+        case "Miracle": 
+			path = "Miracle";
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 90;
+				healthBarBG_Offset[1] = -35;
+			} else {
+				healthBarBG_Offset[0] = 90;
+				healthBarBG_Offset[1] = 35;
+			}
+			healthBar.scale.set(1.07,1.8);
+		case "Affiliation"| "affiliation":
+			path = "Affiliation";
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 100;
+				healthBarBG_Offset[1] = -65;
+			} else {
+				healthBarBG_Offset[0] = 100;
+				healthBarBG_Offset[1] = 95;
+			}
+			healthBar.scale.set(1,2.2);
+		case "The Grieving" | "the-grieving":
+			path = "the-grieving";
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 90;
+				healthBarBG_Offset[1] = 35;
+			} else {
+				healthBarBG_Offset[0] = 90;
+				healthBarBG_Offset[1] = 35;
+			}
+			healthBar.scale.set(1.04, 1.8);
+			
+			//Nevermind this looks bad
+			/*
+			remove(healthBarBG_1);
+			insert(members.indexOf(healthBar) - 1, healthBarBG_1);
+			*/
+        default: 
+			if(get_downscroll()){
+				healthBarBG_Offset[0] = 35;
+				healthBarBG_Offset[1] = -30;
+			} else {
+				healthBarBG_Offset[0] = 35;
+				healthBarBG_Offset[1] = 30;
+			}
+    }
+    return Paths.image('healthBars/' + path);
+    
+}   
+function onStartSong() {
+    songStarted = true;   
+    songLength = inst.length;
+
+    if(dispHudInStart) dispHud(true, false, 1, showNotesStart);
+}
+
+function destroy(){
+    FlxG.game._filters = [];
+	if(!respectMouseVisibility) FlxG.mouse.visible = true;
+}
+
+var camerasFixed:Bool = false;
+function postUpdate() {    
+	if (iconP1 != null && iconP2 != null) {
+		for (icon in [iconP1,iconP2])
+			icon.scale.set( FlxMath.lerp(icon.scale.x,1,0.1), FlxMath.lerp(icon.scale.y,1,0.1));
+	}
+
+    if(songScore > 0 || misses > 0 && accuracy != - 100) {
+		score_Txt.scale.set(
+           lerp(score_Txt.scale.x,1,0.1),
+		   lerp(score_Txt.scale.y,1,0.1)
+		);
+        if (score_Txt != null)
+        score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + 
+        "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+    }
+
+    if(paused && video != null) video.pause();
+	else if(!paused && video != null) video.resume();
+	
+    if(songStarted) {
+        var curTime:Float = Math.max(0, Conductor.songPosition);
+
+        var songCalc:Float = (curTime);
+        var secondsTotal:Int = Math.floor(songCalc / 1000);
+
+        if (time_Txt != null) time_Txt.text = FlxStringUtil.formatTime(secondsTotal, false);
+    }
+
+    warpCroma_Shader.distortion = distortion_Croma;
+    distortion_Croma = lerp(distortion_Croma,0 ,0.02);
+}
+
+function onGameOver(e) if(PlayState.chartingMode) e.cancel();
+
+// BACKEND //
+
+public static function updateHudAssets() {
+    hudAssets = [];
+
+	for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt]) 
+		if(item != null && item.exists) hudAssets.push(item);
+}
+
+public static function dispHud(show:Bool, instant:Bool = false, tweenTime:Float = 1,strumsDisp:Bool = true) {
+    updateHudAssets();
+
+    if (instant) tweenTime = 0.001;
+    if (strumsDisp) strAlpha(show ? 1 : 0, tweenTime);
+
+	for (hS in hudAssets) {   
+		FlxTween.tween(hS, {alpha: (show ? 1 : 0)}, tweenTime);
+	}
+}
+    
+public function strAlpha(alpha:Null<Float> = null, tweenTime:Float = 1, ?str:Int) {
+	final show:Bool = (alpha == null || alpha != 0);
+
+	if (str != null) {
+		_tweenAlphaOnStr(alpha, str, strumLines.members[str], tweenTime, show);
+		return;
+	}
+	for (i=>s in strumLines.members) _tweenAlphaOnStr(alpha, i, s, tweenTime, show);
+}
+    
+function _tweenAlphaOnStr(alpha:Null<Float>, strId:Int, str:StrumLine, tweenTime:Float, tweenIn:Bool) {
+	if (!tweenIn) prevStrAlpha.set(strId, str.members[0].alpha);
+	final goalAlpha:Float = tweenIn ? (alpha ?? prevStrAlpha[strId]) : 0.0001;
+    
+	for (s in str) {
+		s.shader = null;
+		FlxTween.tween(s, {alpha: goalAlpha}, tweenTime);
+	}
+	for (n in str.notes) {
+		final nGoalAlpha:Float = n.isSustainNote ? goalAlpha / 1.6 : goalAlpha;
+		FlxTween.tween(n, {alpha: nGoalAlpha}, tweenTime);
+	}
+}
+
+public static function changeSpeedAngleCamera(speed:String) {
+	speedAngle = Std.float(speed);
+}
+
+public static function desactivateZoom(){
+	camZoomingStrength = 0.0;
+}
+    
+
+public static function changeSpeedLerp(speed:String) {
+	var shit:Float = Std.parseFloat(speed);
+	camGame.followLerp = speed * 0.1;  
+}
+
+public static function showHud() {
+	dispHud(true, false, 1,true);
+}
+public static function hideHud(){
+    dispHud(false, false, 1,true);
+}
+public function fadeCam(){
+	camGame.stopFade();
+	camGame.fade(FlxColor.BLACK,1,false);
+} 
+
+public function deFadeCam(){
+	camGame.stopFade();
+	camGame.fade(FlxColor.BLACK,1,true);
+}
+
+var video = new FlxVideoSprite(0, 0);
+function preLoadVideo(path:String) { //um problem dilay on song shit
+    video.load(Assets.getBytes(Paths.video(path)));
+	video.bitmap.onFormatSetup.add(function():Void {
+		if (video.bitmap != null && video.bitmap.bitmapData != null) {	
+            video.antialiasing = false;
+            video.setGraphicSize(FlxG.width, FlxG.height);
+			video.updateHitbox();
+			video.screenCenter();
+            video.alpha = 0;
+            video.camera = camHUD;
+			FlxTween.tween(video,{alpha:1},1);
+	    }
+	});
+    if(video.bitmap != null) {
+		video.bitmap.onEndReached.add(function() {       
+			video.destroy();  
+		});
+    }
+	insert(members.indexOf(strumLines), video);
+}
+
+public static function playVideo() video.play();
+
+var activeCroma:Bool = false;
+var amounBeat_:String = "";
+function beatHit(){
+	if(curBeat % camZoomingInterval == 0 && activeCroma) setWarpCroma(amounBeat_);
+}
+public static function flashCamOverlay(time:String) camOverlay.flash(FlxColor.WHITE, Std.parseFloat(time));
+public static function setAmountBeat(amountBeat:String) amounBeat_ = amounBeat;
+public static function activeWarpCroma() activeCroma = !activeCroma;
+public static function setWarpCroma(amount:String) distortion_Croma += Std.parseFloat(amount);
+public static function desactivateZoom() camZoomingStrength = 0.0;

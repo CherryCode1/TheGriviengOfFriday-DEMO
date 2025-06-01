@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="icon-pibbygumball.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Lose Icon instancia 10000" x="0" y="0" width="150" height="130" frameX="0" frameY="0" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10001" x="0" y="0" width="150" height="130" frameX="0" frameY="0" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10002" x="150" y="0" width="150" height="130" frameX="0" frameY="0" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10003" x="300" y="0" width="150" height="129" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10004" x="450" y="0" width="150" height="129" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10005" x="450" y="0" width="150" height="129" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10006" x="600" y="0" width="150" height="132" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10007" x="600" y="0" width="150" height="132" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Lose Icon instancia 10008" x="750" y="0" width="150" height="138" frameX="0" frameY="-1" frameWidth="150" frameHeight="139"/>
+	<SubTexture name="Normal Icon instancia 10000" x="0" y="138" width="145" height="154" frameX="0" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10001" x="0" y="138" width="145" height="154" frameX="0" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10002" x="145" y="138" width="145" height="155"/>
+	<SubTexture name="Normal Icon instancia 10003" x="290" y="138" width="145" height="155"/>
+	<SubTexture name="Normal Icon instancia 10004" x="435" y="138" width="145" height="154" frameX="0" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10005" x="435" y="138" width="145" height="154" frameX="0" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10006" x="580" y="138" width="144" height="152" frameX="-1" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10007" x="580" y="138" width="144" height="152" frameX="-1" frameY="0" frameWidth="145" frameHeight="155"/>
+	<SubTexture name="Normal Icon instancia 10008" x="724" y="138" width="144" height="153" frameX="-1" frameY="0" frameWidth="145" frameHeight="155"/>
+</TextureAtlas>

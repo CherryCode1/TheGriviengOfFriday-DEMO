@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-50" y="250" sprite="C l o w n" scale="1.05" camx="-200" antialiasing="false" icon="Clown" color="#FDFDFD" holdTime="8.5" isGF="false">
+	<anim name="singLEFT" anim="Clown Left" x="0" y="-1" fps="24" loop="false"/>
+	<anim name="idle" anim="Clown Idle" x="0" y="0" fps="1" loop="false"/>
+	<anim name="singRIGHT" anim="Clown Right" x="-1" y="1" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Clown Down" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singUP" anim="Clown Up" x="1" y="1" fps="24" loop="false"/>
+</character>

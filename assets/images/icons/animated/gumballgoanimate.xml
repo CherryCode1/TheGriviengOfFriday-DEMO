@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Gumball Punished Icon.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Death0000" x="193" y="154" width="142" height="141" frameX="0" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Death to normal0000" x="0" y="0" width="101" height="90" frameX="-26" frameY="-24" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0001" x="0" y="0" width="101" height="90" frameX="-26" frameY="-24" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0002" x="101" y="0" width="112" height="86" frameX="-22" frameY="-31" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0003" x="101" y="0" width="112" height="86" frameX="-22" frameY="-31" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0004" x="213" y="0" width="150" height="154" frameX="-2" frameY="0" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0005" x="213" y="0" width="150" height="154" frameX="-2" frameY="0" frameWidth="154" frameHeight="154"/>
+	<SubTexture name="Death to normal0006" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0007" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0008" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0009" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0010" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0011" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0012" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Death to normal0013" x="363" y="0" width="154" height="122" frameX="0" frameY="-2" frameWidth="154" frameHeight="122"/>
+	<SubTexture name="Normal0000" x="363" y="0" width="154" height="122"/>
+	<SubTexture name="Normal to death0000" x="363" y="0" width="154" height="122"/>
+	<SubTexture name="Normal to death0001" x="363" y="0" width="154" height="122"/>
+	<SubTexture name="Normal to death0002" x="517" y="0" width="106" height="98" frameX="-23" frameY="-18" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0003" x="517" y="0" width="106" height="98" frameX="-23" frameY="-18" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0004" x="623" y="0" width="107" height="96" frameX="-22" frameY="-21" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0005" x="623" y="0" width="107" height="96" frameX="-22" frameY="-21" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0006" x="730" y="0" width="104" height="99" frameX="-24" frameY="-18" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0007" x="730" y="0" width="104" height="99" frameX="-24" frameY="-18" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0008" x="834" y="0" width="106" height="88" frameX="-23" frameY="-30" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0009" x="0" y="154" width="98" height="89" frameX="-32" frameY="-32" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0010" x="98" y="154" width="95" height="92" frameX="-33" frameY="-29" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0011" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0012" x="335" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0013" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0014" x="477" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0015" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0016" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0017" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0018" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0019" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0020" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0021" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+	<SubTexture name="Normal to death0022" x="193" y="154" width="142" height="141" frameX="-11" frameY="0" frameWidth="154" frameHeight="141"/>
+</TextureAtlas>

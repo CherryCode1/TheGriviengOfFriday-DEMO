@@ -1,0 +1,211 @@
+{
+	"song": {
+		"events": [
+			[
+				0,
+				[
+					[
+						"cameraZoomBop",
+						"4",
+						"0.1, 0.05"
+					]
+				]
+			],
+			[
+				18000,
+				[
+					[
+						"cameraZoomBop",
+						"2",
+						"0.08, 0.012"
+					]
+				]
+			],
+			[
+				40312.5,
+				[
+					[
+						"cameraZoomBop",
+						"0",
+						"0, 0"
+					]
+				]
+			],
+			[
+				40406.25,
+				[
+					[
+						"cameraZoomIn",
+						"0.9",
+						"1, quartInOut"
+					]
+				]
+			],
+			[
+				47906.25,
+				[
+					[
+						"cameraZoomIn",
+						"0.7",
+						"0.6, quartInOut"
+					]
+				]
+			],
+			[
+				48187.5,
+				[
+					[
+						"cameraZoomBop",
+						"2",
+						"0.08, 0.013"
+					]
+				]
+			],
+			[
+				59906.25,
+				[
+					[
+						"cameraZoomBop",
+						"0",
+						"0, 0"
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"cameraZoomIn",
+						"0.65",
+						"0.4, quartInOut"
+					]
+				]
+			],
+			[
+				60375,
+				[
+					[
+						"cameraZoomBop",
+						"1",
+						"0.08, 0.012"
+					]
+				]
+			],
+			[
+				83906.25,
+				[
+					[
+						"cameraZoomBop",
+						"2",
+						"0.1, 0.015"
+					]
+				]
+			],
+			[
+				96000,
+				[
+					[
+						"cameraZoomBop",
+						"1",
+						"0.08, 0.012"
+					]
+				]
+			],
+			[
+				119906.25,
+				[
+					[
+						"cameraZoomBop",
+						"4",
+						"0.15, 0.04"
+					]
+				]
+			],
+			[
+				131906.25,
+				[
+					[
+						"cameraZoomBop",
+						"2",
+						"0.15, 0.04"
+					]
+				]
+			],
+			[
+				156000,
+				[
+					[
+						"cameraZoomBop",
+						"1",
+						"0.15, 0.04"
+					]
+				]
+			],
+			[
+				167906.25,
+				[
+					[
+						"cameraZoomBop",
+						"0",
+						"0.15, 0.04"
+					]
+				]
+			],
+			[
+				169406.25,
+				[
+					[
+						"cameraZoomBop",
+						"2",
+						"0.15, 0.04"
+					],
+					[
+						"Change Character",
+						"Dad",
+						"chibi-chichi"
+					],
+					[
+						"Change Character",
+						"BF",
+						"chibi-bfmic"
+					],
+					[
+						"Change Character",
+						"GF",
+						"chibi-ribbit"
+					]
+				]
+			],
+			[
+				169500,
+				[
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					]
+				]
+			],
+			[
+				217687.5,
+				[
+					[
+						"Change Character",
+						"Dad",
+						"chichi"
+					],
+					[
+						"Change Character",
+						"BF",
+						"bf-mic"
+					],
+					[
+						"Change Character",
+						"GF",
+						"ribbit"
+					]
+				]
+			]
+		]
+	}
+}

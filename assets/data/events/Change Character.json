@@ -1,0 +1,19 @@
+{
+    "params": [
+        {
+            "name": "Character",
+            "type": " StrumLine",
+            "defaultValue": 0
+        },
+        {
+            "name": "New Character",
+            "type": "String",
+            "defaultValue": "dad"
+        },
+        {
+            "name": "change Icon",
+            "type": "Bool",
+            "defaultValue": true
+        }
+    ]
+}

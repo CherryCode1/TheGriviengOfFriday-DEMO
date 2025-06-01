@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gombal_2.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle00000" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="idle00001" x="230" y="0" width="230" height="75"/>
+	<SubTexture name="idle00002" x="460" y="0" width="230" height="75"/>
+	<SubTexture name="idle00003" x="690" y="0" width="230" height="75"/>
+	<SubTexture name="idle00004" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="up00000" x="920" y="0" width="230" height="75"/>
+	<SubTexture name="up00001" x="1150" y="0" width="230" height="75"/>
+	<SubTexture name="up00002" x="1380" y="0" width="230" height="75"/>
+	<SubTexture name="charge attack00000" x="1610" y="0" width="230" height="75"/>
+	<SubTexture name="charge attack00001" x="0" y="75" width="230" height="75"/>
+	<SubTexture name="charge attack00002" x="230" y="75" width="230" height="75"/>
+	<SubTexture name="charge attack00003" x="460" y="75" width="230" height="75"/>
+	<SubTexture name="attack00000" x="690" y="75" width="230" height="75"/>
+	<SubTexture name="attack00001" x="920" y="75" width="230" height="75"/>
+	<SubTexture name="attack00002" x="1150" y="75" width="230" height="75"/>
+	<SubTexture name="attack00003" x="1380" y="75" width="230" height="75"/>
+	<SubTexture name="down00000" x="1610" y="75" width="230" height="75"/>
+	<SubTexture name="down00001" x="0" y="150" width="230" height="75"/>
+	<SubTexture name="down00002" x="230" y="150" width="230" height="75"/>
+	<SubTexture name="left00000" x="460" y="150" width="230" height="75"/>
+	<SubTexture name="left00001" x="690" y="150" width="230" height="75"/>
+	<SubTexture name="left00002" x="920" y="150" width="230" height="75"/>
+	<SubTexture name="right00000" x="1150" y="150" width="230" height="75"/>
+	<SubTexture name="right00001" x="1380" y="150" width="230" height="75"/>
+	<SubTexture name="right00002" x="1610" y="150" width="230" height="75"/>
+	<SubTexture name="hit anim00000" x="0" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00001" x="230" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00002" x="460" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00003" x="690" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00004" x="920" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00005" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00006" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="hit anim00007" x="1380" y="225" width="230" height="75"/>
+	<SubTexture name="down miss00000" x="1610" y="75" width="230" height="75"/>
+	<SubTexture name="down miss00001" x="1610" y="225" width="230" height="75"/>
+	<SubTexture name="down miss00002" x="0" y="300" width="230" height="75"/>
+	<SubTexture name="right miss00000" x="1150" y="150" width="230" height="75"/>
+	<SubTexture name="right miss00001" x="230" y="300" width="230" height="75"/>
+	<SubTexture name="right miss00002" x="460" y="300" width="230" height="75"/>
+	<SubTexture name="left miss00000" x="460" y="150" width="230" height="75"/>
+	<SubTexture name="left miss00001" x="690" y="300" width="230" height="75"/>
+	<SubTexture name="left miss00002" x="920" y="300" width="230" height="75"/>
+	<SubTexture name="up miss00000" x="920" y="0" width="230" height="75"/>
+	<SubTexture name="up miss00001" x="1150" y="300" width="230" height="75"/>
+	<SubTexture name="up miss00002" x="1380" y="300" width="230" height="75"/>
+	<SubTexture name="gumball dies00000" x="0" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00001" x="230" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00002" x="460" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00003" x="690" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00004" x="920" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00005" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00006" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="gumball dies00007" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball dies00008" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball dies00009" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball dies00010" x="0" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00011" x="230" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00012" x="460" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00013" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00014" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00015" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00016" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dies00017" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00000" x="920" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00001" x="1150" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00002" x="1380" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00003" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00004" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00005" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00006" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00007" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00008" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00009" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00010" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00011" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead loop00012" x="1610" y="375" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00000" x="0" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00001" x="230" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00002" x="460" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00003" x="690" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00004" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00005" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00006" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00007" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00008" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball dead confirm00009" x="920" y="450" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00000" x="0" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00001" x="230" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00002" x="460" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00003" x="690" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00004" x="920" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00005" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00006" x="1150" y="225" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00007" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00008" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00009" x="1610" y="300" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00010" x="0" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00011" x="230" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00012" x="460" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00013" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00014" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00015" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00016" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00017" x="690" y="375" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00018" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00019" x="1150" y="450" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00020" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00021" x="1150" y="450" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00022" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00023" x="1150" y="450" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00024" x="0" y="0" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00025" x="1150" y="450" width="230" height="75"/>
+	<SubTexture name="gumball mini dead00026" x="0" y="0" width="230" height="75"/>
+</TextureAtlas>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="logoGlitchLoop.png">
+<SubTexture name="idle0000" x="0" y="0" width="479" height="227" frameX="-405" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0001" x="479" y="0" width="480" height="227" frameX="-405" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0002" x="0" y="227" width="482" height="227" frameX="-405" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0003" x="0" y="454" width="480" height="227" frameX="-404" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0004" x="0" y="681" width="480" height="227" frameX="-407" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0005" x="480" y="454" width="479" height="227" frameX="-405" frameY="-251" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0006" x="959" y="0" width="481" height="227" frameX="-405" frameY="-251" frameWidth="1280" frameHeight="720" />
+</TextureAtlas>

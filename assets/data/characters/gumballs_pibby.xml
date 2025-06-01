@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Corrupted_Gumball" scale="0.9" icon="icon-pibbygumball" color="#2DA8AC" holdTime="6.2" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="Left" x="227" y="-107" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right" x="9" y="-36" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down" x="51" y="-97" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up" x="124" y="59" fps="24" loop="false"/>
+</character>

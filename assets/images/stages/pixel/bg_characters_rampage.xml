@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bg_characters_rampage.png">
+	<!-- Made using Adobe Animate 2019 -->
+	<SubTexture name="BG_characters00000" x="0" y="0" width="100" height="77"/>
+	<SubTexture name="BG_characters00001" x="100" y="0" width="100" height="77"/>
+	<SubTexture name="BG_characters00002" x="200" y="0" width="100" height="77"/>
+	<SubTexture name="BG_characters00003" x="300" y="0" width="100" height="77"/>
+	<SubTexture name="BG_characters00004" x="400" y="0" width="100" height="77"/>
+	<SubTexture name="BG_characters00005" x="500" y="0" width="100" height="77"/>
+</TextureAtlas>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Anais17.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="IdleA0000" x="0" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0001" x="0" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0002" x="311" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0003" x="311" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0004" x="622" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0005" x="622" y="0" width="306" height="320"/>
+	<SubTexture name="IdleA0006" x="0" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0007" x="0" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0008" x="311" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0009" x="311" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0010" x="622" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0011" x="622" y="325" width="306" height="320"/>
+	<SubTexture name="IdleA0012" x="0" y="650" width="306" height="320"/>
+	<SubTexture name="IdleA0013" x="0" y="650" width="306" height="320"/>
+</TextureAtlas>

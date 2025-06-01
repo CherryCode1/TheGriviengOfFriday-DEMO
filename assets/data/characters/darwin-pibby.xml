@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Pibby_Darwin" scale="0.9" icon="face"  scroll ="1" color="#81E98F" holdTime="6.2" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="true"/>
+</character>

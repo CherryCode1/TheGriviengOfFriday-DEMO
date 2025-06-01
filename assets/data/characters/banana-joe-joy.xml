@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Joy_Banana_New" icon="BananaJoe" color="#0E0A00" holdTime="7.3" isGF="false">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singUP" anim="up" x="31" y="78" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="8" y="22" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="162" y="32" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-4" y="30" fps="24" loop="false"/>
+</character>

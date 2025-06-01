@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" y="0" sprite="Bf_17_pavos" flipX="true" isPlayer="true" icon="Rockfriend-17" color="#6A6774" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="25" y="-26" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="Right0" x="-26" y="-15" fps="30" loop="false"/>
+	<anim name="singUP" anim="Up0" x="-29" y="31" fps="30" loop="false"/>
+	<anim name="singLEFT" anim="Left0" x="21" y="5" fps="30" loop="false"/>
+	<anim name="singDOWNmiss" anim="DownMiss" x="23" y="-20" fps="30" loop="false"/>
+	<anim name="singRIGHTmiss" anim="RightMiss" x="-39" y="-17" fps="30" loop="false"/>
+	<anim name="singUPmiss" anim="UpMiss" x="-29" y="23" fps="30" loop="false"/>
+	<anim name="singLEFTmiss" anim="LeftMiss" x="47" y="21" fps="30" loop="false"/>
+</character>

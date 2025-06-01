@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="incel" camy="-80" icon="incelP1" color="#FF3630" holdTime="7.3" isGF="false">
+	<anim name="firstDeath" anim="death anim" x="-18" y="20" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="death anim" x="-18" y="21" fps="24" loop="true" indices="63"/>
+	<anim name="deathConfirm" anim="death anim" x="-18" y="21" fps="24" loop="false" indices="63"/>
+</character>

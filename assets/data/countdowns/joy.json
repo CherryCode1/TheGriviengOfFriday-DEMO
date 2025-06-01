@@ -1,0 +1,38 @@
+{
+	"animations": [
+		{
+		"offsets": [
+				40,
+				50
+			],
+			"name": "3"
+		},
+		{
+			"offsets": [
+				400,
+				230
+			],
+			"name": "2"
+		},
+		{
+		"offsets": [
+				360,
+				140
+			],
+			"name": "1"
+		},
+		{
+			"offsets": [
+				400,
+				300
+			],
+			"name": "Go"
+		}
+	],
+	"image": "countdown/countdownjoy",
+	"position": [
+		450,
+		150
+	],
+	"scale": 0.9
+}

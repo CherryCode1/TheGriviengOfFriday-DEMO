@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Arboles.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Arboles0000" x="0" y="0" width="2140" height="772"/>
+	<SubTexture name="Arboles0001" x="0" y="0" width="2140" height="772"/>
+	<SubTexture name="Arboles0002" x="0" y="0" width="2140" height="772"/>
+	<SubTexture name="Arboles0003" x="0" y="777" width="2140" height="772"/>
+	<SubTexture name="Arboles0004" x="0" y="777" width="2140" height="772"/>
+	<SubTexture name="Arboles0005" x="0" y="777" width="2140" height="772"/>
+	<SubTexture name="Arboles0006" x="0" y="1554" width="2140" height="772"/>
+	<SubTexture name="Arboles0007" x="0" y="1554" width="2140" height="772"/>
+	<SubTexture name="Arboles0008" x="0" y="1554" width="2140" height="772"/>
+	<SubTexture name="Arboles0009" x="0" y="2331" width="2140" height="772"/>
+	<SubTexture name="Arboles0010" x="0" y="2331" width="2140" height="772"/>
+	<SubTexture name="Arboles0011" x="0" y="2331" width="2140" height="772"/>
+</TextureAtlas>

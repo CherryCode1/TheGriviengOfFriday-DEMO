@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Splatty" scale="0.9" icon="splatty" color="#2DA8AC" holdTime="6.2" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="Left" x="157" y="-22" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right" x="-66" y="-11" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down" x="51" y="-207" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up" x="39" y="69" fps="24" loop="false"/>
+</character>

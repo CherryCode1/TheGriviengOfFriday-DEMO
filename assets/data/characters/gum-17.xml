@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character camx="-200" sprite="gumball_17_bucks" icon="gumball-17" color="#427195" holdTime="5" isGF="false">
+	<anim name="singLEFT" anim="Left" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right" x="-100" y="1" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down" x="-56" y="-46" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up" x="-27" y="21" fps="24" loop="false"/>
+	<anim name="idle" anim="Gumball Idle" x="-38" y="-2" fps="20" loop="false"/>
+</character>

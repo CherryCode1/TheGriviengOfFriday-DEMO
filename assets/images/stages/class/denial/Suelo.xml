@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Suelo.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Piso0000" x="0" y="0" width="2021" height="506"/>
+	<SubTexture name="Piso0001" x="0" y="0" width="2021" height="506"/>
+	<SubTexture name="Piso0002" x="0" y="0" width="2021" height="506"/>
+	<SubTexture name="Piso0003" x="0" y="511" width="2021" height="506"/>
+	<SubTexture name="Piso0004" x="0" y="511" width="2021" height="506"/>
+	<SubTexture name="Piso0005" x="0" y="511" width="2021" height="506"/>
+	<SubTexture name="Piso0006" x="0" y="1022" width="2021" height="506"/>
+	<SubTexture name="Piso0007" x="0" y="1022" width="2021" height="506"/>
+	<SubTexture name="Piso0008" x="0" y="1022" width="2021" height="506"/>
+	<SubTexture name="Piso0009" x="0" y="1533" width="2021" height="506"/>
+	<SubTexture name="Piso0010" x="0" y="1533" width="2021" height="506"/>
+	<SubTexture name="Piso0011" x="0" y="1533" width="2021" height="506"/>
+</TextureAtlas>

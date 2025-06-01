@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" name="xploshi" folder="stages/xploshi/">
+	<sprite name="spiral" sprite="BG_Xploshi" scale="1.5" x="-1300" y="300">
+		<anim name="idle" anim="bg" scroll="1" fps="24" loop="true"/>
+	</sprite>
+	<sprite name="bg" x="-600" y="-200" sprite="bg" scroll="1" alpha="1"/>
+	<sprite name="family" sprite="Family_xploshi_normal" scale="1" x="-170" y="140">
+		<anim name="idle" anim="Family normal" scroll="1" fps="24" loop="true"/>
+	</sprite>
+	<sprite name="madfamily" sprite="Family_xploshi_suspect" scale="1" x="-170" y="140">
+		<anim name="idle" anim="Family suspect" scroll="1" fps="24" loop="true"/>
+	</sprite>
+	<dad scale="1.4" y="670" x="0"/>
+	<boyfriend scale="1.4" y="780" x="1000"/>
+</stage>

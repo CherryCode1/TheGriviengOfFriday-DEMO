@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Penny_Joy" flipX="true" isPlayer="true" icon="face" color="#5F4A38" holdTime="7.3" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="Left0" x="192" y="-35" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="31" y="-25" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up0" x="15" y="71" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right0" x="-1" y="5" fps="24" loop="false"/>
+</character>

@@ -1,0 +1,38 @@
+{
+	"animations": [
+		{
+		"offsets": [
+				0,
+				0
+			],
+			"name": "3"
+		},
+		{
+			"offsets": [
+				360,
+				110
+			],
+			"name": "2"
+		},
+		{
+		"offsets": [
+				-60,
+				50
+			],
+			"name": "1"
+		},
+		{
+			"offsets": [
+				350,
+				300
+			],
+			"name": "Go"
+		}
+	],
+	"image": "countdown/countdownpibby",
+	"position": [
+		400,
+		150
+	],
+	"scale": 0.9
+}

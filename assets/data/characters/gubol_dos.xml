@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="gubol_xploshi" x="-20" y="-140" cam="20" icon="GuballP2" color="#90D3FF" holdTime="7.3" isGF="false" scale="0.6">
+	<anim name="singLEFT" anim="sleft" x="221" y="-42" fps="24" loop="false"/>
+	<anim name="idle" anim="sidle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singDOWN" anim="sdown" x="127" y="-25" fps="24" loop="false"/>
+	<anim name="singUP" anim="sup" x="85" y="8" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="sright" x="5" y="-12" fps="24" loop="false"/>
+</character>

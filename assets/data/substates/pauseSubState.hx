@@ -1,0 +1,285 @@
+import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
+import flixel.text.FlxTextBorderStyle;
+import flixel.group.FlxTypedGroup;
+import flixel.tweens.FlxTweenType;
+import flixel.text.FlxTextAlign;
+import flixel.util.FlxAxes;
+import openfl.display.BlendMode;
+
+var items:Array<String> = ["resume", "restart", "options", "exit"];
+var offsetHand_:Array<Float> = [-25, 100, 200, 300];
+
+//fake enum, you get it by now
+final CharacterPortrait:T = {
+	THE_GRIEVING: 0,
+	DISCARDED: 1,
+	MIRACLE_STAR: 8,
+	GRIEVING_CANON: 3,
+	THE_KIDS: 9,
+	THE_JOY: 2,
+	PIBBY: 7,
+	CASTIGADO: 5,
+	PROCRASTINATION: 6,
+	XPLOSHI: 10
+};
+
+var pauseCam:FlxCamera = new FlxCamera();
+
+var menu_items:Array<FlxSprite> = [];
+var board:FlxSprite;
+var hand1:FlxSprite;
+var hand2:FlxSprite;
+var portait:FlxSprite;
+var textPause:FlxText;
+var bgBackdrop:FlxBackdrop;
+
+var curChar:Int = CharacterPortrait.THE_GRIEVING;
+var curSong:Int = 0;
+
+var canDoShit:Bool = false;
+var blockedOptions:Array<String> = [];
+
+var composersArray:Array<String> = [];
+var songsArray:Array<String> = [];
+var prevSuffix:String;
+
+var timeGame = PlayState.instance.curStep;
+var color:FlxColor = FlxColor.BLACK;
+function create(event) {
+	//Initialize
+	event.cancel(); 
+	event.music = "Pause Theme - The Grieving Of Friday";
+	cameras = [];
+
+	composersArray = getCredits();
+	
+	prevSuffix = getWindowSuffix();
+	changePrefix(prevSuffix + ' - (PAUSED)');
+	
+	final isAffiliation:Bool = (PlayState.SONG.meta.name == "affiliation" || PlayState.SONG.meta.name == "Affiliation");
+
+	FlxG.cameras.add(pauseCam, false);
+	pauseCam.bgColor = 0x88000000;
+	pauseCam.alpha = 0;
+	pauseCam.zoom = 1.25;
+
+	if(isAffiliation) pauseCam.scroll.y -= 100;
+	FlxTween.tween(pauseCam, {alpha: 1, zoom: (isAffiliation ? 0.75 : 0.95)}, .5, {ease: FlxEase.circOut});
+	
+	//Actually adding stuff
+	
+	if(!Options.lowMemoryMode) {
+		
+		if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") {
+			color = FlxColor.fromRGB(15, 41, 82);
+			if (timeGame > -1 && timeGame < 1500){
+				color = FlxColor.fromRGB(15, 41, 82);
+			}
+			if (timeGame > 1499 && timeGame < 1759){
+				color = FlxColor.BLACK;
+			}
+			if (timeGame > 1759){
+				color = FlxColor.fromRGB(15, 41, 82);
+			
+			}
+		}
+		
+		bgBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true, color, 0x0));
+		bgBackdrop.velocity.set(-40, 40);
+		bgBackdrop.alpha = 0;
+		bgBackdrop.scrollFactor.set();
+		FlxTween.tween(bgBackdrop, {alpha: 0.2}, 0.5, {ease: FlxEase.linear});
+		add(bgBackdrop);
+	}
+
+	board = new FlxSprite(0, 0, Paths.image('menus/pause/board'));
+	board.scale.set(1.15,1.15);
+	board.updateHitbox();
+	board.screenCenter();
+	add(board);
+
+	for(i in 0...items.length) {
+		var item:FlxSprite = new FlxSprite();
+		item.frames = Paths.getSparrowAtlas('menus/pause/OptionSHEETZ');
+		item.animation.addByPrefix('static', items[i] + '0', 24, false);
+		item.animation.addByPrefix('select', items[i]+ '_select', 24, false);
+		item.animation.play('static');
+		item.scale.set(0.55, 0.55);
+		item.updateHitbox();
+		item.screenCenter();
+		item.antialiasing = Options.antialiasing;
+		item.ID = i;
+		add(item);
+		if (i == 0) item.animation.play('select');
+		menu_items.push(item);
+	}
+
+	portait = new FlxSprite(0, 0, getChar());
+	switch(curChar) {
+		case CharacterPortrait.THE_GRIEVING | CharacterPortrait.DISCARDED:
+			portait.scale.set(1.15,1.15);
+		default:
+			portait.scale.set(0.55,0.55);
+	}
+	portait.updateHitbox();
+	portait.screenCenter();
+	add(portait);
+    
+	hand1 = new FlxSprite(0, 0, Paths.image('menus/pause/hand1'));
+	hand1.scale.set(1.15,1.15);
+	hand1.updateHitbox();
+	hand1.screenCenter();
+	add(hand1);
+
+	hand2 = new FlxSprite(0, 0, Paths.image('menus/pause/hand2'));
+	hand2.scale.set(1.15,1.15);
+	hand2.updateHitbox();
+	hand2.screenCenter();
+	add(hand2);
+
+	textPause = new FlxText(pauseCam.width, 10, FlxG.width / 2, PlayState.SONG.meta.name + "\nby: " + composersArray.get(PlayState.SONG.meta.name.toLowerCase()), 35);
+	textPause.setFormat(Paths.font((PlayState.SONG.meta.name == "Miracle" ? "chinese.ttf" : "vcr.ttf")), 35, FlxColor.WHITE, FlxTextAlign.RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	textPause.scrollFactor.set(1, 1);
+	textPause.borderSize = 1.4;
+	textPause.alpha = 0;
+	if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") textPause.color = FlxColor.fromRGB(0, 48, 255);
+	add(textPause);
+
+	if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") {
+		var filter = new FlxSprite().makeGraphic(pauseCam.width+ 200,pauseCam.height + 200, FlxColor.BLACK);
+		filter.screenCenter();
+		filter.alpha = 0.1;
+		filter.blend = BlendMode.fromString("difference");
+		add(filter);
+
+		var filter_2 = new FlxSprite().makeGraphic(pauseCam.width+ 200,pauseCam.height + 200, FlxColor.fromRGB(2, 39, 199));
+		filter_2.screenCenter();
+		filter_2.alpha = 0.5;
+		filter_2.blend = BlendMode.fromString("multiply");
+		add(filter_2);
+
+		pauseCam.addShader(grieveSh);
+	
+		if (timeGame > -1 && timeGame < 1500){
+			pauseCam.addShader(grieveSh);
+		}
+		if (timeGame > 1499 && timeGame < 1759){
+			pauseCam._filters = [];
+			textPause.color = FlxColor.ORANGE;
+			filter.alpha = filter_2.alpha = 0;
+		}
+		if (timeGame > 1759){
+			filter.alpha = 0.1;
+			filter_2.alpha = 0.5;
+			pauseCam.addShader(grieveSh);
+			textPause.color = FlxColor.fromRGB(2, 39, 199);
+		}
+		
+	}
+	if(isAffiliation) textPause.y -= 200;
+	cameras = [pauseCam];
+
+
+	for(item in [hand2, hand1, board]) item.antialiasing = Options.antialiasing;
+
+	FlxTween.tween(textPause, {x: 650, alpha: 1}, 0.8, {startDelay: 0.3, ease: FlxEase.circInOut, onComplete:
+		function(twn:FlxTween) {
+			if(!Options.lowMemoryMode)
+				FlxTween.tween(textPause, {y: textPause.y + 15}, FlxG.random.float(5, 10), {ease: FlxEase.sineInOut, type: FlxTweenType.PINGPONG});
+		}
+	});
+
+	canDoShit = true;
+}
+
+final charPortraitImages:Array<String> = [
+	"gumball", "discarded", "the-joy", "the-grievieng",
+	"murder", "punished", "clown", "pibby", "chichi", "13_years",
+	"gumball_normal"
+];
+function getChar() {
+	final songs:Array<String> = getSongs();
+	//trace(songs);
+
+	switch(PlayState.SONG.meta.name) {
+		case 'Loss' | "Grieving" | "Denial" | "My Amazing Sadness": curChar = CharacterPortrait.THE_GRIEVING;
+		case "Mistery" | "Enigma": curChar = CharacterPortrait.DISCARDED;
+		case "Miracle": curChar = CharacterPortrait.MIRACLE_STAR;
+		case "The Grieving": curChar = CharacterPortrait.GRIEVING_CANON;
+		case "13 Years": curChar = CharacterPortrait.THE_KIDS;
+		case "Cherophobia": curChar = CharacterPortrait.THE_JOY;
+		case "My Doll": curChar = CharacterPortrait.PIBBY;
+		case "Punished": curChar = CharacterPortrait.CASTIGADO;
+		case "Clown Eyes": curChar = CharacterPortrait.PROCRASTINATION;
+		case "affiliation": curChar = CharacterPortrait.XPLOSHI;
+	}
+  
+  return Paths.image('menus/pause/characters/' + charPortraitImages[curChar]);
+}
+
+function update(elapsed) {
+	for(opt in items) var target:Float = ((opt.ID == curSelected) ? 1 : 0.9);
+
+	if(canDoShit){
+		hand2.y = lerp(hand2.y, offsetHand_[curSelected],0.2);
+
+		if (controls.DOWN_P) changeSelection(1, false);
+		if (controls.UP_P) changeSelection(-1);
+		if (controls.ACCEPT) {
+			final option = items[curSelected];
+			canDoShit = false;
+
+			if(blockedOptions.contains(option)) {
+				FlxG.sound.play(Paths.sound('cancelMenu'));
+				FlxTween.shake(menu_items[curSelected], 0.004, 0.2, FlxAxes.XY, {
+					onComplete: function(twn:FlxTween) {
+						canDoShit = true;
+					}
+				});
+				return;
+			}
+
+			FlxG.sound.play(Paths.sound((option == "exit" ? 'cancelMenu' : 'confirmMenu')));
+			
+			if(textPause != null) {
+				FlxTween.cancelTweensOf(textPause);
+				FlxTween.tween(textPause, {alpha: 0}, 0.5);
+			}
+			if(bgBackdrop != null) FlxTween.tween(bgBackdrop, {alpha: 0}, 0.5, {ease: FlxEase.linear});
+
+			new FlxTimer().start(.5, function(tmr:FlxTimer) comeOnDoSomething(option));
+		}
+	}
+}
+
+function changeSelection(change){
+	FlxG.sound.play(Paths.sound('scrollMenu'));
+
+	curSelected += change;
+
+	if (curSelected < 0) curSelected = items.length - 1;
+	if (curSelected >= items.length) curSelected = 0;
+
+	for (i in 0...menu_items.length) {
+		if(i == curSelected) menu_items[i].animation.play("select");
+		else menu_items[i].animation.play("static");
+	}
+}
+
+function comeOnDoSomething(option:String) {
+	if (PlayState.SONG.meta.name == "affiliation" || PlayState.SONG.meta.name == "Affiliation")
+		FlxTween.tween(pauseCam, {alpha: 0, zoom: 0.95}, .5, {ease: FlxEase.cubeOut});
+	else 
+		FlxTween.tween(pauseCam, {alpha: 0, zoom: 1.2}, .5, {ease: FlxEase.cubeOut});
+
+	new FlxTimer().start(.5, function(tmr:FlxTimer) {
+		switch(option) {
+			case "options": curSelected = 3;
+			case "exit": curSelected = 4;
+		}
+		selectOption();
+	});
+}
+
+function destroy() changePrefix(prevSuffix);

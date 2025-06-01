@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="gf_17_pavos" icon="face" color="#A1A1A1" holdTime="6.1" scale="1.1" isGF="false">
+	<anim name="danceLeft" anim="Idle" x="0" y="0" fps="24" loop="false" indices="1..13"/>
+	<anim name="danceRight" anim="Idle" x="0" y="0" fps="24" loop="false" indices="13..27"/>
+</character>

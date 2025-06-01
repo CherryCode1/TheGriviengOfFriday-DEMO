@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="grieving_fix" x="-225" y="-120" scale="0.9" icon="GumballP2" color="#5F87B5" holdTime="6.2" isGF="false">
+	<anim name="anim" anim="gumball throws mic anim" x="0" y="0" fps="24" loop="false"/>
+</character>

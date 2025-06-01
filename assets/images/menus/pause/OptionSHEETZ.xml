@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="OptionSHEETZ.png">
+	<SubTexture name="resume_select0000" x="0" y="884" width="654" height="179" frameX="-171" frameY="-200" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="resume0000" x="0" y="1063" width="629" height="153" frameX="-186" frameY="-216" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="restart_select0000" x="0" y="0" width="753" height="253" frameX="-174" frameY="-380" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="restart0000" x="0" y="697" width="695" height="187" frameX="-209" frameY="-399" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="options_select0000" x="0" y="253" width="752" height="236" frameX="-207" frameY="-572" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="options0000" x="0" y="489" width="718" height="208" frameX="-225" frameY="-586" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="exit_select0000" x="753" y="0" width="501" height="274" frameX="-232" frameY="-792" frameWidth="2580" frameHeight="1440"/>
+	<SubTexture name="exit0000" x="753" y="274" width="446" height="208" frameX="-266" frameY="-807" frameWidth="2580" frameHeight="1440"/>
+</TextureAtlas>

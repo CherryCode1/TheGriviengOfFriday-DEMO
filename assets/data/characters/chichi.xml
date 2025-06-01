@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="chichi-the-goat" icon="chichi" x="-140" y="300" color="#E29876" holdTime="7.3" isGF="false">
+	<anim name="singLEFT" anim="Chichi Left" x="76" y="193" fps="24" loop="false"/>
+	<anim name="idle" anim="Chichi Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Chichi Down" x="-8" y="170" fps="24" loop="false"/>
+	<anim name="singUP" anim="Chichi Up" x="94" y="234" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Chichi Right" x="-32" y="241" fps="24" loop="false"/>
+</character>

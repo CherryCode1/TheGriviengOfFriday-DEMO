@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character y="320" sprite="weird/bf" antialiasing="false" flipX="true" isPlayer="true" icon="weird-rock" color="#5F6467" holdTime="6" isGF="false">
+	<anim name="idle" anim="BF idle dance" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="BF NOTE DOWN0" x="16" y="-23" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="BF NOTE RIGHT0" x="-65" y="-17" fps="30" loop="false"/>
+	<anim name="singUP" anim="BF NOTE UP0" x="-38" y="16" fps="30" loop="false"/>
+	<anim name="singLEFT" anim="BF NOTE LEFT0" x="20" y="0" fps="30" loop="false"/>
+</character>

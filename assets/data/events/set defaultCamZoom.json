@@ -1,0 +1,14 @@
+{
+    "params": [
+        {
+            "name": "set initial defaultCamZoom",
+            "type": "Bool",
+            "defaultValue": false
+        },
+        {
+            "name": "zoom amount",
+            "type": "Float(0, 99, 1, 2)",
+            "defaultValue": 0.0
+        }
+    ]
+}

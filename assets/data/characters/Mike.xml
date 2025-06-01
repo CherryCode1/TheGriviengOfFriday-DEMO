@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Mike" scale="0.85" icon="face" x="300"  scrollX= "0.7" y="-100" color="#81E98F" holdTime="6.2" isGF="false">
+	<anim name="anim left turn" anim="Turn left0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="idle right" anim="Idle alt0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="idle left" anim="Idle0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="anim right turn" anim="Turn right" x="0" y="0" fps="24" loop="false"/>
+</character>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="ChiChiLoop.png">
+<SubTexture name="idle0000" x="604" y="182" width="604" height="179" frameX="-339" frameY="-303" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0001" x="0" y="182" width="604" height="180" frameX="-339" frameY="-302" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0002" x="0" y="0" width="609" height="182" frameX="-338" frameY="-301" frameWidth="1280" frameHeight="720" />
+<SubTexture name="idle0003" x="609" y="0" width="611" height="182" frameX="-337" frameY="-301" frameWidth="1280" frameHeight="720" />
+</TextureAtlas>

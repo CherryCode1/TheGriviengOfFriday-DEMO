@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Pibby" flipX="true" isPlayer="true" icon="icon-pibby" color="#B54DFD" holdTime="4.2" isGF="false">
+	<anim name="idle" anim="Idle" x="-5" y="0" fps="24" loop="true"/>
+	<anim name="singUP" anim="Up0" x="-100" y="55" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="Left0" x="132" y="3" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right0" x="-149" y="2" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="21" y="-45" fps="24" loop="false"/>
+	<anim name="singUPmiss" anim="Up miss0" x="-119" y="141" fps="24" loop="false"/>
+	<anim name="singLEFTmiss" anim="Left miss" x="160" y="66" fps="24" loop="false"/>
+	<anim name="singRIGHTmiss" anim="Right miss" x="-133" y="64" fps="24" loop="false"/>
+	<anim name="singDOWNmiss" anim="Down miss" x="35" y="-2" fps="24" loop="false"/>
+</character>

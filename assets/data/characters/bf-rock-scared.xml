@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="RockScared" flipX="true" isPlayer="true" icon="Rockfriend" color="#6A6774" gameOverChar="bf-rock-gameover" holdTime="4.2" camY="400" isGF="false">
+	<anim name="idle" anim="idle" x="-5" y="0" fps="24" loop="true"/>
+	<anim name="singUP" anim="up0" x="-15" y="55" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left0" x="48" y="-7" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right0" x="-34" y="-12" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down0" x="21" y="-20" fps="24" loop="false"/>
+</character>

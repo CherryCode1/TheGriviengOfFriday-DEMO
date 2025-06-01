@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Sax_Dog" icon="icon-dog" color="#A5A5A5" holdTime="3.3" isGF="false">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="left" x="-69" y="-25" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="-227" y="-20" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="-121" y="-2" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="20" y="-6" fps="24" loop="false"/>
+</character>

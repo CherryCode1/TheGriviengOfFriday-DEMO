@@ -1,0 +1,11 @@
+<character x="100"  y="325" camx="-300" camy="50" icon="bfmic" flipX="true" color="#4A5258" isGF="false" isPlayer="true" gameOverChar="" holdTime="7.3" sprite="Mic_BF">
+<anim x="0" y="0" fps="24" name="idle" anim="Idle" loop="false" />
+<anim x="112" y="-5" fps="24" name="singLEFT" anim="Left0" loop="false" />
+<anim x="11" y="-6" fps="24" name="singDOWN" anim="Down0" loop="false" />
+<anim x="15" y="26" fps="24" name="singUP" anim="Up0" loop="false" />
+<anim x="4" y="0" fps="24" name="singRIGHT" anim="Right0" loop="false" />
+<anim x="107" y="-4" fps="24" name="singLEFTmiss" anim="Left Miss" loop="false" />
+<anim x="15" y="-18" fps="24" name="singDOWNmiss" anim="Down Miss" loop="false" />
+<anim x="7" y="24" fps="24" name="singUPmiss" anim="Up Miss" loop="false" />
+<anim x="-48" y="-13" fps="24" name="singRIGHTmiss" anim="Right Miss" loop="false" />
+</character>

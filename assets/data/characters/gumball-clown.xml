@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Gumball-scared" flipX="true" isPlayer="true" icon="GumballClownNew" color="#285057" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up0" x="33" y="31" fps="30" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="5" y="-9" fps="30" loop="false"/>
+	<anim name="singLEFT" anim="Left0" x="91" y="17" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="Right0" x="-21" y="-3" fps="30" loop="false"/>
+	<anim name="singUPmiss" anim="Up Miss" x="34" y="31" fps="30" loop="false"/>
+	<anim name="singDOWNmiss" anim="Down Miss" x="1" y="-15" fps="30" loop="false"/>
+	<anim name="singLEFTmiss" anim="Left Miss" x="83" y="17" fps="30" loop="false"/>
+	<anim name="singRIGHTmiss" anim="Right Miss" x="-54" y="-6" fps="30" loop="false"/>
+</character>

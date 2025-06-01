@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Jam.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="jam start0000" x="0" y="0" width="728" height="306" frameX="0" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0001" x="0" y="0" width="728" height="306" frameX="0" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0002" x="0" y="0" width="728" height="306" frameX="-252" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0003" x="0" y="0" width="728" height="306" frameX="-252" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0004" x="0" y="0" width="728" height="306" frameX="-414" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0005" x="0" y="0" width="728" height="306" frameX="-414" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0006" x="0" y="0" width="728" height="306" frameX="-506" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0007" x="0" y="0" width="728" height="306" frameX="-506" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0008" x="0" y="0" width="728" height="306" frameX="-562" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0009" x="0" y="0" width="728" height="306" frameX="-562" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0010" x="0" y="0" width="728" height="306" frameX="-572" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0011" x="0" y="0" width="728" height="306" frameX="-572" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0012" x="0" y="0" width="728" height="306" frameX="-576" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0013" x="0" y="0" width="728" height="306" frameX="-576" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0014" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0015" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0016" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0017" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0018" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0019" x="0" y="0" width="728" height="306" frameX="-578" frameY="-53" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0020" x="728" y="0" width="805" height="381" frameX="-542" frameY="-17" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0021" x="728" y="0" width="805" height="381" frameX="-542" frameY="-17" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0022" x="0" y="381" width="839" height="415" frameX="-525" frameY="0" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0023" x="0" y="381" width="839" height="415" frameX="-525" frameY="0" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0024" x="839" y="381" width="775" height="351" frameX="-557" frameY="-32" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0025" x="839" y="381" width="775" height="351" frameX="-557" frameY="-32" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0026" x="0" y="796" width="757" height="333" frameX="-566" frameY="-41" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0027" x="0" y="796" width="757" height="333" frameX="-566" frameY="-41" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0028" x="757" y="796" width="745" height="321" frameX="-572" frameY="-47" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0029" x="757" y="796" width="745" height="321" frameX="-572" frameY="-47" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0030" x="0" y="1129" width="737" height="313" frameX="-576" frameY="-51" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0031" x="0" y="1129" width="737" height="313" frameX="-576" frameY="-51" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0032" x="737" y="1129" width="735" height="311" frameX="-577" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0033" x="737" y="1129" width="735" height="311" frameX="-577" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0034" x="737" y="1129" width="735" height="311" frameX="-577" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0035" x="737" y="1129" width="735" height="311" frameX="-579" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0036" x="737" y="1129" width="735" height="311" frameX="-579" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0037" x="737" y="1129" width="735" height="311" frameX="-583" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0038" x="737" y="1129" width="735" height="311" frameX="-583" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0039" x="737" y="1129" width="735" height="311" frameX="-647" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0040" x="737" y="1129" width="735" height="311" frameX="-647" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0041" x="0" y="1442" width="734" height="311" frameX="-886" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0042" x="0" y="1442" width="734" height="311" frameX="-886" frameY="-52" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0043" x="737" y="1129" width="735" height="311" frameX="-1060" frameY="-54" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0044" x="737" y="1129" width="735" height="311" frameX="-1060" frameY="-54" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0045" x="734" y="1442" width="735" height="311" frameX="-1284" frameY="-56" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0046" x="734" y="1442" width="735" height="311" frameX="-1284" frameY="-56" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0047" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0048" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0049" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0050" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0051" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+	<SubTexture name="jam start0052" x="737" y="1129" width="735" height="311" frameX="-1553" frameY="-58" frameWidth="2288" frameHeight="415"/>
+</TextureAtlas>

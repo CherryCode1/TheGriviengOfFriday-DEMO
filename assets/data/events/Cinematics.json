@@ -1,0 +1,14 @@
+{
+    "params": [
+        {
+            "name": "Speed (Seconds)",
+            "type": "Float(0.0, 9999, 1, 2)",
+            "defaultValue": "0"
+        },
+        {
+            "name": "Distance (If marked with 0, then the event will end)",
+            "type": "Float(0.0, 9999, 1, 2)",
+            "defaultValue": "0"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="darwincastigados" scale="2" icon="darwinGoAnimate" color="#DC6707" holdTime="7.3" isGF="false">
+	<anim name="singLEFT" anim="left0" x="51" y="8" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="-6" y="-24" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="-7" y="45" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-7" y="30" fps="24" loop="false"/>
+</character>

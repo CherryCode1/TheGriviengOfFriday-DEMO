@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="gubol_faseANGY" x="20" y="-50" camy="-40" icon="GuballP3" color="#90D3FF" holdTime="7.3" isGF="false" scale="0.8">
+	<anim name="singLEFT" anim="aleft" x="223" y="0" fps="24" loop="false"/>
+	<anim name="idle" anim="aidle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singDOWN" anim="adown" x="33" y="-8" fps="24" loop="false"/>
+	<anim name="singUP" anim="aup" x="74" y="206" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="aright" x="13" y="32" fps="24" loop="false"/>
+</character>

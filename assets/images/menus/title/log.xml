@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="log.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="estatic0000" x="0" y="0" width="3030" height="2500"/>
+	<SubTexture name="estatic0001" x="0" y="0" width="3030" height="2500"/>
+	<SubTexture name="estatic0002" x="3030" y="0" width="3030" height="2500"/>
+	<SubTexture name="estatic0003" x="0" y="2500" width="3030" height="2500"/>
+	<SubTexture name="estatic0004" x="0" y="2500" width="3030" height="2500"/>
+	<SubTexture name="estatic0005" x="3030" y="2500" width="3030" height="2500"/>
+</TextureAtlas>

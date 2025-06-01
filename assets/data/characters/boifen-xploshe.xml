@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="xplosher/IncelFeliz" flipX="true" icon="incelP1" color="#FF3630" holdTime="7.3" isGF="false">
+	<anim name="singLEFT" anim="left0" x="-11" y="8" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down0" x="51" y="3" fps="24" loop="false"/>
+	<anim name="singUP" anim="up0" x="35" y="438" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right0" x="47" y="6" fps="24" loop="false"/>
+</character>

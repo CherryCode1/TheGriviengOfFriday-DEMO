@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Warning Xploshi.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Hit0000" x="0" y="0" width="348" height="385" frameX="-80" frameY="-80" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0001" x="0" y="0" width="348" height="385" frameX="-80" frameY="-80" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0002" x="353" y="0" width="376" height="421" frameX="-64" frameY="-64" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0003" x="353" y="0" width="376" height="421" frameX="-64" frameY="-64" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0004" x="734" y="0" width="430" height="475" frameX="-37" frameY="-37" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0005" x="734" y="0" width="430" height="475" frameX="-37" frameY="-37" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0006" x="1169" y="0" width="504" height="549"/>
+	<SubTexture name="Hit0007" x="1169" y="0" width="504" height="549"/>
+	<SubTexture name="Hit0008" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0009" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0010" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0011" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0012" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0013" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0014" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0015" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0016" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0017" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0018" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0019" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Hit0020" x="0" y="554" width="339" height="266" frameX="-89" frameY="-137" frameWidth="504" frameHeight="549"/>
+	<SubTexture name="Warning 10000" x="344" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10001" x="344" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10002" x="666" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10003" x="666" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10004" x="988" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10005" x="988" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10006" x="1310" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10007" x="1310" y="554" width="317" height="242"/>
+	<SubTexture name="Warning 10008" x="0" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10009" x="0" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10010" x="322" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10011" x="322" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10012" x="322" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10013" x="322" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 10014" x="322" y="825" width="317" height="242"/>
+	<SubTexture name="Warning 20000" x="644" y="825" width="327" height="297" frameX="0" frameY="-11" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20001" x="644" y="825" width="327" height="297" frameX="0" frameY="-11" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20002" x="976" y="825" width="322" height="291" frameX="-5" frameY="-17" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20003" x="976" y="825" width="322" height="291" frameX="-5" frameY="-17" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20004" x="1303" y="825" width="322" height="308" frameX="-5" frameY="0" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20005" x="1303" y="825" width="322" height="308" frameX="-5" frameY="0" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20006" x="0" y="1138" width="322" height="296" frameX="-5" frameY="-12" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 20007" x="0" y="1138" width="322" height="296" frameX="-5" frameY="-12" frameWidth="327" frameHeight="308"/>
+	<SubTexture name="Warning 30000" x="327" y="1138" width="322" height="388"/>
+	<SubTexture name="Warning 30001" x="327" y="1138" width="322" height="388"/>
+	<SubTexture name="Warning 30002" x="654" y="1138" width="322" height="372" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30003" x="654" y="1138" width="322" height="372" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30004" x="981" y="1138" width="322" height="368" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30005" x="981" y="1138" width="322" height="368" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30006" x="1308" y="1138" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30007" x="1308" y="1138" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30008" x="0" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30009" x="0" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30010" x="0" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30011" x="0" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30012" x="327" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30013" x="327" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30014" x="327" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30015" x="327" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30016" x="654" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30017" x="654" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30018" x="654" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30019" x="654" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30020" x="981" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30021" x="981" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30022" x="981" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30023" x="981" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30024" x="1308" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+	<SubTexture name="Warning 30025" x="1308" y="1531" width="322" height="367" frameX="0" frameY="0" frameWidth="322" frameHeight="388"/>
+</TextureAtlas>

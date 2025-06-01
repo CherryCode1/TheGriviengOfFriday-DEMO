@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="tbab.png">
+<SubTexture name="tbab idle0000" x="0" y="68" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle0001" x="0" y="68" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle0002" x="0" y="68" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle0002" x="0" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle0003" x="0" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle0004" x="0" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20000" x="0" y="98" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20001" x="0" y="98" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20002" x="0" y="98" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20003" x="0" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20004" x="0" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle20005" x="0" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30000" x="0" y="128" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30001" x="0" y="128" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30002" x="0" y="128" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30003" x="83" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30004" x="83" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab idle30005" x="83" y="0" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0000" x="166" y="0" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0001" x="166" y="0" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0002" x="166" y="0" width="88" height="30" frameX="0" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0003" x="83" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0004" x="83" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored0005" x="83" y="34" width="83" height="34" frameX="0" frameY="-2" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab bored20000" x="166" y="30" width="83" height="30" frameX="-1" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0000" x="166" y="60" width="80" height="30" frameX="-2" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0001" x="166" y="60" width="80" height="30" frameX="-2" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0002" x="166" y="120" width="80" height="29" frameX="-2" frameY="-7" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0003" x="166" y="120" width="80" height="29" frameX="-2" frameY="-7" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0004" x="166" y="90" width="80" height="30" frameX="-2" frameY="-6" frameWidth="88" frameHeight="36" />
+<SubTexture name="tbab walk0005" x="166" y="90" width="80" height="30" frameX="-2" frameY="-6" frameWidth="88" frameHeight="36" />
+</TextureAtlas>

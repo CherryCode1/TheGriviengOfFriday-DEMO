@@ -1,0 +1,19 @@
+{
+    "params": [
+        {
+            "name": "name image",
+            "type": "String",
+            "defaultValue": "sexo tilin"
+        },
+        {
+            "name": "time to show",
+            "type": "Float(0, 99, 1, 2)",
+            "defaultValue": 0.0
+        },
+        {
+            "name": "time to delete",
+            "type": "Float(0, 99, 1, 2)",
+            "defaultValue": 0.0
+        }
+    ]
+}

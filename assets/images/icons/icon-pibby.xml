@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="icon-pibby.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Lose Icon instancia 10000" x="0" y="0" width="142" height="151"/>
+	<SubTexture name="Lose Icon instancia 10001" x="0" y="0" width="142" height="151"/>
+	<SubTexture name="Lose Icon instancia 10002" x="0" y="0" width="142" height="151"/>
+	<SubTexture name="Lose Icon instancia 10003" x="142" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Lose Icon instancia 10004" x="142" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Lose Icon instancia 10005" x="142" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Lose Icon instancia 10006" x="284" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Lose Icon instancia 10007" x="284" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Lose Icon instancia 10008" x="284" y="0" width="142" height="150" frameX="0" frameY="-1" frameWidth="142" frameHeight="151"/>
+	<SubTexture name="Normal Icon instancia 10000" x="0" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10001" x="0" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10002" x="0" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10003" x="148" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10004" x="148" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10005" x="148" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10006" x="296" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10007" x="296" y="151" width="148" height="143"/>
+	<SubTexture name="Normal Icon instancia 10008" x="296" y="151" width="148" height="143"/>
+</TextureAtlas>

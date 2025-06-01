@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character x="-50" y="250" sprite="weird/weirdarwin" antialiasing="false" scale="0.9" icon="darweird" color="#B6513A" holdTime="8.5" isGF="false">
+	<anim name="singLEFT" anim="left" x="24" y="-2" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-10" y="1" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="-3" y="-18" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="6" y="11" fps="24" loop="false"/>
+	<anim name="trans" anim="Turning evil anim" x="-7" y="-6" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="true"/>
+</character>

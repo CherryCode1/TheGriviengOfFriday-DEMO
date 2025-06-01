@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Gameover Main Week" camx="100" flipX="true" isPlayer="true" icon="Rockfriend" color="#6A6774" gameOverChar="bf-rock-gameover" holdTime="4.2" camY="400" isGF="false">
+	<anim name="firstDeath" anim="Gameover Part 1" x="-18" y="20" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="Gameover Part 2" x="-33" y="1" fps="24" loop="true"/>
+	<anim name="deathConfirm" anim="Gameover Part 3" x="0" y="20" fps="24" loop="false"/>
+</character>

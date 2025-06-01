@@ -1,0 +1,93 @@
+{
+  "weeks": [
+    {
+      "weekName": "The Grieving",
+      "songs": ["Loss", "Grieving","Denial","My Amazing Sadness"],
+      "image_key": "grievingFriday",
+      "difficulties": "hard",
+      "isXml": false ,
+      "composers": ["Tnkarot (Feat. Gudzen)","Diamantitos","Crie","Ezzy"]
+    },
+    {
+      "weekName": "Forgotten",
+      "songs": ["Mistery", "Enigma"],
+      "image_key": "forgotten",
+      "difficulties": "hard",
+      "isXml": false,
+      "composers": ["Crie", "Sveltermeenkins (Feat. diamantitos,crie)"]
+    },
+    {
+      "weekName": "Chichi",
+    	"songs": ["Miracle"],
+    	"image_key": "ChiChiLoop",
+	    "difficulties": "hard",
+	    "isXml": true,
+      "composers": ["Sveltermeenkins"]
+    },
+    {
+      "weekName": "The Procrastinators",
+	    "songs": ["Clown Eyes"],
+	    "image_key": "procrastinators",
+	    "difficulties": "hard",
+	    "isXml": false,
+      "composers": ["Diamantitos (Feat. alwk)"]
+    },
+    {
+      "weekName": "Gumball's Fantastic Land",
+	    "songs": ["affiliation"],
+	    "image_key": "guballsLoop",
+	    "difficulties": "hard",
+	    "isXml": true,
+      "composers": ["Fr3shmure"]
+    },
+    {
+     "weekName": "The Grieving",
+	   "songs": ["The Grieving"],
+	   "image_key": "grieving",
+	   "difficulties": "hard",
+	   "isXml": false,
+     "composers": ["Crie"]
+    },
+    {
+      "weekName": "The Kids",
+      "songs": ["13 years"],
+      "image_key": "kids",
+      "difficulties": "hard",
+      "isXml": false,
+      "composers": ["alwk"]
+    },
+    {
+      "weekName": "The Joy",
+    	"songs": ["Cherophobia"],
+	    "image_key": "joy",
+	    "difficulties": "hard",
+	    "isXml": false,
+      "composers": ["Walker 412 (Feat. alwk)"]
+    },
+    {
+     "weekName": "The Glitch",
+	   "songs": ["My Doll"],
+	   "image_key": "logoGlitchLoop",
+	   "difficulties": "hard",
+	   "isXml": true,
+     "composers": ["End_Sella (Feat. Demon Step)"]
+    },
+    {
+      "weekName": "Castigados",
+	    "songs": ["Punished"],
+	    "image_key": "castigados",
+	    "difficulties": "hard",
+	    "isXml": false,
+      "composers": ["Crie"]
+    },
+    {
+      "weekName": "Murder",
+	    "songs": ["Murder"],
+	    "image_key": "murder",
+	    "difficulties": "hard",
+	    "isXml": false,
+      "composers": ["Crie"]
+    }
+  ]
+
+}

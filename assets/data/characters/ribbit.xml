@@ -1,0 +1,6 @@
+<character x="0" y="200" icon="gf" flipX="false" color="#A5004D" isGF="false"   isPlayer="false" gameOverChar="" holdTime="4" sprite="ribbit">
+<anim x="-1" y="0" fps="24" name="left" anim="Idle0" loop="false" />
+<anim x="0" y="0" fps="24" name="right" anim="IdleAlt" loop="false" />
+<anim x="-4" y="-2" fps="24" name="transR" anim="RightTurn" loop="false" />
+<anim x="-4" y="-3" fps="24" name="transL" anim="LeftTurn" loop="false" />
+</character>

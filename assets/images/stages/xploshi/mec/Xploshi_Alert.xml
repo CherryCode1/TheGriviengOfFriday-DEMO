@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Xploshi Alert.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Alerta10000" x="0" y="0" width="53" height="39" frameX="-190" frameY="-146" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10001" x="0" y="0" width="53" height="39" frameX="-190" frameY="-146" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10002" x="53" y="0" width="126" height="91" frameX="-154" frameY="-119" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10003" x="179" y="0" width="270" height="194" frameX="-84" frameY="-65" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10004" x="179" y="0" width="270" height="194" frameX="-84" frameY="-65" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10005" x="449" y="0" width="412" height="296" frameX="-15" frameY="-11" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10006" x="449" y="0" width="412" height="296" frameX="-15" frameY="-11" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10007" x="861" y="0" width="443" height="318"/>
+	<SubTexture name="Alerta10008" x="861" y="0" width="443" height="318"/>
+	<SubTexture name="Alerta10009" x="1304" y="0" width="414" height="297" frameX="-14" frameY="-11" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10010" x="1304" y="0" width="414" height="297" frameX="-14" frameY="-11" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10011" x="1718" y="0" width="435" height="312" frameX="-4" frameY="-3" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10012" x="1718" y="0" width="435" height="312" frameX="-4" frameY="-3" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10013" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10014" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10015" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10016" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10017" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10018" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta10019" x="2153" y="0" width="432" height="310" frameX="-5" frameY="-4" frameWidth="443" frameHeight="318"/>
+	<SubTexture name="Alerta20000" x="2585" y="0" width="432" height="376" frameX="0" frameY="-31" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20001" x="3017" y="0" width="432" height="377" frameX="0" frameY="-31" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20002" x="3449" y="0" width="432" height="399" frameX="0" frameY="-8" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20003" x="0" y="399" width="433" height="408" frameX="0" frameY="0" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20004" x="433" y="399" width="432" height="407" frameX="0" frameY="0" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20005" x="865" y="399" width="433" height="391" frameX="0" frameY="-17" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20006" x="1298" y="399" width="432" height="390" frameX="0" frameY="-17" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20007" x="1730" y="399" width="433" height="394" frameX="0" frameY="-14" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20008" x="2163" y="399" width="432" height="452" frameX="0" frameY="-14" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20009" x="2595" y="399" width="433" height="450" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20010" x="3028" y="399" width="432" height="482" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20011" x="3460" y="399" width="433" height="487" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20012" x="0" y="886" width="432" height="487" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20013" x="432" y="886" width="433" height="475" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20014" x="865" y="886" width="432" height="475" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20015" x="1297" y="886" width="433" height="478" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20016" x="1730" y="886" width="432" height="478" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20017" x="2162" y="886" width="433" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20018" x="2595" y="886" width="432" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20019" x="2162" y="886" width="433" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20020" x="2595" y="886" width="432" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20021" x="2162" y="886" width="433" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20022" x="2595" y="886" width="432" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20023" x="2162" y="886" width="433" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta20024" x="2595" y="886" width="432" height="476" frameX="0" frameY="-16" frameWidth="433" frameHeight="503"/>
+	<SubTexture name="Alerta30000" x="3027" y="886" width="410" height="479" frameX="-60" frameY="-8" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30001" x="3437" y="886" width="398" height="469" frameX="-66" frameY="0" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30002" x="0" y="1373" width="398" height="463" frameX="-66" frameY="-4" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30003" x="398" y="1373" width="496" height="462" frameX="-16" frameY="-8" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30004" x="894" y="1373" width="528" height="460" frameX="0" frameY="-13" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30005" x="1422" y="1373" width="528" height="458" frameX="0" frameY="-17" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30006" x="1950" y="1373" width="489" height="456" frameX="-20" frameY="-22" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30007" x="2439" y="1373" width="489" height="455" frameX="-20" frameY="-26" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30008" x="2928" y="1373" width="512" height="453" frameX="-8" frameY="-31" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30009" x="3440" y="1373" width="512" height="451" frameX="-8" frameY="-35" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30010" x="0" y="1836" width="502" height="449" frameX="-13" frameY="-40" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30011" x="502" y="1836" width="502" height="448" frameX="-13" frameY="-44" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30012" x="1004" y="1836" width="505" height="449" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30013" x="1509" y="1836" width="505" height="451" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30014" x="2014" y="1836" width="505" height="454" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30015" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30016" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30017" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30018" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30019" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30020" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30021" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30022" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30023" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+	<SubTexture name="Alerta30024" x="2519" y="1836" width="505" height="378" frameX="-12" frameY="-46" frameWidth="528" frameHeight="500"/>
+</TextureAtlas>

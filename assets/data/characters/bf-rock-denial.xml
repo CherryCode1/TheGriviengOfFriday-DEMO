@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="bfdenial" flipX="true" isPlayer="true" scale ="0.8" icon="Rockfriend" color="#6A6774" gameOverChar="bf-rock-gameover" holdTime="4.2" beatInterval="2" isGF="false">
+	<anim name="idle" anim="BF-I" x="-5" y="0" fps="24" loop="false"/>
+	<anim name="singUP" anim="BF-U" x="-15" y="25" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="BF-L" x="77" y="-7" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="BF-R" x="-69" y="-28" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="BF-D" x="1" y="-40" fps="24" loop="false"/>
+</character>

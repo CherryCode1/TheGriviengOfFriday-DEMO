@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Gumball Joy P1" isPlayer="true" scale ="0.65" x="-500" icon="face" color="#5F4A38" holdTime="7.3" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Left0" x="-400" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="200" y="-800" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up0" x="206" y="700" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="Right0" x="900" y="-20" fps="24" loop="false"/>
+</character>

@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="gf_Splatty" scale="0.9" icon="face" color="#81E98F" holdTime="6.2" isGF="false">
+	<anim name="_idle-left" anim="Idle0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="_idle-right" anim="Idle-alt0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="trans-right" anim="Vuelta Derecha" x="-23" y="-8" fps="24" loop="false"/>
+	<anim name="trans-left" anim="Vuelta Izquierda" x="-23" y="-5" fps="24" loop="false"/>
+</character>

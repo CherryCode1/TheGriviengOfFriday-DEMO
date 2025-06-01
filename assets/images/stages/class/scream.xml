@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="texture.png" width="4708" height="4921">
+	<SubTexture name="Grito0000" x="3640" y="4404" width="795" height="409" rotated="true" frameX="-66" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0001" x="1" y="4124" width="406" height="796" frameX="-68" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0002" x="4274" y="2379" width="433" height="794" frameX="-41" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0003" x="3640" y="3965" width="794" height="436" rotated="true" frameX="-38" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0004" x="4124" y="794" width="448" height="790" frameX="-27" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0005" x="3808" y="1587" width="464" height="789" frameX="-11" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0006" x="1" y="3656" width="789" height="465" rotated="true" frameX="-10" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0007" x="3170" y="3172" width="471" height="789" frameX="-4" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0008" x="1" y="3181" width="789" height="472" rotated="true" frameX="-3" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0009" x="1" y="1750" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0010" x="2704" y="794" width="473" height="790" frameX="-2" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0011" x="2380" y="2380" width="474" height="789" frameX="-0" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0012" x="1587" y="2541" width="789" height="474" rotated="true" frameX="-0" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0013" x="794" y="2542" width="789" height="474" rotated="true" frameX="-0" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0014" x="2857" y="2380" width="473" height="789" frameX="-1" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0015" x="1" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0016" x="1587" y="1587" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0017" x="479" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0018" x="1750" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0019" x="1" y="794" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0020" x="1913" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0021" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0022" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0023" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0024" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0025" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0026" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0027" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0028" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0029" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0030" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0031" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0032" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0033" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0034" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0035" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0036" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0037" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0038" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0039" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0040" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0041" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0042" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0043" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0044" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0045" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0046" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0047" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0048" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0049" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0050" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0051" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0052" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0053" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0054" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0055" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0056" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0057" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0058" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0059" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0060" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0061" x="1" y="1272" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0062" x="1" y="2227" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0063" x="957" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0064" x="1587" y="2064" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0065" x="794" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0066" x="794" y="2065" width="790" height="474" rotated="true" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0067" x="793" y="3019" width="790" height="472" rotated="true" frameX="-3" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0068" x="2867" y="1" width="473" height="790" frameX="-2" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0069" x="3818" y="1" width="465" height="790" frameX="-10" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0070" x="3655" y="794" width="466" height="790" frameX="-9" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0071" x="3333" y="2379" width="471" height="790" frameX="-3" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0072" x="3180" y="794" width="472" height="790" frameX="-2" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0073" x="1586" y="3018" width="789" height="473" rotated="true" frameX="-1" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0074" x="3333" y="1587" width="472" height="789" frameX="-2" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0075" x="1" y="2704" width="789" height="474" rotated="true" frameX="-0" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0076" x="2378" y="3172" width="789" height="473" rotated="true" frameX="-1" frameY="-2" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0077" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0078" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0079" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0080" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0081" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0082" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0083" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0084" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0085" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0086" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0087" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0088" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0089" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0090" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0091" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0092" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0093" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0094" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0095" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0096" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0097" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0098" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0099" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0100" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0101" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0102" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0103" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0104" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0105" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0106" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0107" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0108" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0109" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0110" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0111" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0112" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0113" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0114" x="2227" y="794" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0115" x="1435" y="1" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0116" x="2390" y="1" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0117" x="794" y="1587" width="790" height="475" rotated="true" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0118" x="2380" y="1587" width="474" height="790" frameX="-1" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0119" x="1272" y="794" width="475" height="790" frameX="-0" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0120" x="3343" y="1" width="472" height="790" frameX="-3" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0121" x="2857" y="1587" width="473" height="790" frameX="-2" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0122" x="1587" y="3648" width="791" height="468" rotated="true" frameX="-7" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0123" x="793" y="3494" width="791" height="469" rotated="true" frameX="-6" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0124" x="3807" y="2379" width="464" height="790" frameX="-11" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0125" x="3644" y="3172" width="465" height="790" frameX="-10" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0126" x="1586" y="4119" width="790" height="462" rotated="true" frameX="-13" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0127" x="793" y="3966" width="790" height="463" rotated="true" frameX="-12" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0128" x="2847" y="3964" width="790" height="462" rotated="true" frameX="-13" frameY="-1" frameWidth="475" frameHeight="797"/>
+	<SubTexture name="Grito0129" x="2381" y="3648" width="463" height="790" frameX="-12" frameY="-1" frameWidth="475" frameHeight="797"/>
+</TextureAtlas>

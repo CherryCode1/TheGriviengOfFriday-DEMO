@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="gubol_faseANGY" x="200" y="180" camx="-570" camy="100" icon="GuballP3" color="#90D3FF" holdTime="7.3" isGF="false" scale="1.2">
+	<anim name="singLEFT" anim="mleft" x="323" y="157" fps="24" loop="false"/>
+	<anim name="idle" anim="midle" x="-1" y="0" fps="24" loop="true"/>
+	<anim name="singDOWN" anim="mdown" x="269" y="-3" fps="24" loop="false"/>
+	<anim name="singUP" anim="mup" x="335" y="111" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="mright" x="507" y="103" fps="24" loop="false"/>
+	<anim name="grito" anim="aaaaaaa" x="76" y="25" fps="24" loop="false"/>
+</character>

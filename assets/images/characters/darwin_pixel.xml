@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="darwin_pixel.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle00000" x="0" y="0" width="100" height="120"/>
+	<SubTexture name="idle00001" x="100" y="0" width="100" height="120"/>
+	<SubTexture name="idle00002" x="200" y="0" width="100" height="120"/>
+	<SubTexture name="idle00003" x="300" y="0" width="100" height="120"/>
+	<SubTexture name="idle00004" x="400" y="0" width="100" height="120"/>
+	<SubTexture name="up00000" x="500" y="0" width="100" height="120"/>
+	<SubTexture name="up00001" x="600" y="0" width="100" height="120"/>
+	<SubTexture name="up00002" x="700" y="0" width="100" height="120"/>
+	<SubTexture name="right00000" x="0" y="120" width="100" height="120"/>
+	<SubTexture name="right00001" x="100" y="120" width="100" height="120"/>
+	<SubTexture name="right00002" x="200" y="120" width="100" height="120"/>
+	<SubTexture name="left00000" x="300" y="120" width="100" height="120"/>
+	<SubTexture name="left00001" x="400" y="120" width="100" height="120"/>
+	<SubTexture name="left00002" x="500" y="120" width="100" height="120"/>
+	<SubTexture name="down00000" x="600" y="120" width="100" height="120"/>
+	<SubTexture name="down00001" x="700" y="120" width="100" height="120"/>
+	<SubTexture name="down00002" x="0" y="240" width="100" height="120"/>
+	<SubTexture name="up miss00000" x="500" y="0" width="100" height="120"/>
+	<SubTexture name="up miss00001" x="100" y="240" width="100" height="120"/>
+	<SubTexture name="up miss00002" x="200" y="240" width="100" height="120"/>
+	<SubTexture name="right miss00000" x="0" y="120" width="100" height="120"/>
+	<SubTexture name="right miss00001" x="300" y="240" width="100" height="120"/>
+	<SubTexture name="right miss00002" x="400" y="240" width="100" height="120"/>
+	<SubTexture name="left miss00000" x="500" y="240" width="100" height="120"/>
+	<SubTexture name="left miss00001" x="600" y="240" width="100" height="120"/>
+	<SubTexture name="left miss00002" x="700" y="240" width="100" height="120"/>
+	<SubTexture name="down miss00000" x="600" y="120" width="100" height="120"/>
+	<SubTexture name="down miss00001" x="0" y="360" width="100" height="120"/>
+	<SubTexture name="down miss00002" x="100" y="360" width="100" height="120"/>
+	<SubTexture name="celebration anim00000" x="200" y="360" width="100" height="120"/>
+	<SubTexture name="celebration anim00001" x="300" y="360" width="100" height="120"/>
+	<SubTexture name="celebration anim00002" x="400" y="360" width="100" height="120"/>
+	<SubTexture name="celebration anim00003" x="500" y="360" width="100" height="120"/>
+	<SubTexture name="celebration anim00004" x="600" y="360" width="100" height="120"/>
+	<SubTexture name="charge attack00000" x="700" y="360" width="100" height="120"/>
+	<SubTexture name="charge attack00001" x="0" y="480" width="100" height="120"/>
+	<SubTexture name="charge attack00002" x="100" y="480" width="100" height="120"/>
+	<SubTexture name="charge attack00003" x="200" y="480" width="100" height="120"/>
+	<SubTexture name="attack00000" x="300" y="480" width="100" height="120"/>
+	<SubTexture name="attack00001" x="400" y="480" width="100" height="120"/>
+	<SubTexture name="attack00002" x="500" y="480" width="100" height="120"/>
+	<SubTexture name="attack00003" x="600" y="480" width="100" height="120"/>
+	<SubTexture name="hit anim00000" x="700" y="480" width="100" height="120"/>
+	<SubTexture name="hit anim00001" x="0" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00002" x="100" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00003" x="200" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00004" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00005" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00006" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="hit anim00007" x="400" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00000" x="700" y="480" width="100" height="120"/>
+	<SubTexture name="darwin dies00001" x="0" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00002" x="100" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00003" x="200" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00004" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00005" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00006" x="500" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00007" x="600" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00008" x="700" y="600" width="100" height="120"/>
+	<SubTexture name="darwin dies00009" x="0" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00000" x="100" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00001" x="200" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00002" x="300" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00003" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00004" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00005" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00006" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00007" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00008" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00009" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00010" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00011" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead loop00012" x="400" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00000" x="500" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00001" x="600" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00002" x="700" y="720" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00003" x="0" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00004" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00005" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00006" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00007" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00008" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin dead confirm00009" x="100" y="840" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00000" x="700" y="480" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00001" x="0" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00002" x="100" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00003" x="200" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00004" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00005" x="300" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00006" x="500" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00007" x="600" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00008" x="700" y="600" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00009" x="0" y="720" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00010" x="0" y="720" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00011" x="0" y="720" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00012" x="0" y="0" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00013" x="200" y="840" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00014" x="0" y="0" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00015" x="200" y="840" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00016" x="0" y="0" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00017" x="200" y="840" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00018" x="0" y="0" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00019" x="200" y="840" width="100" height="120"/>
+	<SubTexture name="darwin mini dead00020" x="0" y="0" width="100" height="120"/>
+</TextureAtlas>
