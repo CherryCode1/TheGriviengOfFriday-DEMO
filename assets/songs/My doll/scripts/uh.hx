@@ -2,8 +2,15 @@ import flixel.math.FlxBasePoint;
 
 var intro_BG:FlxSprite;
 var intro_logo:FlxSprite;
+var blackie:FlxSprite;
 
 function create() {
+    blackie = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+	blackie.scrollFactor.set();
+	blackie.cameras = [camHUD];
+	blackie.alpha = 0;
+	add(blackie);
+
     showNotesStart = false;
     barrVisible = false;
     dispHudInStart = false;
@@ -72,6 +79,30 @@ function stepHit(){
          
         case 308:   setWarpCroma("1.0");
         case 396:   setWarpCroma("2.0");
+        case 830:
+            setCamZoom(-1, false) = (curStep == 830 || curStep == 880);
+        case 384:
+            blackie.alpha = 0.6;
+        case 472:
+            FlxTween.tween(blackie, {alpha: 0}, 0.8, {ease: FlxEase.quartInOut});    
+        case 1408:
+            camGame.alpha = 0;
+        case 1424:
+            camGame.alpha = 1;   
+        case 2448:
+            camGame.alpha = 0;
+        case 2464:
+            camGame.alpha = 1;    
+        case 2720:
+            camGame.alpha = 0;
+        case 2736:
+            camGame.alpha = 1;      
+        case 2984:
+            camGame.alpha = 0;
+        case 2992:
+            camGame.alpha = 1;    
+        case 3634:
+            camGame.alpha = 0; 
     }
 }
 function onDadHit(event){
