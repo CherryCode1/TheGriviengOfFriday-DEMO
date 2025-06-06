@@ -9,8 +9,8 @@ function create() {
     bg.scale.set(0.7,0.7);
     bg.scrollFactor.set(0.9,1);
     bg.screenCenter();
-    bg.y -= 200;
     bg.visible = false;
+    bg.y -= 200;
     insert(members.indexOf(gf),bg);
 
 
@@ -53,14 +53,14 @@ function update(elapsed:Float){
 function postCreate(){
     var shade = new FlxSprite().loadGraphic(Paths.image("joy-ui/put_shane_effect_13"));
     shade.camera = camOverlay;
-    shade.scale.set(0.5,0.5);
+    shade.scale.set(0.7,0.7);
     shade.screenCenter();
     overlay_Sprites.push(shade);
     add(shade);
 
     var shade_2 = new FlxSprite(-1000,-800).loadGraphic(Paths.image("joy-ui/put_shiny_effect_here"));
-    shade_2.scale.set(1,1);
-    shade_2.scrollFactor.set(0,0);
+    shade_2.scale.set(0.7,0.7);
+    shade_2.scrollFactor.set(0.45,0.45);
     overlay_Sprites.push(shade_2);
     add(shade_2);
 
@@ -95,10 +95,6 @@ function postCreate(){
         255,255,255,1
     );
     comboGroup.x = 1500;
-    boyfriend.setColorTransform(
-        255,255,255, 1
-    );
-   
 }
 public function showBanana(){
     gf.visible = true;
@@ -108,7 +104,7 @@ public function showBanana(){
 
 public function showBananaNotes()
 {
-        for (i in [0,1,2,3]){
+    for (i in [0,1,2,3]){
         var strum = strumLines.members[2];
         strum.visible = true;
         strum.members[i].alpha = 0;
@@ -117,14 +113,36 @@ public function showBananaNotes()
         strum.alpha = 0.45;
     }
 }
+function stepHit(){
+    if (curStep > 1332 && curStep < 1774){
+        for (i in [0,1,2,3]){
+            var strum = strumLines.members[2];
+            strum.visible = true;
+            strum.members[i].alpha = lerp(strum.members[i].alpha,0.3,0.1);
+        }
+        for (strum in strumLines.members[2].notes){
+            strum.alpha = lerp(strum.alpha,0.35,0.1);
+        }
+    }
+ 
+    if (curStep == 1790) {
+        gf.visible = false;
+    }
 
+    if (curStep == 1790) {
+        for (i in [0,1,2,3]){
+         var strum = strumLines.members[2];
+         strum.visible = false;
+        }
+    }
+}
 function postUpdate(){
     camOverlay.alpha = camHUD.alpha;
 }
 public function showBG(){
     
-    FlxG.camera.addShader(tvctr);
-    camHUD.addShader(tvctr);
+    //FlxG.camera.addShader(tvctr);
+    //camHUD.addShader(tvctr);
     camOverlay.flash(FlxColor.BLACK,5);
     camHUD.alpha = 1;
     for (overlay in overlay_Sprites)

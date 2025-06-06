@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="Joy_Banana_New" icon="BananaJoe" color="#0E0A00" holdTime="7.3" isGF="false">
+<character sprite="Joy_Banana_New" icon="BananaJoe" color="#0E0A00" scale="1.1" holdTime="7.3" isGF="false">
 	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="true"/>
 	<anim name="singUP" anim="up" x="31" y="78" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="down" x="8" y="22" fps="24" loop="false"/>
