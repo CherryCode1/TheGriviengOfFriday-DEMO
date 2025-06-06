@@ -339,7 +339,7 @@ public static function setBg_1(){
     }
     if (PlayState.SONG.meta.name == "Denial" || PlayState.SONG.meta.name == "denial"){
         for (bg in denial_bg) bg.visible = false;
-        gf.visible = true;
+        gf.alpha = 1;
     }
      defaultCamZoom = 0.75;
     comboGroup.setPosition(1300,600);
@@ -375,9 +375,9 @@ public static function bgDenial(){
   
     for (items in class_bg) items.visible = false;
     for (bg in denial_bg) bg.visible = true;
-    gf.visible = false;
-
     defaultCamZoom = 0.68;
+    gf.cameraOffset.set(-450,-50);
+    gf.alpha = 0;
     
 }
 public static function gumballcolgado(){

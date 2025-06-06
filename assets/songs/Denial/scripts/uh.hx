@@ -10,6 +10,7 @@ function create()
 var sprites:Array<FlxSprite> = [];
 function postCreate()
 {
+   
     camGame.zoom = defaultCamZoom = 1.1;
 
     var shit:Int = -1;
@@ -28,7 +29,11 @@ function postCreate()
     }
    
 }
-
+function stepHit(){
+    switch(curStep){
+        case 2151:	camGame.fade(FlxColor.BLACK,1,false);
+    }
+}
 public static function showSprite(numer:String) {
     var sprite = (numer == "0") ? sprites[0] : sprites[1];
     FlxTween.tween(sprite,{alpha: 1},1);
