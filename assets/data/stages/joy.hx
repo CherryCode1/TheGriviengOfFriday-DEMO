@@ -104,9 +104,11 @@ public function showBanana(){
     gf.visible = true;
     gf.x -=120;
     gf.y +=100;
+}
 
-    
-    for (i in [0,1,2,3]){
+public function showBananaNotes()
+{
+        for (i in [0,1,2,3]){
         var strum = strumLines.members[2];
         strum.visible = true;
         strum.members[i].alpha = 0;
@@ -115,6 +117,7 @@ public function showBanana(){
         strum.alpha = 0.45;
     }
 }
+
 function postUpdate(){
     camOverlay.alpha = camHUD.alpha;
 }
