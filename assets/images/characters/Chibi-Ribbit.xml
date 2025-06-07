@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Chibi-Ribbit.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Idle Ribbit0000" x="10" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0001" x="10" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0002" x="650" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0003" x="650" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0004" x="1290" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0005" x="1290" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0006" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0007" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0008" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0009" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0010" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0011" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0012" x="1290" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0013" x="1290" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0014" x="1290" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0015" x="10" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0016" x="10" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0017" x="650" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0018" x="650" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0019" x="1290" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0020" x="1290" y="10" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0021" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0022" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0023" x="10" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0024" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0025" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0026" x="650" y="531" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0027" x="10" y="1052" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0028" x="10" y="1052" width="630" height="511"/>
+	<SubTexture name="Idle Ribbit0029" x="10" y="1052" width="630" height="511"/>
+</TextureAtlas>

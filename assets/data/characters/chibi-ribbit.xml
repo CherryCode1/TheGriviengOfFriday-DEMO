@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-character>
+<character y="200" sprite="Chibi-Ribbit" icon="gf" color="#A5004D" isGF="false">
+	<anim name="left" anim="Idle Ribbit" x="-1" y="0" fps="24" loop="false"/>
+	<anim name="right" anim="Idle Ribbit" x="-1" y="0" fps="24" loop="false"/>
+	<anim name="transR" anim="Idle Ribbit" x="-1" y="0" fps="24" loop="false"/>
+	<anim name="transL" anim="Idle Ribbit" x="-1" y="0" fps="24" loop="false"/>
+</character>
