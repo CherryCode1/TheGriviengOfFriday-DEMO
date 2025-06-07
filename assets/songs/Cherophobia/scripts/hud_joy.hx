@@ -1,10 +1,10 @@
 import flixel.math.FlxRect;
 
-var leftBar:FlxSprite;
-var rightBar:FlxSprite;
-var new_healBarBG:FlxSprite;
-var corashon:FlxSprite;
-var circle:FlxSprite;
+public var leftBar:FlxSprite;
+public var rightBar:FlxSprite;
+public var new_healBarBG:FlxSprite;
+public var corashon:FlxSprite;
+public var circle:FlxSprite;
 var barOffset:Array<Float> = [3, 3];
 
 function postCreate() {
@@ -69,12 +69,6 @@ function postCreate() {
     insert(members.indexOf(rightBar) + 1, new_healBarBG);
     add(circle);
     add(corashon);
-    
-
-  
-    for (items in [leftBar,rightBar,new_healBarBG,circle,corashon]) {
-        hudAssets.push(items);
-    }
 }
 
 function postUpdate(elapsed:Float) { 

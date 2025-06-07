@@ -243,10 +243,9 @@ function onGameOver(e) if(PlayState.chartingMode) e.cancel();
 // BACKEND //
 
 public static function updateHudAssets() {
-	if (hudAssets != null) return;
     hudAssets = [];
 
-	for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt]) 
+	for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt,leftBar,rightBar,new_healBarBG,circle,corashon]) 
 		if(item != null && item.exists) hudAssets.push(item);
 }
 
