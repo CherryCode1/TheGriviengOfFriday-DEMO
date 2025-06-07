@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-140" y="300" sprite="Chibi-Chichi" camx="150" icon="chichi" color="#E29876" holdTime="7.3" isGF="false">
+	<anim name="singLEFT" anim="Left" x="483" y="-2" fps="24" loop="false"/>
+	<anim name="idle" anim="Idle" x="300" y="0" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down" x="200" y="-5" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up" x="306" y="50" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right" x="130" y="1" fps="24" loop="false"/>
+</character>

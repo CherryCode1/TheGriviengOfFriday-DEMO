@@ -11,13 +11,27 @@ var camerasAffected:Array<Bool> = [true, true]; //[camGame affected, camHUD affe
 var beatInterval:Int = 2;
 
 var ogCamZoom:Float = 1;
+var _timerTrans:FlxTimer; 
+
+function create()
+{
+	_timerTrans = new FlxTimer();
+
+	cumTrans = new FlxSprite(0,0);
+    cumTrans.frames = Paths.getSparrowAtlas("stages/copycat/milkTransition");
+    cumTrans.animation.addByPrefix("instance","milkSeq",24,true);
+    cumTrans.animation.play("instance");
+    cumTrans.camera = camOverlay;
+    cumTrans.scale.set(1,1);
+    cumTrans.alpha = 0;
+    cumTrans.screenCenter();
+    add(cumTrans);
+}
 
 function postCreate() {
-	time_Txt.font = score_Txt.font = Paths.font("chinese.ttf");
-
 	ogCamZoom = camGame.zoom;
 	camGame.alpha = 0;
-	camGame.zoom += 0.5;
+	camGame.zoom += 0.75;
 }
 
 //Making this a map for easier access.
@@ -31,7 +45,7 @@ function stepHit(curStep:Int) {
 		case 66:
 			_stopTween('introTween');
 			camGame.alpha = 1;
-			activeTweens.set('Tween_1', FlxTween.tween(camGame, {zoom: ogCamZoom + 0.5}, 0.15, {ease: FlxEase.sineOut}));
+			activeTweens.set('Tween_1', FlxTween.tween(camGame, {zoom: ogCamZoom + 0.75}, 0.15, {ease: FlxEase.sineOut}));
 		case 72:
 			activeTweens.set('Tween_1', FlxTween.tween(camGame, {zoom: ogCamZoom}, 0.1, {ease: FlxEase.bounceOut, onComplete:
 				function(twn:FlxTween) {
@@ -51,8 +65,19 @@ function stepHit(curStep:Int) {
 			beatThing = BeatType.NONE;
 			camerasAffected = [false, false];
 		
-		case 2024:
-			
+		case 2016:
+			cumTrans.alpha = 1; 
+		    _timerTrans.start(2.1, function(timer:FlxTimer) {
+            cumTrans.alpha = 0; 
+            });
+		case 2034:
+			time_Txt.font = score_Txt.font = Paths.font("chinese.ttf");
+			FlxG.camera.zoom = defaultCamZoom = 0.4;
+		case 2610:
+			time_Txt.font = score_Txt.font = Paths.font("Gumball.ttf");
+			FlxG.camera.zoom = defaultCamZoom = 0.75;
+		case 2935:
+			camGame.alpha = 0;	
 	}
 }
 

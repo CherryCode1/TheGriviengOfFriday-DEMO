@@ -5,7 +5,11 @@ var bg:FlxSprite;
 var light:FlxSprite;
 var sofa:FlxSprite;
 var sofaFG:FlxSprite;
+var yellow:FlxSprite;
 var cumB:FlxSprite;
+var platafor1:FlxSprite;
+var platafor2:FlxSprite;
+var platafor3:FlxSprite;
 
 var _timerTrans:FlxTimer; 
 var _isTransition:Bool = false;
@@ -28,6 +32,27 @@ function create()
     floor.scale.set(0.9,0.85);
     insert(members.indexOf(gf),floor);
 
+    yellow = new FlxSprite(-530, -100).loadGraphic(Paths.image("stages/copycat/yellow"));
+    yellow.scrollFactor.set(0.85,1);
+    yellow.scale.set(20,20);
+    yellow.visible = false;
+    insert(members.indexOf(gf),yellow);
+
+    platafor1 = new FlxSprite(470, 730).loadGraphic(Paths.image("stages/copycat/shitstain"));
+    platafor1.scrollFactor.set(1,1);
+    platafor1.visible = false;
+    insert(members.indexOf(gf),platafor1);
+
+    platafor2 = new FlxSprite(1200, 900).loadGraphic(Paths.image("stages/copycat/shitstain"));
+    platafor2.scrollFactor.set(1,1);
+    platafor2.visible = false;
+    insert(members.indexOf(gf),platafor2);
+
+    platafor3 = new FlxSprite(-270, 900).loadGraphic(Paths.image("stages/copycat/shitstain"));
+    platafor3.scrollFactor.set(1,1);
+    platafor3.visible = false;
+    insert(members.indexOf(gf),platafor3);
+
     bg = new FlxSprite(-660, -100).loadGraphic(Paths.image("stages/copycat/bg"));
     bg.scrollFactor.set(0.85,1);
     bg.scale.set(0.85,0.85);
@@ -44,11 +69,9 @@ function create()
     sofaFG.scrollFactor.set(1.4,1.4);
     sofaFG.scale.set(1,0.85);
     insert(members.indexOf(boyfriend)+1,sofaFG);
-
  
     comboGroup.setPosition(550,700);
     FlxG.camera.zoom = defaultCamZoom = 0.75;
-
 
 }
 function postCreate(){
@@ -101,4 +124,28 @@ function changeAnimGf(changed:Int) {
     _timerTrans.start(0.6, function(timer:FlxTimer) {
         _isTransition = false; 
     });
+}
+
+public function hideChichiStage()
+{
+    floor.visible = false;
+    bg.visible = false;
+    sofa.visible = false;
+    sofaFG.visible = false;
+    yellow.visible = true;
+    platafor1.visible = true;
+    platafor2.visible = true;
+    platafor3.visible = true;
+}
+
+public function showChichiStage()
+{
+    floor.visible = true;
+    bg.visible = true;
+    sofa.visible = true;
+    sofaFG.visible = true;
+    yellow.visible = false;
+    platafor1.visible = false;
+    platafor2.visible = false;
+    platafor3.visible = false;
 }
