@@ -35,7 +35,7 @@ function create() {
 
     score_Txt = new FunkinText(0, 0, FlxG.width, "Score: 0 Misses: 0 Accurracy:  % 0 [Fc]", 20, true);
     score_Txt.alignment = FlxTextAlign.CENTER;
-    score_Txt.screenCenter(FlxAxes.X);
+    //score_Txt.screenCenter(FlxAxes.X);
     score_Txt.camera = camHUD;
 	score_Txt.font = getFont("Gumball.ttf");
     score_Txt.borderSize = 1.4;

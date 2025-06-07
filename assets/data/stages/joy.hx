@@ -138,6 +138,7 @@ function stepHit(){
 }
 function postUpdate(){
     camOverlay.alpha = camHUD.alpha;
+    score_Txt.x = 230;
 }
 public function showBG(){
     
