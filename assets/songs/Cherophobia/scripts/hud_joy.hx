@@ -1,10 +1,10 @@
 import flixel.math.FlxRect;
 
-public var leftBar:FlxSprite;
-public var rightBar:FlxSprite;
-public var new_healBarBG:FlxSprite;
-public var corashon:FlxSprite;
-public var circle:FlxSprite;
+var leftBar:FlxSprite;
+var rightBar:FlxSprite;
+var new_healBarBG:FlxSprite;
+var corashon:FlxSprite;
+var circle:FlxSprite;
 var barOffset:Array<Float> = [3, 3];
 
 function postCreate() {
@@ -89,6 +89,9 @@ function beatHit(){
 }
 
 function updateValueBars() {
+    for(items in [leftBar,rightBar,new_healBarBG,circle,corashon]) 
+		items.alpha = healthBar.alpha;
+    
     var leftBarWidth = leftBar.width;
     var rightBarWidth = rightBar.width;
     var barHeight = rightBar.height;
