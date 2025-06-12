@@ -8,8 +8,8 @@ function create() {
     countDown = "13years";
     countDownFNF = false;
 }
-function postCreate(){
 
+function postCreate(){
     iconDarwin = new HealthIcon(gf.getIcon(),false);
     iconDarwin.camera = camHUD;
     iconDarwin.visible = false;
@@ -56,7 +56,6 @@ function onNoteHit(event){
                 healthBar.createFilledBar(gf.iconColor, boyfriend.iconColor);
                 healthBar.updateBar();
             }
-               
             if (char == dad){
                 iconDarwin.visible = false;
                 iconP2.visible = true;
@@ -64,11 +63,7 @@ function onNoteHit(event){
                 healthBar.updateBar();
             }
         }
-           
     }
-       
-  
-    
 }
 function stepHit(){
     if (curStep == 20){
@@ -83,10 +78,10 @@ function stepHit(){
 }
 
 function onDadHit(event){
-    if (event.isSustainNote) return;
-        if (health > 0.1)
-            health -= 0.014;
+	if (event.isSustainNote) return;
+	if (health > 0.1) health -= 0.014;
 }
+
 function postUpdate(elapsed:Float){
     iconDarwin.scale.set(
        lerp(iconDarwin.scale.x,1,0.1),
@@ -95,21 +90,16 @@ function postUpdate(elapsed:Float){
     iconDarwin.x = iconP2.x;
     iconDarwin.health = iconP2.health;
     iconDarwin.y = iconP2.y;
+	iconDarwin.alpha = iconP2.alpha;
 
     if (curStep > 127){
-        if (curStep % 4 == 0) FlxTween.tween(camHUD, {y: -15}, Conductor.stepCrochet * 0.002, {ease: FlxEase.quadOut});
-        if (curStep % 4 == 2) FlxTween.tween(camHUD, {y: 0}, Conductor.stepCrochet * 0.002, {ease: FlxEase.sineIn});
+		if (curStep % 4 == 0) FlxTween.tween(camHUD, {y: -15}, Conductor.stepCrochet * 0.002, {ease: FlxEase.quadOut});
+		if (curStep % 4 == 2) FlxTween.tween(camHUD, {y: 0}, Conductor.stepCrochet * 0.002, {ease: FlxEase.sineIn});
     }
 }
-function onCameraMove()
-{
-    if(curCameraTarget == 2){
-        defaultCamZoom = 0.9;
-       
-    }   
-    else {
-      
-        defaultCamZoom = 0.7;
-       
-    }
+function onCameraMove() {
+	if(curCameraTarget == 2)
+		defaultCamZoom = 0.9;
+	else
+		defaultCamZoom = 0.7;
 }
