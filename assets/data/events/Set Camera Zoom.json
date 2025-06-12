@@ -1,0 +1,19 @@
+{
+	"params": [
+		{
+			"name": "New Zoom",
+			"type": "Float(-10, 99, 1, 1)",
+			"defaultValue": -1
+		},
+		{
+			"name": "Is the Zoom an addon?",
+			"type": "Bool",
+			"defaultValue": false
+		},
+		{
+			"name": "Duration of Tween",
+			"type": "Float(0, 99, 1, 1)",
+			"defaultValue": 0.7
+		}
+	]
+}
