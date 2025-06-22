@@ -91,7 +91,7 @@ function beatHit(){
 function updateValueBars() {
     for(items in [leftBar,rightBar,new_healBarBG,circle,corashon]) 
 		items.alpha = healthBar.alpha;
-    
+
     var leftBarWidth = leftBar.width;
     var rightBarWidth = rightBar.width;
     var barHeight = rightBar.height;
@@ -104,11 +104,6 @@ var percent_ = health * 50;
     leftBar.clipRect.set(barOffset[0], barOffset[1], leftSize, barHeight);
     rightBar.clipRect.set(barOffset[0] + leftSize, barOffset[1], rightSize, barHeight);
 
-    // ✅ Forzar actualización visual
     leftBar.clipRect = leftBar.clipRect;
     rightBar.clipRect = rightBar.clipRect;
-
-    // Debug
-    trace("leftWidth: " + leftBar.width + " | rightWidth: " + rightBar.width);
-    trace("percent: " + percent_);
 }

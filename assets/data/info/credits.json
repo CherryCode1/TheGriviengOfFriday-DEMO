@@ -1,257 +1,102 @@
 {
-    "devs": [
-        [
-			"Director",
-			"angel",
-			"angel main - Artist",
-			"when andas bien normalote",
-			"https://twitter.com/samgel76",
-			"https://youtube.com",
-			-600,
-			-350,
-			0.5,
-			false
-		],
-		[
-			"Director",
-			"alex",
-			"Alex - Artist/Animator",
-			"nose",
-			"https://twitter.com/AlexDraw_",
-			"https://youtube.com",
-			550,
-			-260,
-			0.5,
-			false
-		],
-		[
-			"Co-Director",
-			"tinny",
-			"Tinny - Main Programmer",
-			"nose",
-			"https://twitter.com/AlexDraw_",
-			"https://youtube.com",
-			-600,
-			-350,
-			0.5,
-			false
-		],
-		[
-			"Co-Director",
-			"peppy",
-			"Peppy - Programmer",
-			"chango",
-			"https://twitter.com/AlexDraw_",
-			"https://youtube.com",
-			550,
-			-60,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"crie",
-			"crie - Composer",
-			"si",
-			"",
-			"",
-			580,
-			-200,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"ezzy",
-			"ezzy - Composer",
-			"como cuando haces tus momos en json",
-			"",
-			"",
-			480,
-			-100,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"elgperras",
-			"g4 - Artist",
-			"pene pene pene pene soi gai",
-			"",
-			"",
-			490,
-			-40,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"diamantitos",
-			"diamantitos - Composer",
-			"vesto compositor wei",
-			"",
-			"",
-			500,
-			-40,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"calavazin",
-			"calavazin - Artist",
-			"calavazin mewing",
-			"",
-			"",
-			550,
-			-100,
-			0.5,
-			false
-		]
-		,
-		[
-			"Dev",
-			"handy",
-			"handy - Artist, Animator",
-			"una ardillota",
-			"",
-			"",
-			550,
-			10,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"jason",
-			"jason - Programmer",
-			"el jason que miedito",
-			"",
-			"",
-			700,
-			10,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"tbar",
-			"T-Bar - Programmer, Charter",
-			"Thanks for checking out the mod.\nHope to see you in future projects!",
-			"https://twitter.com/tbar27862",
-			"https://www.youtube.com/@tbar7460",
-			480,
-			-160,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"karot",
-			"Tnkarot - composer",
-			"when tienes un machete en tu mochila",
-			"",
-			"",
-			480,
-			-300,
-			0.45,
-			false
-		],
-		[
-			"Dev",
-			"lavy",
-			"lavy - Artist",
-			"Todos aquí son unos putos que dejan lo mas mid para la demo brrrr, bueno ya serio creo que este es de los pocos mods donde trabajo el cual realmente le tengo muchísimo interés, motivación y sobre todo en el que me divierto chambeando como fan de El Increíble Culo de Gumball, quiza no haya hecho mucho o pase muy desapercibido aveces pero realmente les doy muchas felicitaciones al team (uno que me cae bastante bien por cierto) por este hermoso mod y estoy agradecido de que me hayan aceptado aquí AL OJO",
-			"",
-			"",
-			600,
-			-50,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"leon",
-			"The leon - Chromatic Maker",
-			"trans, femboys>>>>>>>mujeres",
-			"",
-			"",
-			550,
-			-100,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"luis",
-			"luis y rita - Artist",
-			"sans el esqueleto",
-			"",
-			"",
-			650,
-			-150,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"mars",
-			"Mars - Artist, Animator",
-			"g4 dos",
-			"",
-			"",
-			600,
-			-150,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"n4meless",
-			"Name Sait - Artist, Animator",
-			"besto animador we",
-			"",
-			"",
-			500,
-			-210,
-			0.48,
-			false
-		],
-		[
-			"Dev",
-			"retro",
-			"Retro M - Artist",
-			"como quiero a retrosin",
-			"",
-			"",
-			500,
-			-50,
-			0.48,
-			false
-		],
-		[
-			"Dev",
-			"waze",
-			"Waze - Animator",
-			"mi vieja we..",
-			"",
-			"",
-			580,
-			-50,
-			0.5,
-			false
-		],
-		[
-			"Dev",
-			"xonixactordevoz",
-			"Nightmare Xonix - Charter,Voice Actor",
-			"El mejor voice actor tio",
-			"",
-			"",
-			500,
-			-140,
-			0.5,
-			false
-		]
-	]
+ "sections": [
+    {
+      "section": "musicians",
+      "credits": [        
+		{
+		  "name": "alwk",
+          "image": "alwk",
+		  "fun_text": "es justamente alwk si solo eso si aja emmmm sii",
+          "position": {"x": 240, "y": 220},
+          "scale": 0.2,
+          "angle": 0,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "tnkarot",
+          "image": "karot",
+		  "fun_text": "es karot ooooooh yeaaaaa! osi osi osi perraaaas o siiiiiiiiiii oooo me vine",
+          "position": {"x": 440, "y": 180},
+          "scale": 0.18,
+          "angle": 25,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "Walker 431",
+          "image": "walker",
+		  "fun_text": "Alan Walker aja.............................................",
+          "position": {"x": 440, "y": 440},
+          "scale": 0.18,
+          "angle": -5,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "nuse",
+          "image": "nuse",
+		  "fun_text": "al chile nose we..............................",
+          "position": {"x": 640, "y": 400},
+          "scale": 0.22,
+          "angle": 10,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "ezzy",
+          "image": "ezzy",
+		  "fun_text": "oh es ezzy fnf.............",
+          "position": {"x": 640, "y": 200},
+          "scale": 0.2,
+          "angle": 35,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "diamantitos",
+          "image": "diamantitos",
+		  "fun_text": "un diamantote con un culote bien cuadradote",
+          "position": {"x": 150, "y": 440},
+          "scale": 0.22,
+          "angle": 10,
+          "link": "https://twitter.com/samgel76"
+        },
+		{
+		  "name": "crie",
+          "image": "crie",
+		  "fun_text": "eso crie eso crisin eso tilin compone bien rico el tilin",
+          "position": {"x": 890, "y": 305},
+          "scale": 0.3,
+          "angle": 0,
+          "link": "https://twitter.com/samgel76"
+        }
+      ]
+    },
+	{
+      "section": "artist",
+      "credits": [    
+		{
+		  "name": "calavazin",
+          "image": "calavazin",
+		  "fun_text": "shhh vamos cerrando el ortito",
+          "position": {"x": 890, "y": 305},
+          "scale": 0.3,
+          "angle": 0,
+          "link": "https://twitter.com/samgel76"
+        }    
+		
+      ]
+    },
+	{
+      "section": "charters",
+      "credits": [    
+		{
+		  "name": "NightmareXoNIX",
+          "image": "xonixactordevoz",
+		  "fun_text": "actor de voz si sisisisi",
+          "position": {"x": 500, "y": 305},
+          "scale": 0.3,
+          "angle": 0,
+          "link": "https://twitter.com/samgel76"
+        }    
+		
+      ]
+    }
+  ]
 }
