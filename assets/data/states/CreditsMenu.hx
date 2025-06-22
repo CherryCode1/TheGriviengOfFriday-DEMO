@@ -5,207 +5,251 @@ import flixel.util.FlxAxes;
 import flixel.text.FlxTextBorderStyle;
 
 /**
- * 0 - rol
- * 1 - imagen
- * 2 - nombre y eso
- * 3 - quote
- * 4 - link de twitter
- * 5 - link de youtube
- * 6 - X de la imagen por que la sociedad es mierda
- * 7 - la X pero con Y
- * 8 - tamaño de la imagen
- * 9 - por si alguien se le ocurre hacer una quote larga
- */
 
-var devs:Array<Dynamic> = [];
+ //Structure Json File -- uh maybe changes on release mod - Alan//
+ 
+ {
+ "sections": [
+    {
+      "section": "Musicians",
+      "credits": [
+        {
+          "image": "",
+          "name": "",
+          "position": { "x": 100, "y": 200 },
+          "scale": 1.0,
+          "angle": 0,
+          "link": ""
+        }
+      ]
+    }
+  ]
+}
 
-public static var creditArray:Array<Dynamic>;
-var curSelected:Int = 0;
-var bg:FlxSprite;
-var exitB:FlxSprite;
-var creditIconSprite:FlxSprite;
-var creditDescText:FlxText;
-var creditRolText:FlxText;
-var creditNameText:FlxText;
-var path:String;
-var daJson:String = null;
-var creditThing:CreditStuff;
+**/
+var creditsData:Array<Dynamic>;
 var camHUD:FlxCamera;
+
+var bg:FlxSprite;
+var bg_section:FlxSprite;
+var decoration:FlxSprite;
+var overlay:FlxSprite;
+var light_:FlxSprite;
+var grpSection:FlxTypedGroup<FlxSprite>;
+var grpCredit_sprite:Array<FlxTypedGroup<FlxSprite>> = [];
+public static var curSelected:Int = 0;
+public static var curSection:Int = 0;
+
+var scale_Credts:Array<Array<Float>> = [];
+var box_Info:FlxSprite;
+var textCredit:FlxText;
 
 function create(){
     changePrefix("Credits");
 
-    //
+    creditsData = [];
+    creditsData = daShitJson('info/credits');
+    trace(creditsData);
 
-	creditThing = jsonStuff();
-	creditArray = creditThing.devs;
-    // 
-
-    camHUD = new FlxCamera();
-	camHUD.bgColor = 0x00000000;
-	FlxG.cameras.add(camHUD, false);
-
-    FlxG.mouse.visible = true;
-
-    bg = new FlxSprite(-650, -400).loadGraphic(Paths.image('menus/credits/bg'));
-    bg.setGraphicSize(Std.int(bg.width * 0.6));
-    bg.updateHitbox();
-	bg.scrollFactor.set(.6, 1.2);
-	bg.screenCenter();
+    bg = new FlxSprite().loadGraphic(Paths.image("menus/credits/background"));
     add(bg);
 
+    bg_section = new FlxSprite().loadGraphic(Paths.image("menus/credits/section/bg"));
+    add(bg_section);
 
-    exitB = new FlxSprite(30, 30).loadGraphic(Paths.image('menus/credits/ExitButton'));
-    exitB.setGraphicSize(Std.int(exitB.width * 0.4));
-    exitB.scrollFactor.set(0.9, 0.9);
-    exitB.updateHitbox();
-    exitB.cameras = [camHUD]; 
-    add(exitB);
-
-    var boardd = new FlxSprite(-270, -130).loadGraphic(Paths.image('menus/credits/board'));
-    boardd.scrollFactor.set(0.8, 0.8);
-    boardd.updateHitbox();
-    boardd.screenCenter();
-    add(boardd);
-
-    creditDescText = new FlxText(0, FlxG.height * 0.6, 500, creditArray[curSelected][3]);
-    creditDescText.setFormat(Paths.font('CascadiaMonoPL-Bold.otf'), 40, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-    creditDescText.borderSize = 0;
-    //creditDescText.cameras = [camHUD];
-    add(creditDescText);
-
-    creditRolText = new FlxText(-300, FlxG.height * 0.28, FlxG.width, creditArray[curSelected][0]);
-    creditRolText.setFormat(Paths.font('Gumball.ttf'), 70, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-    creditRolText.borderSize = 0;
-   // creditRolText.cameras = [camHUD];
-    add(creditRolText);
-
-    creditNameText = new FlxText(90, FlxG.height * 0.41, 500, creditArray[curSelected][2]);
-    creditNameText.setFormat(Paths.font('CascadiaMonoPL-Bold.otf'), 30, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-    creditNameText.borderSize = 0;
-  //  creditNameText.cameras = [camHUD];
-    add(creditNameText);
-
-    creditIconSprite = new FlxSprite(creditArray[curSelected][6],
-        creditArray[curSelected][7]).loadGraphic(Paths.image('menus/credits/portraits/' + creditArray[curSelected][1]));
-    creditIconSprite.setGraphicSize(Std.int(creditIconSprite.width * creditArray[curSelected][6]));
-    creditIconSprite.scrollFactor.set(0.8, 0.8);
-    add(creditIconSprite);
+    decoration = new FlxSprite().loadGraphic(Paths.image("menus/credits/decoration"));
+    add(decoration);
     
-    var gradient = new FlxSprite(-270, -130).loadGraphic(Paths.image('menus/credits/gradient'));
-    gradient.setGraphicSize(1280, 720);
-    gradient.updateHitbox();
-    gradient.cameras = [camHUD];
-    gradient.screenCenter();
-    add(gradient);
+    grpSection = new FlxTypedGroup();
+    add(grpSection);
+
 
     
-    changeSelection();    
+    for (i in 0...creditsData.sections.length){
+        if (creditsData == null) return; // its return if value creditsData is null
+        trace("Section.. " + i);
+        
+
+        var item = new FlxSprite().loadGraphic(Paths.image("menus/credits/section/" + creditsData.sections[i].section));
+        item.scale.set(0.5,0.5);
+        item.updateHitbox();
+        item.screenCenter();
+        item.ID = i;
+        item.visible = (i == curSection) ? true : false; 
+        grpSection.add(item);
+      
+
+        var group:FlxTypedGroup<FlxSprite> = new FlxTypedGroup();
+        add(group);
+        group.visible = (i == curSection) ? true : false; 
+        grpCredit_sprite.push(group);
+
+        for (o in 0...creditsData.sections[i].credits.length){
+            if (scale_Credts[i] == null)
+                 scale_Credts[i] = [];
+            var sprite = new FlxSprite().loadGraphic(Paths.image("menus/credits/portraits/" + creditsData.sections[i].credits[o].image));
+            var sexy_position:Array<Float> = (creditsData.sections[i].credits[o].position == null) ? [0,0] : [creditsData.sections[i].credits[o].position.x,creditsData.sections[i].credits[o].position.y];
+            var sexy_scale:Float = (creditsData.sections[i].credits[o].scale == null) ? 1 : creditsData.sections[i].credits[o].scale;
+            scale_Credts[i][o] = sexy_scale;
+            sprite.scale.set(sexy_scale,sexy_scale);
+            sprite.updateHitbox();
+            sprite.setPosition(sexy_position[0],sexy_position[1]);
+            sprite.angle = (creditsData.sections[i].credits[o].angle == null) ? 0 : creditsData.sections[i].credits[o].angle;
+            sprite.ID = o;
+            grpCredit_sprite[i].add(sprite);
+           
+            //grpCredit_sprite.add(sprite);
+        }
+
+    }
+
+    box_Info = new FlxSprite().makeGraphic(200,210,FlxColor.BLACK);
+    box_Info.alpha = 0;
+    add(box_Info);
+
+
+    textCredit = new FlxText(box_Info.x, box_Info.y, box_Info.width - 15, "");
+    textCredit.setFormat(Paths.font('CascadiaMonoPL-Bold.otf'), 14, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+    textCredit.borderSize = 0;
+    textCredit.wordWrap = true;
+    add(textCredit);
+
+    overlay = new FlxSprite().loadGraphic(Paths.image("menus/credits/overlay"));
+    add(overlay);
+
+
+    light_ = new FlxSprite().loadGraphic(Paths.image("menus/credits/Lights"));
+    add(light_);
+
+
+    for (sprites in [bg,overlay,light_,bg_section,decoration])
+    {
+        sprites.scale.set(0.5,0.5);
+        sprites.updateHitbox();
+        sprites.screenCenter();
+       // sprites.x += 20;
+    }
 }
 
-function jsonStuff() {
-	daJson = Assets.getBytes(Paths.json('info/credits'));
-	if (daJson != null && daJson.length > 0)
-		return JsonParser.parse(daJson);
+var pressedInfo:Bool = false;
+var targetMove:Bool = false;
+function update(elapsed:Float){
+ 
+    grpCredit_sprite[curSection].forEach(
+        function(spriteCred:FlxSprite) 
+        {
+            if (FlxG.mouse.overlaps(spriteCred)){
+           
+                textCredit.x = box_Info.x + (box_Info.width - textCredit.width) / 2;
+                textCredit.y = box_Info.y + 10;
 
-	return null;
-}
+                if (!pressedInfo && !targetMove) {
+                    box_Info.x = spriteCred.x + (spriteCred.width - box_Info.width) / 2 - 120;
+                    box_Info.y = spriteCred.y + (spriteCred.height - box_Info.height) / 2 + 25;
 
-var holdTime:Float = 0;
+                    curSelected = spriteCred.ID;
+                    var scale_ = scale_Credts[curSection][spriteCred.ID] + 0.025;
+                    var shitLerp = lerp(spriteCred.scale.x, scale_, 0.1);
+                    spriteCred.scale.set(shitLerp, shitLerp);
 
-function update(elapsed:Float) {
-    FlxG.camera.scroll.x = FlxMath.lerp(FlxG.camera.scroll.x, (FlxG.mouse.screenX-(FlxG.width/2)) * 0.015, (1/30)*240*elapsed); //mario madres
-    FlxG.camera.scroll.y = FlxMath.lerp(FlxG.camera.scroll.y, (FlxG.mouse.screenY-6-(FlxG.height/2)) * 0.015, (1/30)*240*elapsed);
-  
+                    if (FlxG.mouse.justPressed) {
+                        updateText();
+                    }
+                }
+            }
+            else
+            {
+                if (!pressedInfo){
+                    var scale_ = scale_Credts[curSection][spriteCred.ID]; 
+                    var shitLerp = lerp(spriteCred.scale.x, scale_, 0.1);
+                    spriteCred.scale.set(shitLerp, shitLerp);
+                }
+               
+            }
+
     
-    if (FlxG.mouse.overlaps(exitB)) {
-        exitB.scale.set(
-            FlxMath.lerp(exitB.scale.x,0.42,0.1),
-            FlxMath.lerp(exitB.scale.y,0.42,0.1)
-           );
+        }
+    );
+
+    if (box_Info.alpha == 0){
+        if (controls.BACK)
+        {
+            FlxG.switchState(new MainMenuState());
+        }
+        if (controls.LEFT_P){
+            changeSection(-1);
+        }
+        if (controls.RIGHT_P){
+            changeSection(1);
+        }
     }else{
-        exitB.scale.set(
-            FlxMath.lerp(exitB.scale.x,0.4,0.1),
-            FlxMath.lerp(exitB.scale.y,0.4,0.1)
-           );
+        if (controls.BACK && targetMove)
+        {
+            hideInfo();
+        }
     }
-    if (controls.UP_P)
-	{
-		changeSelection(-1);
-		holdTime = 0;
-	}
-	else if (controls.DOWN_P)
-	{
-		changeSelection(1);
-		holdTime = 0;
-	}
+   
+}
+function changeSection(uh:Int = 0){
+    curSection = FlxMath.wrap(curSection + uh, 0, grpSection.length - 1);
 
-	if(controls.DOWN || controls.UP)
-	{
-		var checkLastHold:Int = Math.floor((holdTime - 0.5) * 10);
-		holdTime += elapsed;
-		var checkNewHold:Int = Math.floor((holdTime - 0.5) * 10);
-
-		if(holdTime > 0.5 && checkNewHold - checkLastHold > 0)
-		{
-			changeSelection((checkNewHold - checkLastHold));
-			
-		}
-	}
-
-
-    if(FlxG.mouse.wheel != 0)
-	{
-		FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
-		changeSelection(FlxG.mouse.wheel);
-	}
-
-    if (FlxG.mouse.justPressed && FlxG.mouse.overlaps(exitB)) {
-        FlxG.switchState(new MainMenuState());
+    for (i in 0...grpSection.length){
+        grpSection.members[i].visible = false;           // ocultar todas las secciones
+        grpCredit_sprite[i].visible = false;             // ocultar todos los grupos de créditos
     }
-    if (controls.BACK)
-	{
-        FlxG.switchState(new MainMenuState());
-	}
+    
+    // mostrar solo la sección actual
+    grpSection.members[curSection].visible = true;
+    grpCredit_sprite[curSection].visible = true;   
 }
 
-
-var currentIndex:Int = 0;
-function changeSelection(newSelect:Int = 0)
-{
-    curSelected = FlxMath.wrap(curSelected + newSelect, 0, creditArray.length - 1);
-	
-	creditRolText.text = creditArray[curSelected][0] != null ? creditArray[curSelected][0] : 'unknown';
-	creditDescText.text = creditArray[curSelected][3] != null ? creditArray[curSelected][3] : 'unknown';
-	creditNameText.text = creditArray[curSelected][2] != null ? creditArray[curSelected][2] : 'has not worked';
-	creditIconSprite.loadGraphic(Paths.image('menus/credits/portraits/'+creditArray[curSelected][1]));
-	creditIconSprite.setGraphicSize(Std.int(creditIconSprite.width * creditArray[curSelected][8]));
-	creditIconSprite.setPosition(creditArray[curSelected][6], creditArray[curSelected][7]);
-
-	FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);
-
-	reloadText(creditArray[curSelected][9]);
-
+function hideInfo() {
+    textCredit.text = "";
+    FlxTween.tween(box_Info,{"scale.y": 0,alpha: 0}, 0.45, {ease:FlxEase.cubeInOut,onComplete: function(){
+        pressedInfo = false;
+        targetMove = false;
+    }});
 }
+function updateText() {
+    targetMove = false;
+    pressedInfo = true;
 
-function reloadText(long)
-{
-	if (long)
-	{
-		creditRolText.y = FlxG.height * 0.1;
-        creditNameText.y = FlxG.height * 0.21;
-        creditDescText.fieldWidth = 1000;
-        creditDescText.x = 70;
-        creditDescText.y = FlxG.height * 0.16;
-        creditDescText.scale.set(0.6, 0.6);
-	}
-	else
-	{
-		creditDescText.fieldWidth = 500;
-        creditDescText.x = 90;
-        creditDescText.y = FlxG.height * 0.6;
-        creditDescText.scale.set(1, 1);
-        creditRolText.y = FlxG.height * 0.28;
-        creditNameText.y = FlxG.height * 0.39;
-    }
+    var final_text:String = 
+    "Name: " + creditsData.sections[curSection].credits[curSelected].name + "\nDescription: " 
+    + creditsData.sections[curSection].credits[curSelected].fun_text
+    + "\nFollow me on: " + creditsData.sections[curSection].credits[curSelected].link;
+    textCredit.text = final_text;
+    textCredit.calcFrame();
+
+    var padding:Int = 20;
+    var realWidth = textCredit.textField.textWidth + padding;
+    var realHeight = textCredit.textField.textHeight + padding;
+    realWidth = Math.max(realWidth, 200);
+    realHeight = Math.max(realHeight, 100);
+
+
+    box_Info.makeGraphic(Std.int(realWidth), Std.int(realHeight), FlxColor.BLACK);
+    box_Info.alpha = 0;
+    box_Info.scale.y = 0;
+    textCredit.setPosition(box_Info.x + padding / 2, box_Info.y + padding / 2);
+    textCredit.text = "";
+
+    FlxTween.tween(box_Info, {"scale.y": 1, alpha: 0.8}, 0.45, {
+        ease: FlxEase.cubeInOut,
+        onComplete: function(_) {
+            var currentText:String = "";
+            var textIndex:Int = 0;
+
+            new FlxTimer().start(0.03, function(t:FlxTimer) {
+                if (textIndex < final_text.length) {
+                    currentText += final_text.charAt(textIndex);
+                    textCredit.text = currentText;
+                    textIndex++;
+                    t.reset();
+                }else targetMove = true;
+                
+                
+            });
+        }
+    });
 }
