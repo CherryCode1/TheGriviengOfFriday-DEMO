@@ -3,7 +3,7 @@ import flixel.math.FlxPoint;
 import flixel.text.FlxTextAlign;
 import flixel.util.FlxAxes;
 import flixel.text.FlxTextBorderStyle;
-
+import flixel.math.FlxBasePoint;
 /**
 
  //Structure Json File -- uh maybe changes on release mod - Alan//
@@ -43,8 +43,16 @@ public static var curSection:Int = 0;
 var scale_Credts:Array<Array<Float>> = [];
 var box_Info:FlxSprite;
 var textCredit:FlxText;
+//
+var blinkTimer:Float = 0;
+var nextBlinkTime:Float = 0;
+var blinkCount:Int = 0;
+var maxBlinks:Int = 0;
+var isBlinking:Bool = false;
 
 function create(){
+   
+
     changePrefix("Credits");
 
     creditsData = [];
@@ -66,7 +74,7 @@ function create(){
 
     
     for (i in 0...creditsData.sections.length){
-        if (creditsData == null) return; // its return if value creditsData is null
+        if (creditsData == null) return;
         trace("Section.. " + i);
         
 
@@ -97,8 +105,7 @@ function create(){
             sprite.angle = (creditsData.sections[i].credits[o].angle == null) ? 0 : creditsData.sections[i].credits[o].angle;
             sprite.ID = o;
             grpCredit_sprite[i].add(sprite);
-           
-            //grpCredit_sprite.add(sprite);
+      
         }
 
     }
@@ -127,14 +134,28 @@ function create(){
         sprites.scale.set(0.5,0.5);
         sprites.updateHitbox();
         sprites.screenCenter();
-       // sprites.x += 20;
     }
 }
 
 var pressedInfo:Bool = false;
 var targetMove:Bool = false;
+var defaultCamZoom = 1;
+var force_targetCamera:Bool = false;
+var targetCamPos = new FlxBasePoint(); 
+
 function update(elapsed:Float){
- 
+
+    if (force_targetCamera) {
+        FlxG.camera.scroll.x = lerp(FlxG.camera.scroll.x, targetCamPos.x, 0.05);
+        FlxG.camera.scroll.y = lerp(FlxG.camera.scroll.y, targetCamPos.y, 0.05);
+    }else{
+        FlxG.camera.scroll.x = lerp(FlxG.camera.scroll.x, (FlxG.mouse.screenX - FlxG.width / 2) * 0.015, 0.05);
+        FlxG.camera.scroll.y = lerp(FlxG.camera.scroll.y, (FlxG.mouse.screenY - 6 - FlxG.height / 2) * 0.015, 0.05);
+    }
+
+
+    FlxG.camera.zoom = lerp(FlxG.camera.zoom,defaultCamZoom,0.05);
+
     grpCredit_sprite[curSection].forEach(
         function(spriteCred:FlxSprite) 
         {
@@ -144,6 +165,7 @@ function update(elapsed:Float){
                 textCredit.y = box_Info.y + 10;
 
                 if (!pressedInfo && !targetMove) {
+                   
                     box_Info.x = spriteCred.x + (spriteCred.width - box_Info.width) / 2 - 120;
                     box_Info.y = spriteCred.y + (spriteCred.height - box_Info.height) / 2 + 25;
 
@@ -159,7 +181,9 @@ function update(elapsed:Float){
             }
             else
             {
+                  
                 if (!pressedInfo){
+                    
                     var scale_ = scale_Credts[curSection][spriteCred.ID]; 
                     var shitLerp = lerp(spriteCred.scale.x, scale_, 0.1);
                     spriteCred.scale.set(shitLerp, shitLerp);
@@ -190,15 +214,16 @@ function update(elapsed:Float){
     }
    
 }
+
+
 function changeSection(uh:Int = 0){
     curSection = FlxMath.wrap(curSection + uh, 0, grpSection.length - 1);
 
     for (i in 0...grpSection.length){
-        grpSection.members[i].visible = false;           // ocultar todas las secciones
-        grpCredit_sprite[i].visible = false;             // ocultar todos los grupos de créditos
+        grpSection.members[i].visible = false;          
+        grpCredit_sprite[i].visible = false;           
     }
-    
-    // mostrar solo la sección actual
+  
     grpSection.members[curSection].visible = true;
     grpCredit_sprite[curSection].visible = true;   
 }
@@ -208,11 +233,15 @@ function hideInfo() {
     FlxTween.tween(box_Info,{"scale.y": 0,alpha: 0}, 0.45, {ease:FlxEase.cubeInOut,onComplete: function(){
         pressedInfo = false;
         targetMove = false;
+        defaultCamZoom = 1;
+        force_targetCamera = false;
     }});
 }
+
 function updateText() {
     targetMove = false;
     pressedInfo = true;
+    defaultCamZoom = 2;
 
     var final_text:String = 
     "Name: " + creditsData.sections[curSection].credits[curSelected].name + "\nDescription: " 
@@ -234,6 +263,12 @@ function updateText() {
     textCredit.setPosition(box_Info.x + padding / 2, box_Info.y + padding / 2);
     textCredit.text = "";
 
+    var daPosX = grpCredit_sprite[curSection].members[curSelected].x + (grpCredit_sprite[curSection].members[curSelected].width - FlxG.width) / 2;
+    var daPosY = grpCredit_sprite[curSection].members[curSelected].y + (grpCredit_sprite[curSection].members[curSelected].height - FlxG.height) / 2 + 10;
+
+    targetCamPos.set(daPosX, daPosY);
+    force_targetCamera = true;
+    FlxTween.tween(FlxG.camera,{"scroll.x": daPosX, "scroll.y": daPosY},1,{ease: FlxEase.quadInOut});
     FlxTween.tween(box_Info, {"scale.y": 1, alpha: 0.8}, 0.45, {
         ease: FlxEase.cubeInOut,
         onComplete: function(_) {
