@@ -4,16 +4,23 @@ var tvctr:CustomShader = new CustomShader("tvcrt");
 var intensityBloom:Float = 0.1;
 var sizeBlur:Float = 0;
 var bg:FlxSprite = new FlxSprite();
+var bg1:FlxSprite = new FlxSprite();
 function create() {
-    bg.loadGraphic(Paths.image("stages/joy/bg"));
+    bg1.loadGraphic(Paths.image("stages/joy/piso"));
+    bg1.scale.set(0.7,0.7);
+    bg1.scrollFactor.set(0.9,1);
+    bg1.screenCenter();
+    bg1.visible = false;
+    bg1.y -= 200;
+    insert(members.indexOf(gf),bg1);
+
+    bg.loadGraphic(Paths.image("stages/joy/librerias"));
     bg.scale.set(0.7,0.7);
     bg.scrollFactor.set(0.9,1);
     bg.screenCenter();
     bg.visible = false;
     bg.y -= 200;
     insert(members.indexOf(gf),bg);
-
-
 
     crom.greenOff = [-0.0015,0.0015];
     crom.blueOff = [-0.0015,0.0015];
@@ -153,6 +160,7 @@ public function showBG(){
     healthBarBG.setColorTransform();
     boyfriend.setColorTransform();
     bg.visible = true;
+    bg1.visible = true;
     boyfriend.cameraOffset.y = 100;
     defaultCamZoom = 0.75;
     boyfriend.x += 250;
