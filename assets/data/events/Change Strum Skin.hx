@@ -55,12 +55,17 @@ function onEvent(eventEvent) {
 
 				note.frames = frame;
 				note.animation.destroyAnimations();
-
+				var dir = switch (note.noteData % 4) {
+				case 0: "purple";
+				case 1: "blue";
+				case 2: "green";
+				case 3: "red";
+			};
 				if (note.isSustainNote) {
 					note.animation.addByPrefix('hold', 'green hold piece');
 					note.animation.addByPrefix('holdend', 'green hold end');
 				} else {
-					note.animation.addByPrefix('scroll', "arrowUP");
+					note.animation.addByPrefix('scroll', dir + "0");
 				}
 
 				var animToPlay = note.isSustainNote ? (note.isEnd ? 'holdend' : 'hold') : 'scroll';
