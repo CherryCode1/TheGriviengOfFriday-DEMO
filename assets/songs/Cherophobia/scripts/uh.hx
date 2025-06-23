@@ -1,4 +1,3 @@
-
 function postCreate(){  
     camGame._fxFadeAlpha = 1;
     camGame._fxFadeColor = FlxColor.BLACK; 
@@ -6,6 +5,8 @@ function postCreate(){
 
 }
 function onDadHit(event){
+    if (event.note.isSustainNote) return;
+    
     if (health > 0.1)
        health -= 0.025;
 }

@@ -39,6 +39,7 @@ function create() {
     FlxG.camera.zoom = defaultCamZoom = 0.6;
     dispHudInStart = false;   
 }
+
 var overlay_Sprites:Array<Dynamic> =[];
 
 function beatHit(){
@@ -96,6 +97,8 @@ function postCreate(){
 
     var strum = strumLines.members[2];
     strum.visible = false;
+
+   
     healthBar.createFilledBar(FlxColor.WHITE, FlxColor.BLACK);
     healthBar.updateBar();
     healthBarBG.setColorTransform(0,0,0,0,
@@ -105,8 +108,6 @@ function postCreate(){
 }
 public function showBanana(){
     gf.visible = true;
-    gf.x -=120;
-    gf.y +=100;
 }
 
 public function showBananaNotes()
@@ -149,21 +150,29 @@ function postUpdate(){
 }
 public function showBG(){
     
-    //FlxG.camera.addShader(tvctr);
-    //camHUD.addShader(tvctr);
     camOverlay.flash(FlxColor.BLACK,5);
     camHUD.alpha = 1;
     for (overlay in overlay_Sprites)
         overlay.visible = true;
     healthBar.createFilledBar(dad.iconColor, boyfriend.iconColor);
     healthBar.updateBar();
-    healthBarBG.setColorTransform();
-    boyfriend.setColorTransform();
     bg.visible = true;
     bg1.visible = true;
-    boyfriend.cameraOffset.y = 100;
-    defaultCamZoom = 0.75;
-    boyfriend.x += 250;
-    dad.cameraOffset.x -= 700;
+
+
+   
+
+    strumLines.members[1].characters[1].x += 250;
+    strumLines.members[1].characters[1].cameraOffset.y = -500;
+    strumLines.members[0].characters[1].cameraOffset.x -= 500;
+
+
+    strumLines.members[1].characters[0].visible = true;
+    strumLines.members[0].characters[0].visible = true;
+
+
+
+   
+    defaultCamZoom = 0.75;  
     comboGroup.x = 1400;
 }

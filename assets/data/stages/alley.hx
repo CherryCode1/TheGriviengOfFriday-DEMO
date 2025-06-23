@@ -232,17 +232,37 @@ public static function changeBG(){
 
     sky.visible = plataform_1.visible = plataform_2.visible =rocks.visible = true;
     filter_.visible = filter_2.visible = false;
-    dad.setPosition(500,900);
-    dad.cameraOffset.y += 90;
-    boyfriend.setPosition(2350,900);
-    boyfriend.cameraOffset.y += 90;
-    boyfriend.cameraOffset.x -= 100;
+  
     
     remove(yoshi);
     var mike = strumLines.members[2].characters[0];
     remove(mike);
+
     var gf = strumLines.members[2].characters[1];
     remove(gf);
+
+    var gf_s = strumLines.members[2].characters[2];
+    remove(gf_s);
+
+    var bf_s = strumLines.members[1].characters[1];
+    remove(bf_s);
+
+    var dad_s = strumLines.members[0].characters[1];
+    remove(dad_s);
+
+    dad.alpha = 1;
+    dad.color = FlxColor.WHITE;
+
+    dad.flipX = false;
+    dad.angle = 0;
+    dad.cameraOffset.y += 900;
+    dad.y += 490;
+
+    dad.setPosition(500,900);
+    dad.cameraOffset.y += 90;
+    boyfriend.setPosition(2350,900);
+    boyfriend.cameraOffset.y += 4000;
+    boyfriend.cameraOffset.x += 200;
 
     comboGroup.x += 450;
     comboGroup.y += 250;
