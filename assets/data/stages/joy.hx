@@ -91,7 +91,7 @@ function postCreate(){
     for (uh in overlay_Sprites) uh.visible =false;
     time_Txt.visible = false;
     //strumLines.members[0].camera = camGame;
-    boyfriend.cameraOffset.y = 100;
+    boyfriend.cameraOffset.y = 170;
     defaultHudZoom = 0.9;
     iconP1.visible = iconP2.visible = false;
 
@@ -158,13 +158,12 @@ public function showBG(){
     healthBar.updateBar();
     bg.visible = true;
     bg1.visible = true;
-
-
+    dad.cameraOffset.x -= 700;
    
 
     strumLines.members[1].characters[1].x += 250;
     strumLines.members[1].characters[1].cameraOffset.y = -500;
-    strumLines.members[0].characters[1].cameraOffset.x -= 500;
+    strumLines.members[0].characters[1].cameraOffset.x -= 550;
 
 
     strumLines.members[1].characters[0].visible = true;
