@@ -6,6 +6,7 @@ var isActuallyPixel = false;
 var strumAnimPrefix = ["left", "down", "up", "right"];
 
 function create() {
+	// Puedes precargar skins desde aquí si lo deseas, pero NO accedas a strumLines aquí.
 	for (event in PlayState.SONG.events) {
 		if (event.name == "Change Strum Skin") {
 			var skin = event.params[0];
@@ -18,8 +19,6 @@ function create() {
 				if (loaded != null) {
 					preloadedFrames.set(skin, loaded);
 					preloadedNames.set(skin, skin);
-				} else {
-				
 				}
 			}
 		}
@@ -31,52 +30,28 @@ function onEvent(eventEvent) {
 		var skin:String = eventEvent.event.params[0];
 		var isPixel:Bool = isActuallyPixel = eventEvent.event.params[1];
 
+		// Precargar si no existe aún
 		if (!preloadedFrames.exists(skin)) {
 			var loaded = isPixel
 				? Paths.image("game/pixel/" + skin + "/Notes")
 				: Paths.getFrames("game/notes/" + skin);
-			if (loaded != null) preloadedFrames.set(skin, loaded);
-			else {
+			if (loaded != null)
+				preloadedFrames.set(skin, loaded);
+			else
 				return;
-			}
 		}
 
 		var frame = preloadedFrames[skin];
-		if (frame == null) {
-			return;
-		}
+		if (frame == null) return;
+
+
 
 		for (strumLine in strumLines) {
-			for (note in strumLine.notes) {
-				if (note == null || note.animation == null) continue;
+		    if (strumLine == null || strumLine.notes == null || strumLine.members == null) continue;
 
-				var oldAnimName:String = note.animation.name;
-				var oldAnimFrame:Int = note.animation.curAnim != null ? note.animation.curAnim.curFrame : 0;
+			trace("change strum: " + skin);
+			
 
-				note.frames = frame;
-				note.animation.destroyAnimations();
-				var dir = switch (note.noteData % 4) {
-				case 0: "purple";
-				case 1: "blue";
-				case 2: "green";
-				case 3: "red";
-			};
-				if (note.isSustainNote) {
-					note.animation.addByPrefix('hold', 'green hold piece');
-					note.animation.addByPrefix('holdend', 'green hold end');
-				} else {
-					note.animation.addByPrefix('scroll', dir + "0");
-				}
-
-				var animToPlay = note.isSustainNote ? (note.isEnd ? 'holdend' : 'hold') : 'scroll';
-				note.animation.play(animToPlay, true);
-				note.scale.set(isPixel ? daPixelZoom : 0.7, isPixel ? daPixelZoom : 0.7);
-				note.antialiasing = !isPixel;
-				note.updateHitbox();
-			}
-		}
-
-		for (strumLine in strumLines) {
 			for (i => strum in strumLine.members) {
 				if (strum == null || strum.animation == null) continue;
 
@@ -104,6 +79,35 @@ function onEvent(eventEvent) {
 				if (strum.animation.curAnim != null)
 					strum.animation.curAnim.curFrame = oldAnimFrame;
 			}
+			
+			for (note in strumLine.notes) {
+				if (note == null || note.animation == null) continue;
+				var oldAnimName:String = 'scroll';
+				var oldAnimFrame:Int = 0;
+
+				if (note.animation.curAnim != null) {
+					oldAnimName = note.animation.curAnim.name;
+					oldAnimFrame = note.animation.curAnim.curFrame;
+				}
+				
+				if (!isPixel) note.frames = frame;
+				note.animation.destroyAnimations();
+				var dir = switch (note.noteData % 4) {
+					case 0: "purple";
+					case 1: "blue";
+					case 2: "green";
+					case 3: "red";
+				};
+				note.animation.addByPrefix('hold', dir + ' hold piece');
+				if (note.noteData == 0) note.animation.addByPrefix('holdend', 'pruple end hold');
+				else note.animation.addByPrefix('holdend', dir + ' hold end');
+				note.animation.addByPrefix('scroll', dir + "0");
+				note.animation.play(oldAnimName);
+				note.scale.set(isPixel ? daPixelZoom : 0.7, isPixel ? daPixelZoom : 0.7);
+				note.antialiasing = !isPixel;
+				note.updateHitbox();
+			}
 		}
+		
 	}
 }

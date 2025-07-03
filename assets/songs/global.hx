@@ -53,8 +53,7 @@ function create() {
 
     if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 Years") healthBarDefault = true;
 
-    camOverlay.bgColor = 0x00000000;
-    FlxG.cameras.add(camOverlay, false);
+
 }
 function getFont(key:String = "Gumball.ttf")
 	return Paths.font(key);
@@ -78,6 +77,9 @@ function onPlayerHit(event){
 }
 
 function postCreate() {
+	camOverlay.bgColor = 0x00000000;
+    FlxG.cameras.add(camOverlay, false);
+   
 	if (PlayState.instance.isStoryMode) trace(PlayState.instance.storyPlaylist);
 
     add(score_Txt);

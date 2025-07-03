@@ -1,4 +1,5 @@
 import openfl.filters.BlurFilter;
+import openfl.filters.ShaderFilter;
 
 var houseStuff:Array<String> = ['overworld', 'outsidehouse', 'house'];
 var path = 'stages/clown/';
@@ -9,14 +10,20 @@ var daRealSprites:Array<FlxSprite> = [];
 var selectedSprite:Int = 0;
 var mult:Int = 1;
 
-var gumballCamera:FlxCamera = new FlxCamera();
+public var gumballCamera:FlxCamera = new FlxCamera();
 var houseFilter:BlurFilter = new BlurFilter(10, 10, 2);
 var gumballFilter:BlurFilter = new BlurFilter(0, 0, 2);
+public var shader_fire = new CustomShader("fire_");
+public var fire_Sprite = new FlxSprite(490,100);
+var viggnete = new FlxSprite().loadGraphic(Paths.image("stages/class/fog_class"));
+public var desactivateZoom_A = false;
+
+
 function create() {
+  
     healthBarDefault = true;
     noteSkin = "NOTE_assetsEXTRAS";
     splashSkin = "default-griv";
-  
 }
 function postCreate() {
     
@@ -24,7 +31,7 @@ function postCreate() {
     gumballCamera.zoom = FlxG.camera.zoom + 0.2;
     FlxG.cameras.insert(gumballCamera, 1,false);
 
-   
+
     FlxG.camera.setFilters([houseFilter]);
     gumballCamera.setFilters([gumballFilter]);
 
@@ -33,6 +40,15 @@ function postCreate() {
         insert((i < 2) ? i : members.indexOf(dad) + 1, asset);
         daRealSprites.push(asset);
     }
+
+    fire_Sprite.makeGraphic(FlxG.width * 1.4,FlxG.height * 1.4, FlxColor.TRASPARENT);
+    fire_Sprite.shader = shader_fire;  
+    fire_Sprite.flipY = true;
+    fire_Sprite.visible = false;
+    insert(members.indexOf(dad),fire_Sprite);
+
+    viggnete.camera = camOverlay;
+    insert(0,viggnete);
 
     debugTxt.cameras = [camHUD];
     debugTxt.visible = false;
@@ -52,10 +68,11 @@ function postCreate() {
 function onGameOver() {
     gumballCamera._filters = FlxG.camera._filters = [];
 }
-
+var time_Elapsed:Float = 0;
 function update(elapsed) {
+    time_Elapsed += elapsed;
+    shader_fire.uTime = time_Elapsed;
    
-
     if (FlxG.keys.justPressed.NINE) debugTxt.visible = !debugTxt.visible;
 
     if (debugTxt.visible) {
@@ -97,6 +114,7 @@ function setCamerasFilter(houseBlur:Int, gumballBlur:Int) {
 
 function onCameraMove()
 {
+    if (desactivateZoom_A) return;
     if(curCameraTarget == 0) defaultCamZoom = 0.8;
     else defaultCamZoom = 0.65;
 }

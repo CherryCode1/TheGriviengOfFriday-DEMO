@@ -1,0 +1,9 @@
+{
+    "params": [
+        {
+            "name": "Name xml splash",
+            "type": "String",
+            "defaultValue": "default"
+        }
+    ]
+}
