@@ -32,8 +32,11 @@ function postCreate() {
     FlxG.cameras.insert(gumballCamera, 1,false);
 
 
-    FlxG.camera.setFilters([houseFilter]);
-    gumballCamera.setFilters([gumballFilter]);
+    if (FlxG.save.data.BlurShade) {
+        FlxG.camera.setFilters([houseFilter]);
+        gumballCamera.setFilters([gumballFilter]);
+    }
+   
 
     for (i in 0...houseStuff.length) {
         var asset:FlxSprite = new FlxSprite().loadGraphic(Paths.image(path + houseStuff[i]));
@@ -42,7 +45,7 @@ function postCreate() {
     }
 
     fire_Sprite.makeGraphic(FlxG.width * 1.4,FlxG.height * 1.4, FlxColor.TRASPARENT);
-    fire_Sprite.shader = shader_fire;  
+    fire_Sprite.shader = (FlxG.save.data.FireShader) ? shader_fire : null;  
     fire_Sprite.flipY = true;
     fire_Sprite.visible = false;
     insert(members.indexOf(dad),fire_Sprite);
@@ -69,10 +72,14 @@ function onGameOver() {
     gumballCamera._filters = FlxG.camera._filters = [];
 }
 var time_Elapsed:Float = 0;
+var frameRate:Int = 0;
 function update(elapsed) {
     time_Elapsed += elapsed;
-    shader_fire.uTime = time_Elapsed;
-   
+    frameRate ++;
+
+    if (FlxG.save.data.FireShader)
+        if (frameRate % Std.int(FlxG.save.data.FrameRateFireShader) == 0 && fire_Sprite.visible) shader_fire.iTime = time_Elapsed;
+    
     if (FlxG.keys.justPressed.NINE) debugTxt.visible = !debugTxt.visible;
 
     if (debugTxt.visible) {

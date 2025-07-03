@@ -1,15 +1,16 @@
 <!DOCTYPE codename-mod-options>
-<!-- TEMPLATE FOR CUSTOM OPTIONS!!! -->
-<menu name="Mod Options" desc="Modify mod options here">
-	<checkbox id="checkboxExample" name="Checkbox example" />
-	<number id="numberExample" name="Number example" min="0" max="10" change="1"/>
-	<choice id="choiceExample" name="Choice Example">
-		<value name="Disabled" value="disabled"/>
-		<value name="This only" value="thisOnly"/>
-		<value name="All" value="all"/>
-	</choice>
-
-	<menu name="Submenu Example" desc="Submenu test">
-		<checkbox id="levelOfIdk2" name="Level of idk" />
-	</menu>
+<menu name= "The Grivieng Of Friday" desc = "change options!" >       
+   <menu name="Mechanics" desc="Configure gameplay mechanics.">
+      <checkbox id="joyMechanic" name="The joy mechanic" desc="bla bla bla bla"/>
+	  <checkbox id="clownMechanic" name="the clown mechanic" desc="bla bla bla bla"/>
+   </menu>
+   <menu name= "Graphics" desc = "Configure visual effects" >
+   	<checkbox id="FireShader" name="Fire Shader" desc="fire ball!" />
+	<number id="FrameRateFireShader" name="FireShader Framerate" min="0" max="20" change="1" desc="speed at which the shader is played, the more it has, the slower it will become"/>
+	<checkbox id="BlurShader" name="Blur Shader" desc="uh shader blur"/>
+	<checkbox id="GriviengShader" name="Grivieng Shader" desc="Griving week Shader and Menus"/>
+	<checkbox id="Shadows" name="Enabled Shadows Characters" desc="Sader Shadows Characters"/>
+	<checkbox id="iconsBump" name="icons bump beat" desc="icon bump for beat"/>
+	<checkbox id="iconsBumpHit" name="icons bump hit" desc="icons bump hit notes"/>
+   </menu>
 </menu>

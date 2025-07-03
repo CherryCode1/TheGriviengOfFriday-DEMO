@@ -28,7 +28,8 @@ function create() {
     grieveSh.vignette_intensity = 0.3;
     grieveSh.line_intensity = 0.;
     grieveSh.wobble_intensity = 0.;
-    FlxG.camera.addShader(grieveSh);
+
+    if (FlxG.save.data.GriviengShader) FlxG.camera.addShader(grieveSh);
 
     if(!startedMenuMusic){
         startedMenuMusic = true;

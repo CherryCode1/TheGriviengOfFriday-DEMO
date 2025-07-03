@@ -1,6 +1,6 @@
 var globes:Array<FlxSprite> = [];
 
-function create()
+function postCreate()
 {
     globes = [];
 

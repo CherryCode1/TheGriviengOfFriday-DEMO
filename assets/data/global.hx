@@ -11,6 +11,7 @@ import funkin.menus.credits.CreditsMain;
 import funkin.backend.system.framerate.Framerate;
 import Type;
 import hxvlc.flixel.FlxVideoSprite;
+import hxvlc.util.Handle;
 
 static var curMainMenuSelected:Int = 0;
 static var curStoryMenuSelected:Int = 0;
@@ -38,8 +39,20 @@ public static var WeekData:Array<{songs:Array<String>, image_key:String, difficu
 public static var WeekDataOld:Array<{songs:Array<String>, image_key:String, difficulties:String, weekName:String}> = [];
 
 function new() {
+    Handle.init([]);
+    // confing Stuff
 	modInfo = daShitJson('data');
 	windowTitle = Std.string(modInfo.title);
+    // settings Mechanics
+    if (FlxG.save.data.joyMechanic == null) FlxG.save.data.joyMechanic = true;
+    if (FlxG.save.data.clownMechanicc == null) FlxG.save.data.clownMechanic = true;
+    // settings Gameplay
+    if (FlxG.save.data.FireShader == null) FlxG.save.data.FireShader = true;
+    if (FlxG.save.data.FrameRateFireShader == null) FlxG.save.data.FrameRateFireShader = 0;
+    if (FlxG.save.data.BlurShade == null) FlxG.save.data.BlurShade = true;
+    if (FlxG.save.data.GriviengShader == null) FlxG.save.data.GriviengShader = true;
+    if (FlxG.save.data.Shadows == null) FlxG.save.data.Shadows = true;
+ 
 }
  
 function update(elapsed:Float){

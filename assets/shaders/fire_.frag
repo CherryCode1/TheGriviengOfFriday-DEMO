@@ -1,7 +1,6 @@
 #pragma header
 
-uniform float uTime;
-uniform float uAlpha; // Valor enviado desde Lua
+uniform float iTime;
 
 vec3 rgb2hsv(vec3 c) {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
@@ -41,7 +40,6 @@ float fbm(vec2 n) {
 void main() {
     vec2 fragCoord = openfl_TextureCoordv * openfl_TextureSize;
     vec2 iResolution = openfl_TextureSize;
-    float iTime = uTime;
 
     const vec3 c1 = vec3(0.5, 0.0, 0.1);
     const vec3 c2 = vec3(0.9, 0.1, 0.0);
@@ -80,7 +78,7 @@ void main() {
     color = hsv2rgb(hsv);
 
     float alpha = clamp(length(color) - 0.1, 0.0, 1.0);
-    float finalAlpha = alpha * uAlpha; // se multiplica por uniform uAlpha
+    float finalAlpha = alpha;
 
     gl_FragColor = vec4(color, finalAlpha);
 }

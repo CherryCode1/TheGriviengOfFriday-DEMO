@@ -43,6 +43,9 @@ function stepHit(){
         FlxTween.tween(redFilter,{alpha: 0},0.25);
         desactivateZoom_A = true;
     }
+    if (curStep == 1359){
+        gumballCamera.fade(FlxColor.BLACK,1,false);
+    }
     if (curStep == 848){
         desactivateZoom_A = false;
     }
