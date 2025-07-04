@@ -7,14 +7,13 @@ public var soundsVanilla:Bool = false;
 var spriteCountDown:FlxSprite;
 var jsonCD;
 function create() {
-
     if (PlayState.SONG.meta.name == "Affiliation" || PlayState.SONG.meta.name== "affiliation") countDownFNF = true;
 }
+
 function postCreate() {
     if (countDownFNF || skipCounDown) return;
 
-    if (daShitJson("countdowns/" + countDown) != null)
-     jsonCD = daShitJson("countdowns/" + countDown);
+    if (daShitJson("countdowns/" + countDown) != null) jsonCD = daShitJson("countdowns/" + countDown);
     else  jsonCD = daShitJson("countdowns/countDown");
 
     spriteCountDown = new FlxSprite(jsonCD.position[0],jsonCD.position[1]);
@@ -29,9 +28,6 @@ function postCreate() {
       
     add(spriteCountDown);
     spriteCountDown.visible = false;
-
-
-    introLength = 5;
 }
 
 function onCountdown(e)
@@ -41,7 +37,7 @@ function onCountdown(e)
         startTimer.finished = true;
         e.cancel();
     } 
-    var swagCounter = e.swagCounter;
+    var swagCounter = e.swagCounter - introLength + 5;
     if (!soundsVanilla){
 
         var suffix:String = "-gum";
@@ -54,34 +50,32 @@ function onCountdown(e)
 
         }
         e.soundPath = "gumball/" + prefix + suffix;
-        trace("gumball/" + prefix + suffix);
+        if (e.soundPath == "gumball/-gum") e.soundPath = "";
+        // trace("gumball/" + prefix + suffix);
         e.volume = 1;
     }
   
     e.spritePath = null;
-
-   
-  
-    spriteCountDown.visible = true;
     
     if (swagCounter == 4) 
-       FlxTween.tween(spriteCountDown,{alpha: 0},0.4,{ease:FlxEase.sineInOut,onComplete: function uh(){
-        remove(spriteCountDown);
-       }});
-       
-       
-    else
+        FlxTween.tween(spriteCountDown,{ alpha: 0 }, 0.4, { ease:FlxEase.sineInOut, onComplete: function uh(){
+            remove(spriteCountDown);
+        }});       
+    else if (swagCounter >= 0)
     {
-        var animName:String = jsonCD.animations[swagCounter].name;
-        var pos:Array<Float> = jsonCD.animations[swagCounter].offsets;
+        spriteCountDown.visible = true;
+        var animName:String = jsonCD.animations[swagCounter]?.name;
+        var pos:Array<Float> = jsonCD.animations[swagCounter]?.offsets;
         spriteCountDown.offset.set(pos[0],pos[1]);
         spriteCountDown.animation.play(animName);
     }
 }
+
 function onStartCountdown(e)
 {
-    if (skipCounDown){
+    introLength = PlayState.SONG.meta.displayName == "Clown Eyes" || PlayState.SONG.meta.displayName == "clown eyes" ? 7 : 5; // it doesn't work on createPost() (no funciona en createPost())
 
+    if (skipCounDown) {
         e.cancel();
         startedCountdown = true;
         Conductor.songPosition = 0;

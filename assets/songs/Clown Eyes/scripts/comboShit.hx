@@ -1,3 +1,6 @@
+// Perdoname Alan
+
+/*
 var globes:Array<FlxSprite> = [];
 
 function postCreate()
@@ -44,3 +47,4 @@ function globeEvent()
         }
     }
 }
+*/

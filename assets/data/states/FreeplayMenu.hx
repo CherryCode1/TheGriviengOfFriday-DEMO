@@ -412,7 +412,7 @@ function update(elapsed:Float) {
                 changeSong(1);
             
             if (controls.ACCEPT && noPressed) {
-                trace("pdlaf");
+                // trace("pdlaf");
 
                 gotoPlayState();
                 noPressed = false;
@@ -494,23 +494,26 @@ function goToSongs(){
 }
 
 function gotoPlayState() {
-    trace("Ola");
+    // trace("Ola");
 
     if (ogSongsMenu){
         isVoidWeek = true;
         PlayState.loadSong(WeekDataOld[curOldWeek].songs[curSong],'hard');
         FlxG.switchState(new PlayState());
 
-        trace(WeekDataOld[curOldWeek].songs);
+        // trace(WeekDataOld[curOldWeek].songs);
     }else{
         isVoidWeek = false;
+        PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
         if (WeekData[curWeek].songs[curSong] == "Affiliation" || WeekData[curWeek].songs[curSong] == "affiliation"){
             FlxG.switchState(new ModState("videoState"));
             video_Path = "xploshiIntro";
             _nextState = PlayState;
-            PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
-        } else{
-            PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
+        }
+        else if((WeekData[curWeek].songs[curSong] == "Clown Eyes" || WeekData[curWeek].songs[curSong] == "clown eyes") && FlxG.random.bool(5)) {
+            FlxG.switchState(new ModState('ClownEasterEgg'));
+        }
+        else{
             FlxG.switchState(new PlayState());
         }
     }
