@@ -177,7 +177,10 @@ function create(event) {
 		}
 		
 	}
-	if(isAffiliation) textPause.y -= 200;
+	if(isAffiliation){
+	textPause.y -= 200;
+	textPause.font = "Arial";	
+	} 
 	cameras = [pauseCam];
 
 

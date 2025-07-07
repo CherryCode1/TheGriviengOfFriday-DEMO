@@ -1,8 +1,9 @@
 <!DOCTYPE codename-engine-character>
-<character x="0" icon="GumballP4" y="0" isGF="false" scale="0.9" color="#2E5C8A" isPlayer="false" gameOverChar="" holdTime="6.2" sprite="sad-gumball">
-	<anim x="0" loop="true" y="0" fps="24" anim="Idle" name="idle"/>
-	<anim x="162" loop="false" y="-13" fps="24" anim="Left" name="singLEFT"/>
-	<anim x="-6" loop="false" y="-31" fps="24" anim="Right" name="singRIGHT"/>
-	<anim x="21" loop="false" y="-71" fps="24" anim="Down" name="singDOWN"/>
-	<anim x="72" loop="false" y="52" fps="24" anim="Up" name="singUP"/>
+<character sprite="sad-gumball" scale="0.9" icon="GumballP4" color="#2E5C8A" holdTime="6.2" isGF="false">
+	<anim name="idle" anim="Idle0" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="Left" x="162" y="-13" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right" x="-6" y="-31" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down" x="21" y="-71" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up" x="72" y="52" fps="24" loop="false"/>
+	<anim name="idle-alt" anim="Idle_alt" x="20" y="15" fps="24" loop="false"/>
 </character>

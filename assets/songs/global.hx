@@ -68,7 +68,7 @@ function onNoteHit(event){
 	     "Denial - old", "daniel", "denial", "Denial", "Loss", "loss":
 		event.ratingPrefix = "game/score/grivieng/";
 		case "My Doll": event.ratingPrefix = "game/score/clown/"; // placeHolder
-		case "Affiliation": event.ratingPrefix = "xploshiUI/";
+		case "Affiliation", "affiliation": event.ratingPrefix = "xploshiUI/";
 
 	}
 	//trace(event.ratingPrefix);
@@ -106,6 +106,7 @@ function postCreate() {
 
     creditsArray = getCredits();
     songsArray = getSongs();
+
     for (i in 0...songsArray.length){
         if (PlayState.SONG.meta.name == songsArray[i]) curSong_ = i;
     }
@@ -136,7 +137,7 @@ function postCreate() {
 	 
 function getBarrPath():Void{
     var path:String = "default";
-	switch(songsArray[curSong_]){
+	switch(PlayState.SONG.meta.name){
 		case "Mistery": 
 			path = "Mistery";
 			healthBar.scale.set(1.05,4.04);
@@ -167,16 +168,16 @@ function getBarrPath():Void{
 				healthBarBG_Offset[1] = 35;
 			}
 			healthBar.scale.set(1.07,1.8);
-		case "Affiliation"| "affiliation":
+		case "Affiliation", "affiliation":
 			path = "Affiliation";
 			if(get_downscroll()){
 				healthBarBG_Offset[0] = 100;
 				healthBarBG_Offset[1] = -65;
 			} else {
-				healthBarBG_Offset[0] = 100;
-				healthBarBG_Offset[1] = 95;
+				healthBarBG_Offset[0] = 85;
+				healthBarBG_Offset[1] = 35;
 			}
-			healthBar.scale.set(1,2.2);
+			healthBar.scale.set(1.08,1.35);
 		case "The Grieving" | "the-grieving":
 			path = "the-grieving";
 			if(get_downscroll()){
@@ -187,12 +188,6 @@ function getBarrPath():Void{
 				healthBarBG_Offset[1] = 35;
 			}
 			healthBar.scale.set(1.04, 1.8);
-			
-			//Nevermind this looks bad
-			/*
-			remove(healthBarBG_1);
-			insert(members.indexOf(healthBar) - 1, healthBarBG_1);
-			*/
         default: 
 			if(get_downscroll()){
 				healthBarBG_Offset[0] = 35;

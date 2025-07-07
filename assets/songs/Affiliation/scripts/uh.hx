@@ -125,6 +125,8 @@ function stepHit(step) {
             video.destroy();
             video.alpha = 0;
             camHUD.alpha = 1;
+               strumLines.members[1].characters[0].visible = false;
+            strumLines.members[1].characters[1].visible = true;
 
         case 2320:
             FlxTween.tween(camGame,{zoom: 1.2}, (Conductor.stepCrochet / 1000) * 16,{ease:FlxEase.sineInOut,onComplete: function uh(){
@@ -144,6 +146,7 @@ function stepHit(step) {
                     FlxTween.tween(camGame,{zoom: 2}, (Conductor.stepCrochet / 1000) * 4,{ease:FlxEase.expoIn,onComplete: function uh(){
                         defaultCamZoom = 0.6;
                         camGame.zoom = 0.6;
+                       
                     }});
                 }});
             }});

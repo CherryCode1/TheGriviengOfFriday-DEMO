@@ -1,9 +1,18 @@
+var shader = new CustomShader("shader");
 function postCreate() {
+    camHUD.addShader(shader);
+    camGame.addShader(shader);
+  
     madfamily.visible = false;
+    strumLines.members[1].characters[1].visible = false;
+
+    score_Txt.font  = "Arial";
+    score_Txt.borderSize = 0;
+    time_Txt.font = "Arial";
+    time_Txt.borderSize = 0;
 }
 
 function stepHit(step) {
-
     switch (step) {
         case 1296: 
             madfamily.visible = true;
@@ -14,6 +23,8 @@ function stepHit(step) {
         case 2352: 
             madfamily.visible = false;
             bg.visible = false;
-            strumLines.members[1].characters[0].visible = false;
+            comboGroup.x -= 300;
+            comboGroup.y += 200;
+          
     }
 }
