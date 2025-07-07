@@ -25,6 +25,7 @@ function create() {
 }
 
 function postCreate() {
+    score_Txt.x = 150;
     iconP1.flipX = true;
     gumballCamera.bgColor = FlxColor.TRASPARENT;
     FlxG.cameras.insert(gumballCamera, 1, false);
