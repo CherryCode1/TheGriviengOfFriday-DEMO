@@ -26,6 +26,11 @@ function postCreate(){
     cinematic.visible = false;
 
 }
+function onGameOver(event){
+    event.gameOverSong = "GameOver_joy";
+    event.retrySFX = "gameOver_joyEND";
+    event.lossSFX = "";
+}
 /*
 function onDadHit(event){
     if (event.note.isSustainNote) return;

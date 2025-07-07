@@ -41,6 +41,7 @@ var camHUD:FlxCamera;
 var thevoidsito:FlxSprite;
 static var isSelectingWeek:Bool = true;
 var rockTimer:FlxTimer;
+var nata = new FlxSprite();
 
 function create() {
     changePrefix("Freeplay - select week");
@@ -170,7 +171,17 @@ function create() {
 	blackMonitor.screenCenter();
 	blackMonitor.y -= 40;
 	blackMonitor.alpha = (isStarted) ? 0: 1;
+    blackMonitor.blend = 10;
 	add(blackMonitor);
+
+    nata.frames = Paths.getSparrowAtlas("daSTAT");
+    nata.setPosition(445,150);
+    nata.scale.set(1.405,1.4);
+    nata.animation.addByPrefix("loop","staticFLASH",24,true);
+    nata.animation.play("loop");
+    nata.scrollFactor.set(1,1);
+    nata.alpha = (isStarted) ? 0 : 1;
+    add(nata);
 
 	monitor_down = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/monitor_down'));
 	monitor_down.setGraphicSize(Std.int(monitor_down.width * 0.55));
@@ -247,6 +258,7 @@ function changeWeek(uh:Int = 0){
 
     var sprite:FlxSprite = (uh == 1) ? RB : LB;
     sprite.scale.set(0.45,0.45);
+    nata.alpha = 1;
 
     for (i in 0...WeekData.length) {
         grpTitles.members[i].visible = false;
@@ -294,8 +306,8 @@ function update(elapsed:Float) {
 		
         if (controls.ACCEPT || FlxG.mouse.justPressed) {
             uh = false;
-            FlxTween.tween(blackMonitor, {alpha:0}, 2,{onComplete: function penis(tween:FlxTween):Void{
-                FlxTween.tween(FlxG.camera,{zoom:1.1},1,{ease:FlxEase.cubeInOut, onComplete: function sex(tween:FlxTween){
+            FlxTween.tween(blackMonitor, {alpha:0}, 1,{onComplete: function penis(tween:FlxTween):Void{
+                FlxTween.tween(FlxG.camera,{zoom:1.1},0.7,{ease:FlxEase.cubeInOut, onComplete: function sex(tween:FlxTween){
                     isStarted = true;
                     FlxTween.tween(LB,{y:300},1,{ease:FlxEase.backInOut});
                     FlxTween.tween(RB,{y:295},1,{ease:FlxEase.backInOut});
@@ -303,7 +315,8 @@ function update(elapsed:Float) {
             }});
         }	
     }
-
+    nata.alpha = lerp(nata.alpha,0, 0.1);
+   
     if (isSelectingWeek && isStarted && !ogSongsMenu) {
         LB.scale.set(
             FlxMath.lerp(LB.scale.x, 0.38, 0.1),
