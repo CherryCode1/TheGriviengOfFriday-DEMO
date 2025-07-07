@@ -51,7 +51,7 @@ function create() {
     if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") time_Txt.color = FlxColor.fromRGB(61, 122, 191);
     add(time_Txt);
 
-    if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 Years") healthBarDefault = true;
+    if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 years") healthBarDefault = true;
 
 
 }
@@ -62,6 +62,16 @@ function onStrumCreation(event:StrumCreationEvent){
 }
 
 function onNoteHit(event){
+	switch(PlayState.SONG.meta.name){
+		case "Clown Eyes" , "clown eyes":  event.ratingPrefix = "game/score/clown/";
+		case "My Amazing Sadness", "my amazing sadness", "Grieving", "Grieving - old", "grieving",
+	     "Denial - old", "daniel", "denial", "Denial", "Loss", "loss":
+		event.ratingPrefix = "game/score/grivieng/";
+		case "My Doll": event.ratingPrefix = "game/score/clown/"; // placeHolder
+		case "Affiliation": event.ratingPrefix = "xploshiUI/";
+
+	}
+	//trace(event.ratingPrefix);
     if (event.note.isSustainNote) return;
 
     if (!event.animCancelled)

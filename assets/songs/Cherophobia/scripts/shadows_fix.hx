@@ -1,9 +1,16 @@
+import flixel.math.FlxBasePoint;
 var shadowGf;
 var shadowBf;
 var shadowDad;
+
+var cameraOffsets:Array<FlxBasePoint> = [];
 function postCreate() {
+    cameraOffsets[0] = new FlxBasePoint(dad.cameraOffset.x,dad.cameraOffset.y);
+    cameraOffsets[1] = new FlxBasePoint(boyfriend.cameraOffset.x,boyfriend.cameraOffset.y);
+    cameraOffsets[2] = new FlxBasePoint(gf.cameraOffset.x,gf.cameraOffset.y);
+  
     strumLines.members[0].characters[2].visible = false;
-     strumLines.members[0].characters[2].x += 100;
+    strumLines.members[0].characters[2].x += 100;
     gf.x -=120;
     gf.y +=100;
    
@@ -23,6 +30,17 @@ function postCreate() {
     strumLines.members[2].characters[1].cameraOffset.set(gf.cameraOffset.x,gf.cameraOffset.y - 400);
     // position shadows
 
+    if (!FlxG.save.data.Shadows){
+        var chars = [dad,boyfriend,gf];
+        for (shadows in [shadowBf,shadowDad,shadowGf]){
+            remove(shadows);
+        }
+        for (shit in 0...chars.length) //resetCameraOffset
+        {
+          chars[shit].cameraOffset.set(cameraOffsets[shit].x,cameraOffsets[shit].y);   
+        }
+        return;
+    }
     for (shadow in [shadowDad,shadowBf,shadowGf]) {
         shadow.scale.y -= 0.05;
         shadow.alpha = 0.35;
@@ -42,12 +60,16 @@ function postCreate() {
              shadow.flipX = true;
         }
     }
-  
 }
 function update(){
     shadowGf.visible = gf.visible;
 }
 public static function changeCumBall(){
+    if (!FlxG.save.data.Shadows){
+        dad.cameraOffset.y += 250;
+        boyfriend.cameraOffset.y += 250;
+        gf.cameraOffset.y += 350;
+    }
     remove(strumLines.members[0].characters[1]);
     strumLines.members[0].characters[2].visible = true;
 }

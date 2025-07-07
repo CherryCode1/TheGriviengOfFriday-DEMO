@@ -25,6 +25,7 @@ function create() {
 }
 
 function postCreate() {
+    iconP1.flipX = true;
     gumballCamera.bgColor = FlxColor.TRASPARENT;
     FlxG.cameras.insert(gumballCamera, 1, false);
 
@@ -138,11 +139,13 @@ function beatHit() {
         house.colorTransform.redOffset = house.colorTransform.greenOffset = house.colorTransform.blueOffset = -255;
         dad.colorTransform.redOffset = dad.colorTransform.greenOffset = dad.colorTransform.blueOffset = 255;
         boyfriend.colorTransform.redOffset = boyfriend.colorTransform.greenOffset = boyfriend.colorTransform.blueOffset = 255;
+        activeMechanic = false;
     }
     if (curBeat == 276) {
         house.colorTransform.redOffset = house.colorTransform.greenOffset = house.colorTransform.blueOffset = 0;
         dad.colorTransform.redOffset = dad.colorTransform.greenOffset = dad.colorTransform.blueOffset = 0;
         boyfriend.colorTransform.redOffset = boyfriend.colorTransform.greenOffset = boyfriend.colorTransform.blueOffset = 0;
+        activeMechanic = true;
     }
 }
 

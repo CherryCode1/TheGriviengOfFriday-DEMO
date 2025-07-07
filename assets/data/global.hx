@@ -45,7 +45,7 @@ function new() {
 	windowTitle = Std.string(modInfo.title);
     // settings Mechanics
     if (FlxG.save.data.joyMechanic == null) FlxG.save.data.joyMechanic = true;
-    if (FlxG.save.data.clownMechanicc == null) FlxG.save.data.clownMechanic = true;
+    if (FlxG.save.data.clownMechanic == null) FlxG.save.data.clownMechanic = true;
     // settings Gameplay
     if (FlxG.save.data.FireShader == null) FlxG.save.data.FireShader = true;
     if (FlxG.save.data.FrameRateFireShader == null) FlxG.save.data.FrameRateFireShader = 0;

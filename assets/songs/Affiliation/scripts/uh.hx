@@ -101,10 +101,7 @@ function postUpdate(){
         }
     }
 }
-function onNoteHit(event){
-    event.ratingPrefix = "xploshiUI/";
 
-}
 
 function stepHit(step) {
 

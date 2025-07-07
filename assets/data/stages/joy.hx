@@ -5,6 +5,7 @@ var intensityBloom:Float = 0.1;
 var sizeBlur:Float = 0;
 var bg:FlxSprite = new FlxSprite();
 var bg1:FlxSprite = new FlxSprite();
+
 function create() {
     bg1.loadGraphic(Paths.image("stages/joy/piso"));
     bg1.scale.set(0.7,0.7);
@@ -60,7 +61,7 @@ function update(elapsed:Float){
 }
 function postCreate(){
     var shade = new FlxSprite().loadGraphic(Paths.image("joy-ui/put_shane_effect_13"));
-    shade.camera = camOverlay;
+    shade.camera = camHUD;
     shade.scale.set(0.7,0.7);
     shade.screenCenter();
     overlay_Sprites.push(shade);
@@ -73,7 +74,7 @@ function postCreate(){
     add(shade_2);
 
     var puntero = new FlxSprite().loadGraphic(Paths.image("joy-ui/puntero"));
-    puntero.camera = camOverlay;
+    puntero.camera = camHUD;
     puntero.scale.set(0.3,0.3);
     puntero.updateHitbox();
     puntero.screenCenter();
@@ -81,9 +82,9 @@ function postCreate(){
     add(puntero);
 
 
-    var camara_ = new FlxSprite(600,0).loadGraphic(Paths.image("joy-ui/cam"));
-    camara_.camera = camOverlay;
-    camara_.scale.set(0.3,0.3);
+    var camara_ = new FlxSprite(560,-350).loadGraphic(Paths.image("joy-ui/cam"));
+    camara_.scrollFactor.set(1,1);
+    camara_.scale.set(0.5,0.5);
     camara_.updateHitbox();
     overlay_Sprites.push(camara_);
     add(camara_);
@@ -92,18 +93,12 @@ function postCreate(){
     time_Txt.visible = false;
     //strumLines.members[0].camera = camGame;
     boyfriend.cameraOffset.y = 170;
-    defaultHudZoom = 0.9;
+   // defaultHudZoom = 0.9;
     iconP1.visible = iconP2.visible = false;
 
     var strum = strumLines.members[2];
     strum.visible = false;
 
-   
-    healthBar.createFilledBar(FlxColor.WHITE, FlxColor.BLACK);
-    healthBar.updateBar();
-    healthBarBG.setColorTransform(0,0,0,0,
-        255,255,255,1
-    );
     comboGroup.x = 1500;
 }
 public function showBanana(){
@@ -144,33 +139,28 @@ function stepHit(){
         }
     }
 }
+
 function postUpdate(){
-    camOverlay.alpha = camHUD.alpha;
+    camHUD.alpha = camHUD.alpha;
     score_Txt.x = 230;
 }
+
 public function showBG(){
-    
-    camOverlay.flash(FlxColor.BLACK,5);
+    camHUD.flash(FlxColor.BLACK,5);
     camHUD.alpha = 1;
     for (overlay in overlay_Sprites)
         overlay.visible = true;
-    healthBar.createFilledBar(dad.iconColor, boyfriend.iconColor);
-    healthBar.updateBar();
+  
     bg.visible = true;
     bg1.visible = true;
     dad.cameraOffset.x -= 700;
-   
 
     strumLines.members[1].characters[1].x += 250;
     strumLines.members[1].characters[1].cameraOffset.y = -500;
     strumLines.members[0].characters[1].cameraOffset.x -= 550;
 
-
     strumLines.members[1].characters[0].visible = true;
     strumLines.members[0].characters[0].visible = true;
-
-
-
    
     defaultCamZoom = 0.75;  
     comboGroup.x = 1400;

@@ -40,8 +40,8 @@ function postCreate() {
 
 
     intro_logo = new FlxSprite();
-    intro_logo.frames = Paths.getSparrowAtlas("songsintro/MyDollSongCard");
-    intro_logo.animation.addByPrefix("idle","songCardSequence",24,true);
+    intro_logo.frames = Paths.getSparrowAtlas("songsintro/myDoll");
+    intro_logo.animation.addByPrefix("idle","myDollLoop",24,true);
     intro_logo.animation.play("idle");
     intro_logo.camera = camHUD;
     intro_logo.screenCenter();
@@ -80,7 +80,7 @@ function stepHit(){
         case 308:   setWarpCroma("1.0");
         case 396:   setWarpCroma("2.0");
         case 830:
-            setCamZoom(-1, false) = (curStep == 830 || curStep == 880);
+            setCamZoom(-1, false);
         case 384:
             blackie.alpha = 0.6;
         case 472:
