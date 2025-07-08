@@ -8,7 +8,6 @@ function create()
 	cumTrans = new FlxSprite(0,0);
     cumTrans.frames = Paths.getSparrowAtlas("stages/copycat/milkTransition");
     cumTrans.animation.addByPrefix("instance","milkSeq",24,true);
-    cumTrans.animation.play("instance");
     cumTrans.camera = camOverlay;
     cumTrans.scale.set(1,1);
     cumTrans.alpha = 0;
@@ -27,6 +26,7 @@ function stepHit(curStep:Int) {
 	
 		case 2016:
 			cumTrans.alpha = 1; 
+			cumTrans.animation.play("instance");
 		    _timerTrans.start(2.1, function(timer:FlxTimer) {
             cumTrans.alpha = 0; 
             });
