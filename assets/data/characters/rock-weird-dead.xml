@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character y="320" sprite="weird/bf_dies" antialiasing="false" flipX="true" isPlayer="true" icon="weirder-rock" color="#5F6467" holdTime="6" isGF="false">
+	<anim name="firstDeath" anim="death" x="0" y="0" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="death" x="0" y="0" fps="1" loop="false" indices="72"/>
+	<anim name="deathConfirm" anim="death" x="0" y="0" fps="1" loop="false" indices="72"/>
+</character>

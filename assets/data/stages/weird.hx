@@ -1,3 +1,4 @@
+import lime.app.Application;
 import funkin.backend.utils.NdllUtil;
 import funkin.backend.system.framerate.Framerate;
 import flixel.util.FlxTimer;
@@ -16,14 +17,16 @@ public var grain:Float = 0.05;
 public var scary:Bool = false;
 
 var shouldResize:Bool = false;
+var shouldFullscreen:Bool = false;
 
 function create()
 {
-    if(FlxG.fullscreen || FlxG.stage.window.maximized)
+    // Seeing if the application from lime is fullscreened makes more sure that the window gets resized on fullscreen
+    if(Application.current.window.fullscreen || FlxG.fullscreen || FlxG.stage.window.maximized)
     {
-        shouldResize = true;
-        FlxG.stage.window.maximized = false;
-        FlxG.fullscreen = false;
+        shouldResize = FlxG.stage.window.maximized;
+        shouldFullscreen = Application.current.window.fullscreen || FlxG.fullscreen;
+        FlxG.stage.window.maximized = Application.current.window.fullscreen = FlxG.fullscreen = false;
     }
 
     FlxG.mouse.visible = false;
@@ -118,8 +121,6 @@ function destroy()
 	Framerate.memoryCounter.memoryPeakText.alpha = 0.5;
 	Framerate.fpsCounter.fpsLabel.alpha = 0.5;
 
-    if(shouldResize)
-    {
-        FlxG.stage.window.maximized = true;
-    }
+    FlxG.stage.window.maximized = shouldResize;
+    Application.current.window.fullscreen = FlxG.fullscreen = shouldFullscreen;
 }

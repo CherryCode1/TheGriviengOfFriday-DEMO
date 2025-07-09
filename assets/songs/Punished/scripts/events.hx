@@ -8,7 +8,8 @@ function postUpdate(elapsed:Float){
 }
 function stepHit(){
     switch(curStep){
-        case 248:   camGame.fade(FlxColor.BLACK,0.35,false);
+        case 1: camHUD.height = FlxG.height + 15;
+        case 248: camGame.fade(FlxColor.BLACK,0.35,false);
         case 255: camGame.fade(FlxColor.BLACK,0.00001,true);
     }
 }

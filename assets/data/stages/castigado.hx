@@ -1,7 +1,16 @@
 var gfsprite:FlxSprite;
+static var nose:Bool = false;
 function create() {
+    //caches de videos para el gameover
+    if (!nose) {
+        Assets.loadBytes(Paths.video("deathStart"));
+        Assets.loadBytes(Paths.video("deathLoop"));
+        Assets.loadBytes(Paths.video("deathEnd"));
+        nose = false;
+    }
+
     var bg:FlxSprite = new FlxSprite(200,-300).loadGraphic(Paths.image("stages/goanimate/schoolinside"));
-    bg.scale.set(2,2);
+    bg.scale.set(2, 2);
     bg.scrollFactor.x = 0.9;
     insert(members.indexOf(gf),bg);
     
@@ -15,11 +24,18 @@ function create() {
     boyfriend.cameraOffset.x -= 200;
     comboGroup.x += 400;
     boyfriend.x += 600;
-
-
 }
-function postCreate(){
- 
+
+function postCreate() { 
+    GameOverSubstate.script = 'data/substates/GameOverSubstate-punished';
     countDownFNF = true;
     FlxG.camera.zoom = defaultCamZoom = 0.75;
+}
+
+function onSongEnd() {
+    // FlxG.switchState(new ModState("VideoState"));
+    video_Path = "punishedend";
+    _nextState = FreeplayState;
+    endCutscene = "data/states/VideoState";
+    trace(endCutscene);
 }

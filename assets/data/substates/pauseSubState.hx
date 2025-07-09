@@ -178,8 +178,8 @@ function create(event) {
 		
 	}
 	if(isAffiliation){
-	textPause.y -= 200;
-	textPause.font = "Arial";	
+		textPause.y -= 200;
+		textPause.font = "Arial";	
 	} 
 	cameras = [pauseCam];
 
@@ -215,7 +215,7 @@ function getChar() {
 		case "My Doll": curChar = CharacterPortrait.PIBBY;
 		case "Punished": curChar = CharacterPortrait.CASTIGADO;
 		case "Clown Eyes": curChar = CharacterPortrait.PROCRASTINATION;
-		case "affiliation": curChar = CharacterPortrait.XPLOSHI;
+		case "Affiliation": curChar = CharacterPortrait.XPLOSHI;
 	}
   
   return Paths.image('menus/pause/characters/' + charPortraitImages[curChar]);

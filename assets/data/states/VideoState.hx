@@ -1,14 +1,13 @@
 import hxvlc.flixel.FlxVideoSprite;
 
+var video:FlxVideoSprite = new FlxVideoSprite();
 var camera_Video:FlxCamera = new FlxCamera(); 
 
-function postCreate() {
-
+function create() {
     FlxG.sound.music.destroy();
     camera_Video.bgColor = 0x00000000;
     FlxG.cameras.add(camera_Video, false);
    
-    var video = new FlxVideoSprite();
     video.load(Assets.getBytes(Paths.video(video_Path)));
     video.bitmap.onFormatSetup.add(() -> 
     {
@@ -17,13 +16,7 @@ function postCreate() {
         video.bitmap.volume = 1;    
         video.screenCenter();
     });
-    video.bitmap.onEndReached.add(() -> 
-    {
-        video.destroy();
-        FlxG.sound.music.pitch = 1;
-        FlxG.switchState(new _nextState());
-        if (video_Path == "xploshiIntro")  resizeGame(1024, 768);
-    });
+    video.bitmap.onEndReached.add(skipVideo);
     video.autoVolumeHandle = true;
     video.play();
    
@@ -31,8 +24,11 @@ function postCreate() {
 }
 
 function update(elapsed:Float) {
-    if (FlxG.keys.justPressed.ENTER) {
-        FlxG.switchState(new _nextState());
-        if (video_Path == "xploshiIntro")  resizeGame(1024, 768);
-    }
+    if (FlxG.keys.justPressed.ENTER) skipVideo();
+}
+
+function skipVideo() {
+    video.destroy();
+    FlxG.sound.music.pitch = 1;
+    FlxG.switchState(new _nextState());
 }

@@ -20,6 +20,7 @@ var _animationsRibbit:Array<String> = [
     "transR", "transL",
     "right", "left"
 ];
+
 var fase_1:Bool = true;
 function create()
 {
@@ -41,7 +42,7 @@ function create()
     platafor1 = new FlxSprite(470, 730).loadGraphic(Paths.image("stages/copycat/shitstain"));
     platafor1.scrollFactor.set(1,1);
     platafor1.visible = false;
-    insert(members.indexOf(gf),platafor1);
+    insert(members.indexOf(gf), platafor1);
 
     platafor2 = new FlxSprite(1200, 900).loadGraphic(Paths.image("stages/copycat/shitstain"));
     platafor2.scrollFactor.set(1,1);
@@ -57,13 +58,11 @@ function create()
     bg.scrollFactor.set(0.85,1);
     bg.scale.set(0.85,0.85);
     insert(members.indexOf(gf),bg);
-  
 
     sofa = new FlxSprite(-780, -100).loadGraphic(Paths.image("stages/copycat/sofa"));
     sofa.scrollFactor.set(1,1);
     sofa.scale.set(0.9,0.85);
     insert(members.indexOf(gf),sofa);
-  
 
     sofaFG = new FlxSprite(-900, 100).loadGraphic(Paths.image("stages/copycat/sofa2"));
     sofaFG.scrollFactor.set(1.4,1.4);
@@ -72,8 +71,8 @@ function create()
  
     comboGroup.setPosition(550,700);
     FlxG.camera.zoom = defaultCamZoom = 0.75;
-
 }
+
 function postCreate(){
     cumB = new FlxSprite(0,0);
     cumB.frames = Paths.getSparrowAtlas("stages/copycat/cumBorder");
@@ -87,7 +86,6 @@ function postCreate(){
 }
 
 function beatHit() {
- 
     if (_isRight) _daOffsetAnim = 2;
     else _daOffsetAnim = 3;
 
@@ -95,16 +93,13 @@ function beatHit() {
     if (!_isTransition) {
         _isDancing = true;
         if (curBeat % 2 == 0) {
-        
             gf.playAnim(_animationsRibbit[_daOffsetAnim], true);
-    
         }
     }
 }
-function postUpdate(elapsed:Float){
-    _isRight =  (curCameraTarget == 0) ? false : true;
 
-  
+function postUpdate(elapsed:Float){
+    _isRight = curCameraTarget != 0;
 
     if (_isRight != _previousFocus && !_isTransition) {
         _previousFocus = _isRight;
@@ -112,7 +107,6 @@ function postUpdate(elapsed:Float){
         if (!_isRight) changeAnimGf(1);
         if (_isRight) changeAnimGf(0);
     }
-
 }
 
 function changeAnimGf(changed:Int) {

@@ -523,6 +523,11 @@ function gotoPlayState() {
             video_Path = "xploshiIntro";
             _nextState = PlayState;
         }
+        else if (WeekData[curWeek].songs[curSong] == "punished" || WeekData[curWeek].songs[curSong] == "Punished"){
+            FlxG.switchState(new ModState("videoState"));
+            video_Path = "gumbalestascastigadopor";
+            _nextState = PlayState;
+        }
         else if((WeekData[curWeek].songs[curSong] == "Clown Eyes" || WeekData[curWeek].songs[curSong] == "clown eyes") && FlxG.random.bool(5)) {
             FlxG.switchState(new ModState('ClownEasterEgg'));
         }
@@ -533,7 +538,7 @@ function gotoPlayState() {
 }
 
 function backWeeks() {
-    changePrefix("Freeplay - select week");
+    changePrefix("Freeplay - Week Select");
     changeWeek();
     FlxTween.tween(LB,{y:300},1,{ease:FlxEase.backInOut});
             FlxTween.tween(RB,{y:295},1,{ease:FlxEase.backInOut});

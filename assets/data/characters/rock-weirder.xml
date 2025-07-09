@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character y="320" sprite="weird/bf-weird" antialiasing="false" flipX="true" isPlayer="true" icon="weirder-rock" color="#5F6467" holdTime="6" isGF="false">
+<character y="320" sprite="weird/bf-weird" antialiasing="false" flipX="true" isPlayer="true" icon="weirder-rock" color="#5F6467" gameOverChar="rock-weird-dead" holdTime="6" isGF="false">
 	<anim name="idle" anim="BF idle dance" x="0" y="0" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="BF NOTE DOWN0" x="16" y="-23" fps="30" loop="false"/>
 	<anim name="singRIGHT" anim="BF NOTE RIGHT0" x="-65" y="-17" fps="30" loop="false"/>
