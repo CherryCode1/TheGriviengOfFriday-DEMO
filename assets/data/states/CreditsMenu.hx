@@ -176,6 +176,15 @@ function create(){
 
     nextBlinkTime = FlxG.random.float(1.0, 2.5);
 
+      switch(creditsData.sections[curSection].section){
+        case "artist":  changeMusic("creditsState-AnimatorsStem");
+        case "animators": changeMusic("creditsState-AnimatorsStem");
+        case "musicians": changeMusic("creditsState-AnimatorsStem");
+        case "programmers": changeMusic("creditsState-CodersStem");
+        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
+        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
+        case "charters": changeMusic("creditsState-ChartersStem");
+    }
 }
 
 function startBreatheTween() {
@@ -311,6 +320,7 @@ if (!isBlinking) {
     if (box_Info.alpha == 0){
         if (controls.BACK)
         {
+            startedMenuMusic = false;
             FlxG.switchState(new MainMenuState());
         }
         if (controls.LEFT_P){
@@ -347,10 +357,26 @@ if (!isBlinking) {
    
 }
 
+function changeMusic(key:String) {
+
+    FlxG.sound.playMusic(Paths.music(key), 0);
+    FlxG.sound.music.fadeIn(4, 0, 0.7);
+	FlxG.sound.music.play();
+
+}
 
 function changeSection(uh:Int = 0){
     curSection = FlxMath.wrap(curSection + uh, 0, grpSection.length - 1);
-
+    switch(creditsData.sections[curSection].section){
+        case "artist":  changeMusic("creditsState-AnimatorsStem");
+        case "animators": changeMusic("creditsState-AnimatorsStem");
+        case "musicians": changeMusic("creditsState-AnimatorsStem");
+        case "programmers": changeMusic("creditsState-CodersStem");
+        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
+        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
+        case "charters": changeMusic("creditsState-ChartersStem");
+    }
+  
     for (i in 0...grpSection.length){
         grpSection.members[i].visible = false;          
         grpCredit_sprite[i].visible = false;           
@@ -358,6 +384,13 @@ function changeSection(uh:Int = 0){
   
     grpSection.members[curSection].visible = true;
     grpCredit_sprite[curSection].visible = true;   
+
+
+    var offsetCamera = uh * 10;
+    FlxG.camera.scroll.x += offsetCamera;
+
+    FlxG.camera.zoom += 0.005;
+    FlxTween.tween(FlxG.camera,{"scroll.x": FlxG.camera.scroll.x - offsetCamera}, 0.25,{ease:FlxEase.cubeInOut});
 
     for (renders in grpCredit_sprite[curSection]){
         renders.scale.x += 0.015;
@@ -379,7 +412,18 @@ function hideInfo() {
         pressedInfo = false;
         targetMove = false;
         defaultCamZoom = 1;
+         switch(creditsData.sections[curSection].section){
+        case "artist":  changeMusic("creditsState-AnimatorsStem");
+        case "animators": changeMusic("creditsState-AnimatorsStem");
+        case "musicians": changeMusic("creditsState-AnimatorsStem");
+        case "programmers": changeMusic("creditsState-CodersStem");
+        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
+        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
+        case "charters": changeMusic("creditsState-ChartersStem");
+    }
     }});
+
+
 }
 
 function updateText() {
@@ -391,8 +435,12 @@ function updateText() {
     + creditsData.sections[curSection].credits[curSelected].fun_text;
     textCredit.text = final_text;
     textCredit.calcFrame();
-    if (creditsData.sections[curSection].credits[curSelected].isMain)
-      particles.emit(60,950,300);
+    if (creditsData.sections[curSection].credits[curSelected].isMain){
+        particles.emit(60,950,300);
+
+        changeMusic("creditsState-Main");
+    }
+      
 
 
     var twitterCred:Bool = (creditsData.sections[curSection].credits[curSelected].twitter == null) ? false : true;

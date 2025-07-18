@@ -6,12 +6,12 @@
       {
         "name": "Retro M",
         "image": "retro",
-		    "fun_text": "",
+		    "fun_text": "Díganle a Ángel, Lavy y Calavazín que los quiero mucho. BRZ por favor, andate a jugar repo y deja de chingar en el grupo. (PD: Claramente, Los Simpson lo volvieron a hacer).",
         "position": {"x": 150, "y": 200},
         "scale": 0.2,
         "angle": -5,
-        "twitter": "https://twitter.com/samgel76",
-        "youtube": null
+        "twitter": "https://x.com/RetroMdev",
+        "youtube": "https://www.youtube.com/@RetroMlol"
     },
     {
       "name": "Robert",
@@ -36,12 +36,12 @@
     {
       "name": "calavazin",
       "image": "calavazin",
-		  "fun_text": "shhh vamos cerrando el ortito",
+		  "fun_text": "shhh vamos cerrando el culo, yo hice todo el arte en tgof si",
       "position": {"x": 150, "y": 400},
       "scale": 0.2,
       "angle": 0,
-      "twitter": "https://twitter.com/samgel76",
-      "youtube": null
+      "twitter": "https://x.com/CalavazinX46336",
+      "youtube": ""
     },
     {
       "name": "G4",
@@ -172,12 +172,12 @@
 		{
 		  "name": "diamantitos",
           "image": "diamantitos",
-		  "fun_text": "un diamantote con un culote bien cuadradote",
+		  "fun_text": "Bien mediocre mi trabajo, But termine salvando el mod varias veces jsjsjs",
           "position": {"x": 150, "y": 440},
           "scale": 0.22,
           "angle": 10,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
+          "twitter": "https://x.com/DiamonCheetos?t=gQX_NpH0Iazm4Tpkrvsw6g&s=09",
+          "youtube": "https://youtube.com/@diaman-"
         },
 		{
 		  "name": "crie",
@@ -236,8 +236,8 @@
         "position": {"x": 900, "y": 300},
         "scale": 0.3,
         "angle":0,
-        "twitter": null,
-        "youtube": null,
+        "twitter": "https://x.com/CherryCode_1",
+        "youtube": "https://www.youtube.com/@alansinCoder",
         "isMain": true
 
       }
