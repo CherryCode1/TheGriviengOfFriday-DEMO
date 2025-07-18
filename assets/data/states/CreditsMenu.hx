@@ -4,6 +4,7 @@ import flixel.text.FlxTextAlign;
 import flixel.util.FlxAxes;
 import flixel.text.FlxTextBorderStyle;
 import flixel.math.FlxBasePoint;
+import funkin.backend.utils.CoolUtil;
 /**
 
  //Structure Json File -- uh maybe changes on release mod - Alan//
@@ -36,6 +37,9 @@ var decoration:FlxSprite;
 var overlay:FlxSprite;
 var light_:FlxSprite;
 var grpSection:FlxTypedGroup<FlxSprite>;
+var log_youtubbe:FlxSprite;
+var log_twiiter:FlxSprite;
+var mainAttach:FlxSprite;
 var grpCredit_sprite:Array<FlxTypedGroup<FlxSprite>> = [];
 public static var curSelected:Int = 0;
 public static var curSection:Int = 0;
@@ -49,6 +53,10 @@ var nextBlinkTime:Float = 0;
 var blinkCount:Int = 0;
 var maxBlinks:Int = 0;
 var isBlinking:Bool = false;
+var particles;
+var nextBlinkTime;
+
+var breatheTween:FlxTween;
 
 function create(){
    
@@ -67,6 +75,13 @@ function create(){
 
     decoration = new FlxSprite().loadGraphic(Paths.image("menus/credits/decoration"));
     add(decoration);
+
+
+    mainAttach = new FlxSprite().loadGraphic(Paths.image("menus/credits/main"));
+    mainAttach.scale.set(0.5,0.5);
+    mainAttach.screenCenter();
+    mainAttach.y -= 50;
+    add(mainAttach);
     
     grpSection = new FlxTypedGroup();
     add(grpSection);
@@ -121,6 +136,27 @@ function create(){
     textCredit.wordWrap = true;
     add(textCredit);
 
+
+ 
+
+
+
+
+
+    log_youtubbe = new FlxSprite(810,60).loadGraphic(Paths.image("menus/credits/youtube"));
+    log_youtubbe.scale.set(0.5,0.5);
+    log_youtubbe.color = FlxColor.fromRGB(64, 64, 64);
+    log_youtubbe.updateHitbox();
+    add(log_youtubbe);
+
+    log_twiiter = new FlxSprite(990,60).loadGraphic(Paths.image("menus/credits/twiiter"));
+    log_twiiter.scale.set(0.5,0.5);
+    log_twiiter.color = FlxColor.fromRGB(64, 64, 64);
+    log_twiiter.updateHitbox();
+    add(log_twiiter);
+
+
+
     overlay = new FlxSprite().loadGraphic(Paths.image("menus/credits/overlay"));
     add(overlay);
 
@@ -128,33 +164,110 @@ function create(){
     light_ = new FlxSprite().loadGraphic(Paths.image("menus/credits/Lights"));
     add(light_);
 
+    startBreatheTween();
 
+    particles = createParticles();
     for (sprites in [bg,overlay,light_,bg_section,decoration])
     {
         sprites.scale.set(0.5,0.5);
         sprites.updateHitbox();
         sprites.screenCenter();
     }
+
+    nextBlinkTime = FlxG.random.float(1.0, 2.5);
+
+}
+
+function startBreatheTween() {
+    breatheTween = FlxTween.tween(light_, {alpha: 0.5}, 1.4, {
+        type: FlxTween.PINGPONG,
+        ease: FlxEase.quadInOut
+    });
+}
+
+function createParticles():Dynamic {
+    var particles:Array<FlxSprite> = [];
+    
+    function emit(num:Int, x:Float, y:Float) {
+        for (i in 0...num) {
+            var particle = new FlxSprite(x, y);
+            particle.makeGraphic(7, 7, FlxG.random.color()); 
+            particle.velocity.set(FlxG.random.float(-100, 100), FlxG.random.float(-10, -150));
+            particle.acceleration.y = 300;
+            particle.angularVelocity = FlxG.random.float(-360, 360); 
+            particle.elasticity = 0.4;
+            particle.scrollFactor.set(0,0);
+            particle.alpha = 1;
+            particle.ID = 1; 
+            add(particle);
+            particles.push(particle);
+        }
+    }
+
+    return {
+        emit: emit,
+        update: function() {
+            
+            for (particle in particles) {
+                if (particle.exists) {
+                    particle.scale.x -= FlxG.elapsed * 0.6;
+                    particle.scale.y -= FlxG.elapsed * 0.6;
+                    particle.alpha -= FlxG.elapsed * 0.5;
+                    if (particle.alpha <= 0) {
+                        particle.kill();
+                    }
+                }
+            }
+        }
+    };
 }
 
 var pressedInfo:Bool = false;
 var targetMove:Bool = false;
 var defaultCamZoom = 1;
-var force_targetCamera:Bool = false;
-var targetCamPos = new FlxBasePoint(); 
+
+var blinkTimer:Float = 0;
+var nextBlinkTime:Float = 0;
+var blinkStateOn:Bool = true; // True si está encendido
+
 
 function update(elapsed:Float){
-
-    if (force_targetCamera) {
-        FlxG.camera.scroll.x = lerp(FlxG.camera.scroll.x, targetCamPos.x, 0.05);
-        FlxG.camera.scroll.y = lerp(FlxG.camera.scroll.y, targetCamPos.y, 0.05);
-    }else{
-        FlxG.camera.scroll.x = lerp(FlxG.camera.scroll.x, (FlxG.mouse.screenX - FlxG.width / 2) * 0.015, 0.05);
-        FlxG.camera.scroll.y = lerp(FlxG.camera.scroll.y, (FlxG.mouse.screenY - 6 - FlxG.height / 2) * 0.015, 0.05);
-    }
-
-
+    FlxG.camera.scroll.x = lerp(FlxG.camera.scroll.x, (FlxG.mouse.screenX - FlxG.width / 2) * 0.015, 0.05);
+    FlxG.camera.scroll.y = lerp(FlxG.camera.scroll.y, (FlxG.mouse.screenY - 6 - FlxG.height / 2) * 0.015, 0.05);
+    
     FlxG.camera.zoom = lerp(FlxG.camera.zoom,defaultCamZoom,0.05);
+
+    particles.update();
+   blinkTimer += elapsed;
+
+if (!isBlinking) {
+    if (blinkTimer >= nextBlinkTime) {
+        blinkTimer = 0;
+        isBlinking = true;
+
+       light_.alpha = 1;
+        if (breatheTween != null) {
+            breatheTween.cancel();
+        }
+
+        FlxTween.tween(light_, {alpha: 0}, 0.05, {
+            ease: FlxEase.quadInOut,
+            onComplete: function(_) {
+                new FlxTimer().start(0.015, function(_) {
+                    FlxTween.tween(light_, {alpha: 1}, 0.04, {
+                        ease: FlxEase.sineInOut,
+                        onComplete: function(_) {
+                            isBlinking = false;
+                            nextBlinkTime = FlxG.random.float(2.0, 5.0);
+                            startBreatheTween(); 
+                        }
+                    });
+                });
+            }
+        });
+    }
+}
+
 
     grpCredit_sprite[curSection].forEach(
         function(spriteCred:FlxSprite) 
@@ -207,6 +320,25 @@ function update(elapsed:Float){
             changeSection(1);
         }
     }else{
+        if (FlxG.mouse.overlaps(log_twiiter) && FlxG.mouse.justPressed){
+            if (creditsData.sections[curSection].credits[curSelected].twitter != null) {
+                CoolUtil.openURL(creditsData.sections[curSection].credits[curSelected].twitter);
+
+            }else{
+                FlxG.camera.shake(0.002,0.25);
+
+            }
+        }
+         if (FlxG.mouse.overlaps(log_youtubbe) && FlxG.mouse.justPressed){
+            
+            if (creditsData.sections[curSection].credits[curSelected].youtube != null) {
+                CoolUtil.openURL(creditsData.sections[curSection].credits[curSelected].youtube);
+
+            }else{
+                FlxG.camera.shake(0.002,0.25);
+            }
+
+        }
         if (controls.BACK && targetMove)
         {
             hideInfo();
@@ -226,29 +358,54 @@ function changeSection(uh:Int = 0){
   
     grpSection.members[curSection].visible = true;
     grpCredit_sprite[curSection].visible = true;   
+
+    for (renders in grpCredit_sprite[curSection]){
+        renders.scale.x += 0.015;
+        renders.scale.y += 0.015;
+        renders.color = FlxColor.fromRGB(64, 64, 64);
+
+
+        FlxTween.color(renders, 1.0, renders.color, FlxColor.WHITE);
+    }
+
 }
 
 function hideInfo() {
+    for (shit in [log_twiiter,log_youtubbe]){
+        FlxTween.color(shit, 1.0, shit.color, FlxColor.fromRGB(64, 64, 64));
+    }
     textCredit.text = "";
     FlxTween.tween(box_Info,{"scale.y": 0,alpha: 0}, 0.45, {ease:FlxEase.cubeInOut,onComplete: function(){
         pressedInfo = false;
         targetMove = false;
         defaultCamZoom = 1;
-        force_targetCamera = false;
     }});
 }
 
 function updateText() {
     targetMove = false;
-    pressedInfo = true;
-    defaultCamZoom = 2;
+    pressedInfo = true; 
 
     var final_text:String = 
     "Name: " + creditsData.sections[curSection].credits[curSelected].name + "\nDescription: " 
-    + creditsData.sections[curSection].credits[curSelected].fun_text
-    + "\nFollow me on: " + creditsData.sections[curSection].credits[curSelected].link;
+    + creditsData.sections[curSection].credits[curSelected].fun_text;
     textCredit.text = final_text;
     textCredit.calcFrame();
+    if (creditsData.sections[curSection].credits[curSelected].isMain)
+      particles.emit(60,950,300);
+
+
+    var twitterCred:Bool = (creditsData.sections[curSection].credits[curSelected].twitter == null) ? false : true;
+    var youtubeCred:Bool = (creditsData.sections[curSection].credits[curSelected].youtube == null) ? false : true;
+
+
+    for (shit in [log_twiiter,log_youtubbe]){
+       var color_:FlxColor = switch (shit) {
+          case log_twiiter: twitterCred ? FlxColor.WHITE : FlxColor.fromRGB(64, 64, 64);
+          case log_youtubbe: youtubeCred ? FlxColor.WHITE : FlxColor.fromRGB(64, 64, 64);
+        };
+        FlxTween.color(shit, 1.0, shit.color, color_);
+    }
 
     var padding:Int = 20;
     var realWidth = textCredit.textField.textWidth + padding;
@@ -261,14 +418,9 @@ function updateText() {
     box_Info.alpha = 0;
     box_Info.scale.y = 0;
     textCredit.setPosition(box_Info.x + padding / 2, box_Info.y + padding / 2);
-    textCredit.text = "";
+    textCredit.text = "";   
 
-    var daPosX = grpCredit_sprite[curSection].members[curSelected].x + (grpCredit_sprite[curSection].members[curSelected].width - FlxG.width) / 2;
-    var daPosY = grpCredit_sprite[curSection].members[curSelected].y + (grpCredit_sprite[curSection].members[curSelected].height - FlxG.height) / 2 + 10;
 
-    targetCamPos.set(daPosX, daPosY);
-    force_targetCamera = true;
-    FlxTween.tween(FlxG.camera,{"scroll.x": daPosX, "scroll.y": daPosY},1,{ease: FlxEase.quadInOut});
     FlxTween.tween(box_Info, {"scale.y": 1, alpha: 0.8}, 0.45, {
         ease: FlxEase.cubeInOut,
         onComplete: function(_) {

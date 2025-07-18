@@ -1,6 +1,74 @@
 {
  "sections": [
-    {
+   {
+      "section": "artist",
+      "credits": [  
+        {
+          "name": "Retro M",
+          "image": "retro",
+		      "fun_text": "",
+          "position": {"x": 150, "y": 200},
+          "scale": 0.2,
+          "angle": -5,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
+        },
+        {
+          "name": "Robert",
+          "image": "Rob",
+		      "fun_text": "",
+          "position": {"x": 350, "y": 200},
+          "scale": 0.2,
+          "angle": 0,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
+        },
+         {
+          "name": "Lavy",
+          "image": "lavy",
+		      "fun_text": "",
+          "position": {"x": 550, "y": 200},
+          "scale": 0.2,
+          "angle": 5,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
+        },
+         {
+          "name": "calavazin",
+          "image": "calavazin",
+		      "fun_text": "shhh vamos cerrando el ortito",
+          "position": {"x": 150, "y": 400},
+          "scale": 0.2,
+          "angle": 0,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
+        },
+        {
+          "name": "G4",
+          "image": "elgperras",
+		      "fun_text": "",
+          "position": {"x": 350, "y": 420},
+          "scale": 0.21,
+          "angle": 0,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
+        },
+       
+        {
+          "name": "Angel [Owner]",
+          "image": "Angel",
+          "fun_text": "",
+          "position": {"x": 850, "y": 280},
+          "scale": 0.28,
+          "angle": 0,
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": "https://www.youtube.com/watch?v=ip9gSY30Yz0&t=715s",
+          "isMain": true
+        }   
+		
+      ]
+    },
+  {
       "section": "musicians",
       "credits": [        
 		{
@@ -10,7 +78,8 @@
           "position": {"x": 240, "y": 220},
           "scale": 0.2,
           "angle": 0,
-          "link": "https://twitter.com/samgel76"
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "tnkarot",
@@ -19,7 +88,8 @@
           "position": {"x": 440, "y": 180},
           "scale": 0.18,
           "angle": 25,
-          "link": "https://twitter.com/samgel76"
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "Walker 431",
@@ -28,7 +98,8 @@
           "position": {"x": 440, "y": 440},
           "scale": 0.18,
           "angle": -5,
-          "link": "https://twitter.com/samgel76"
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "nuse",
@@ -37,7 +108,8 @@
           "position": {"x": 640, "y": 400},
           "scale": 0.22,
           "angle": 10,
-          "link": "https://twitter.com/samgel76"
+           "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "ezzy",
@@ -46,7 +118,8 @@
           "position": {"x": 640, "y": 200},
           "scale": 0.2,
           "angle": 35,
-          "link": "https://twitter.com/samgel76"
+           "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "diamantitos",
@@ -55,7 +128,8 @@
           "position": {"x": 150, "y": 440},
           "scale": 0.22,
           "angle": 10,
-          "link": "https://twitter.com/samgel76"
+          "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         },
 		{
 		  "name": "crie",
@@ -64,25 +138,13 @@
           "position": {"x": 890, "y": 305},
           "scale": 0.3,
           "angle": 0,
-          "link": "https://twitter.com/samgel76"
+           "twitter": "https://twitter.com/samgel76",
+          "youtube": null,
+          "isMain": true
         }
       ]
     },
-	{
-      "section": "artist",
-      "credits": [    
-		{
-		  "name": "calavazin",
-          "image": "calavazin",
-		  "fun_text": "shhh vamos cerrando el ortito",
-          "position": {"x": 890, "y": 305},
-          "scale": 0.3,
-          "angle": 0,
-          "link": "https://twitter.com/samgel76"
-        }    
-		
-      ]
-    },
+	
 	{
       "section": "charters",
       "credits": [    
@@ -93,7 +155,8 @@
           "position": {"x": 500, "y": 305},
           "scale": 0.3,
           "angle": 0,
-          "link": "https://twitter.com/samgel76"
+           "twitter": "https://twitter.com/samgel76",
+          "youtube": null
         }    
 		
       ]
