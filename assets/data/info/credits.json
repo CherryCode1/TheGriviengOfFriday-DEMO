@@ -1,76 +1,124 @@
 {
  "sections": [
-   {
-      "section": "artist",
-      "credits": [  
-        {
-          "name": "Retro M",
-          "image": "retro",
-		      "fun_text": "",
-          "position": {"x": 150, "y": 200},
-          "scale": 0.2,
-          "angle": -5,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
-        },
-        {
-          "name": "Robert",
-          "image": "Rob",
-		      "fun_text": "",
-          "position": {"x": 350, "y": 200},
-          "scale": 0.2,
-          "angle": 0,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
-        },
-         {
-          "name": "Lavy",
-          "image": "lavy",
-		      "fun_text": "",
-          "position": {"x": 550, "y": 200},
-          "scale": 0.2,
-          "angle": 5,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
-        },
-         {
-          "name": "calavazin",
-          "image": "calavazin",
-		      "fun_text": "shhh vamos cerrando el ortito",
-          "position": {"x": 150, "y": 400},
-          "scale": 0.2,
-          "angle": 0,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
-        },
-        {
-          "name": "G4",
-          "image": "elgperras",
-		      "fun_text": "",
-          "position": {"x": 350, "y": 420},
-          "scale": 0.21,
-          "angle": 0,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
-        },
-       
-        {
-          "name": "Angel [Owner]",
-          "image": "Angel",
-          "fun_text": "",
-          "position": {"x": 850, "y": 280},
-          "scale": 0.28,
-          "angle": 0,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": "https://www.youtube.com/watch?v=ip9gSY30Yz0&t=715s",
-          "isMain": true
-        }   
-		
-      ]
-    },
   {
-      "section": "musicians",
-      "credits": [        
+    "section": "artist",
+    "credits": [  
+      {
+        "name": "Retro M",
+        "image": "retro",
+		    "fun_text": "",
+        "position": {"x": 150, "y": 200},
+        "scale": 0.2,
+        "angle": -5,
+        "twitter": "https://twitter.com/samgel76",
+        "youtube": null
+    },
+    {
+      "name": "Robert",
+      "image": "Rob",
+		  "fun_text": "",
+      "position": {"x": 350, "y": 200},
+      "scale": 0.2,
+      "angle": 0,
+      "twitter": "https://twitter.com/samgel76",
+      "youtube": null
+    },
+    {
+      "name": "Lavy",
+      "image": "lavy",
+		  "fun_text": "Amigos yo soy el verdadero artista, dibuje todo ese Angel es solo un impostor no le hagan caso",
+      "position": {"x": 550, "y": 200},
+      "scale": 0.2,
+      "angle": 5,
+      "twitter": "https://x.com/Lavy_0307",
+      "youtube": "https://www.youtube.com/@ElLavydito"
+    },
+    {
+      "name": "calavazin",
+      "image": "calavazin",
+		  "fun_text": "shhh vamos cerrando el ortito",
+      "position": {"x": 150, "y": 400},
+      "scale": 0.2,
+      "angle": 0,
+      "twitter": "https://twitter.com/samgel76",
+      "youtube": null
+    },
+    {
+      "name": "G4",
+      "image": "elgperras",
+		  "fun_text": "",
+      "position": {"x": 350, "y": 420},
+      "scale": 0.21,
+      "angle": 0,
+      "twitter": "https://twitter.com/samgel76",
+      "youtube": null
+    },
+       
+    {
+      "name": "Angel [Owner]",
+      "image": "Angel",
+      "fun_text": "",
+      "position": {"x": 850, "y": 280},
+      "scale": 0.28,
+      "angle": 0,
+      "twitter": "https://twitter.com/samgel76",
+      "youtube": "https://www.youtube.com/watch?v=ip9gSY30Yz0&t=715s",
+      "isMain": true
+    }   
+		
+    ]
+  },
+  {
+    "section": "animators",
+    "credits":[
+      {
+        "name": "n4meless [Artist and Animator]",
+        "image": "n4meless",
+        "fun_text": "",
+        "position": {"x": 150, "y":200},
+        "scale": 0.2,
+        "angle": -20,
+        "twitter":null,
+        "youtube": null
+      },
+      {
+        "name": "Waze",
+        "image": "waze",
+        "fun_text": "",
+        "position": {"x":400 , "y":210},
+        "scale": 0.24,
+        "angle":0,
+        "twitter":null,
+        "youtube":null
+      },
+      {
+        "name": "handy",
+        "image": "handy",
+        "fun_text": "",
+        "position": {"x":620 ,"y": 210},
+        "scale":0.24,
+        "angle":20,
+        "twitter": null,
+        "youtube": null
+      },
+      {
+        "name": "Alex [Owner]",
+        "image": "alex",
+        "fun_text": "",
+        "position": {"x": 850, "y": 300},
+        "scale": 0.28,
+        "angle":0,
+        "twitter": null,
+        "youtube": null,
+        "isMain": true
+      }
+     
+
+    ]
+  },
+  {
+    "section": "musicians",
+    "credits": [        
 		{
 		  "name": "alwk",
           "image": "alwk",
@@ -144,7 +192,75 @@
         }
       ]
     },
-	
+  {
+    "section": "programmers",
+    "credits":[
+      {
+        "name": "Soul",
+        "image": "Soul",
+        "fun_text": "",
+        "position": {"x": 150 ,"y": 150},
+        "scale": 0.23,
+        "angle": 0
+
+      },
+      {
+        "name": "Peppy",
+        "image": "peppy",
+        "fun_text": "",
+        "position": {"x": 420, "y": 180},
+        "scale": 0.24,
+        "angle": 0
+      },
+     
+      {
+        "name": "tinny [Artist and Animator]",
+        "image": "tinny",
+        "fun_text": "",
+        "position": {"x": 650, "y": 180},
+        "scale": 0.24,
+        "angle": 0
+      },
+       {
+        "name": "T-bar",
+        "image": "tbar",
+        "fun_text": "",
+        "position": {"x": 150, "y": 420},
+        "scale": 0.25,
+        "angle": 0
+      },
+      {
+        "name": "CherryCode",
+        "image": "cherry",
+        "fun_text": "programe casi todo la demo jejeje si hola",
+        "position": {"x": 900, "y": 300},
+        "scale": 0.3,
+        "angle":0,
+        "twitter": null,
+        "youtube": null,
+        "isMain": true
+
+      }
+    ]
+  },
+  {
+    "section": "voice_actor",
+    "credits": []
+  },
+	{
+    "section": "chroms_maker",
+    "credits": [
+      {
+        "name": "The leon",
+        "image": "leon",
+        "fun_text": "",
+        "position": {"x": 850 , "y": 350},
+        "scale": 0.3,
+        "angle": 0,
+        "isMain": true
+      }
+    ]
+  },
 	{
       "section": "charters",
       "credits": [    
