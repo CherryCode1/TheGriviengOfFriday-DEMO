@@ -198,10 +198,12 @@
       {
         "name": "Soul",
         "image": "Soul",
-        "fun_text": "",
+        "fun_text": "Yo revivi The Grieving del Friday (Me hice 10 gameplays dx)",
         "position": {"x": 150 ,"y": 150},
         "scale": 0.23,
-        "angle": 0
+        "angle": 0,
+        "twitter": "https://x.com/SoySoulDev",
+        "youtube": "https://www.youtube.com/@SoySoulMC"
 
       },
       {
@@ -257,6 +259,8 @@
         "position": {"x": 850 , "y": 350},
         "scale": 0.3,
         "angle": 0,
+        "twitter": "https://x.com/TheLeon75924616",
+        "youtube": "https://www.youtube.com/@theleon3780",
         "isMain": true
       }
     ]
