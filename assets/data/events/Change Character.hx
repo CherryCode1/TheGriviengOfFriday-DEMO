@@ -80,6 +80,7 @@ function onEvent(_) {
             insert(members.indexOf(oldIcon), newIcon);
             newIcon.active = true;
             newIcon.visible =  oldIcon.visible;
+            newIcon.alpha = oldIcon.alpha;
            
             remove(oldIcon);
             if (oldCharacter.isPlayer) iconP1 = newIcon;

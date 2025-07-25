@@ -25,6 +25,6 @@ function stepHit(step) {
             bg.visible = false;
             comboGroup.x -= 300;
             comboGroup.y += 200;
-          
+            boyfriend.visible = false;
     }
 }

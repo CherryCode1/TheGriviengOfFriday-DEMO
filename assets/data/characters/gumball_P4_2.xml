@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="sad-gumball" scale="0.9" icon="GumballP4_1" color="#2E5C8A" holdTime="6.2" isGF="false">
+<character sprite="sad-gumball" scale="0.9" icon="GumballP4" color="#2E5C8A" holdTime="6.2" isGF="false">
 	<anim name="idle" anim="Idle0" x="0" y="0" fps="24" loop="true"/>
 	<anim name="singLEFT" anim="Left" x="162" y="-13" fps="24" loop="false"/>
 	<anim name="singRIGHT" anim="Right" x="-6" y="-31" fps="24" loop="false"/>

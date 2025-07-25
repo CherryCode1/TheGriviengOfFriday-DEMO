@@ -90,6 +90,7 @@ function preStateSwitch() {
     WeekDataOld = daShitJson('info/weeksVoid').weeks;
     WeekData = daShitJson('info/weeks').weeks;
 
+    FlxG.bitmap.add(Paths.video('stars'));
   
 	if (Std.isOfType(FlxG.game._requestedState, Type.getClass(FlxG.state))) return;
 

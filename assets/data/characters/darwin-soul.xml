@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="darwin" scale="1.05" icon="face" color="#A74D16" x="-300" holdTime="5" isGF="false">
+<character x="-300" sprite="darwin" scale="1.05" icon="darwing-soul" color="#A74D16" holdTime="5" isGF="false">
 	<anim name="singLEFT" anim="left" x="17" y="-2" fps="24" loop="false"/>
 	<anim name="singRIGHT" anim="right" x="-7" y="-1" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="down" x="-2" y="-4" fps="24" loop="false"/>

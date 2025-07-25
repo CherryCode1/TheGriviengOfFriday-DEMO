@@ -17,6 +17,8 @@ public var grade_intensity = 0.2;
 public var line_intensity = 0.;
 public var vignette_intensity = 0.2;
 public var logo:FlxSprite;
+var probabilidad = 0;
+
 function create(){
     camGame.addShader(grieveSh);
     camHUD.addShader(grieveSh);
@@ -47,6 +49,10 @@ function create(){
     class_bg.push(blueness);
 
     if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness"){
+        probabilidad = FlxG.random.int(1,5);
+        bg.loadGraphic(Paths.image("stages/class/classroom_2"));
+       // trace("probabilidad: "  + probabilidad);
+
         ghost_anais = new FlxSprite(dad.x + 250,dad.y+ 350);
         ghost_anais.frames = Paths.getSparrowAtlas("stages/class/anais");
         ghost_anais.animation.addByPrefix("idle","Idle",24,true);
@@ -54,7 +60,7 @@ function create(){
         ghost_anais.antialiasing = false;
         insert(members.indexOf(dad),ghost_anais);
     
-        ghost_anais.alpha = 0.85;
+        ghost_anais.alpha = 0.6;
         FlxTween.tween(ghost_anais,{x: ghost_anais.x - 35,},Conductor.stepCrochet/1000 * 30,{ease:FlxEase.sineInOut,type:FlxTween.PINGPONG});
         FlxTween.tween(ghost_anais,{y: ghost_anais.y + 40},Conductor.stepCrochet/1000 * 35,{ease:FlxEase.sineInOut,type:FlxTween.PINGPONG});
     
@@ -64,7 +70,7 @@ function create(){
         ghost_darwin.animation.play("idle");
         ghost_darwin.antialiasing = false;
         insert(members.indexOf(dad) + 1,ghost_darwin);
-        ghost_darwin.alpha = 0.85;
+        ghost_darwin.alpha = 0.6;
         FlxTween.tween(ghost_darwin,{x: ghost_darwin.x + 45,},Conductor.stepCrochet/1000 * 30,{ease:FlxEase.sineInOut,type:FlxTween.PINGPONG});
         FlxTween.tween(ghost_darwin,{y: ghost_darwin.y + 50},Conductor.stepCrochet/1000 * 35,{ease:FlxEase.sineInOut,type:FlxTween.PINGPONG});
     
@@ -90,6 +96,9 @@ function create(){
     logo.scale.set(0.325,0.325);
     logo.alpha = 0.5;
     add(logo);
+    if (get_downscroll()){
+        logo.y -= 580;
+    }
     
     GameOverSubstate.script = "data/substates/GameOverSubstate-gumball";
 }
@@ -314,7 +323,8 @@ public static function setBg_2(){
  boyfriend.cameraOffset.set(-250, -100);
  for (items in class_bg) items.visible = false;
  for (hudsito in [healthBar,healthBarBG_1,iconP1,iconP2,missesTxt])
-    hudsito.visible = false;
+    hudsito.visible = true;
+ health = 1.0;
  angleMoveSpeed = 0; 
 }
 public static function setBg_1(){
@@ -339,6 +349,7 @@ public static function setBg_1(){
     }
     if (PlayState.SONG.meta.name == "Denial" || PlayState.SONG.meta.name == "denial"){
         for (bg in denial_bg) bg.visible = false;
+        bg.loadGraphic(Paths.image("stages/class/classroom_2"));
         gf.alpha = 1;
     }
      defaultCamZoom = 0.75;
@@ -381,11 +392,20 @@ public static function bgDenial(){
     
 }
 public static function gumballcolgado(){
-    var pathThing = "characters/Gumball_is_dead";
+     
     var sprite:FlxSprite = new FlxSprite(600,400);
-    sprite.frames = Paths.getSparrowAtlas(pathThing);
-    sprite.animation.addByPrefix("idle","Gumball_dead",24,true);
-    sprite.animation.play("idle");
+    var pathThing;
+    if (probabilidad == 5){
+        pathThing = "stages/class/la_mama_de_xonix_20250412214909";
+        sprite.setPosition(550,300);
+        sprite.loadGraphic(Paths.image(pathThing));
+    }else{
+        pathThing = "characters/Gumball_is_dead";
+        sprite.frames = Paths.getSparrowAtlas(pathThing);
+        sprite.animation.addByPrefix("idle","Gumball_dead",24,true);
+        sprite.animation.play("idle");
+    }
+   
     insert(members.indexOf(dad),sprite);
 
     for (items in [dad,gf,boyfriend])

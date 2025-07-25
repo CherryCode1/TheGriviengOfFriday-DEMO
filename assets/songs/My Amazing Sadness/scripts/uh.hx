@@ -9,7 +9,7 @@ function create()
 function postCreate(){
     logo.alpha = 0.2;
 
-    gf.cameraOffset.x -= 250;
-    gf.cameraOffset.y += 50;
+    gf.cameraOffset.x += 150;
+    gf.cameraOffset.y -= 120;
  
 }

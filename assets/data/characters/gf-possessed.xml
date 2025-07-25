@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="GF-Poseida" scale="0.9" icon="face" color="#81E98F" holdTime="6.2" isGF="false">
+<character sprite="GF-Poseida" camx="-200" camy="50" scale="0.9" icon="face" color="#81E98F" holdTime="6.2" isGF="false">
 	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="true"/>
 	<anim name="singLEFT" anim="Left" x="115" y="-35" fps="24" loop="false"/>
 	<anim name="singRIGHT" anim="Right" x="-90" y="-40" fps="24" loop="false"/>

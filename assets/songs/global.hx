@@ -172,13 +172,13 @@ function getBarrPath():Void{
 		case "Affiliation", "affiliation":
 			path = "Affiliation";
 			if(get_downscroll()){
-				healthBarBG_Offset[0] = 100;
-				healthBarBG_Offset[1] = -65;
+				healthBarBG_Offset[0] = 90;
+				healthBarBG_Offset[1] = -35;
 			} else {
 				healthBarBG_Offset[0] = 85;
 				healthBarBG_Offset[1] = 35;
 			}
-			healthBar.scale.set(1.08,1.35);
+			healthBar.scale.set(1.1,1.36);
 		case "The Grieving" | "the-grieving":
 			path = "the-grieving";
 			if(get_downscroll()){
@@ -192,7 +192,7 @@ function getBarrPath():Void{
         default: 
 			if(get_downscroll()){
 				healthBarBG_Offset[0] = 35;
-				healthBarBG_Offset[1] = -30;
+				healthBarBG_Offset[1] = -32;
 			} else {
 				healthBarBG_Offset[0] = 35;
 				healthBarBG_Offset[1] = 30;
@@ -232,6 +232,14 @@ function postUpdate() {
 
     if(paused && video != null) video.pause();
 	else if(!paused && video != null) video.resume();
+	if (video != null && video.playing && videoStartTime >= 0) {
+		var expectedTime = (Conductor.songPosition / 1000) - videoStartTime;
+		var difference = Math.abs(video.time - expectedTime);
+		if (difference > 0.05) {
+			video.time = expectedTime;
+		}
+	}
+
 	
     if(songStarted) {
         var curTime:Float = Math.max(0, Conductor.songPosition);
@@ -327,28 +335,36 @@ public function deFadeCam(){
 }
 
 var video = new FlxVideoSprite(0, 0);
-function preLoadVideo(path:String) { //um problem dilay on song shit
+var videoStartTime:Float = -1; // ← NUEVO
+
+function preLoadVideo(path:String) {
     video.load(Assets.getBytes(Paths.video(path)));
-	video.bitmap.onFormatSetup.add(function():Void {
-		if (video.bitmap != null && video.bitmap.bitmapData != null) {	
+    video.bitmap.onFormatSetup.add(function():Void {
+        if (video.bitmap != null && video.bitmap.bitmapData != null) {	
             video.antialiasing = false;
             video.setGraphicSize(FlxG.width, FlxG.height);
-			video.updateHitbox();
-			video.screenCenter();
+            video.updateHitbox();
+            video.screenCenter();
             video.alpha = 0;
             video.camera = camHUD;
-			FlxTween.tween(video,{alpha:1},1);
-	    }
-	});
-    if(video.bitmap != null) {
-		video.bitmap.onEndReached.add(function() {       
-			video.destroy();  
-		});
+            FlxTween.tween(video, {alpha: 1}, 1);
+        }
+    });
+
+    if (video.bitmap != null) {
+        video.bitmap.onEndReached.add(function() {
+            video.destroy();  
+            videoStartTime = -1; // ← reinicia sincronización
+        });
     }
-	insert(members.indexOf(strumLines), video);
+
+    insert(members.indexOf(strumLines), video);
 }
 
-public static function playVideo() video.play();
+public static function playVideo() {
+    video.play();
+    videoStartTime = Conductor.songPosition / 1000; // ← marca el tiempo de inicio
+}
 
 var activeCroma:Bool = false;
 var amounBeat_:String = "";
