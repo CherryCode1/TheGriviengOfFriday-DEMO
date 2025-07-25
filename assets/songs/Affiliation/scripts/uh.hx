@@ -136,6 +136,7 @@ function stepHit(step) {
             videoStartTime = -1;
             strumLines.members[1].characters[0].visible = false;
             strumLines.members[1].characters[1].visible = true;
+        
 
         case 2320:
             FlxTween.tween(camGame, {zoom: 1.2}, (Conductor.stepCrochet / 1000) * 16, {

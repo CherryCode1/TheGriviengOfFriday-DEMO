@@ -518,12 +518,8 @@ function gotoPlayState() {
     }else{
         isVoidWeek = false;
         PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
-        if (WeekData[curWeek].songs[curSong] == "Affiliation" || WeekData[curWeek].songs[curSong] == "affiliation"){
-            FlxG.switchState(new ModState("videoState"));
-            video_Path = "xploshiIntro";
-            _nextState = PlayState;
-        }
-        else if (WeekData[curWeek].songs[curSong] == "punished" || WeekData[curWeek].songs[curSong] == "Punished"){
+       
+        if (WeekData[curWeek].songs[curSong] == "punished" || WeekData[curWeek].songs[curSong] == "Punished"){
             FlxG.switchState(new ModState("videoState"));
             video_Path = "gumbalestascastigadopor";
             _nextState = PlayState;

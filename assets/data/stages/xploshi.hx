@@ -18,13 +18,13 @@ function stepHit(step) {
             madfamily.visible = true;
             family.visible = false;
             strumLines.members[1].characters[0].scale.set(1.21,1.21);
-            strumLines.members[1].characters[0].y += 0;
+            strumLines.members[1].characters[1].y -= 50;
 
         case 2352: 
             madfamily.visible = false;
             bg.visible = false;
             comboGroup.x -= 300;
             comboGroup.y += 200;
-            boyfriend.visible = false;
+            strumLines.members[1].characters[1].visible = false;
     }
 }
