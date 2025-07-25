@@ -9,8 +9,8 @@ var distortIntensity_3:Float = 0;
 var pibby_Shader:CustomShader = new CustomShader("Pibbified");
 
 function create(){
-    noteSkin = "NOTE_assetsPIBBY";
-	splashSkin = "default";
+    noteSkin = "NOTE_assets";
+	splashSkin = "default-griv";
 
 
     pibby_Shader.uTime = 0;
