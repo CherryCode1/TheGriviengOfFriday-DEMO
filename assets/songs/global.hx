@@ -72,6 +72,7 @@ function onNoteHit(event){
 
 	}
 	//trace(event.ratingPrefix);
+	
     if (event.note.isSustainNote) return;
 
     if (!event.animCancelled)

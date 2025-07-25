@@ -6,7 +6,7 @@
    </menu>
    <menu name= "Graphics" desc = "Configure visual effects" >
    	<checkbox id="FireShader" name="Fire Shader" desc="fire ball!" />
-	<number id="FrameRateFireShader" name="FireShader Framerate" min="0" max="20" change="1" desc="speed at which the shader is played, the more it has, the slower it will become"/>
+	<number id="FrameRateFireShader" name="FireShader Framerate" min="0" max="60" change="1" desc="speed at which the shader is played, the more it has, the slower it will become"/>
 	<checkbox id="BlurShader" name="Blur Shader" desc="uh shader blur"/>
 	<checkbox id="GriviengShader" name="Grivieng Shader" desc="Griving week Shader and Menus"/>
 	<checkbox id="Shadows" name="Enabled Shadows Characters" desc="Sader Shadows Characters"/>

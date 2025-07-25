@@ -66,7 +66,42 @@ function onCountdown(e)
         spriteCountDown.visible = true;
         var animName:String = jsonCD.animations[swagCounter]?.name;
         var pos:Array<Float> = jsonCD.animations[swagCounter]?.offsets;
-        spriteCountDown.offset.set(pos[0],pos[1]);
+        if (get_downscroll()){
+            var position:Array<Float> = switch(countDown){
+                case "default":  
+                    switch(swagCounter){
+                        case 0: [0,-100];
+                        case 1: [370,-140];
+                        case 2: [-40,-50];
+                        case 3: [180,200];
+                    }
+                case "joy":
+                    switch(swagCounter){
+                        case 0: [40,-50];
+                        case 1: [420,100];
+                        case 2: [360,80];
+                        case 3: [400,200];
+                    }
+                case "pibby":
+                       switch(swagCounter){
+                        case 0: [-40,-150];
+                        case 1: [320,-20];
+                        case 2: [-100,-80];
+                        case 3: [380,150];
+                    }
+                case "13years":
+                       switch(swagCounter){
+                        case 0: [0,-100];
+                        case 1: [370,-140];
+                        case 2: [-40,-50];
+                        case 3: [180,200];
+                    }
+
+            }
+            spriteCountDown.offset.set(position[0], position[1]);
+        }
+        else spriteCountDown.offset.set(pos[0],pos[1]);
+
         spriteCountDown.animation.play(animName);
     }
 }

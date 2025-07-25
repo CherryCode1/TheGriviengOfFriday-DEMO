@@ -142,12 +142,12 @@
 		{
 		  "name": "Walker 431",
           "image": "walker",
-		  "fun_text": "Alan Walker aja.............................................",
+		  "fun_text": "Licenciado en mixing",
           "position": {"x": 440, "y": 440},
           "scale": 0.18,
           "angle": -5,
-          "twitter": "https://twitter.com/samgel76",
-          "youtube": null
+          "twitter": "https://x.com/ItsWalker412",
+          "youtube": "https://www.youtube.com/channel/UC2a20q5djE7W4YekhqP4KvQ"
         },
 		{
 		  "name": "nuse",
@@ -268,12 +268,23 @@
 		  "name": "NightmareXoNIX",
           "image": "xonixactordevoz",
 		  "fun_text": "actor de voz si sisisisi",
-          "position": {"x": 500, "y": 305},
+          "position": {"x": 400, "y": 305},
           "scale": 0.3,
           "angle": 0,
            "twitter": "https://twitter.com/samgel76",
           "youtube": null
-        }    
+        }  , 
+           {
+            "name": "Byrox",
+            "image": "byrox",
+            "fun_text": "mira mi render full hd cabron",
+            "position": {"x": 800, "y": 345},
+            "scale": 0.36,
+            "angle": 0,
+            "isMain": true,
+            "twitter": "https://x.com/Byrox1648"
+      
+    }
 		
       ]
     }

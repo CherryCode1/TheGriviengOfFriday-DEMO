@@ -62,7 +62,7 @@ function postCreate() {
     for (i in 0...20) {
         var baloon:FlxSprite = new FlxSprite(0, 1100).loadGraphic(Paths.image(path + 'globo' + FlxG.random.int(1, 4)));
         globos.push(baloon);
-        insert(1, baloon);
+        insert(members.indexOf(dad) + 1, baloon);
     }
 
     for (i => text in [showComboNum, showComboTxt]) {
@@ -90,15 +90,28 @@ var curShakeIntensity:Float = 0;
 
 var time_Elapsed:Float = 0;
 var frameRate:Int = 0;
+var shaderTime:Float = 0;        
+var shaderAccum:Float = 0;  
 function update(elapsed) {
     if (healthBar.percent >= 80) iconP2.angle = FlxG.random.int(-3, 3);
     else iconP2.angle = 0;
 
     time_Elapsed += elapsed;
-    frameRate++;
+    shaderTime += elapsed;
+   shaderTime += elapsed;
+    shaderAccum += elapsed;
 
-    if (FlxG.save.data.FireShader)
-        if (frameRate % Std.int(FlxG.save.data.FrameRateFireShader) == 0 && fire_Sprite.visible) shader_fire.iTime = time_Elapsed;
+   
+    if (FlxG.save.data.FireShader && fire_Sprite.visible) {
+        var targetFPS = Std.int(FlxG.save.data.FrameRateFireShader);
+        if (targetFPS <= 0) targetFPS = 60;
+        var updateInterval = 1 / targetFPS; 
+
+        if (shaderAccum >= updateInterval) {
+            shaderAccum = 0;
+            shader_fire.iTime = shaderTime;
+        }
+    }
 
     gumballCamera.focusOn(FlxG.camera.scroll);
     gumballCamera.angle = FlxG.camera.angle;
@@ -156,8 +169,6 @@ function onDadHit() {
 }
 
 function onPlayerHit() {
-
-    // "showComboNum.text != Std.string(combo)" is needed in case this is repeated with sustain notes or multiple notes at the same time
     if (combo > 0 && combo % 50 == 0 && showComboNum.text != Std.string(combo)) {
         var globosNum = FlxG.random.int(10, 20);
         for (i in 0...globosNum) {
@@ -166,26 +177,37 @@ function onPlayerHit() {
             globos[i].velocity.y = FlxG.random.int(-150, -350);
         }
 
-        showComboNum.text = combo;
+        showComboNum.text = Std.string(combo);
         showComboNum.x = -showComboNum.width;
         showComboTxt.x = -showComboTxt.width;
-        FlxTween.tween(showComboNum, { x: (FlxG.width - showComboNum.width) / 2 - 20 }, 0.5, { ease: FlxEase.quadOut,  onComplete: (_) -> {
-            moveComboNum = true;
-            new FlxTimer().start(2.5, (_) -> {
-                moveComboNum = false;
-                FlxTween.tween(showComboNum, { x: FlxG.width }, 0.5, { ease: FlxEase.quadIn });
-            });
-        }});
 
-        FlxTween.tween(showComboTxt, { x: (FlxG.width - showComboTxt.width) / 2 - 14 }, 0.5, { startDelay: 0.3, ease: FlxEase.quadOut, onComplete: (_) -> {
-            moveComboText = true;
-            new FlxTimer().start(2, (_) -> {
-                moveComboText = false;
-                FlxTween.tween(showComboTxt, { x: FlxG.width }, 0.5, { ease: FlxEase.quadIn });
-            });
-        }});
+        FlxTween.tween(showComboNum, { x: (FlxG.width - showComboNum.width) / 2 - 20 }, 0.5, {
+            ease: FlxEase.quadOut,
+            onComplete: (_) -> {
+                moveComboNum = true;
+                new FlxTimer().start(2.5, (_) -> {
+                    moveComboNum = false;
+                    FlxTween.tween(showComboNum, { x: FlxG.width }, 0.5, { ease: FlxEase.quadIn });
+                });
+            }
+        });
+
+        FlxTween.tween(showComboTxt, { x: (FlxG.width - showComboTxt.width) / 2 - 14 }, 0.5, {
+            startDelay: 0.3,
+            ease: FlxEase.quadOut,
+            onComplete: (_) -> {
+                moveComboText = true;
+                new FlxTimer().start(2, (_) -> {
+                    moveComboText = false;
+                    FlxTween.tween(showComboTxt, { x: FlxG.width }, 0.5, { ease: FlxEase.quadIn });
+                });
+            }
+        });
+
+        trace("globos event");
     }
 }
+
 
 function onCameraMove()
 {

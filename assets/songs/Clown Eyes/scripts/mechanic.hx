@@ -38,11 +38,15 @@ function postCreate() {
     darwingDraw.screenCenter();
     darwingDraw.y += 1000;
     darwingDraw.scale.set(0.5, 0.5);
-    darwingDraw.camera = camHUD;
+    darwingDraw.camera = camOverlay;
     insert(members.indexOf(strumLines) + 10,darwingDraw);
 
     healthBarBG.x += 150;
     healthBar.x += 150;
+    if (get_downscroll()) {
+        barr_mechanic_.y += 70;
+        barr_mechanicBG.y += 70;
+    }
 }
 
 function onDadHit(event) {
@@ -59,8 +63,7 @@ function postUpdate(elapsed:Float) {
     if (!FlxG.save.data.clownMechanic) return;
 
     if (curStep > 0 && activeMechanic) {
-        trace("time space: " + Std.int(TIME_SPACEPRESSED) + " | Ansiedad: " + TOTAL_ANXIETY);
-
+       
         if (spaceCooldown > 0)
             spaceCooldown -= elapsed;
 
@@ -95,11 +98,14 @@ function postUpdate(elapsed:Float) {
         }
 
         if (TOTAL_ANXIETY >= MAX_ANXIETY) {
-            health = FlxMath.lerp(health, -0.1, 0.005);
+            health = FlxMath.lerp(health, -0.1, 0.007);
         }
 
         var anxietyRatio:Float = FlxMath.bound(TOTAL_ANXIETY / MAX_ANXIETY, 0, 1);
         updateValueBars(anxietyRatio);
+    }else{
+
+        darwingDraw.y = FlxMath.lerp(darwingDraw.y, 1020, 0.1);
     }
     for (item in [barr_mechanic_, barr_mechanicBG])
         item.alpha = healthBar.alpha;
