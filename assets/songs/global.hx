@@ -305,7 +305,7 @@ function _tweenAlphaOnStr(alpha:Null<Float>, strId:Int, str:StrumLine, tweenTime
 }
 
 public static function changeSpeedAngleCamera(speed:String) {
-	speedAngle = Std.float(speed);
+	//speedAngle = Std.float(speed);
 }
 
 public static function desactivateZoom(){
@@ -335,7 +335,7 @@ public function deFadeCam(){
 }
 
 var video = new FlxVideoSprite(0, 0);
-var videoStartTime:Float = -1; // ← NUEVO
+var videoStartTime:Float = -1;
 
 function preLoadVideo(path:String) {
     video.load(Assets.getBytes(Paths.video(path)));
@@ -354,7 +354,7 @@ function preLoadVideo(path:String) {
     if (video.bitmap != null) {
         video.bitmap.onEndReached.add(function() {
             video.destroy();  
-            videoStartTime = -1; // ← reinicia sincronización
+            videoStartTime = -1;
         });
     }
 
@@ -363,7 +363,7 @@ function preLoadVideo(path:String) {
 
 public static function playVideo() {
     video.play();
-    videoStartTime = Conductor.songPosition / 1000; // ← marca el tiempo de inicio
+    videoStartTime = Conductor.songPosition / 1000; 
 }
 
 var activeCroma:Bool = false;

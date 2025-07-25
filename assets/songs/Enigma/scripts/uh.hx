@@ -7,6 +7,11 @@ function postCreate() {
     iconP2.color = CoolUtil.getColorFromDynamic('#000000');
 
 
+     var rightColor:Int = boyfriend != null && boyfriend.visible && boyfriend.iconColor != null && Options.colorHealthBar ? boyfriend.iconColor : 0xFF000000;
+    healthBar.createFilledBar(FlxColor.BLACK,rightColor);
+    healthBar.updateBar();
+
+
     angleCamera = false;
    
 }
@@ -75,6 +80,11 @@ public static function showShits(){
     strumLines.members[0].characters[0].color = CoolUtil.getColorFromDynamic('#FFFFFF');
     strumLines.members[0].characters[1].color = FlxColor.fromRGB(161, 170, 199);
     iconP2.color = CoolUtil.getColorFromDynamic('#FFFFFF');
+
+    var leftColor:Int = dad != null && dad.visible && dad.iconColor != null && Options.colorHealthBar ? dad.iconColor : 0xFF000000;
+    var rightColor:Int = boyfriend != null && boyfriend.visible && boyfriend.iconColor != null && Options.colorHealthBar ? boyfriend.iconColor : 0xFF000000;
+    healthBar.createFilledBar(leftColor, rightColor);
+    healthBar.updateBar();
 
 }
 var bfTrailEffectActive:Bool = false;

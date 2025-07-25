@@ -43,7 +43,9 @@ var plataform_2:FlxSprite;
 var mononoise:Character;
 var rocks:FlxTypedGroup<FlxSprite>;
 var blur:CustomShader = new CustomShader("blur");
-
+var old_Bg:FlxSprite;
+var viggn:FlxSprite;
+var viggn2:FlxSprite;
 function create(){
  
     isTransition = _isTransition = false;
@@ -141,6 +143,20 @@ function create(){
             var mike = strumLines.members[2].characters[0];
             mike.visible = false;
 
+            old_Bg = new FlxSprite().loadGraphic(Paths.image("stages/alley/alley"));
+            old_Bg.visible = false;
+            insert(members.indexOf(gf), old_Bg);
+            strumLines.members[2].characters[3].visible = false;
+
+            
+            viggn = new FlxSprite().loadGraphic(Paths.image("stages/alley/shading"));
+            insert(members.indexOf(boyfriend) + 1,viggn);   
+            
+            viggn2 = new FlxSprite().loadGraphic(Paths.image("stages/alley/shading"));
+            viggn2.flipX = true;
+            insert(members.indexOf(boyfriend) + 1,viggn2);    
+
+            viggn.visible = viggn2.visible = false;
         case "Enigma" | "enigma":
             var mike = strumLines.members[2].characters[0];
             mike.cameraOffset.set(-550,200);
@@ -223,7 +239,36 @@ function create(){
     comboGroup.x += 800;
     comboGroup.y += 100;
 }
+public static function showOldBG()
+{
+    old_Bg.visible = true;
+    filter_.visible = false;
+    filter_2.visible = false;
 
+    strumLines.members[0].characters[1].visible = false;
+    strumLines.members[1].characters[1].visible = false;
+    strumLines.members[2].characters[3].visible = true;
+    strumLines.members[2].characters[1].visible = false;
+    strumLines.members[2].characters[2].visible = false;
+    viggn.visible = viggn2.visible = true;
+    blur.effectiveness = 0.5;
+    camGame.addShader(blur);
+
+}
+public static function hideOldBG()
+{
+    old_Bg.visible = false;
+    filter_.visible = true;
+    filter_2.visible = true;
+    viggn.visible = viggn2.visible = false;
+    camGame._filters = [];
+
+    strumLines.members[0].characters[1].visible = true;
+    strumLines.members[1].characters[1].visible = true;
+    strumLines.members[2].characters[3].visible = false;
+    strumLines.members[2].characters[1].visible = true;
+    strumLines.members[2].characters[2].visible = true;   
+}
 function postCreate(){
     camGame.zoom =  defaultCamZoom;
 }
@@ -238,51 +283,97 @@ public static function changeBG(){
     var mike = strumLines.members[2].characters[0];
     remove(mike);
 
-    var gf = strumLines.members[2].characters[1];
-    remove(gf);
 
-    var gf_s = strumLines.members[2].characters[2];
-    remove(gf_s);
+    if (!FlxG.save.data.Shadows){
+        var dad = strumLines.members[0].characters[1];
+        var boyfriend = strumLines.members[1].characters[1];
+        var gf = strumLines.members[2].characters[2];
 
-    var bf_s = strumLines.members[1].characters[1];
-    remove(bf_s);
+        remove(gf);
 
-    var dad_s = strumLines.members[0].characters[1];
-    remove(dad_s);
 
-    dad.alpha = 1;
-    dad.color = FlxColor.WHITE;
+        dad.setPosition(500,900);
 
-    dad.flipX = false;
-    dad.angle = 0;
-    dad.cameraOffset.y += 900;
-    dad.y += 490;
+        dad.cameraOffset.y += 700;
+        dad.cameraOffset.x += 150;
 
-    dad.setPosition(500,900);
-    dad.cameraOffset.y += 90;
-    boyfriend.setPosition(2350,900);
-    boyfriend.cameraOffset.y += 4000;
-    boyfriend.cameraOffset.x += 200;
+        boyfriend.setPosition(2350,900);
 
+        boyfriend.cameraOffset.y -= 300;
+        boyfriend.cameraOffset.x -= 1500;
+
+        dad.alpha = 1;
+        dad.color = FlxColor.WHITE;
+    }
+    else{
+
+        var gf = strumLines.members[2].characters[1];
+        remove(gf);
+
+        var gf_s = strumLines.members[2].characters[2];
+        remove(gf_s);
+     
+        var bf_s = strumLines.members[1].characters[1];
+        remove(bf_s);
+
+        var dad_s = strumLines.members[0].characters[1];
+        remove(dad_s);
+
+
+        dad.flipX = false;
+        dad.angle = 0;
+
+        dad.setPosition(500,900);
+        dad.cameraOffset.y += 1500;
+        dad.cameraOffset.x += 200;
+      
+     
+        boyfriend.setPosition(2350,900);
+        boyfriend.cameraOffset.y += 3000;
+        boyfriend.cameraOffset.x += 450;
+        
+        dad.alpha = 1;
+        dad.color = FlxColor.WHITE;
+
+    }
     comboGroup.x += 450;
     comboGroup.y += 250;
 }
 
 public static function mononoiseVisible(){
-    var mononoise = strumLines.members[3].characters[0];
-    mononoise.y = dad.y + 100;
-    mononoise.x += 150;
-    mononoise.visible = true;
+    if (!FlxG.save.data.Shadows){
+        var dad = strumLines.members[0].characters[1];
+        var mononoise = strumLines.members[3].characters[0];
+        mononoise.y = dad.y + 50;
+        mononoise.x += 550;
+        mononoise.visible = true;
+    }
+    else
+    {
+        var mononoise = strumLines.members[3].characters[0];
+        mononoise.y = dad.y + 50;
+        mononoise.x += 550;
+        mononoise.visible = true;
+
+    }
+   
 
     var strum =  strumLines.members[3]; 
     strum.visible = true;
 
-    FlxTween.tween(time_Txt,{x: time_Txt.x - 400},Conductor.stepCrochet / 1000 * 10,{ease:FlxEase.circInOut});
+    //FlxTween.tween(time_Txt,{x: time_Txt.x - 400},Conductor.stepCrochet / 1000 * 10,{ease:FlxEase.circInOut});
     for (notes in [0,1,2,3]) {
-        var strum  = strumLines.members[3].members[notes];
-        strum.x += 150;
-        strum.y += 250;
-        strum.alpha = 0.55;
+        if (!FlxG.save.data.Shadows){
+         var strum  = strumLines.members[3].members[notes];
+         strum.x += 550;
+         strum.y += 710;
+         strum.alpha = 0.55;
+        }else{
+            var strum  = strumLines.members[3].members[notes];
+            strum.x += 550;
+            strum.y += 710;
+            strum.alpha = 0.55;
+        }
 
 
         var strumSplatty = strumLines.members[0];
@@ -296,11 +387,11 @@ public static function mononoiseVisible(){
         strum.y = 120;
         strum.scrollFactor.set(1, 1);
         strum.x += 1005;
-        strum.y += 750;
+        strum.y += 650;
 
 
-        var strumPlayer = strumLines.members[1].members[notes];
-        FlxTween.tween(strumPlayer,{x: strumPlayer.x -300},Conductor.stepCrochet / 1000 * 10,{ease:FlxEase.circInOut});
+        //var strumPlayer = strumLines.members[1].members[notes];
+        //FlxTween.tween(strumPlayer,{x: strumPlayer.x -300},Conductor.stepCrochet / 1000 * 10,{ease:FlxEase.circInOut});
 
     }
     for (shit in strumLines.members[0].notes)  {
@@ -340,7 +431,9 @@ function beatHit() {
         }
     }
 }
+var time:Float = 0;
 function postUpdate(elapsed:Float){
+    time += elapsed;
   
     isRight = (curCameraTarget == 0) ? false : true;
     _isRight = isRight;
@@ -356,6 +449,9 @@ function postUpdate(elapsed:Float){
         _previousFocus = _isRight;
         if (!_isRight) changeAnimMike(1);
         if (_isRight) changeAnimMike(0);
+    }
+    if (blur != null){
+        blur.iTime = time;
     }
 
 }

@@ -58,7 +58,14 @@ function onEvent(_) {
     var params:Array = _.event.params;
     if (_.event.name == "Change Character") {
         // Change Character
-        var oldCharacter = strumLines.members[params[0]].characters[0];
+        var oldCharacter;
+        oldCharacter = strumLines.members[params[0]].characters[0];
+
+        if (!FlxG.save.data.Shadows) {
+            trace("esto esta funcionando");
+            oldCharacter = strumLines.members[params[0]].characters[1];
+        }
+
         var newCharacter = preloadedCharacters.get(params[1]);
         if (oldCharacter.curCharacter == newCharacter.curCharacter) return;
 
