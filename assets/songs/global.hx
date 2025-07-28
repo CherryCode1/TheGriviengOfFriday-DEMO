@@ -223,6 +223,7 @@ function postUpdate() {
 		var desyncThreshold = 35; 
 		var difference = Math.abs(expected - songPosition);
 		if (difference >= desyncThreshold) {
+			trace("sincronizando de nuevo");
 			PlayState.instance.resyncVocals();
 		}
 		Conductor.songPosition = expected;
