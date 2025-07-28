@@ -10,7 +10,8 @@ var cumB:FlxSprite;
 var platafor1:FlxSprite;
 var platafor2:FlxSprite;
 var platafor3:FlxSprite;
-
+var lamp:FlxSprite;
+var logo:FlxSprite;
 var _timerTrans:FlxTimer; 
 var _isTransition:Bool = false;
 static var _isDancing:Bool = false;
@@ -32,6 +33,8 @@ function create()
     floor.scrollFactor.set(1,1);
     floor.scale.set(0.9,0.85);
     insert(members.indexOf(gf),floor);
+
+  
 
     yellow = new FlxSprite(-530, -100).loadGraphic(Paths.image("stages/copycat/yellow"));
     yellow.scrollFactor.set(0.85,1);
@@ -59,6 +62,11 @@ function create()
     bg.scale.set(0.85,0.85);
     insert(members.indexOf(gf),bg);
 
+    lamp = new FlxSprite(-720, -100).loadGraphic(Paths.image("stages/copycat/lamp"));
+    lamp.scrollFactor.set(1,1);
+    lamp.scale.set(0.9,0.85);
+    insert(members.indexOf(gf), lamp);
+
     sofa = new FlxSprite(-780, -100).loadGraphic(Paths.image("stages/copycat/sofa"));
     sofa.scrollFactor.set(1,1);
     sofa.scale.set(0.9,0.85);
@@ -68,6 +76,11 @@ function create()
     sofaFG.scrollFactor.set(1.4,1.4);
     sofaFG.scale.set(1,0.85);
     insert(members.indexOf(boyfriend)+1,sofaFG);
+
+    logo = new FlxSprite(860,350).loadGraphic(Paths.image("logos/sany"));
+    logo.scale.set(0.4,0.4);
+    logo.camera = camHUD;
+    add(logo);
  
     comboGroup.setPosition(550,700);
     FlxG.camera.zoom = defaultCamZoom = 0.75;
@@ -130,6 +143,7 @@ public function hideChichiStage()
     platafor1.visible = true;
     platafor2.visible = true;
     platafor3.visible = true;
+    lamp.visible = false;
 }
 
 public function showChichiStage()
@@ -142,4 +156,5 @@ public function showChichiStage()
     platafor1.visible = false;
     platafor2.visible = false;
     platafor3.visible = false;
+    lamp.visible = true;
 }

@@ -215,6 +215,19 @@ function destroy(){
 
 var camerasFixed:Bool = false;
 function postUpdate() {    
+   
+	if (curStep > 0){
+
+		var expected = FlxG.sound.music.time;
+		var songPosition = Conductor.songPosition;
+		var desyncThreshold = 35; 
+		var difference = Math.abs(expected - songPosition);
+		if (difference >= desyncThreshold) {
+			PlayState.instance.resyncVocals();
+		}
+		Conductor.songPosition = expected;
+	}
+
 	if (iconP1 != null && iconP2 != null) {
 		for (icon in [iconP1,iconP2])
 			icon.scale.set( FlxMath.lerp(icon.scale.x,1,0.1), FlxMath.lerp(icon.scale.y,1,0.1));
@@ -225,9 +238,19 @@ function postUpdate() {
            lerp(score_Txt.scale.x,1,0.1),
 		   lerp(score_Txt.scale.y,1,0.1)
 		);
-        if (score_Txt != null)
-        score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + 
-        "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+		if (score_Txt != null){
+			if (PlayState.SONG.meta.name == "Miracle" || PlayState.SONG.meta.name == "miracle"){
+				if (curStep >=  2034 && curStep < 2609) score_Txt.text = "句読点: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   失敗: "  + misses + "   失敗: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+				else score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+				
+			}else{
+				score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+			}
+
+		}
+		
+       
+      
     }
 
     if(paused && video != null) video.pause();
