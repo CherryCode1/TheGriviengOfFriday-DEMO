@@ -1,17 +1,50 @@
 import funkin.backend.util.CoolUtil;
 
+var fragie:FlxSprite;
+var _hide:Bool = true;
+var fragieOnCooldown:Bool = false;
+var stepCooldown:Int = 60; 
+var lastFragieStep:Int = -stepCooldown; 
+var randomTimeAparition:Int;
+var fragieAlreadyAppeared:Bool = false;
+
 function postCreate() {
     strumLines.members[0].characters[1].color = CoolUtil.getColorFromDynamic('#08080a');
     iconP2.color = CoolUtil.getColorFromDynamic('#000000');
 
 
-     var rightColor:Int = boyfriend != null && boyfriend.visible && boyfriend.iconColor != null && Options.colorHealthBar ? boyfriend.iconColor : 0xFF000000;
+    var rightColor:Int = boyfriend != null && boyfriend.visible && boyfriend.iconColor != null && Options.colorHealthBar ? boyfriend.iconColor : 0xFF000000;
     healthBar.createFilledBar(FlxColor.BLACK,rightColor);
     healthBar.updateBar();
 
-
     angleCamera = false;
-   
+
+    fragie = new FlxSprite(-150,600);
+    fragie.frames = Paths.getSparrowAtlas("stages/alley/Fragie");
+    fragie.animation.addByPrefix("Idle","Idle",24,true);
+    fragie.animation.addByPrefix("aparition","aparition",24,false);
+    fragie.animation.addByPrefix("desaparece","desaparece",24,false);
+    fragie.camera = camOverlay;
+    add(fragie);
+
+    fragie.visible = false;
+    randomTimeAparition = FlxG.random.int(600,1000);
+}
+
+function fragieEvent(hide:Bool) {
+    trace("fragie hide:" + hide);
+    fragie.offset.set(FlxG.random.int(-150,-200),350);
+    fragie.animation.play(hide ? "desaparece" : "aparition");
+    fragie.visible = true;
+
+    fragie.animation.finishCallback = function(name:String) {
+            switch(name){
+                case "desaparece": fragie.visible = false;
+                case "aparition":  fragie.animation.play("Idle");
+                fragie.offset.set(-165,290);
+
+            }
+    }
 }
 
 public static function changeGf(){
@@ -49,6 +82,7 @@ public static function changeGf(){
 
     strumLines.members[2].characters[1] = newCharacter;
 }
+
 public static function showShits(){
     healthBar.visible = true;
     healthBarBG.visible = true;
@@ -63,12 +97,24 @@ public static function showShits(){
 
 }
 
-function stepHit(){
+function stepHit() {
+  
+    if (!fragieAlreadyAppeared && curStep > randomTimeAparition && curStep % 20 == 0) {
+        if (FlxG.random.bool(35)) {
+            fragieAlreadyAppeared = true;
+            fragieEvent(false); 
+
+            new FlxTimer().start(20, function(_) {
+                fragieEvent(true);
+            });
+        }
+    }
+
     if (curStep >= 1039) {
         comboGroup.cameras = [camHUD];
         comboGroup.screenCenter();
         comboGroup.x -= 100;
         comboGroup.y += 100;
-        boyfriend.cameraOffset.set(600,1000);
+        boyfriend.cameraOffset.set(600, 1000);
     }
 }

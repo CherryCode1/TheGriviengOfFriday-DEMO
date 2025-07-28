@@ -7,7 +7,7 @@ import flixel.text.FlxTextAlign;
 import flixel.util.FlxAxes;
 import openfl.display.BlendMode;
 
-var items:Array<String> = ["resume", "restart", "options", "exit"];
+var options:Array<String> = ["resume", "restart", "options", "exit"];
 var offsetHand_:Array<Float> = [-25, 100, 200, 300];
 
 //fake enum, you get it by now
@@ -16,6 +16,7 @@ final CharacterPortrait:T = {
 	DISCARDED: 1,
 	MIRACLE_STAR: 8,
 	GRIEVING_CANON: 3,
+	MURDER: 4,
 	THE_KIDS: 9,
 	THE_JOY: 2,
 	PIBBY: 7,
@@ -24,6 +25,11 @@ final CharacterPortrait:T = {
 	XPLOSHI: 10
 };
 
+final charPortraitImages:Array<String> = [
+	"gumball", "discarded", "the-joy", "the-grievieng",
+	"murder", "punished", "clown", "pibby", "chichi", "13_years",
+	"gumball_normal"
+];
 var pauseCam:FlxCamera = new FlxCamera();
 
 var menu_items:Array<FlxSprite> = [];
@@ -46,6 +52,7 @@ var prevSuffix:String;
 
 var timeGame = PlayState.instance.curStep;
 var color:FlxColor = FlxColor.BLACK;
+
 function create(event) {
 	//Initialize
 	event.cancel(); 
@@ -99,11 +106,11 @@ function create(event) {
 	board.screenCenter();
 	add(board);
 
-	for(i in 0...items.length) {
+	for(i in 0...options.length) {
 		var item:FlxSprite = new FlxSprite();
 		item.frames = Paths.getSparrowAtlas('menus/pause/OptionSHEETZ');
-		item.animation.addByPrefix('static', items[i] + '0', 24, false);
-		item.animation.addByPrefix('select', items[i]+ '_select', 24, false);
+		item.animation.addByPrefix('static', options[i] + '0', 24, false);
+		item.animation.addByPrefix('select', options[i]+ '_select', 24, false);
 		item.animation.play('static');
 		item.scale.set(0.55, 0.55);
 		item.updateHitbox();
@@ -115,7 +122,8 @@ function create(event) {
 		menu_items.push(item);
 	}
 
-	portait = new FlxSprite(0, 0, getChar());
+
+	portait = new FlxSprite(0, 0, getRenderChar());
 	switch(curChar) {
 		case CharacterPortrait.THE_GRIEVING | CharacterPortrait.DISCARDED:
 			portait.scale.set(1.15,1.15);
@@ -195,34 +203,27 @@ function create(event) {
 
 	canDoShit = true;
 }
-
-final charPortraitImages:Array<String> = [
-	"gumball", "discarded", "the-joy", "the-grievieng",
-	"murder", "punished", "clown", "pibby", "chichi", "13_years",
-	"gumball_normal"
-];
-function getChar() {
+function getRenderChar() {
 	final songs:Array<String> = getSongs();
-	//trace(songs);
-
+	
 	switch(PlayState.SONG.meta.name) {
-		case 'Loss' | "Grieving" | "Denial" | "My Amazing Sadness": curChar = CharacterPortrait.THE_GRIEVING;
-		case "Mistery" | "Enigma": curChar = CharacterPortrait.DISCARDED;
-		case "Miracle": curChar = CharacterPortrait.MIRACLE_STAR;
-		case "The Grieving": curChar = CharacterPortrait.GRIEVING_CANON;
-		case "13 Years": curChar = CharacterPortrait.THE_KIDS;
-		case "Cherophobia": curChar = CharacterPortrait.THE_JOY;
-		case "My Doll": curChar = CharacterPortrait.PIBBY;
-		case "Punished": curChar = CharacterPortrait.CASTIGADO;
-		case "Clown Eyes": curChar = CharacterPortrait.PROCRASTINATION;
-		case "Affiliation": curChar = CharacterPortrait.XPLOSHI;
+		case 'Loss' ,"loss", "Grieving" ,"grivieng", "Denial","denial" , "My Amazing Sadness","my amazing sadness": curChar = CharacterPortrait.THE_GRIEVING;
+		case "Mistery" ,"mistery", "Enigma","enigma": curChar = CharacterPortrait.DISCARDED;
+		case "Miracle", "miracle": curChar = CharacterPortrait.MIRACLE_STAR;
+		case "The Grieving", "the grieving": curChar = CharacterPortrait.GRIEVING_CANON;
+		case "13 Years", "13 years": curChar = CharacterPortrait.THE_KIDS;
+		case "Cherophobia", "cherophobia": curChar = CharacterPortrait.THE_JOY;
+		case "My Doll" , "My doll": curChar = CharacterPortrait.PIBBY;
+		case "Punished", "punished": curChar = CharacterPortrait.CASTIGADO;
+		case "Clown Eyes", "clown eyes": curChar = CharacterPortrait.PROCRASTINATION;
+		case "Affiliation", "affiliation": curChar = CharacterPortrait.XPLOSHI;
+		case "Murder", "murder": curChar = CharacterPortrait.MURDER;
 	}
   
   return Paths.image('menus/pause/characters/' + charPortraitImages[curChar]);
 }
 
 function update(elapsed) {
-	for(opt in items) var target:Float = ((opt.ID == curSelected) ? 1 : 0.9);
 
 	if(canDoShit){
 		hand2.y = lerp(hand2.y, offsetHand_[curSelected],0.2);
@@ -230,7 +231,7 @@ function update(elapsed) {
 		if (controls.DOWN_P) changeSelection(1, false);
 		if (controls.UP_P) changeSelection(-1);
 		if (controls.ACCEPT) {
-			final option = items[curSelected];
+			var option = options[curSelected];
 			canDoShit = false;
 
 			if(blockedOptions.contains(option)) {
@@ -261,8 +262,8 @@ function changeSelection(change){
 
 	curSelected += change;
 
-	if (curSelected < 0) curSelected = items.length - 1;
-	if (curSelected >= items.length) curSelected = 0;
+	if (curSelected < 0) curSelected = options.length - 1;
+	if (curSelected >= options.length) curSelected = 0;
 
 	for (i in 0...menu_items.length) {
 		if(i == curSelected) menu_items[i].animation.play("select");

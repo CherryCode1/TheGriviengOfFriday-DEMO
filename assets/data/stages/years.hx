@@ -1,7 +1,13 @@
+import flixel.util.FlxGradient;
 var image:FlxSprite;
 var iconDarwin:HealthIcon;
+var anais:FlxSprite;
+
+var gradient:FlxGradient;
 function create() {
-    FlxG.camera.bgColor = FlxColor.WHITE;
+
+    FlxG.camera.bgColor = FlxColor.fromRGB(255,255,255);
+    
 
     noteSkin = "default";
     splashSkin = "default";  
@@ -10,6 +16,12 @@ function create() {
 }
 
 function postCreate(){
+    anais = new FlxSprite(800,250);
+    anais.frames = Paths.getSparrowAtlas("stages/17bucks/Anais17");
+    anais.animation.addByPrefix("Idle","IdleA",24,false);
+    anais.animation.play("Idle");
+    insert(members.indexOf(gf),anais);
+
     iconDarwin = new HealthIcon(gf.getIcon(),false);
     iconDarwin.camera = camHUD;
     iconDarwin.visible = false;
@@ -42,6 +54,9 @@ function postCreate(){
     }
     
     comboGroup.x += 1300;
+}
+function beatHit(){
+    if (curBeat % 4 == 0)   anais.animation.play("Idle");
 }
 function onNoteHit(event){
     if (event.note.isSustainNote) return;

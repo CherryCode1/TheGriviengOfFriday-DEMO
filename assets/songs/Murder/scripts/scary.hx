@@ -18,5 +18,6 @@ function stepHit()
         case 1408:
             scary = false;
             angleVar = 2;
+        case 1678: camGame.visible = false;
     }
 }

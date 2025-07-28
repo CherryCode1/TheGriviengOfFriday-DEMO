@@ -5,4 +5,5 @@
 	<anim name="singRIGHT" anim="Right" x="-36" y="-76" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="Down" x="11" y="-167" fps="24" loop="false"/>
 	<anim name="singUP" anim="Up" x="-47" y="189" fps="24" loop="false"/>
+	<anim name="anim o si o si" anim="Alt" x="5" y="-1" fps="24" loop="false" indices="0..19"/>
 </character>

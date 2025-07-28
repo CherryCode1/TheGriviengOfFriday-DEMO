@@ -29,7 +29,7 @@ var lockers:FlxSprite;
 var luz:FlxSprite;
 var shade:FlxSprite;
 var shit:FlxTween;
-var yoshi:FlxSprite;
+public var yoshi:FlxSprite;
 
 var filter_:FlxSprite = new FlxSprite().makeGraphic(FlxG.width,FlxG.height,FlxColor.fromRGB(15, 28, 48));
 var filter_2:FlxSprite = new FlxSprite().makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);

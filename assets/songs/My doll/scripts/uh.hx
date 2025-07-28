@@ -79,13 +79,39 @@ function stepHit(){
          
         case 308:   setWarpCroma("1.0");
         case 396:   setWarpCroma("2.0");
-        case 830:
-            setCamZoom(-1, false);
+       // case 830:setCamZoom(-1, false); ???
         case 384:
             blackie.alpha = 0.6;
         case 472:
-            FlxTween.tween(blackie, {alpha: 0}, 0.8, {ease: FlxEase.quartInOut});    
+            FlxTween.tween(blackie, {alpha: 0}, 0.8, {ease: FlxEase.quartInOut});   
+        case 1151:  for (stage in bg_sprites_P) {
+            FlxTween.color(stage, 1.0, stage.color, FlxColor.BLACK);
+        }
+
+        for (colorsChars in [boyfriend,dad,gf]) {
+            colorsChars.shader = null;
+            FlxTween.tween(colorsChars,{
+                "colorTransform.redOffset": 255,
+                "colorTransform.greenOffset": 255,
+                "colorTransform.blueOffset": 255,
+                "colorTransform.alphaOffset": 1,
+
+                "colorTransform.redMultiplier": 255,
+                "colorTransform.greenMultiplier": 255,
+                "colorTransform.blueMultiplier": 255,
+                "colorTransform.alphaMultiplier": 0
+            },1);
+
+        }
         case 1408:
+            for (stage in bg_sprites_P) {
+                stage.color = FlxColor.WHITE;
+            }
+
+            for (colorsChars in [boyfriend,dad,gf]) {
+                colorsChars.colorTransform = null;
+            }
+
             camGame.alpha = 0;
         case 1424:
             camGame.alpha = 1;   

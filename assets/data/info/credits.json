@@ -57,7 +57,7 @@
     {
       "name": "Angel [Owner]",
       "image": "Angel",
-      "fun_text": "",
+      "fun_text": "Esperense 5 años para la v1",
       "position": {"x": 850, "y": 280},
       "scale": 0.28,
       "angle": 0,
@@ -292,7 +292,7 @@
 		{
 		  "name": "NightmareXoNIX",
       "image": "xonixactordevoz",
-		  "fun_text": "actor de voz si sisisisi",
+		  "fun_text": "alwk y walker me la pelan",
       "position": {"x":500, "y": 305},
       "scale": 0.28,
       "angle": 0,
