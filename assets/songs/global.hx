@@ -255,14 +255,14 @@ function destroy(){
 var camerasFixed:Bool = false;
 function postUpdate() {   
 
-    if (songStarted && timeBarr != null && songLength > 0) {
+    if (songStarted && timeBarr != null && songLength > 0 && !paused) {
      var curTime:Float = Math.max(0, Conductor.songPosition);
-     var ratio:Float = FlxMath.bound(curTime / songLength, 0, 1); // Normaliza entre 0 y 1
+     var ratio:Float = FlxMath.bound(curTime / songLength, 0, 1); 
 
      timeBarr.scale.x = ratio;
      timeBarr.updateHitbox();
     }
-	if (curStep > 0){
+	if (curStep > 0 && !paused){
 
 		var expected = FlxG.sound.music.time;
 		var songPosition = Conductor.songPosition;
@@ -272,7 +272,7 @@ function postUpdate() {
 			trace("sincronizando de nuevo");
 			PlayState.instance.resyncVocals();
 		}
-		Conductor.songPosition = expected;
+		//Conductor.songPosition = expected;
 	}
 
 	if (iconP1 != null && iconP2 != null) {

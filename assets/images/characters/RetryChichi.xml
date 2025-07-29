@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="RetryChichi.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="retry0000" x="0" y="0" width="199" height="102" frameX="-3" frameY="-195" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0001" x="0" y="0" width="199" height="102" frameX="-3" frameY="-195" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0002" x="199" y="0" width="374" height="180" frameX="0" frameY="-108" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0003" x="573" y="0" width="501" height="258" frameX="-8" frameY="-13" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0004" x="573" y="0" width="501" height="258" frameX="-8" frameY="-13" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0005" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0006" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0007" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0008" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0009" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0010" x="1074" y="0" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0011" x="0" y="269" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0012" x="507" y="269" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0013" x="1014" y="269" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0014" x="1521" y="269" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0015" x="0" y="538" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0016" x="507" y="538" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0017" x="1014" y="538" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0018" x="1521" y="538" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0019" x="0" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0020" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0021" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0022" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0023" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0024" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0025" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0026" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0027" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry0028" x="507" y="807" width="507" height="269" frameX="-9" frameY="0" frameWidth="516" frameHeight="297"/>
+	<SubTexture name="retry confirm0000" x="1014" y="807" width="507" height="269"/>
+	<SubTexture name="retry confirm0001" x="1521" y="807" width="507" height="269"/>
+	<SubTexture name="retry confirm0002" x="1521" y="807" width="507" height="269"/>
+	<SubTexture name="retry confirm0003" x="0" y="1076" width="507" height="269"/>
+	<SubTexture name="retry confirm0004" x="507" y="1076" width="507" height="269"/>
+	<SubTexture name="retry confirm0005" x="1014" y="1076" width="507" height="269"/>
+	<SubTexture name="retry confirm0006" x="1521" y="1076" width="507" height="269"/>
+	<SubTexture name="retry confirm0007" x="0" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0008" x="507" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0009" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0010" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0011" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0012" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0013" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0014" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0015" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0016" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0017" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0018" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0019" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0020" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0021" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0022" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0023" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0024" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0025" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0026" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0027" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0028" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0029" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0030" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0031" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0032" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0033" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0034" x="1014" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0035" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0036" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0037" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry confirm0038" x="1521" y="1345" width="507" height="269"/>
+	<SubTexture name="retry loop0000" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0001" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0002" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0003" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0004" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0005" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0006" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0007" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0008" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0009" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0010" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0011" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0012" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0013" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0014" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0015" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0016" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0017" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0018" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0019" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0020" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0021" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0022" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0023" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0024" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0025" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0026" x="1521" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0027" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0028" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0029" x="1014" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0030" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0031" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0032" x="0" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0033" x="507" y="1614" width="507" height="269"/>
+	<SubTexture name="retry loop0034" x="507" y="1614" width="507" height="269"/>
+</TextureAtlas>

@@ -19,12 +19,12 @@ function postCreate() {
 
     angleCamera = false;
 
-    fragie = new FlxSprite(-150,600);
+    fragie = new FlxSprite(-250,640);
     fragie.frames = Paths.getSparrowAtlas("stages/alley/Fragie");
     fragie.animation.addByPrefix("Idle","Idle",24,true);
     fragie.animation.addByPrefix("aparition","aparition",24,false);
     fragie.animation.addByPrefix("desaparece","desaparece",24,false);
-    fragie.camera = camOverlay;
+    fragie.scrollFactor.set(1,1.1);
     add(fragie);
 
     fragie.visible = false;
@@ -33,7 +33,7 @@ function postCreate() {
 
 function fragieEvent(hide:Bool) {
     trace("fragie hide:" + hide);
-    fragie.offset.set(FlxG.random.int(-150,-200),350);
+    fragie.offset.set(0,0);
     fragie.animation.play(hide ? "desaparece" : "aparition");
     fragie.visible = true;
 
@@ -41,7 +41,7 @@ function fragieEvent(hide:Bool) {
             switch(name){
                 case "desaparece": fragie.visible = false;
                 case "aparition":  fragie.animation.play("Idle");
-                fragie.offset.set(-165,290);
+                fragie.offset.set(-5,-50);
 
             }
     }
@@ -99,16 +99,16 @@ public static function showShits(){
 
 function stepHit() {
   
-    if (!fragieAlreadyAppeared && curStep > randomTimeAparition && curStep % 20 == 0) {
-        if (FlxG.random.bool(35)) {
-            fragieAlreadyAppeared = true;
+    switch(curStep){
+        case 200: 
             fragieEvent(false); 
 
-            new FlxTimer().start(20, function(_) {
+            new FlxTimer().start(15, function(_) {
                 fragieEvent(true);
             });
-        }
+        
     }
+  
 
     if (curStep >= 1039) {
         comboGroup.cameras = [camHUD];

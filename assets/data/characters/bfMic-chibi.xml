@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character x="100" y="325" sprite="Chibi-BFMic" flipX="true" camx="-150" camy="50" isPlayer="true" icon="bfmic" color="#4A5258" holdTime="7.3" isGF="false">
+<character x="100" y="325" sprite="Chibi-BFMic" flipX="true" camx="-150" camy="50" isPlayer="true" icon="bfmic" color="#4A5258" gameOverChar="bf-chichi-bouble-gameover" holdTime="7.3" isGF="false">
 	<anim name="idle" anim="Idle" x="-300" y="10" fps="24" loop="false"/>
 	<anim name="singLEFT" anim="Left0" x="-118" y="5" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="Down0" x="-299" y="4" fps="24" loop="false"/>

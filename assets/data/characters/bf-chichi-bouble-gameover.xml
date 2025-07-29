@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="RetryChichi" x="400" y="-200" flipX="true" camy="250" camx="-100" isPlayer="true" icon="Rockfriend" color="#6A6774" gameOverChar="bf-rock-gameover" holdTime="4.2" camY="400" isGF="false">
+	<anim name="firstDeath" anim="retry0" x="-18" y="20" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="retry loop0" x="-27" y="20" fps="24" loop="true"/>
+	<anim name="deathConfirm" anim="retry confirm0" x="-27" y="20" fps="24" loop="false"/>
+</character>

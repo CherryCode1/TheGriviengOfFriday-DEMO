@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="BF_Mic_Dead" flipX="true" camx="100" isPlayer="true" icon="Rockfriend" color="#6A6774" gameOverChar="bf-rock-gameover" holdTime="4.2" camY="400" isGF="false">
+	<anim name="deathLoop" anim="Dead_loop" x="-27" y="20" fps="24" loop="true"/>
+	<anim name="deathConfirm" anim="Dead_confirm" x="162" y="20" fps="24" loop="false"/>
+</character>

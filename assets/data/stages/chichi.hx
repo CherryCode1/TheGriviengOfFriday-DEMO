@@ -84,6 +84,7 @@ function create()
  
     comboGroup.setPosition(550,700);
     FlxG.camera.zoom = defaultCamZoom = 0.75;
+    GameOverSubstate.script = "data/substates/GameOverSubstate-miracle";
 }
 
 function postCreate(){

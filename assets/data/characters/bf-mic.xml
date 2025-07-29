@@ -1,11 +1,12 @@
-<character x="100"  y="330" camx="-300" camy="50" icon="bfmic" flipX="true" color="#4A5258" isGF="false" scale="0.85" isPlayer="true" gameOverChar="" holdTime="7.3" sprite="Mic_BF">
-<anim x="0" y="0" fps="24" name="idle" anim="Idle" loop="false" />
-<anim x="112" y="-5" fps="24" name="singLEFT" anim="Left0" loop="false" />
-<anim x="11" y="-6" fps="24" name="singDOWN" anim="Down0" loop="false" />
-<anim x="15" y="26" fps="24" name="singUP" anim="Up0" loop="false" />
-<anim x="4" y="0" fps="24" name="singRIGHT" anim="Right0" loop="false" />
-<anim x="107" y="-4" fps="24" name="singLEFTmiss" anim="Left Miss" loop="false" />
-<anim x="15" y="-18" fps="24" name="singDOWNmiss" anim="Down Miss" loop="false" />
-<anim x="7" y="24" fps="24" name="singUPmiss" anim="Up Miss" loop="false" />
-<anim x="-48" y="-13" fps="24" name="singRIGHTmiss" anim="Right Miss" loop="false" />
+<!DOCTYPE codename-engine-character>
+<character x="100" y="330" sprite="Mic_BF" scale="0.85" flipX="true" camx="-300" camy="50" isPlayer="true" icon="bfmic" color="#4A5258" gameOverChar="bf-chichi-bouble-gameover" holdTime="7.3" isGF="false">
+	<anim name="idle" anim="Idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="Left0" x="112" y="-5" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Down0" x="11" y="-6" fps="24" loop="false"/>
+	<anim name="singUP" anim="Up0" x="15" y="26" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Right0" x="4" y="0" fps="24" loop="false"/>
+	<anim name="singLEFTmiss" anim="Left Miss" x="107" y="-4" fps="24" loop="false"/>
+	<anim name="singDOWNmiss" anim="Down Miss" x="15" y="-18" fps="24" loop="false"/>
+	<anim name="singUPmiss" anim="Up Miss" x="7" y="24" fps="24" loop="false"/>
+	<anim name="singRIGHTmiss" anim="Right Miss" x="-48" y="-13" fps="24" loop="false"/>
 </character>
