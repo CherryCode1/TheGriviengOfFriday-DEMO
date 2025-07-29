@@ -113,11 +113,11 @@
       {
         "name": "Alex [Owner]",
         "image": "alex",
-        "fun_text": "",
+        "fun_text": "Este mod me vio nacer, crecer y morir",
         "position": {"x": 850, "y": 300},
         "scale": 0.28,
         "angle":0,
-        "twitter": null,
+        "twitter": "https://x.com/AlexDraw_",
         "youtube": null,
         "isMain": true
       }
@@ -283,7 +283,7 @@
         "position": {"x": 880 , "y": 250},
         "scale": 0.3,
         "angle": 0,
-        "twitter": null,
+        "twitter": "https://x.com/ratinastudio",
         "youtube": null,
         "isMain": true
       }
