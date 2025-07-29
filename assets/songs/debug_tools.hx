@@ -5,16 +5,12 @@ import funkin.editors.charter.Charter;
 import funkin.game.PlayState;
 
 public var curSpeed:Float = 1;
-static var curBotplay:Bool = true;
+static var curBotplay:Bool = false;
 static var devControlBotplay:Bool = true;
-static var hideHud = true;
 var curZoom:Float;
 function postCreate() curZoom = defaultCamZoom;
 
 function postUpdate() {
-    hide_HUD(hideHud);
-    if (startingSong || !canPause || paused || health <= 0) return;
-    if (FlxG.keys.justPressed.TAB) hideHud = !hideHud;
     
     if (FlxG.keys.justPressed.ONE && generatedMusic) endSong();
     if (FlxG.keys.justPressed.TWO) curSpeed -= 0.1;
@@ -43,14 +39,7 @@ function postUpdate() {
     if (FlxG.keys.justPressed.SEVEN)
         FlxG.switchState(new Charter(PlayState.SONG.meta.name, PlayState.difficulty, true));
 }
-function hide_HUD(visible_:Bool) { 
-    for (hud in hudAssets) 
-        hud.visible = visible_;
-    for (strum in strumLines)
-        strum.visible = visible_;
-    splashHandler.visible = visible_;
-    comboGroup.visible = visible_;
-}
+
 function onNoteHit(event) {
     if (!curBotplay || event.character != boyfriend) return;
     
