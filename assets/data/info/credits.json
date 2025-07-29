@@ -16,7 +16,7 @@
     {
       "name": "Robert",
       "image": "Rob",
-		  "fun_text": "",
+		  "fun_text": "nunca nos dijo que ponerle de descripcion :v",
       "position": {"x": 350, "y": 200},
       "scale": 0.2,
       "angle": 0,
@@ -56,7 +56,7 @@
     {
       "name": "Andrew",
       "image": "andrew",
-		  "fun_text": "i'm adrew .v",
+		  "fun_text": "I made Denial assets B)",
       "position": {"x": 550, "y": 420},
       "scale": 0.21,
       "angle": 0,
@@ -83,7 +83,7 @@
       {
         "name": "n4meless [Artist and Animator]",
         "image": "n4meless",
-        "fun_text": "",
+        "fun_text": "nada por aqui",
         "position": {"x": 150, "y":200},
         "scale": 0.2,
         "angle": -20,
@@ -93,7 +93,7 @@
       {
         "name": "Waze",
         "image": "waze",
-        "fun_text": "",
+        "fun_text": "nada por alla :v",
         "position": {"x":400 , "y":210},
         "scale": 0.24,
         "angle":0,
@@ -253,10 +253,11 @@
       {
         "name": "TheSans",
         "image": "sans",
-        "fun_text": "",
+        "fun_text": "Work done, gonna go take my nap now, really need my beauty sleep lol",
         "position": {"x": 640, "y":450},
         "scale": 0.2,
-        "angle": 10
+        "angle": 10,
+        "twitter": "https://x.com/TheSansTwitt3r?t=WhwoEqEfAcGZVdOlf8gtOQ&s=09"
       },
       {
         "name": "CherryCode",
@@ -278,12 +279,12 @@
       {
         "name": "Junky",
         "image": "junky",
-        "fun_text": "Mientras yo avanzo, ellos aún siguen dando vueltas en el mismo lugar",
+        "fun_text": "i was told to write a description, but i'm not sure what to put here! i voiced gumball hello like and subscribe",
         "position": {"x": 880 , "y": 250},
         "scale": 0.3,
         "angle": 0,
-        "twitter": "",
-        "youtube": "",
+        "twitter": null,
+        "youtube": null,
         "isMain": true
       }
     ]
