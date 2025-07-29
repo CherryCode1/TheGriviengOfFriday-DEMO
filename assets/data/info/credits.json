@@ -236,10 +236,18 @@
         "name": "Two ef",
         "image": "twoef",
         "fun_text": "No se como Byrox me hizo a entrar aquì",
-        "position": {"x": 480, "y": 400},
+        "position": {"x": 430, "y": 400},
         "scale": 0.25,
         "angle":0,
         "twitter": "https://x.com/TwoEf33"
+      },
+      {
+        "name": "TheSans",
+        "image": "sans",
+        "fun_text": "",
+        "position": {"x": 640, "y":450},
+        "scale": 0.2,
+        "angle": 10
       },
       {
         "name": "CherryCode",

@@ -1,7 +1,10 @@
 import funkin.backend.utils.DiscordUtil;
 
-function onGameOver() {
-	DiscordUtil.changePresence('Game Over', PlayState.SONG.meta.displayName + " (" + PlayState.difficulty + ")");
+
+
+function onGameOver() {	
+	var credits = getCredits(PlayState.SONG.meta.displayName); 
+	DiscordUtil.changePresence('Game Over', PlayState.SONG.meta.displayName + "["+  credits + "](" + PlayState.difficulty + ")");
 }
 
 function onDiscordPresenceUpdate(e) {
@@ -16,9 +19,10 @@ function onDiscordPresenceUpdate(e) {
 }
 
 function onPlayStateUpdate() {
+	var credits = getCredits(PlayState.SONG.meta.displayName); 
 	DiscordUtil.changeSongPresence(
 		PlayState.instance.detailsText,
-		(PlayState.instance.paused ? "Paused - " : "") + PlayState.SONG.meta.displayName + " (" + PlayState.difficulty + ")",
+		(PlayState.instance.paused ? "Paused - " : "") + PlayState.SONG.meta.displayName  + "["+  credits + "](" + PlayState.difficulty + ")",
 		PlayState.instance.inst,
 		PlayState.instance.getIconRPC()
 	);

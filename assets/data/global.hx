@@ -136,6 +136,7 @@ public static function getSongs() {
     
     return songArray;
 }
+
 public static function getWeeks(weekNum:Int = 0){
     var daWeek:Array<String> = [];
     if (isVoidWeek){
@@ -189,6 +190,25 @@ public static function getCredits() {
    
     return composers;
 }
+public static function getCredits(songName:String = null):Dynamic {
+    var composers:Map<String, String> = [];
+
+    if (isVoidWeek) {
+        for (i in 0...WeekDataOld.length)
+            for (j in 0...WeekDataOld[i].songs.length)
+                composers.set(WeekDataOld[i].songs[j].toLowerCase(), WeekDataOld[i].composers[j]);
+    } else {
+        for (i in 0...WeekData.length)
+            for (j in 0...WeekData[i].songs.length)
+                composers.set(WeekData[i].songs[j].toLowerCase(), WeekData[i].composers[j]);
+    }
+
+    if (songName != null)
+        return composers.get(songName.toLowerCase()) ?? "Desconocido";
+
+    return composers; 
+}
+
 public static function changePrefix(suffix:String){
     window_suffix = suffix;
     WindowUtils.resetTitle();
