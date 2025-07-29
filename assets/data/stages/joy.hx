@@ -176,6 +176,7 @@ function stepHit(){
         }
     }
 }
+
 public function GumballJoyPantalla() {
     gumaballecen.visible = true;
 }
