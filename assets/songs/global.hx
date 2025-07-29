@@ -1,3 +1,4 @@
+import flixel.util.FlxGradient;
 import flixel.math.FlxBasePoint;
 import funkin.backend.FunkinText;
 import flixel.util.FlxStringUtil;
@@ -19,9 +20,12 @@ public var dispHudInStart:Bool = true;
 public var distortion_Croma:Float = 0.0;
 public var score_Txt:FunkinText;
 public var time_Txt:FunkinText;
+public var timeBarr:FlxSprite;
+public var timeBarrBG:FlxSprite;
+public var timeBarrBG_2:FlxSprite;
 public var songStarted:Bool = false;
 public var respectMouseVisibility:Bool = false; //Determines if the cursor is hidden during a song -TBar
-
+public var timeBarrWidth:Float = 0;
 var healthBarBG_Offset:Array<Float> = [];
 var creditsArray:Array<String> = [];
 var songsArray:Array<String> = [];
@@ -35,24 +39,53 @@ function create() {
 
     score_Txt = new FunkinText(0, 0, FlxG.width, "Score: 0 Misses: 0 Accurracy:  % 0 [Fc]", 20, true);
     score_Txt.alignment = FlxTextAlign.CENTER;
-    //score_Txt.screenCenter(FlxAxes.X);
+    score_Txt.screenCenter(FlxAxes.X);
     score_Txt.camera = camHUD;
 	score_Txt.font = getFont("Gumball.ttf");
     score_Txt.borderSize = 1.4;
     if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") score_Txt.color = FlxColor.fromRGB(61, 122, 191);
-  
-    time_Txt = new FunkinText(0, 80, FlxG.width/2, "0:00", 30, true);
+    add(score_Txt);  
+
+
+
+    time_Txt = new FunkinText(0, 20, FlxG.width/2, "0:00", 30, true);
     time_Txt.alignment = FlxTextAlign.CENTER;
     time_Txt.screenCenter(FlxAxes.X);
+
     time_Txt.camera = camHUD;
 	time_Txt.font = getFont("Gumball.ttf");
     time_Txt.borderSize = 1.4;
 
     if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") time_Txt.color = FlxColor.fromRGB(61, 122, 191);
-    add(time_Txt);
+
+	
+	timeBarrBG_2 = new FlxSprite().makeGraphic(280,20,FlxColor.BLACK);
+	timeBarrBG_2.screenCenter(FlxAxes.X);
+	timeBarrBG_2.setPosition(510 ,25);
+	timeBarrBG_2.camera = camHUD;
+
+	timeBarrBG = new FlxSprite();
+	timeBarrBG = FlxGradient.createGradientFlxSprite(300, 30, [FlxColor.fromRGB(0,0,0)],1,-90);
+	timeBarrBG.screenCenter(FlxAxes.X);
+	timeBarrBG.setPosition(500 ,20);
+	timeBarrBG.camera = camHUD;
+	
+	
+	var colors:Array<FlxColor> = switch(PlayState.SONG.meta.name){
+		case "My Amazing Sadness", "my amazing sadness", "Grieving", "Grieving - old", "grieving",
+	     "Denial - old", "daniel", "denial", "Denial", "Loss", "loss","My doll", "My Doll": [FlxColor.fromRGB(57, 126, 204),FlxColor.fromRGB(43, 80, 122)];
+		case "Enigma", "enigma","Affiliation", "affiliation": [FlxColor.fromRGB(68, 137, 171),FlxColor.fromRGB(48, 98, 122)];
+	    case "Miracle": [FlxColor.fromRGB(214, 168, 103),FlxColor.fromRGB(150, 118, 72)];
+		case "Cherophobia": [FlxColor.fromRGB(86, 166, 184),FlxColor.fromRGB(156, 184, 86), FlxColor.fromRGB(86, 184, 163)];
+		default: [FlxColor.fromRGB(168, 168, 168),FlxColor.fromRGB(266,266,266)];
+	}
+	timeBarr = new FlxSprite();
+    timeBarr = FlxGradient.createGradientFlxSprite(280, 20, colors,1,90);
+	timeBarr.setPosition(timeBarrBG.x + 10, timeBarrBG.y + 5);
+	timeBarr.camera = camHUD;
+	timeBarrWidth = timeBarr.width;
 
     if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 years") healthBarDefault = true;
-
 
 }
 function getFont(key:String = "Gumball.ttf")
@@ -93,7 +126,11 @@ function postCreate() {
    
 	if (PlayState.instance.isStoryMode) trace(PlayState.instance.storyPlaylist);
 
-    add(score_Txt);
+    insert(0, time_Txt);
+	insert(members.indexOf(time_Txt), timeBarrBG);
+	insert(members.indexOf(timeBarrBG) + 1,timeBarrBG_2);
+    insert(members.indexOf(timeBarrBG) + 2,timeBarr);
+
 
     for (i in [0,1,2,3]) {
         var strum = strumLines.members[0].members[i];
@@ -135,7 +172,9 @@ function postCreate() {
 
     FlxG.game.addShader(warpCroma_Shader);
 }
-	 
+public function changeColorTimeBarr(colors:Array<FlxColor>){
+    timeBarr = FlxGradient.createGradientFlxSprite(280, 20, colors,1,90);
+}
 function getBarrPath():Void{
     var path:String = "default";
 	switch(PlayState.SONG.meta.name){
@@ -214,8 +253,15 @@ function destroy(){
 }
 
 var camerasFixed:Bool = false;
-function postUpdate() {    
-   
+function postUpdate() {   
+
+    if (songStarted && timeBarr != null && songLength > 0) {
+     var curTime:Float = Math.max(0, Conductor.songPosition);
+     var ratio:Float = FlxMath.bound(curTime / songLength, 0, 1); // Normaliza entre 0 y 1
+
+     timeBarr.scale.x = ratio;
+     timeBarr.updateHitbox();
+    }
 	if (curStep > 0){
 
 		var expected = FlxG.sound.music.time;
@@ -283,14 +329,11 @@ function onGameOver(e) if(PlayState.chartingMode) e.cancel();
 // BACKEND //
 
 public static function updateHudAssets() {
-	//if (hudAssets != null) return;
     hudAssets = [];
-/*
-for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt,leftBar,rightBar,new_healBarBG,circle,corashon]) 
+
+	for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt,timeBarr,timeBarrBG,timeBarrBG_2]) 
 		if(item != null && item.exists) hudAssets.push(item);
-*/
-	for(item in [iconP1, iconP2, healthBar, healthBarBG, healthBarBG_1, score_Txt, time_Txt]) 
-		if(item != null && item.exists) hudAssets.push(item);
+
 }
 
 public static function dispHud(show:Bool, instant:Bool = false, tweenTime:Float = 1,strumsDisp:Bool = true) {
