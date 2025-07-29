@@ -5,8 +5,46 @@ var intensityBloom:Float = 0.1;
 var sizeBlur:Float = 0;
 var bg:FlxSprite = new FlxSprite();
 var bg1:FlxSprite = new FlxSprite();
+var simian:FlxSprite = new FlxSprite();
+var gumaballecen:FlxSprite = new FlxSprite();
+var scene2:FlxSprite = new FlxSprite();
+var scene1:FlxSprite = new FlxSprite();
 
 function create() {
+    simian = new FlxSprite(0,0);
+    simian.frames = Paths.getSparrowAtlas("stages/joy/Miss-Simian");
+    simian.animation.addByPrefix("ada","simian idle",24,true);
+    simian.animation.play("ada");
+    simian.camera = camOverlay;
+    simian.scale.set(1.2,1.2);
+    simian.alpha = 0;
+    simian.screenCenter();
+    add(simian);
+
+    gumaballecen.loadGraphic(Paths.image("stages/joy/Ecenaguball"));
+    gumaballecen.scale.set(0.5,0.5);
+    gumaballecen.screenCenter();
+    gumaballecen.camera = camHUD;
+    gumaballecen.visible = false;
+    gumaballecen.screenCenter();
+    add(gumaballecen);
+
+    scene1.loadGraphic(Paths.image("stages/joy/Ecena1"));
+    scene1.scale.set(0.5,0.5);
+    scene1.camera = camHUD;
+    scene1.screenCenter();
+    scene1.visible = false;
+    scene1.screenCenter();
+    add(scene1);
+
+    scene2.loadGraphic(Paths.image("stages/joy/Ecena2"));
+    scene2.scale.set(0.5,0.5);
+    scene2.screenCenter();
+    scene2.camera = camHUD;
+    scene2.visible = false;
+    scene2.screenCenter();
+    add(scene2);
+
     bg1.loadGraphic(Paths.image("stages/joy/piso"));
     bg1.scale.set(0.7,0.7);
     bg1.scrollFactor.set(0.9,1);
@@ -90,7 +128,6 @@ function postCreate(){
     add(camara_);
 
     for (uh in overlay_Sprites) uh.visible =false;
-    time_Txt.visible = false;
     //strumLines.members[0].camera = camGame;
     boyfriend.cameraOffset.y = 170;
    // defaultHudZoom = 0.9;
@@ -139,6 +176,23 @@ function stepHit(){
         }
     }
 }
+public function GumballJoyPantalla() {
+    gumaballecen.visible = true;
+}
+
+public function Escena1() {
+    scene1.visible = true;
+    gumaballecen.visible = false;
+}
+public function Escena2() {
+    scene2.visible = true;
+    scene1.visible = false;
+    gumaballecen.visible = false;
+}
+
+public function ShowSimian() {
+    FlxTween.tween(simian, {alpha: 0.4}, 1,{ease:FlxEase.circInOut});
+}
 
 function postUpdate(){
     camHUD.alpha = camHUD.alpha;
@@ -156,8 +210,8 @@ public function showBG(){
     dad.cameraOffset.x -= 700;
 
     strumLines.members[1].characters[1].x += 250;
-    strumLines.members[1].characters[1].cameraOffset.y = -500;
-    strumLines.members[0].characters[1].cameraOffset.x -= 550;
+    strumLines.members[1].characters[1].cameraOffset.y = -530;
+    strumLines.members[0].characters[1].cameraOffset.x -= 540;
 
     strumLines.members[1].characters[0].visible = true;
     strumLines.members[0].characters[0].visible = true;

@@ -53,7 +53,16 @@
       "twitter": "https://x.com/g4_two2",
       "youtube": null
     },
-       
+    {
+      "name": "Andrew",
+      "image": "andrew",
+		  "fun_text": "i'm adrew .v",
+      "position": {"x": 550, "y": 420},
+      "scale": 0.21,
+      "angle": 0,
+      "twitter": "https://x.com/andrew_flas",
+      "youtube": null
+    },
     {
       "name": "Angel [Owner]",
       "image": "Angel",
@@ -265,7 +274,19 @@
   },
   {
     "section": "voice_actor",
-    "credits": []
+    "credits": [
+      {
+        "name": "Junky",
+        "image": "junky",
+        "fun_text": "Mientras yo avanzo, ellos aún siguen dando vueltas en el mismo lugar",
+        "position": {"x": 880 , "y": 250},
+        "scale": 0.3,
+        "angle": 0,
+        "twitter": "",
+        "youtube": "",
+        "isMain": true
+      }
+    ]
   },
 	{
     "section": "chroms_maker",

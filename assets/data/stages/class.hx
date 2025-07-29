@@ -465,7 +465,6 @@ function update(elapsed:Float){
          
         }
         if (curStep == 1760){
-            time_Txt.alpha = 0;
             for (strum in cpuStrums){
                 FlxTween.tween(strum,{alpha:0},0.01);
                

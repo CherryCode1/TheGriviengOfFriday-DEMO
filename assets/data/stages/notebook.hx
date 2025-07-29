@@ -35,7 +35,6 @@ function postCreate() {
 	paperBF.y = 2000;
 	paperGF.y = 2000;
 
-	time_Txt.visible = false;
 	camGame.zoom = defaultCamZoom = 0.6; //idk why it's not setting this in the stage xml :sob:
 
 	for(strum in cpuStrums) strum.visible = false;
@@ -47,8 +46,8 @@ public function showPapers() {
 	paperGF.angle = 90;
 	for (papers in [paperBF,paperGF]){
 		FlxTween.tween(papers, {y: -280,angle: 0},1.4,{ease:FlxEase.circInOut,onComplete: function(){
-			new FlxTimer().start(1, function(t:FlxTimer) {
-				FlxTween.tween(papers, {y: 2000}, 2,{ease:FlxEase.circInOut});
+			new FlxTimer().start(0.4, function(t:FlxTimer) {
+				FlxTween.tween(papers, {y: 2000}, 0.6,{ease:FlxEase.circInOut});
 			});
 		}});
 	}
