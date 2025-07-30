@@ -5,13 +5,14 @@ function postCreate(){
 
     dad.cameraOffset.x += 100;
 
-
     songCard.frames = Paths.getSparrowAtlas("songsIntro/13Years");
     songCard.animation.addByPrefix("anim","songCardLoop",24,false);
     songCard.screenCenter();
     songCard.camera = camHUD;
     songCard.scale.set(0.6,0.6);
     add(songCard);
+    
+    GameOverSubstate.script = "data/substates/GameOverSubstate-years";
 }
 
 function onStartSong(){

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="shucky.png" width="5203" height="5039">
+	<SubTexture name="Muere0000" x="665" y="3677" width="656" height="439" frameX="-101" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0001" x="1324" y="3677" width="656" height="439" frameX="-101" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0002" x="1646" y="2351" width="757" height="439" frameX="-0" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0003" x="2763" y="1" width="439" height="746" rotated="true" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0004" x="2763" y="750" width="439" height="746" rotated="true" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0005" x="2406" y="2351" width="746" height="439" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0006" x="2736" y="1499" width="439" height="746" rotated="true" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0007" x="1" y="2815" width="746" height="439" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0008" x="750" y="2815" width="746" height="439" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0009" x="1499" y="2793" width="746" height="439" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0010" x="3205" y="1" width="439" height="745" rotated="true" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0011" x="2248" y="2793" width="746" height="439" frameX="-11" frameY="-63" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0012" x="1" y="1" width="964" height="502" frameX="-11" frameY="-0" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0013" x="1" y="506" width="964" height="502" frameX="-11" frameY="-0" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0014" x="968" y="1" width="469" height="919" rotated="true" frameX="-11" frameY="-33" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0015" x="1" y="1011" width="919" height="469" frameX="-11" frameY="-33" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0016" x="1" y="1483" width="825" height="430" frameX="-11" frameY="-72" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0017" x="829" y="1483" width="825" height="430" frameX="-11" frameY="-72" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0018" x="1866" y="1" width="432" height="821" rotated="true" frameX="-11" frameY="-71" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0019" x="1866" y="825" width="432" height="821" rotated="true" frameX="-11" frameY="-71" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0020" x="1" y="1916" width="820" height="460" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0021" x="1" y="1916" width="820" height="460" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0022" x="824" y="1916" width="819" height="459" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0023" x="2301" y="1" width="459" height="819" rotated="true" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0024" x="2301" y="823" width="432" height="819" rotated="true" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0025" x="1646" y="1916" width="819" height="432" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0026" x="1" y="2379" width="819" height="433" frameX="-11" frameY="-70" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0027" x="923" y="1011" width="828" height="434" frameX="-11" frameY="-69" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0028" x="1440" y="1" width="423" height="834" rotated="true" frameX="-11" frameY="-82" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0029" x="823" y="2379" width="788" height="360" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0030" x="3205" y="749" width="414" height="745" rotated="true" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0031" x="3205" y="1497" width="414" height="745" rotated="true" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0032" x="2205" y="3235" width="728" height="408" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0033" x="3647" y="1" width="408" height="728" rotated="true" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0034" x="3178" y="2245" width="417" height="733" rotated="true" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0035" x="1" y="3257" width="733" height="417" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0036" x="737" y="3257" width="731" height="417" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0037" x="1471" y="3257" width="731" height="417" frameX="-11" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0038" x="3622" y="749" width="430" height="716" rotated="true" frameX="-26" frameY="-132" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0039" x="2936" y="3235" width="664" height="423" frameX="-78" frameY="-139" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0040" x="3622" y="2145" width="417" height="673" rotated="true" frameX="-68" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0041" x="3622" y="1468" width="417" height="674" rotated="true" frameX="-68" frameY="-145" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0042" x="3955" y="3955" width="652" height="460" frameX="-90" frameY="-102" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0043" x="1" y="4578" width="652" height="460" frameX="-90" frameY="-102" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0044" x="3603" y="2821" width="445" height="661" rotated="true" frameX="-81" frameY="-117" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0045" x="1" y="3677" width="661" height="445" frameX="-81" frameY="-117" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0046" x="2205" y="3661" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0047" x="2864" y="3661" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0048" x="4058" y="1" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0049" x="4058" y="660" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0050" x="4055" y="1319" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0051" x="4051" y="1978" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0052" x="4508" y="1319" width="450" height="655" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0053" x="4051" y="2637" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0054" x="4051" y="3296" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0055" x="1" y="4125" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0056" x="660" y="4125" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0057" x="1319" y="4119" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0058" x="1978" y="4119" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0059" x="2637" y="4114" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0060" x="3296" y="4114" width="656" height="450" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0061" x="4511" y="1" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0062" x="4511" y="660" width="450" height="656" rotated="true" frameX="-86" frameY="-112" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0063" x="2997" y="2981" width="439" height="239" frameX="-302" frameY="-323" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0064" x="4504" y="3161" width="439" height="239" frameX="-302" frameY="-323" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="Muere0065" x="2997" y="2981" width="439" height="239" frameX="-302" frameY="-323" frameWidth="975" frameHeight="562"/>
+	<SubTexture name="MuereButRevive0000" x="4504" y="3403" width="439" height="238" frameX="-6" frameY="-14" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0001" x="4508" y="1977" width="451" height="234" frameX="-0" frameY="-18" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0002" x="4504" y="2214" width="451" height="234" frameX="-0" frameY="-18" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0003" x="4946" y="3518" width="246" height="420" rotated="true" frameX="-15" frameY="-6" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0004" x="4599" y="4769" width="412" height="252" frameX="-19" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0005" x="4599" y="4769" width="412" height="252" frameX="-19" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0006" x="3523" y="3723" width="422" height="243" frameX="-14" frameY="-9" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0007" x="4950" y="3093" width="243" height="422" rotated="true" frameX="-14" frameY="-9" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0008" x="4504" y="3644" width="439" height="238" frameX="-6" frameY="-14" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0009" x="1657" y="1649" width="439" height="238" frameX="-6" frameY="-14" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0010" x="3603" y="3485" width="443" height="235" frameX="-4" frameY="-17" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0011" x="4504" y="2923" width="443" height="235" frameX="-4" frameY="-17" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0012" x="2245" y="4572" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0013" x="2484" y="4572" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0014" x="2099" y="1649" width="439" height="236" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0015" x="2468" y="1888" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0016" x="4962" y="2211" width="236" height="438" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0017" x="2723" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0018" x="2962" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0019" x="3201" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0020" x="3440" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0021" x="3679" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0022" x="3918" y="4567" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0023" x="4610" y="3885" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0024" x="4610" y="4327" width="236" height="439" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0025" x="4157" y="4418" width="439" height="236" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0026" x="4157" y="4657" width="439" height="236" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0027" x="4958" y="2652" width="236" height="438" rotated="true" frameX="-6" frameY="-16" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0028" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0029" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0030" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0031" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0032" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0033" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereButRevive0034" x="4504" y="1978" width="1" height="1" frameX="-0" frameY="-0" frameWidth="451" frameHeight="253"/>
+	<SubTexture name="MuereLoop0000" x="4964" y="1" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0001" x="1779" y="4572" width="230" height="461" rotated="true" frameX="-1" frameY="-8" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0002" x="2012" y="4572" width="230" height="461" rotated="true" frameX="-1" frameY="-8" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0003" x="1319" y="4572" width="227" height="463" rotated="true" frameX="-0" frameY="-11" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0004" x="1549" y="4572" width="227" height="463" rotated="true" frameX="-0" frameY="-11" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0005" x="656" y="4578" width="230" height="459" rotated="true" frameX="-2" frameY="-8" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0006" x="889" y="4578" width="230" height="459" rotated="true" frameX="-2" frameY="-8" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0007" x="4504" y="2451" width="451" height="233" frameX="-6" frameY="-5" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0008" x="4504" y="2687" width="451" height="233" frameX="-6" frameY="-5" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0009" x="4964" y="443" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0010" x="4964" y="1" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0011" x="4964" y="885" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0012" x="4962" y="1327" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0013" x="4962" y="1769" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0014" x="4964" y="1" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+	<SubTexture name="MuereLoop0015" x="4964" y="1" width="238" height="439" rotated="true" frameX="-12" frameY="-0" frameWidth="463" frameHeight="239"/>
+</TextureAtlas>

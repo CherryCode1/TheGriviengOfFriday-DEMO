@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Gameover Years" flipX="true" icon="Rockfriend-17" color="#6A6774" isGF="false">
+	<anim name="firstDeath" anim="Muere0" x="0" y="0" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="MuereLoop" x="-221" y="-323" fps="24" loop="false"/>
+	<anim name="deathConfirm" anim="MuereButRevive" x="-227" y="-309" fps="24" loop="false"/>
+</character>
