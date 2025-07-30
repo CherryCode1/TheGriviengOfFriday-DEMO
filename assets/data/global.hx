@@ -203,10 +203,7 @@ public static function getCredits(songName:String = null):Dynamic {
                 composers.set(WeekData[i].songs[j].toLowerCase(), WeekData[i].composers[j]);
     }
 
-    if (songName != null)
-        return composers.get(songName.toLowerCase()) ?? "Desconocido";
-
-    return composers; 
+    return composers.get(songName.toLowerCase()); 
 }
 
 public static function changePrefix(suffix:String){

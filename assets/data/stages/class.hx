@@ -397,7 +397,7 @@ public static function gumballcolgado(){
      
     var sprite:FlxSprite = new FlxSprite(600,400);
     var pathThing;
-    if (probabilidad == 5){
+    if (FlxG.random.bool(5)){
         pathThing = "stages/class/la_mama_de_xonix_20250412214909";
         sprite.setPosition(550,300);
         sprite.loadGraphic(Paths.image(pathThing));
