@@ -76,7 +76,6 @@ function create(){
 
     creditsData = [];
     creditsData = daShitJson('info/credits');
-    trace(creditsData);
 
     bg = new FlxSprite().loadGraphic(Paths.image("menus/credits/background"));
     add(bg);
@@ -101,8 +100,6 @@ function create(){
     
     for (i in 0...creditsData.sections.length){
         if (creditsData == null) return;
-        trace("Section.. " + i);
-        
 
         var item = new FlxSprite().loadGraphic(Paths.image("menus/credits/section/" + creditsData.sections[i].section));
         item.scale.set(0.5,0.5);
@@ -388,17 +385,15 @@ if (!isBlinking) {
             }
             else
             {
-                  
-                if (!pressedInfo){
-                    
+                if (!pressedInfo){ 
                     var scale_ = scale_Credts[curSection][spriteCred.ID]; 
                     var shitLerp = lerp(spriteCred.scale.x, scale_, 0.1);
                     spriteCred.scale.set(shitLerp, shitLerp);
                 }
-               
-            }
 
-    
+                if(FlxG.mouse.justPressed && targetMove)
+                    hideInfo();
+            }
         }
     );
 

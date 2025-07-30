@@ -220,7 +220,6 @@ function pressedButt(thing){
             case 'Options':
                 FlxG.switchState(new ModState("LoadingScreen"));
                 _nextState_loading = OptionsMenu;
-             
             case 'Credits':
                 FlxG.switchState(new ModState("LoadingScreen"));
                 _nextState_loading = CreditsMain;

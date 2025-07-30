@@ -28,7 +28,7 @@ static var redirectStates:Map<FlxState, String> = [
     StoryMenuState => "MainMenuScreen",
     TitleState => "TitleMenu",
     FreeplayState => "FreeplayMenu",
-    CreditsMain =>"CreditsMenu"
+    CreditsMain => "CreditsMenu"
 ];
 public static var startedFreeplayMusic:Bool = false;
 public static var startedMenuMusic:Bool = false;

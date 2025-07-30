@@ -1,3 +1,5 @@
+import funkin.options.OptionsMenu;
+
 var blackScreen:FlxSprite = new FlxSprite().makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);
 var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("LOADING_SCREEN"));
 var barr:FlxSprite = new FlxSprite(0,700).makeGraphic(800,10,FlxColor.fromRGB(196, 18, 140));
@@ -26,6 +28,14 @@ function loading()
     new FlxTimer().start(0.65, ()-> {nextState();});
 }
 function nextState() {
-    if (_nextState_loading == ModState)   FlxG.switchState(new ModState("videoState"));
-    else   FlxG.switchState(new _nextState_loading());
+    switch(_nextState_loading)
+    {
+        case ModState:
+            FlxG.switchState(new ModState("videoState"));
+        case OptionsMenu:
+            FlxG.switchState(new _nextState_loading());
+            _nextState_loading = MainMenuState; //fix de pacotilla pero hace su trabajo igual
+        default:
+            FlxG.switchState(new _nextState_loading());
+    }
 }
