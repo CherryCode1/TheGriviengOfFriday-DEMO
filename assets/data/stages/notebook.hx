@@ -36,6 +36,7 @@ function postCreate() {
 	paperGF.y = 2000;
 
 	camGame.zoom = defaultCamZoom = 0.6; //idk why it's not setting this in the stage xml :sob:
+	GameOverSubstate.script = 'data/substates/GameOverSubstate-chihuahua';
 
 	for(strum in cpuStrums) strum.visible = false;
 	for(i in 0...4) playerStrums.members[i].x = 420 + (110 * i);
