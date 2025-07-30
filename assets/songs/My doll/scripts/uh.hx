@@ -84,13 +84,13 @@ function stepHit(){
             blackie.alpha = 0.6;
         case 472:
             FlxTween.tween(blackie, {alpha: 0}, 0.8, {ease: FlxEase.quartInOut});   
-        case 1151:  for (stage in bg_sprites_P) {
-            FlxTween.color(stage, 1.0, stage.color, FlxColor.BLACK);
-        }
-
-        for (colorsChars in [boyfriend,dad,gf]) {
-            colorsChars.shader = null;
-            FlxTween.tween(colorsChars,{
+        case 1151:  
+            for (stage in bg_sprites_P) {
+                FlxTween.color(stage, 1.0, stage.color, FlxColor.BLACK);
+            }
+            for (colorsChars in [boyfriend,dad,gf]) {
+                colorsChars.shader = null;
+                FlxTween.tween(colorsChars,{
                 "colorTransform.redOffset": 255,
                 "colorTransform.greenOffset": 255,
                 "colorTransform.blueOffset": 255,
@@ -99,10 +99,9 @@ function stepHit(){
                 "colorTransform.redMultiplier": 255,
                 "colorTransform.greenMultiplier": 255,
                 "colorTransform.blueMultiplier": 255,
-                "colorTransform.alphaMultiplier": 0
-            },1);
-
-        }
+                "colorTransform.alphaMultiplier": 1
+                },1);
+            }
         case 1408:
             for (stage in bg_sprites_P) {
                 stage.color = FlxColor.WHITE;
