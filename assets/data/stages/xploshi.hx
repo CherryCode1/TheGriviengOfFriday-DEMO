@@ -1,7 +1,6 @@
 var shader = new CustomShader("shader");
 function postCreate() {
-    camHUD.addShader(shader);
-    camGame.addShader(shader);
+    FlxG.game.addShader(shader);
   
     madfamily.visible = false;
     strumLines.members[1].characters[1].visible = false;
