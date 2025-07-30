@@ -1,8 +1,7 @@
 <!DOCTYPE codename-mod-options>
 <menu name= "The Grivieng Of Friday" desc = "change options!" >       
    <menu name="Mechanics" desc="Configure gameplay mechanics.">
-      <checkbox id="joyMechanic" name="The joy mechanic" desc="bla bla bla bla"/>
-	  <checkbox id="clownMechanic" name="the clown mechanic" desc="bla bla bla bla"/>
+	  <checkbox id="clownMechanic" name="the clown mechanic" desc="Your opponent will fill the bar when he sings, and if you don't press space to lower the bar, you will die."/>
    </menu>
    <menu name= "Graphics" desc = "Configure visual effects" >
    	<checkbox id="FireShader" name="Fire Shader" desc="fire ball!" />

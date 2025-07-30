@@ -208,19 +208,22 @@ function pressedButt(thing){
             
 				PlayState.isStoryMode = true;
                 
-                FlxG.switchState(new PlayState());
+                FlxG.switchState(new ModState("LoadingScreen"));
+                _nextState_loading = PlayState;
+                //FlxG.switchState(new PlayState());
             case 'Freeplay':
-                FlxG.switchState(new FreeplayState());
+                FlxG.switchState(new ModState("LoadingScreen"));
+                _nextState_loading = FreeplayState;
             case 'Extras':
-                FlxG.switchState(new FreeplayState());
+                FlxG.switchState(new ModState("LoadingScreen"));
+                _nextState_loading = OptionsMenu;
             case 'Options':
-                FlxG.switchState(new OptionsMenu());
+                FlxG.switchState(new ModState("LoadingScreen"));
+                _nextState_loading = OptionsMenu;
+             
             case 'Credits':
-                FlxG.switchState(new CreditsMain());
+                FlxG.switchState(new ModState("LoadingScreen"));
+                _nextState_loading = CreditsMain;
         }     
     });
-}
-
-function beatHit(curBeat:Int){
-    
 }

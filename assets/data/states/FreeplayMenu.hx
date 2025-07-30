@@ -520,15 +520,15 @@ function gotoPlayState() {
         PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
        
         if (WeekData[curWeek].songs[curSong] == "punished" || WeekData[curWeek].songs[curSong] == "Punished"){
-            FlxG.switchState(new ModState("videoState"));
+            FlxG.switchState(new ModState("LoadingScreen"));
+            _nextState_loading =  ModState;
             video_Path = "gumbalestascastigadopor";
             _nextState = PlayState;
         }
-        else if((WeekData[curWeek].songs[curSong] == "Clown Eyes" || WeekData[curWeek].songs[curSong] == "clown eyes") && FlxG.random.bool(5)) {
-            FlxG.switchState(new ModState('ClownEasterEgg'));
-        }
         else{
-            FlxG.switchState(new PlayState());
+            FlxG.switchState(new ModState("LoadingScreen"));
+            _nextState_loading = PlayState;
+          
         }
     }
 }

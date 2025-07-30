@@ -17,6 +17,7 @@ static var curMainMenuSelected:Int = 0;
 static var curStoryMenuSelected:Int = 0;
 public static var video_Path:String = "";
 public static var _nextState:FlxState;
+public static var _nextState_loading:FlxState;
 
 static var windowTitle:String = "The Grieving Of Friday";
 public static var window_suffix:String = "";
@@ -52,7 +53,9 @@ function new() {
     if (FlxG.save.data.BlurShade == null) FlxG.save.data.BlurShade = true;
     if (FlxG.save.data.GriviengShader == null) FlxG.save.data.GriviengShader = true;
     if (FlxG.save.data.Shadows == null) FlxG.save.data.Shadows = true;
- 
+
+    MusicBeatTransition.script = "data/scripts/transition";
+
 }
  
 function update(elapsed:Float){
@@ -73,10 +76,7 @@ function preStateSwitch() {
     
     WindowUtils.resetTitle();
    
-    #if !TGOF_BUILD
-    window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('iconOG'))));
-    #end
-
+  
     sprite_ = new FlxSprite().loadGraphic(Paths.image('mouse/default'));
     sprite_2 = new FlxSprite().loadGraphic(Paths.image('mouse/onHold'));
    

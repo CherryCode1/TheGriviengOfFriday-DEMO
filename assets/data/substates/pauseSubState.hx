@@ -1,3 +1,4 @@
+import funkin.options.OptionsMenu;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 import flixel.text.FlxTextBorderStyle;
@@ -282,7 +283,13 @@ function comeOnDoSomething(option:String) {
 			case "options": curSelected = 3;
 			case "exit": curSelected = 4;
 		}
-		selectOption();
+		if (option == "options"){
+			FlxG.switchState(new ModState("LoadingScreen"));
+            _nextState_loading = OptionsMenu;
+		}else{
+			selectOption();
+		}
+		
 	});
 }
 
