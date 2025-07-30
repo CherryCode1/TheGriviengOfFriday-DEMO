@@ -73,6 +73,8 @@ function stepHit()
 {
     switch(curStep)
     {
+        case 2228: for (strum in strumLines) for(char in strum.characters)
+                char.visible = false;
         case 2245:
             FlxTween.tween(intro_BG2, {alpha: 1}, 1,{ease:FlxEase.circInOut});   
         case 2260:

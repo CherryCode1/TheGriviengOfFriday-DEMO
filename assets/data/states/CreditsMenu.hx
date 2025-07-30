@@ -5,9 +5,10 @@ import flixel.util.FlxAxes;
 import flixel.text.FlxTextBorderStyle;
 import flixel.math.FlxBasePoint;
 import funkin.backend.utils.CoolUtil;
+import hxvlc.flixel.FlxVideoSprite;
 /**
 
- //Structure Json File -- uh maybe changes on release mod - Alan//
+ //Structure Json File - Cherry//
  
  {
  "sections": [
@@ -58,6 +59,16 @@ var nextBlinkTime;
 
 var breatheTween:FlxTween;
 
+var videoPlaying:Bool = false;
+var savedMusicTime:Float = 0;
+//funny things
+var byroxMeme:FlxSprite;
+var momxonix:FlxSprite;
+var yosoydios:FlxSprite;
+var okangel:FlxSprite;
+var cherry:FlxSprite;
+
+var video:FlxVideoSprite = new FlxVideoSprite();
 function create(){
    
 
@@ -136,13 +147,6 @@ function create(){
     textCredit.wordWrap = true;
     add(textCredit);
 
-
- 
-
-
-
-
-
     log_youtubbe = new FlxSprite(810,60).loadGraphic(Paths.image("menus/credits/youtube"));
     log_youtubbe.scale.set(0.5,0.5);
     log_youtubbe.color = FlxColor.fromRGB(64, 64, 64);
@@ -166,6 +170,55 @@ function create(){
 
     startBreatheTween();
 
+  
+    switch(creditsData.sections[curSection].section){
+        case "artist":  changeMusic("creditsState-AnimatorsStem");
+        case "animators": changeMusic("creditsState-AnimatorsStem");
+        case "musicians": changeMusic("creditsState-AnimatorsStem");
+        case "programmers": changeMusic("creditsState-CodersStem");
+        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
+        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
+        case "charters": changeMusic("creditsState-ChartersStem");
+    }
+
+    byroxMeme = new FlxSprite().loadGraphic(Paths.image("byrox"));
+    byroxMeme.screenCenter();
+    byroxMeme.scrollFactor.set(0,0);
+    add(byroxMeme);
+    byroxMeme.alpha = 0;
+
+    
+    momxonix = new FlxSprite().loadGraphic(Paths.image("lamamadexonix"));
+    momxonix.screenCenter();
+    momxonix.scrollFactor.set(0,0);
+    add(momxonix);
+    momxonix.alpha = 0;
+
+    yosoydios = new FlxSprite().loadGraphic(Paths.image("yosoydios"));
+    yosoydios.screenCenter();
+    yosoydios.scrollFactor.set(0,0);
+    yosoydios.alpha = 0;
+    add(yosoydios);
+
+
+    okangel = new FlxSprite().loadGraphic(Paths.image("angel"));
+    okangel.screenCenter();
+    okangel.scrollFactor.set(0,0);
+    okangel.alpha = 0;
+    add(okangel);
+
+    cherry = new FlxSprite().loadGraphic(Paths.image("cherriada"));
+    cherry.screenCenter();
+    cherry.scrollFactor.set(0,0);
+    cherry.alpha = 0;
+    cherry.scale.set(0.5,0.5);
+    add(cherry);
+
+
+  
+   
+    video.autoVolumeHandle = true;
+    add(video);
     particles = createParticles();
     for (sprites in [bg,overlay,light_,bg_section,decoration])
     {
@@ -174,16 +227,44 @@ function create(){
         sprites.screenCenter();
     }
 
+
     nextBlinkTime = FlxG.random.float(1.0, 2.5);
 
-      switch(creditsData.sections[curSection].section){
-        case "artist":  changeMusic("creditsState-AnimatorsStem");
-        case "animators": changeMusic("creditsState-AnimatorsStem");
-        case "musicians": changeMusic("creditsState-AnimatorsStem");
-        case "programmers": changeMusic("creditsState-CodersStem");
-        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
-        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
-        case "charters": changeMusic("creditsState-ChartersStem");
+}
+function playVideo(video_Path:String) {
+    if (FlxG.sound.music != null && FlxG.sound.music.playing) {
+        savedMusicTime = FlxG.sound.music.time;
+        FlxG.sound.music.pause();
+    }
+
+    video.load(Assets.getBytes(Paths.video(video_Path)));
+    video.autoVolumeHandle = true;
+    videoPlaying = true;
+
+    video.bitmap.onFormatSetup.add(() -> {
+        video.setGraphicSize(FlxG.width, FlxG.height);
+        video.scrollFactor.set(0, 0);
+        video.screenCenter();
+        video.bitmap.volume = 1;
+    });
+
+    video.bitmap.onEndReached.add(() -> {
+        endVideo();
+    });
+
+    video.play();
+    video.visible = true;
+}
+function endVideo() {
+    if (videoPlaying) {
+        video.destroy();
+        video.visible = false;
+        videoPlaying = false;
+
+        if (FlxG.sound.music != null) {
+            FlxG.sound.music.play();
+            FlxG.sound.music.time = savedMusicTime;
+        }
     }
 }
 
@@ -248,6 +329,10 @@ function update(elapsed:Float){
 
     particles.update();
    blinkTimer += elapsed;
+
+   if (videoPlaying && FlxG.keys.justPressed.ENTER) {
+    endVideo(); 
+   }
 
 if (!isBlinking) {
     if (blinkTimer >= nextBlinkTime) {
@@ -356,14 +441,17 @@ if (!isBlinking) {
     }
    
 }
+var currentMusic:String = "";
 
-function changeMusic(key:String) {
+function changeMusic(song:String, vol:Float = 1) {
+    if (currentMusic == song && FlxG.sound.music != null && FlxG.sound.music.playing)
+        return;
 
-    FlxG.sound.playMusic(Paths.music(key), 0);
-    FlxG.sound.music.fadeIn(4, 0, 0.7);
-	FlxG.sound.music.play();
-
+    currentMusic = song;
+    FlxG.sound.playMusic(Paths.music(song), vol);
 }
+
+
 
 function changeSection(uh:Int = 0){
     curSection = FlxMath.wrap(curSection + uh, 0, grpSection.length - 1);
@@ -407,6 +495,7 @@ function hideInfo() {
     for (shit in [log_twiiter,log_youtubbe]){
         FlxTween.color(shit, 1.0, shit.color, FlxColor.fromRGB(64, 64, 64));
     }
+   
     textCredit.text = "";
     FlxTween.tween(box_Info,{"scale.y": 0,alpha: 0}, 0.45, {ease:FlxEase.cubeInOut,onComplete: function(){
         pressedInfo = false;
@@ -440,8 +529,54 @@ function updateText() {
 
         changeMusic("creditsState-Main");
     }
-      
 
+
+    if (creditsData.sections[curSection].credits[curSelected].name == "Byrox"){
+
+        FlxG.sound.play(Paths.sound("nos-destruiran-a-todos-nos-destruiran-a-todos-_1_"));
+        FlxG.camera.shake(0.005,1);
+        FlxTween.tween(byroxMeme,{"scale.x": 2,"scale.y": 2,alpha: 1},1,{ease:FlxEase.backInOut,onComplete: function(){
+             FlxTween.tween(byroxMeme,{alpha: 0},2);
+        }});
+    }else if(creditsData.sections[curSection].credits[curSelected].name == "CherryCode"){
+        FlxG.sound.play(Paths.sound("yippee_"));
+        cherry.alpha = 1;
+        new FlxTimer().start(1, function(t:FlxTimer) {
+         FlxTween.tween(cherry,{alpha: 0},1,{ease:FlxEase.backInOut});
+        });
+
+
+    }else if(creditsData.sections[curSection].credits[curSelected].name == "NightmareXoNIX"){
+        FlxG.sound.play(Paths.sound("BOOM-sound-effect"));
+        FlxG.camera.shake(0.005,0.1);
+        FlxTween.tween(momxonix,{"scale.x": 1,"scale.y": 1,alpha: 1},1,{ease:FlxEase.backInOut,onComplete: function(){
+            new FlxTimer().start(1, function(t:FlxTimer) {
+                 FlxTween.tween(momxonix,{alpha: 0},2);
+            });
+            
+        }});
+
+    }else if (creditsData.sections[curSection].credits[curSelected].name == "Peppy"){
+        new FlxTimer().start(2, function(t:FlxTimer) {
+        FlxG.sound.play(Paths.sound("Sonic.exe-laugh"));
+        FlxG.camera.shake(0.005,0.1);
+        yosoydios.alpha = 1;
+          new FlxTimer().start(1, function(t:FlxTimer) {
+             FlxTween.tween(yosoydios,{alpha: 0},2);
+          });
+        });
+    }else if(creditsData.sections[curSection].credits[curSelected].name == "Angel [Owner]"){
+        FlxG.sound.play(Paths.sound("fart-sound"));
+        okangel.alpha = 1;
+        new FlxTimer().start(2, function(t:FlxTimer) {
+            FlxTween.tween(okangel,{y: okangel.y + 2000},3,{ease:FlxEase.sineInOut,onComplete: function(){
+                okangel.y -= 2000;
+                okangel.alpha = 0;
+            }});
+        });
+    }else if (creditsData.sections[curSection].credits[curSelected].name == "handy"){
+        playVideo("robachambas");
+    }
 
     var twitterCred:Bool = (creditsData.sections[curSection].credits[curSelected].twitter == null) ? false : true;
     var youtubeCred:Bool = (creditsData.sections[curSection].credits[curSelected].youtube == null) ? false : true;

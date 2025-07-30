@@ -1,0 +1,15 @@
+{
+	"opponentModeAllowed": false,
+	"difficulties": [
+		"HARD"
+	],
+	"icon": "face",
+	"parsedColor": -7179779,
+	"name": "Mistery - old",
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"displayName": "Mystery - old",
+	"beatsPerMeasure": 4,
+	"needsVoices": true,
+	"bpm": 141
+}

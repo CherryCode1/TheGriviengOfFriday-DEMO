@@ -4,7 +4,7 @@
 import funkin.editors.charter.Charter;
 import funkin.game.PlayState;
 
-public var enabled:Bool = false;
+public var enabled:Bool = true;
 
 public var curSpeed:Float = 1;
 static var curBotplay:Bool = false;

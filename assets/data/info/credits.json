@@ -262,12 +262,12 @@
       {
         "name": "CherryCode",
         "image": "cherry",
-        "fun_text": "programe casi todo la demo jejeje si hola",
+        "fun_text": "programe casi todo la demo jejeje si hola [tuve que arreglar la mayoria de bugs yo sola y la mayoria de cosas las implemente yo jeje]",
         "position": {"x": 900, "y": 300},
         "scale": 0.3,
         "angle":0,
         "twitter": "https://x.com/CherryCode_1",
-        "youtube": "https://www.youtube.com/@alansinCoder",
+        "youtube": "https://www.youtube.com/@cherrycode12",
         "isMain": true
 
       }

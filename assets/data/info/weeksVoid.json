@@ -1,11 +1,11 @@
 {
     "weeks": [
         {
-            "songs": ["The grieving - old", "Denial - old","Loss - old", "Mistery - old"],
+            "songs": ["Denial - old","Loss - old", "Mistery - old"],
             "image_key": "null", 
             "difficulties": "hard",
             "weekName": "The Void",
-            "composers": ["???","Diamantitos","Diamantitos","crie"]
+            "composers": ["Diamantitos","Diamantitos","crie"]
         }
     ]
 }
