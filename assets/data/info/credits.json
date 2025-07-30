@@ -245,12 +245,14 @@
         "angle": 0
       },
        {
-        "name": "T-bar",
+        "name": "T-Bar",
         "image": "tbar",
         "fun_text": "Yo thanks for playing the mod! It was really fun working on it. Be sure to check out Spongebob 2004 and stay tuned to see what's in store for the Grieving of Friday down the road!",
         "position": {"x": 150, "y": 420},
         "scale": 0.25,
-        "angle": 0
+        "angle": 0,
+		"twitter": "https://x.com/tbar27862",
+        "youtube": "https://www.youtube.com/@tbar7460"
       },
       {
         "name": "Two ef",

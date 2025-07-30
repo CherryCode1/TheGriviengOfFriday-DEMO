@@ -30,20 +30,22 @@ static var redirectStates:Map<FlxState, String> = [
     FreeplayState => "FreeplayMenu",
     CreditsMain => "CreditsMenu"
 ];
+
 public static var startedFreeplayMusic:Bool = false;
 public static var startedMenuMusic:Bool = false;
 public static var isVoidWeek:Bool = false;
-var sprite_:FlxSprite;
-var sprite_2:FlxSprite;
-
 public static var WeekData:Array<{songs:Array<String>, image_key:String, difficulties:String, weekName:String, isXml:Bool, numSongs:Int,composers:Array<String>}> = [];
 public static var WeekDataOld:Array<{songs:Array<String>, image_key:String, difficulties:String, weekName:String}> = [];
 
+var sprite_:FlxSprite;
+var sprite_2:FlxSprite;
+
 function new() {
-    Handle.init([]);
-    // confing Stuff
+	Handle.init([]);
+	// confing Stuff
 	modInfo = daShitJson('data');
 	windowTitle = Std.string(modInfo.title);
+
     // settings Mechanics
     if (FlxG.save.data.joyMechanic == null) FlxG.save.data.joyMechanic = true;
     if (FlxG.save.data.clownMechanic == null) FlxG.save.data.clownMechanic = true;
@@ -55,34 +57,30 @@ function new() {
     if (FlxG.save.data.Shadows == null) FlxG.save.data.Shadows = true;
 
     MusicBeatTransition.script = "data/scripts/transition";
-
 }
  
-function update(elapsed:Float){
+function update(elapsed:Float) {
     if (FlxG.mouse.pressed && FlxG.mouse.visible) {
         FlxG.mouse.load(sprite_2.pixels, 0.9, 1, -11);
     }
-
     if (FlxG.mouse.justReleased && FlxG.mouse.visible) {
         FlxG.mouse.load(sprite_.pixels, 0.9, 1, -11);
     }
-    if (FlxG.keys.justPressed.F5) FlxG.resetState();
-    if(FlxG.keys.justPressed.F11) FlxG.fullscreen = !FlxG.fullscreen;
+
+	if(FlxG.keys.justPressed.F5) FlxG.resetState();
+	if(FlxG.keys.justPressed.F11) FlxG.fullscreen = !FlxG.fullscreen;
 }
-   
 
 function preStateSwitch() {
     Framerate.codenameBuildField.text = '';
-    
     WindowUtils.resetTitle();
-   
-  
+
     sprite_ = new FlxSprite().loadGraphic(Paths.image('mouse/default'));
     sprite_2 = new FlxSprite().loadGraphic(Paths.image('mouse/onHold'));
-   
+
     FlxG.mouse.useSystemCursor = false;
     FlxG.mouse.load(sprite_.pixels, 0.9, 1, -11);
-    
+
     FlxG.camera.bgColor = FlxColor.BLACK;
 
     // json shits
@@ -104,19 +102,21 @@ function preStateSwitch() {
             FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
 }
 
+/*
+ * BACKEND
+ */
+ 
 var _nextResolution = {width: 1280, height: 720}; //1280, 720
-
 public static function resizeGame(width:Int, height:Int) {
 	_nextResolution = {width: width, height: height}
 }
 
 public static function daShitJson(data) {
-    var daJson = Assets.getBytes(Paths.json(data));
-    return JsonParser.parse(daJson);
+	var daJson = Assets.getBytes(Paths.json(data));
+	return JsonParser.parse(daJson);
 }
 
-
-public static function getSongs() {
+public static function getSongs():Array<String> {
     var songArray:Array<String> = [];
     if (isVoidWeek){
        
@@ -136,68 +136,53 @@ public static function getSongs() {
     return songArray;
 }
 
-public static function getWeeks(weekNum:Int = 0){
-    var daWeek:Array<String> = [];
-    if (isVoidWeek){
-       
-        for (i in 0...WeekDataOld.length){
-            daWeek.push(WeekDataOld[i]);
-        }
-    }else{
-        
-        for (i in 0...WeekData.length){
-            daWeek.push(WeekData[i]);
-        }
-    }
-   
-    return daWeek[weekNum];
+public static function getWeeks(weekNum:Int = 0):Array<Dynamic> {
+	var daWeek:Array<Dynamic> = [];
+	if(isVoidWeek) {
+		for(i in 0...WeekDataOld.length) daWeek.push(WeekDataOld[i]);
+    } else {
+		for(i in 0...WeekData.length) daWeek.push(WeekData[i]);
+	}
+
+	return daWeek[weekNum];
 }
-public static function getSongsFromTheWeeks(weekNum:Int = 0)
-{
-    var songArray:Array<String> = [];
-    if (isVoidWeek){
-        for (song in 0...WeekDataOld[weekNum].songs.length){
-            songArray.push(WeekDataOld[weekNum].songs[song]);
-        }
-    }
-    else
-    {
-        for (song in 0...WeekData[weekNum].songs.length){
-            songArray.push(WeekData[weekNum].songs[song]);
-        }
-    }
-        
+
+public static function getSongsFromTheWeeks(weekNum:Int = 0):Array<String> {
+	var songArray:Array<String> = [];
+	if(isVoidWeek){
+		for(song in 0...WeekDataOld[weekNum].songs.length){
+			songArray.push(WeekDataOld[weekNum].songs[song]);
+		}
+	} else {
+		for (song in 0...WeekData[weekNum].songs.length){
+			songArray.push(WeekData[weekNum].songs[song]);
+		}
+	}
+
     return songArray;
-    
-
 }
 
-public static function getCredits() {
-    var composers:Map<String, String> = [];
-    if (isVoidWeek){
-       
+public static function getCredits():Map<String, String> {
+	var composers:Map<String, String> = [];
+	if(isVoidWeek) {
+		for (i in 0...WeekDataOld.length) 
+			for(j in 0...WeekDataOld[i].songs.length)
+				composers.set(WeekDataOld[i].songs[j].toLowerCase(), WeekDataOld[i].composers[j]);
+    } else {
+		for (i in 0...WeekData.length) 
+			for(j in 0...WeekData[i].songs.length)
+				composers.set(WeekData[i].songs[j].toLowerCase(), WeekData[i].composers[j]);
+	}
 
-        for (i in 0...WeekDataOld.length) 
-            for(j in 0...WeekDataOld[i].songs.length)
-                composers.set(WeekDataOld[i].songs[j].toLowerCase(), WeekDataOld[i].composers[j]);
-    
-    }else{
-      
-        for (i in 0...WeekData.length) 
-            for(j in 0...WeekData[i].songs.length)
-                composers.set(WeekData[i].songs[j].toLowerCase(), WeekData[i].composers[j]);
-    
-    }
-   
-    return composers;
+	return composers;
 }
 
-public static function changePrefix(suffix:String){
-    window_suffix = suffix;
-    WindowUtils.resetTitle();
-    window.title = windowTitle + " - " + window_suffix;
+public static function changePrefix(suffix:String) {
+	window_suffix = suffix;
+	WindowUtils.resetTitle();
+	window.title = windowTitle + " - " + window_suffix;
 }
-public static function getWindowSuffix(){
-    var daName:String = window_suffix;
-    return daName;
+
+public static function getWindowSuffix():String {
+	return window_suffix;
 }
