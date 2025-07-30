@@ -64,6 +64,17 @@
       "youtube": null
     },
     {
+      "name": "ray",
+      "image": "ray",
+		  "fun_text": "te queremos mucho ray",
+      "position": {"x": 700, "y": 200},
+      "scale": 0.21,
+      "angle": 0,
+      "twitter": "twitter.com/rayonim",
+      "youtube": "https://www.youtube.com/@afuckingray",
+      "isMain": true
+    },
+    {
       "name": "Angel [Owner]",
       "image": "Angel",
       "fun_text": "Esperense 5 años para la v1",

@@ -44,7 +44,7 @@ var bgBackdrop:FlxBackdrop;
 var curChar:Int = CharacterPortrait.THE_GRIEVING;
 var curSong:Int = 0;
 
-var canDoShit:Bool = false;
+var canPressed:Bool = false;
 var blockedOptions:Array<String> = [];
 
 var composersArray:Array<String> = [];
@@ -53,12 +53,14 @@ var prevSuffix:String;
 
 var timeGame = PlayState.instance.curStep;
 var color:FlxColor = FlxColor.BLACK;
+var curSelected:Int = 0; 
 
 function create(event) {
 	//Initialize
 	event.cancel(); 
 	event.music = "Pause Theme - The Grieving Of Friday";
 	cameras = [];
+	curSelected = 0;
 
 	composersArray = getCredits();
 	
@@ -107,21 +109,23 @@ function create(event) {
 	board.screenCenter();
 	add(board);
 
-	for(i in 0...options.length) {
-		var item:FlxSprite = new FlxSprite();
-		item.frames = Paths.getSparrowAtlas('menus/pause/OptionSHEETZ');
-		item.animation.addByPrefix('static', options[i] + '0', 24, false);
-		item.animation.addByPrefix('select', options[i]+ '_select', 24, false);
-		item.animation.play('static');
-		item.scale.set(0.55, 0.55);
-		item.updateHitbox();
-		item.screenCenter();
-		item.antialiasing = Options.antialiasing;
-		item.ID = i;
-		add(item);
-		if (i == 0) item.animation.play('select');
-		menu_items.push(item);
-	}
+for (i in 0...options.length) {
+	var item:FlxSprite = new FlxSprite();
+	item.frames = Paths.getSparrowAtlas('menus/pause/OptionSHEETZ');
+	item.animation.addByPrefix('static', options[i] + '0', 24, false);
+	item.animation.addByPrefix('select', options[i]+ '_select', 24, false);
+	item.animation.play('static');
+	item.scale.set(0.55, 0.55);
+	item.updateHitbox();
+	item.screenCenter();
+	item.antialiasing = Options.antialiasing;
+	item.ID = i;
+	add(item);
+	menu_items.push(item);
+}
+
+updateSelectionVisuals(); 
+
 
 
 	portait = new FlxSprite(0, 0, getRenderChar());
@@ -202,7 +206,17 @@ function create(event) {
 		}
 	});
 
-	canDoShit = true;
+	canPressed = true;
+
+
+}
+function updateSelectionVisuals() {
+	for (i in 0...menu_items.length) {
+		if (i == curSelected)
+			menu_items[i].animation.play("select");
+		else
+			menu_items[i].animation.play("static");
+	}
 }
 function getRenderChar() {
 	final songs:Array<String> = getSongs();
@@ -226,20 +240,21 @@ function getRenderChar() {
 
 function update(elapsed) {
 
-	if(canDoShit){
+	if(canPressed){
 		hand2.y = lerp(hand2.y, offsetHand_[curSelected],0.2);
 
-		if (controls.DOWN_P) changeSelection(1, false);
-		if (controls.UP_P) changeSelection(-1);
+	    if (controls.DOWN_P) changeSelection(1);
+	    if (controls.UP_P) changeSelection(-1);
+		
 		if (controls.ACCEPT) {
 			var option = options[curSelected];
-			canDoShit = false;
+			canPressed = false;
 
 			if(blockedOptions.contains(option)) {
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				FlxTween.shake(menu_items[curSelected], 0.004, 0.2, FlxAxes.XY, {
 					onComplete: function(twn:FlxTween) {
-						canDoShit = true;
+						canPressed = true;
 					}
 				});
 				return;
@@ -261,15 +276,11 @@ function update(elapsed) {
 function changeSelection(change){
 	FlxG.sound.play(Paths.sound('scrollMenu'));
 
-	curSelected += change;
-
-	if (curSelected < 0) curSelected = options.length - 1;
-	if (curSelected >= options.length) curSelected = 0;
-
-	for (i in 0...menu_items.length) {
-		if(i == curSelected) menu_items[i].animation.play("select");
-		else menu_items[i].animation.play("static");
-	}
+	curSelected = FlxMath.wrap(curSelected + change, 0, options.length - 1);
+    
+	
+	updateSelectionVisuals();
+	trace(curSelected);
 }
 
 function comeOnDoSomething(option:String) {
