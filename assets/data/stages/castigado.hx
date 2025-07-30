@@ -27,15 +27,8 @@ function create() {
 }
 
 function postCreate() { 
+   
     GameOverSubstate.script = 'data/substates/GameOverSubstate-punished';
     countDownFNF = true;
     FlxG.camera.zoom = defaultCamZoom = 0.75;
-}
-
-function onSongEnd() {
-    // FlxG.switchState(new ModState("VideoState"));
-    video_Path = "punishedend";
-    _nextState = FreeplayState;
-    endCutscene = "data/states/VideoState";
-    trace(endCutscene);
 }

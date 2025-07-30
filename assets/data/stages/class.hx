@@ -326,6 +326,7 @@ public static function setBg_2(){
     hudsito.visible = true;
  health = 1.0;
  angleMoveSpeed = 0; 
+ changeColorTimeBarr([FlxColor.fromRGB(191, 111, 40),FlxColor.fromRGB(143, 82, 29)]);
 }
 public static function setBg_1(){
     if(PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") {
@@ -345,6 +346,7 @@ public static function setBg_1(){
          gf.visible = true;
          FlxG.camera.bgColor = FlxColor.BLACK;
          my_family.visible = false;
+          changeColorTimeBarr([FlxColor.fromRGB(57, 126, 204),FlxColor.fromRGB(43, 80, 122)]);
 
     }
     if (PlayState.SONG.meta.name == "Denial" || PlayState.SONG.meta.name == "denial"){

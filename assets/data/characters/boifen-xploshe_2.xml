@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character y="-50" sprite="xplosher/IncelLocuras" scale="0.8" flipX="true" camy="-150" icon="incelP1" color="#CA2B2B" holdTime="7.3" isGF="false">
+<character y="-50" sprite="xplosher/IncelLocuras" scale="0.8" flipX="true" camy="-150" icon="incelP1" color="#CA2A2A" gameOverChar="dead_incel" holdTime="7.3" isGF="false">
 	<anim name="singRIGHT" anim="left0" x="14" y="-2" fps="24" loop="false" indices="0..7"/>
 	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
 	<anim name="singDOWN" anim="down0" x="9" y="-25" fps="24" loop="false"/>

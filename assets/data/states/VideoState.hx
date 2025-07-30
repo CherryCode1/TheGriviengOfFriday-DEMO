@@ -21,6 +21,7 @@ function create() {
     video.play();
    
     add(video);
+    trace("loading video");
 }
 
 function update(elapsed:Float) {

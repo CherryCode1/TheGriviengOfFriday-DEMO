@@ -172,8 +172,11 @@ function postCreate() {
 
     FlxG.game.addShader(warpCroma_Shader);
 }
-public function changeColorTimeBarr(colors:Array<FlxColor>){
-    timeBarr = FlxGradient.createGradientFlxSprite(280, 20, colors,1,90);
+public function changeColorTimeBarr(colors:Array<FlxColor>) {
+    var newGfx = FlxGradient.createGradientBitmapData(280, 20, colors, 1, 90);
+    timeBarr.pixels = newGfx;
+    timeBarr.dirty = true;
+    trace("la barra cambio de color");
 }
 function getBarrPath():Void{
     var path:String = "default";
@@ -262,8 +265,7 @@ function postUpdate() {
      timeBarr.scale.x = ratio;
      timeBarr.updateHitbox();
     }
-	if (curStep > 0 && !paused){
-
+	if (songStarted && !paused){
 		var expected = FlxG.sound.music.time;
 		var songPosition = Conductor.songPosition;
 		var desyncThreshold = 35; 
@@ -426,6 +428,7 @@ function preLoadVideo(path:String) {
     }
 
     insert(members.indexOf(strumLines), video);
+	trace("precargando video: " + path);
 }
 
 public static function playVideo() {

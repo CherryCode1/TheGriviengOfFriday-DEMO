@@ -42,23 +42,21 @@ function beatHit(){
 }
 function update(elapsed:Float){
     for (char in [gf, dad]){
-        // Aplicar velocidad a la posición
+       
         char.x += char.velocity.x * elapsed;
 
-        // Determinar límites según personaje
         var minX = (char == gf) ? minX_GF : minX_Dad;
         var maxX = (char == gf) ? maxX_GF : maxX_Dad;
 
-        // Limita posición para no salirse
+       
         if (char.x < minX) char.x = minX;
         if (char.x > maxX) char.x = maxX;
 
-        // Si la velocidad es casi 0, volver a posición original suavemente
         if (Math.abs(char.velocity.x) < 0.1){
             var targetX = (char == gf) ? originalX_GF : originalX_Dad;
             char.x = lerp(char.x, targetX, elapsed * 5);
         } else {
-            // Aplicar fricción
+           
             char.velocity.x *= 0.9;
         }
     }
