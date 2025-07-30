@@ -4,6 +4,8 @@
 import funkin.editors.charter.Charter;
 import funkin.game.PlayState;
 
+public var enabled:Bool = false;
+
 public var curSpeed:Float = 1;
 static var curBotplay:Bool = false;
 static var devControlBotplay:Bool = true;
@@ -11,6 +13,8 @@ var curZoom:Float;
 function postCreate() curZoom = defaultCamZoom;
 
 function postUpdate() {
+
+    if(!enabled) return;
     
     if (FlxG.keys.justPressed.ONE && generatedMusic) endSong();
     if (FlxG.keys.justPressed.TWO) curSpeed -= 0.1;
@@ -41,7 +45,7 @@ function postUpdate() {
 }
 
 function onNoteHit(event) {
-    if (!curBotplay || event.character != boyfriend) return;
+    if (!curBotplay || event.character != boyfriend || !enabled) return;
     
     event.player = true;
     event.countAsCombo = true;
@@ -54,12 +58,18 @@ function onNoteHit(event) {
 }
 
 function updateSpeed(speed:Float){
+    if(!enabled) return;
+
     FlxG.timeScale = inst.pitch = vocals.pitch = speed;
 }
 function onGamePause() {
+    if(!enabled) return;
+
     updateSpeed(1);
 }
 function onSongEnd() {
+    if(!enabled) return;
+
     updateSpeed(1);
 }
 function destroy() {

@@ -72,7 +72,6 @@ function preStateSwitch() {
     Framerate.codenameBuildField.text = '';
     
     WindowUtils.resetTitle();
-    window.title = windowTitle + window_suffix;
    
     #if !TGOF_BUILD
     window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('iconOG'))));
