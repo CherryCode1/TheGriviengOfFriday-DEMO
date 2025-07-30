@@ -172,6 +172,11 @@ function postCreate() {
 
     FlxG.game.addShader(warpCroma_Shader);
 }
+function onGameOver(){
+	camHUD.visible = false;
+	FlxG.camera.stopFade();
+	FlxG.camera.fade(FlxColor.BLACK,0.0001,true);
+}
 public function changeColorTimeBarr(colors:Array<FlxColor>) {
     var newGfx = FlxGradient.createGradientBitmapData(280, 20, colors, 1, 90);
     timeBarr.pixels = newGfx;
