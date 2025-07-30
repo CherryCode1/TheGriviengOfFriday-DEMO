@@ -467,6 +467,11 @@ function update(elapsed:Float){
          
         }
         if (curStep == 1760){
+            healthBar.visible = false;
+            healthBarBG.visible = false;
+            healthBarBG_1.visible = false;
+            iconP1.visible = false;
+            iconP2.visible = false;
             for (strum in cpuStrums){
                 FlxTween.tween(strum,{alpha:0},0.01);
                
@@ -489,6 +494,11 @@ function update(elapsed:Float){
                 FlxTween.tween(strumPlayer,{x: defaultPlayerStrum[notes].x},1,{ease:FlxEase.quadInOut});
 
             }
+            healthBar.visible = true;
+            healthBarBG.visible = true;
+            healthBarBG_1.visible = true;
+            iconP1.visible = true;
+            iconP2.visible = true;
             FlxTween.tween(time_Txt,{alpha: 1},1);
         }
         if (curStep > 2163 && curStep < 2779){
