@@ -1,8 +1,6 @@
 var time_:Float = 0.0;
 
 function create(){
-    FlxTween.cancelTweensOf(FlxG.camera); // evitar errores en la cancion de mas en la parte de darwing
-    FlxG.camera.stopFX(); // ok
     FlxG.camera.zoom = 0.7;
     var sprite = new FlxSprite().makeGraphic(cameras[0].width + 1400,cameras[0].height + 1400,FlxColor.BLACK);
     sprite.screenCenter();
