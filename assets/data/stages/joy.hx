@@ -119,6 +119,12 @@ function postCreate(){
     overlay_Sprites.push(puntero);
     add(puntero);
 
+    camara = new FlxSprite(500,-550).loadGraphic(Paths.image("joy-ui/cam"));
+    camara.scale.set(0.6, 0.6);
+    camara.updateHitbox();
+    camara.visible = false;
+    insert(members.indexOf(gf),camara);
+
     for (uh in overlay_Sprites) uh.visible =false;
     //strumLines.members[0].camera = camGame;
     boyfriend.cameraOffset.y = 170;
