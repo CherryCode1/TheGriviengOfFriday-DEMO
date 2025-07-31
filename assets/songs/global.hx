@@ -230,7 +230,7 @@ function getBarrPath():Void{
 			path = "the-grieving";
 			if(get_downscroll()){
 				healthBarBG_Offset[0] = 90;
-				healthBarBG_Offset[1] = 35;
+				healthBarBG_Offset[1] = -35;
 			} else {
 				healthBarBG_Offset[0] = 90;
 				healthBarBG_Offset[1] = 35;
