@@ -1,8 +1,10 @@
 var time_:Float = 0.0;
 
 function create(){
+    FlxTween.cancelTweensOf(FlxG.camera); // evitar errores en la cancion de mas en la parte de darwing
+    FlxG.camera.stopFX(); // ok
     FlxG.camera.zoom = 0.7;
-    var sprite = new FlxSprite().makeGraphic(cameras[0].width + 400,cameras[0].height + 400,FlxColor.BLACK);
+    var sprite = new FlxSprite().makeGraphic(cameras[0].width + 1400,cameras[0].height + 1400,FlxColor.BLACK);
     sprite.screenCenter();
     sprite.alpha = 0;
     sprite.scrollFactor.set(0,0);
@@ -13,6 +15,9 @@ function create(){
 
 }
 function update(elapsed:Float) {
+    if (controls.BACK){
+        FlxG.camera.visible = false;
+    }
     time_ += elapsed;
     grieveSh.iTime = time_;
 }
