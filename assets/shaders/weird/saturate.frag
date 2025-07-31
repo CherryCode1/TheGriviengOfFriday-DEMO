@@ -8,11 +8,6 @@
  * https://www.shadertoy.com/view/3ssSz2
  */
 
-
-vec2 uv = openfl_TextureCoordv.xy;
-vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize;
-vec2 iResolution = openfl_TextureSize;
-
 uniform float iTime; // esto no lo tengo que explicar xdxd
 uniform float contrast; // esto es la saturacion o contraste
 uniform float midpoint; // esto es la oscuridad de la imagen
@@ -51,6 +46,9 @@ vec4 originalSigmoidContrast(vec4 color, float contrast, float midpoint)
 
 void main()
 {
+    vec2 uv = openfl_TextureCoordv.xy;
+    vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize;
+    vec2 iResolution = openfl_TextureSize;
     vec2 pix_size = 1.0/iResolution.xy;
     vec2 image_uv = uv;
     

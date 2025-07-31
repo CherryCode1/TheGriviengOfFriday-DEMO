@@ -113,24 +113,15 @@ function postCreate(){
 
     var puntero = new FlxSprite().loadGraphic(Paths.image("joy-ui/puntero"));
     puntero.camera = camHUD;
-    puntero.scale.set(0.3,0.3);
+    puntero.setGraphicSize(FlxG.width, FlxG.height);
     puntero.updateHitbox();
     puntero.screenCenter();
     overlay_Sprites.push(puntero);
     add(puntero);
 
-
-    var camara_ = new FlxSprite(560,-350).loadGraphic(Paths.image("joy-ui/cam"));
-    camara_.scrollFactor.set(1,1);
-    camara_.scale.set(0.5,0.5);
-    camara_.updateHitbox();
-    overlay_Sprites.push(camara_);
-    add(camara_);
-
     for (uh in overlay_Sprites) uh.visible =false;
     //strumLines.members[0].camera = camGame;
     boyfriend.cameraOffset.y = 170;
-   // defaultHudZoom = 0.9;
     iconP1.visible = iconP2.visible = false;
 
     var strum = strumLines.members[2];
@@ -196,16 +187,15 @@ public function ShowSimian() {
 }
 
 function postUpdate(){
-    camHUD.alpha = camHUD.alpha;
+    camOverlay.alpha = camHUD.alpha;
     score_Txt.x = 230;
 }
-
 public function showBG(){
-    camHUD.flash(FlxColor.BLACK,5);
+    
+    camOverlay.flash(FlxColor.BLACK,5);
     camHUD.alpha = 1;
     for (overlay in overlay_Sprites)
         overlay.visible = true;
-  
     bg.visible = true;
     bg1.visible = true;
     dad.cameraOffset.x -= 700;
@@ -216,6 +206,8 @@ public function showBG(){
 
     strumLines.members[1].characters[0].visible = true;
     strumLines.members[0].characters[0].visible = true;
+
+    boyfriend.cameraOffset.y = -100;
    
     defaultCamZoom = 0.75;  
     comboGroup.x = 1400;

@@ -11,7 +11,7 @@ public var initialYLowerBar:Float;
 
 public var shouldMoveStrum:Bool = true;
 
-function postCreate() {
+function create() {
     upperBar = new FlxSprite(-110, -350);
     upperBar.makeGraphic(1500, 350, 0xFF000000);
     upperBar.camera = camHUD;

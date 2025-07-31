@@ -1,5 +1,14 @@
 var songCard = new FlxSprite();
+var barCam:FlxCamera;
+
 function postCreate(){
+    barCam = new FlxCamera();
+    barCam.bgColor = 0x0;
+
+    FlxG.cameras.remove(camHUD, false);
+    FlxG.cameras.add(barCam, false);
+    FlxG.cameras.add(camHUD, false);
+
     camFollowChars = false;
     camFollow.setPosition(1100,-200);
 
@@ -11,6 +20,9 @@ function postCreate(){
     songCard.camera = camHUD;
     songCard.scale.set(0.6,0.6);
     add(songCard);
+
+    for(i in [upperBar, lowerBar])
+      i.cameras = [barCam];
     
     GameOverSubstate.script = "data/substates/GameOverSubstate-years";
 }

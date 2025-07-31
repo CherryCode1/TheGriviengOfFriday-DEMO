@@ -18,7 +18,7 @@ function postCreate() {
     new_healBarBG = new FlxSprite().loadGraphic(Paths.image("Joy-UI/barrBG"));
     //circle
     circle = new FlxSprite().loadGraphic(Paths.image("Joy-UI/circle"));
-    circle.scale.set(0.6,0.6);
+    circle.scale.set(0.9,0.9);
     // corashon
     corashon = new FlxSprite();
     corashon.frames = Paths.getSparrowAtlas("Joy-UI/Corazao joy");
@@ -27,7 +27,7 @@ function postCreate() {
     corashon.animation.addByPrefix("3","30",24,false);
     corashon.animation.addByPrefix("3","30",24,false);
     corashon.animation.play("3");
-    corashon.scale.set(0.2,0.2);
+    corashon.scale.set(0.35,0.35);
 
     //properties
     for (bars in [leftBar, rightBar,new_healBarBG,corashon,circle]) {
@@ -41,23 +41,23 @@ function postCreate() {
             case leftBar: 
                 offsetDownscroll = (get_downscroll()) ? 10: 0;
                 bars.offset.set(0,offsetDownscroll);
-                bars.setPosition(565,650);
+                bars.setPosition(605,640);
             case rightBar: 
                 offsetDownscroll = (get_downscroll()) ? 25: 0;
                   bars.offset.set(0,offsetDownscroll);
-                bars.setPosition(565,630);
+                bars.setPosition(602,618);
             case new_healBarBG: 
                 offsetDownscroll = 0;
                 bars.offset.set(0,offsetDownscroll());
-                bars.setPosition(550,640);
+                bars.setPosition(590,630);
             case corashon:
                 offsetDownscroll =(get_downscroll()) ? 0: 0;
                 bars.offset.set(0,offsetDownscroll);
-                bars.setPosition(-20,420);
+                bars.setPosition(-81,392);
             case circle:
                 offsetDownscroll =(get_downscroll()) ? 0: 0;
                 bars.offset.set(0,offsetDownscroll);
-                bars.setPosition(-100,480);
+                bars.setPosition(-50,450);
         }
     }
 
@@ -73,6 +73,8 @@ function postCreate() {
 
 function postUpdate(elapsed:Float) { 
     updateValueBars();
+
+    trace(boyfriend.cameraOffset);
 }
 
 function beatHit(){
@@ -95,8 +97,7 @@ function updateValueBars() {
     var leftBarWidth = leftBar.width;
     var rightBarWidth = rightBar.width;
     var barHeight = rightBar.height;
-var percent_ = health * 50; 
-
+    var percent_ = (health * 50); 
 
     var leftSize:Float = FlxMath.lerp(0, leftBarWidth, 1 - percent_ / 100);
     var rightSize:Float = rightBarWidth - leftSize;
@@ -106,4 +107,12 @@ var percent_ = health * 50;
 
     leftBar.clipRect = leftBar.clipRect;
     rightBar.clipRect = rightBar.clipRect;
+}
+
+function goodNoteHit(e)
+{
+    if(e.note.isSustainNote)
+        e.cancel();
+
+    e.healthGain = 0.0005;
 }

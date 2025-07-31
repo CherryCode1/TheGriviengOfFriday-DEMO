@@ -25,7 +25,6 @@ function postCreate(){
     camGame._fxFadeColor = FlxColor.BLACK; 
     camGame.zoom = defaultCamZoom = 2;
 
-
     pathSimian = Paths.getSparrowAtlas("stages/joy/Miss-Simian");
     spriteMonkey.frames = pathSimian;
     spriteMonkey.animation.addByPrefix("loop", "simian idle", 24, true);
@@ -43,7 +42,6 @@ function postCreate(){
 
     spriteMonkey.visible = false;
     cinematic.visible = false;
-
 }
 function onGameOver(event){
     event.gameOverSong = "GameOver_joy";

@@ -1,7 +1,4 @@
 #pragma header
-vec2 uv = openfl_TextureCoordv.xy;
-vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize;
-vec2 iResolution = openfl_TextureSize;
 uniform float iTime;
 #define iChannel0 bitmap
 #define iChannel1 bitmap
@@ -11,8 +8,6 @@ uniform float iTime;
 #define fragColor gl_FragColor
 #define mainImage main
 uniform vec4 iMouse;
-
-const float PI = 3.14159265; // no touches !!
 
 // yes touches !!
 uniform float wobble_intensity = 0.;
@@ -27,6 +22,7 @@ float rand(vec2 co){
 
 float sample_noise(vec2 fragCoord)
 {
+	vec2 iResolution = openfl_TextureSize;
 	vec2 uv = mod(fragCoord + vec2(0, 100. * iTime), 200);
 	float value = texture(iChannel1, uv / iResolution.xy).r;
 	return pow(value, 7.); //  sharper ramp
@@ -34,7 +30,12 @@ float sample_noise(vec2 fragCoord)
 
 void main()
 {
-	vec2 uv = fragCoord / iResolution.xy;
+	
+	const float PI = 3.14159265; // no touches !!
+
+	vec2 uv = openfl_TextureCoordv.xy;
+	vec2 fragCoord = openfl_TextureCoordv*openfl_TextureSize;
+	vec2 iResolution = openfl_TextureSize;
 	
 	//  wobble
 	vec2 wobbl = vec2(wobble_intensity * rand(vec2(iTime, fragCoord.y)), 0.);
