@@ -14,8 +14,8 @@ public var shader_fire = new CustomShader("fire_");
 public var fire_Sprite = new FlxSprite(490,100);
 public var desactivateZoom_A = false;
 var viggnete = new FlxSprite().loadGraphic(Paths.image("stages/class/fog_class"));
-var houseFilter:BlurFilter = FlxG.save.data.BlurShade ? new BlurFilter(10, 10, 2) : null;
-var gumballFilter:BlurFilter = FlxG.save.data.BlurShade ? new BlurFilter(0, 0, 2) : null;
+var houseFilter:BlurFilter = FlxG.save.data.BlurShade ? new BlurFilter(0, 0, 0) : null;
+var gumballFilter:BlurFilter = FlxG.save.data.BlurShade ? new BlurFilter(0, 0, 0) : null;
 var blurEffect:CustomShader = FlxG.save.data.blurEffect ? new CustomShader('blur') : null;
 
 function create() {
