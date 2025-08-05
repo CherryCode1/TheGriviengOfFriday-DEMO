@@ -261,6 +261,7 @@ function destroy(){
 }
 
 var camerasFixed:Bool = false;
+
 function postUpdate() {   
 
     if (songStarted && timeBarr != null && songLength > 0 && !paused) {
@@ -270,17 +271,17 @@ function postUpdate() {
      timeBarr.scale.x = ratio;
      timeBarr.updateHitbox();
     }
-	if (songStarted && !paused){
+/* 	if (songStarted && !paused){
 		var expected = FlxG.sound.music.time;
 		var songPosition = Conductor.songPosition;
-		var desyncThreshold = 35; 
+		var desyncThreshold = 35; 						//esto esta en MILISEGUNDOS, a quien se le ocurrio poner 35??? que no piensan en la gente con delay o que
 		var difference = Math.abs(expected - songPosition);
 		if (difference >= desyncThreshold) {
 			trace("sincronizando de nuevo");
 			PlayState.instance.resyncVocals();
 		}
 		//Conductor.songPosition = expected;
-	}
+	} */
 
 	if (iconP1 != null && iconP2 != null) {
 		for (icon in [iconP1,iconP2])
