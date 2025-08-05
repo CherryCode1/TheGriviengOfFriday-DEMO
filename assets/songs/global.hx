@@ -270,18 +270,7 @@ function postUpdate() {
      timeBarr.scale.x = ratio;
      timeBarr.updateHitbox();
     }
-	if (songStarted && !paused){
-		var expected = FlxG.sound.music.time;
-		var songPosition = Conductor.songPosition;
-		var desyncThreshold = 35; 
-		var difference = Math.abs(expected - songPosition);
-		if (difference >= desyncThreshold) {
-			trace("sincronizando de nuevo");
-			PlayState.instance.resyncVocals();
-		}
-		//Conductor.songPosition = expected;
-	}
-
+	
 	if (iconP1 != null && iconP2 != null) {
 		for (icon in [iconP1,iconP2])
 			icon.scale.set( FlxMath.lerp(icon.scale.x,1,0.1), FlxMath.lerp(icon.scale.y,1,0.1));
