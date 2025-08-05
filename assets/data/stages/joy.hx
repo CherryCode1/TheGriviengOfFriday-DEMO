@@ -197,24 +197,23 @@ function postUpdate(){
     score_Txt.x = 230;
 }
 public function showBG(){
-    
     camOverlay.flash(FlxColor.BLACK,5);
     camHUD.alpha = 1;
-    for (overlay in overlay_Sprites)
-        overlay.visible = true;
-    bg.visible = true;
-    bg1.visible = true;
+    
     dad.cameraOffset.x -= 700;
 
     strumLines.members[1].characters[1].x += 250;
     strumLines.members[1].characters[1].cameraOffset.y = -530;
     strumLines.members[0].characters[1].cameraOffset.x -= 540;
 
-    strumLines.members[1].characters[0].visible = true;
-    strumLines.members[0].characters[0].visible = true;
-
     boyfriend.cameraOffset.y = -100;
    
     defaultCamZoom = 0.75;  
     comboGroup.x = 1400;
+
+    for(stuff in [bg, bg1, camara, strumLines.members[0].characters[0], strumLines.members[1].characters[0]])
+        stuff.visible = true;
+
+    for (overlay in overlay_Sprites)
+        overlay.visible = true;
 }

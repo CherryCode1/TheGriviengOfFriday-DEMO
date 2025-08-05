@@ -1,1 +1,1 @@
-function postCreate() playCutscenes = true; //si, esto es todo lo que se ocupaba -peppytron3000
+function create() playCutscenes = true;

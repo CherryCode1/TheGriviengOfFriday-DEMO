@@ -7,6 +7,11 @@ import flixel.tweens.FlxTweenType;
 import flixel.text.FlxTextAlign;
 import flixel.util.FlxAxes;
 import openfl.display.BlendMode;
+import funkin.options.TreeMenu;
+import funkin.backend.system.Conductor;
+import funkin.backend.utils.FunkinParentDisabler;
+import funkin.editors.charter.Charter;
+import funkin.options.keybinds.KeybindsOptions;
 
 var options:Array<String> = ["resume", "restart", "options", "exit"];
 var offsetHand_:Array<Float> = [-25, 100, 200, 300];
@@ -274,14 +279,28 @@ function comeOnDoSomething(option:String) {
 
 	new FlxTimer().start(.5, function(tmr:FlxTimer) {
 		switch(option) {
-			case "options": curSelected = 3;
-			case "exit": curSelected = 4;
-		}
+			case 'resume':
+				close();
+			case 'restart':
+				game.registerSmoothTransition();
+				FlxG.resetState();
+			case "options": 
+				TreeMenu.lastState = PlayState;
+				FlxG.switchState(new OptionsMenu());
+			case "exit":
+				if (PlayState.chartingMode && Charter.undos.unsaved)
+					game.saveWarn(false);
+				else {
+					PlayState.resetSongInfos();
+					if (Charter.instance != null) Charter.instance.__clearStatics();
 
-		if (option == "options") {
-			FlxG.switchState(new ModState("LoadingScreen"));
-            _nextState_loading = OptionsMenu;
-		} else selectOption();
+					// prevents certain notes to disappear early when exiting  - Nex
+					game.strumLines.forEachAlive(function(grp) grp.notes.__forcedSongPos = Conductor.songPosition);
+
+					CoolUtil.playMenuSong();
+					FlxG.switchState(PlayState.isStoryMode ? new StoryMenuState() : new FreeplayState());
+				}
+		}
 	});
 }
 

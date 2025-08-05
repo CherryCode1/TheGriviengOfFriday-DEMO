@@ -208,21 +208,15 @@ function pressedButt(thing){
             
 				PlayState.isStoryMode = true;
                 
-                FlxG.switchState(new ModState("LoadingScreen"));
-                _nextState_loading = PlayState;
-                //FlxG.switchState(new PlayState());
+                FlxG.switchState(new PlayState());
             case 'Freeplay':
-                FlxG.switchState(new ModState("LoadingScreen"));
-                _nextState_loading = FreeplayState;
+                FlxG.switchState(new FreeplayState());
             case 'Extras':
-                FlxG.switchState(new ModState("LoadingScreen"));
-                _nextState_loading = OptionsMenu;
+                FlxG.switchState(new OptionsMenu());
             case 'Options':
-                FlxG.switchState(new ModState("LoadingScreen"));
-                _nextState_loading = OptionsMenu;
+                FlxG.switchState(new OptionsMenu());
             case 'Credits':
-                FlxG.switchState(new ModState("LoadingScreen"));
-                _nextState_loading = CreditsMain;
+                FlxG.switchState(new CreditsMain());
         }     
     });
 }

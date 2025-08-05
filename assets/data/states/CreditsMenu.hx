@@ -28,6 +28,8 @@ import hxvlc.flixel.FlxVideoSprite;
   ]
 }
 
+thanks to ada_funni for fixing a few bugs!!!
+
 **/
 var creditsData:Array<Dynamic>;
 var camHUD:FlxCamera;
@@ -168,15 +170,7 @@ function create(){
     startBreatheTween();
 
   
-    switch(creditsData.sections[curSection].section){
-        case "artist":  changeMusic("creditsState-AnimatorsStem");
-        case "animators": changeMusic("creditsState-AnimatorsStem");
-        case "musicians": changeMusic("creditsState-AnimatorsStem");
-        case "programmers": changeMusic("creditsState-CodersStem");
-        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
-        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
-        case "charters": changeMusic("creditsState-ChartersStem");
-    }
+    changeSection(0);
 
     byroxMeme = new FlxSprite().loadGraphic(Paths.image("byrox"));
     byroxMeme.screenCenter();
@@ -437,6 +431,7 @@ if (!isBlinking) {
    
 }
 var currentMusic:String = "";
+var curSound:FlxSound;
 
 function changeMusic(song:String, vol:Float = 1) {
     if (currentMusic == song && FlxG.sound.music != null && FlxG.sound.music.playing)
@@ -451,7 +446,7 @@ function changeMusic(song:String, vol:Float = 1) {
 function changeSection(uh:Int = 0){
     curSection = FlxMath.wrap(curSection + uh, 0, grpSection.length - 1);
     switch(creditsData.sections[curSection].section){
-        case "artist":  changeMusic("creditsState-AnimatorsStem");
+        case "artist":  changeMusic("creditsState-ArtistsStem");
         case "animators": changeMusic("creditsState-AnimatorsStem");
         case "musicians": changeMusic("creditsState-AnimatorsStem");
         case "programmers": changeMusic("creditsState-CodersStem");
@@ -468,20 +463,23 @@ function changeSection(uh:Int = 0){
     grpSection.members[curSection].visible = true;
     grpCredit_sprite[curSection].visible = true;   
 
+    // What is the point in moving everything if we go nowhere?
 
-    var offsetCamera = uh * 10;
-    FlxG.camera.scroll.x += offsetCamera;
+    if (uh != 0) {
+        var offsetCamera = uh * 10;
+        FlxG.camera.scroll.x += offsetCamera;
 
-    FlxG.camera.zoom += 0.005;
-    FlxTween.tween(FlxG.camera,{"scroll.x": FlxG.camera.scroll.x - offsetCamera}, 0.25,{ease:FlxEase.cubeInOut});
+        FlxG.camera.zoom += 0.005;
+        FlxTween.tween(FlxG.camera,{"scroll.x": FlxG.camera.scroll.x - offsetCamera}, 0.25,{ease:FlxEase.cubeInOut});
 
-    for (renders in grpCredit_sprite[curSection]){
-        renders.scale.x += 0.015;
-        renders.scale.y += 0.015;
-        renders.color = FlxColor.fromRGB(64, 64, 64);
+        for (renders in grpCredit_sprite[curSection]){
+            renders.scale.x += 0.015;
+            renders.scale.y += 0.015;
+            renders.color = FlxColor.fromRGB(64, 64, 64);
 
 
-        FlxTween.color(renders, 1.0, renders.color, FlxColor.WHITE);
+            FlxTween.color(renders, 1.0, renders.color, FlxColor.WHITE);
+        }
     }
 
 }
@@ -496,15 +494,7 @@ function hideInfo() {
         pressedInfo = false;
         targetMove = false;
         defaultCamZoom = 1;
-         switch(creditsData.sections[curSection].section){
-        case "artist":  changeMusic("creditsState-AnimatorsStem");
-        case "animators": changeMusic("creditsState-AnimatorsStem");
-        case "musicians": changeMusic("creditsState-AnimatorsStem");
-        case "programmers": changeMusic("creditsState-CodersStem");
-        case "voice_actor": changeMusic("creditsState-VoiceActorsStem");
-        case "chroms_maker": changeMusic("creditsState-VoiceActorsStem");
-        case "charters": changeMusic("creditsState-ChartersStem");
-    }
+        changeSection(0);
     }});
 
 

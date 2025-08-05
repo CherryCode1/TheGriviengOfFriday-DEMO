@@ -122,6 +122,7 @@ function create() {
         }
         add(textGrp);
     }
+    
     for (i in 0...WeekData.length) {
         var title = new FlxSprite();
         var imgPath = 'menus/freeplay/weekName/' + WeekData[i].image_key;
@@ -513,23 +514,11 @@ function gotoPlayState() {
         isVoidWeek = true;
         PlayState.loadSong(WeekDataOld[curOldWeek].songs[curSong],'hard');
         FlxG.switchState(new PlayState());
-
-        // trace(WeekDataOld[curOldWeek].songs);
     }else{
         isVoidWeek = false;
         PlayState.loadSong(WeekData[curWeek].songs[curSong],'hard');
        
-        if (WeekData[curWeek].songs[curSong] == "punished" || WeekData[curWeek].songs[curSong] == "Punished"){
-            FlxG.switchState(new ModState("LoadingScreen"));
-            _nextState_loading =  ModState;
-            video_Path = "gumbalestascastigadopor";
-            _nextState = PlayState;
-        }
-        else{
-            FlxG.switchState(new ModState("LoadingScreen"));
-            _nextState_loading = PlayState;
-          
-        }
+        FlxG.switchState(new PlayState());
     }
 }
 

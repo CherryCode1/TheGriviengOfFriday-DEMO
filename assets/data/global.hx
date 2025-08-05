@@ -13,11 +13,14 @@ import Type;
 import hxvlc.flixel.FlxVideoSprite;
 import hxvlc.util.Handle;
 
+import funkin.backend.scripting.GlobalScript;
+import funkin.backend.assets.ModsFolder;
+import funkin.backend.utils.NativeAPI.ConsoleColor;
+import funkin.backend.system.Logs;
+
 static var curMainMenuSelected:Int = 0;
 static var curStoryMenuSelected:Int = 0;
 public static var video_Path:String = "";
-public static var _nextState:FlxState;
-public static var _nextState_loading:FlxState;
 
 static var windowTitle:String = "The Grieving Of Friday";
 public static var window_suffix:String = "";
@@ -68,6 +71,17 @@ function update(elapsed:Float) {
     }
 
 	if(FlxG.keys.justPressed.F5) FlxG.resetState();
+
+    if (FlxG.keys.justPressed.F6) {
+		Logs.trace('Reloading global script(s)...', 1, ConsoleColor.YELLOW);
+		try {
+			GlobalScript.onModSwitch(ModsFolder.currentModFolder);
+			Logs.trace('Successfully reloaded global script(s)!', 1, ConsoleColor.GREEN);
+		} catch (e:Dynamic) {
+			Logs.trace('Uh Oh! Failed to reload global script(s).', 1, ConsoleColor.RED);
+		}
+	}
+
 	if(FlxG.keys.justPressed.F11) FlxG.fullscreen = !FlxG.fullscreen;
 }
 
