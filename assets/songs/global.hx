@@ -296,17 +296,6 @@ function postUpdate() {
        
       
     }
-
-    if(paused && video != null) video.pause();
-	else if(!paused && video != null) video.resume();
-	if (video != null && video.playing && videoStartTime >= 0) {
-		var expectedTime = (Conductor.songPosition / 1000) - videoStartTime;
-		var difference = Math.abs(video.time - expectedTime);
-		if (difference > 0.05) {
-			video.time = expectedTime;
-		}
-	}
-
 	
     if(songStarted) {
         var curTime:Float = Math.max(0, Conductor.songPosition);
@@ -396,39 +385,6 @@ public function fadeCam(){
 public function deFadeCam(){
 	camGame.stopFade();
 	camGame.fade(FlxColor.BLACK,1,true);
-}
-
-var video = new FlxVideoSprite(0, 0);
-var videoStartTime:Float = -1;
-
-function preLoadVideo(path:String) {
-    video.load(Assets.getBytes(Paths.video(path)));
-    video.bitmap.onFormatSetup.add(function():Void {
-        if (video.bitmap != null && video.bitmap.bitmapData != null) {	
-            video.antialiasing = false;
-            video.setGraphicSize(FlxG.width, FlxG.height);
-            video.updateHitbox();
-            video.screenCenter();
-            video.alpha = 0;
-            video.camera = camHUD;
-            FlxTween.tween(video, {alpha: 1}, 1);
-        }
-    });
-
-    if (video.bitmap != null) {
-        video.bitmap.onEndReached.add(function() {
-            video.destroy();  
-            videoStartTime = -1;
-        });
-    }
-
-    insert(members.indexOf(strumLines), video);
-	trace("precargando video: " + path);
-}
-
-public static function playVideo() {
-    video.play();
-    videoStartTime = Conductor.songPosition / 1000; 
 }
 
 var activeCroma:Bool = false;

@@ -3,34 +3,47 @@ import flixel.addons.transition.TransitionData;
 import flixel.addons.transition.Transition;
 import flixel.graphics.FlxGraphic;
 import flixel.math.FlxRect;
-import funkin.options.OptionsMenu;
 
-var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("LOADING_SCREEN"));
-var bar:FlxSprite = new FlxSprite(0,700).makeGraphic(800,10,FlxColor.fromRGB(196, 18, 140));
 
 function create(e) {
-    e.cancel();
+    e.cancelled = true;
 
-    bg.scale.set(0.5,0.5);
-    bg.screenCenter();
-    add(bg);
+    if(!nextFrameSkip) {
+        var out = e.transOut;
 
-    bar.screenCenter(FlxAxes.X); 
-    add(bar);
+        var circleTiles:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileCircle);
+        circleTiles.persist = true;
+        circleTiles.destroyOnNoUse = false;
 
-    if (e.transOut) {
-        finish();
-        return;
+        var data = new TransitionData(
+            "tiles",                 
+            FlxColor.BLACK,        
+            0.5,                     
+            FlxPoint.get(-1, -1),     
+            { asset: circleTiles, width: 32, height: 32}, 
+            FlxRect.get(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4) 
+        );
+
+        var _trans = new Transition(data);
+        if(_trans._effect != null)
+            _trans._effect.cameras = [transitionCamera];
+
+        _trans.setStatus(out ? 2 : 3);
+        openSubState(_trans);
+        _trans.finishCallback = done;
+        _trans.start(out ? 0 : 1);
+
+        transitionCamera.scroll.y = 0;
     }
+    else {
+        done();
+    }
+}
 
-    FlxTween.tween(bg,{alpha:0},1,{startDelay: 0.2});
-    bar.scale.x = 1;
-    FlxTween.tween(bar,{"scale.x":0,"alpha":0},1,{ease:FlxEase.cubeOut, onComplete: () ->{
-        new FlxTimer().start(.4, ()-> {
-            if (newState != null)
-                FlxG.switchState(newState);
+function done()
+{
+	if (newState != null)
+		FlxG.switchState(newState);
 
-            finish();
-        });
-    }});
+	new FlxTimer().start(0.7, ()-> {close();});
 }
