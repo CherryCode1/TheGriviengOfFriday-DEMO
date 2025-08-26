@@ -1,8 +1,14 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="darwincastigados" scale="2" icon="darwinGoAnimate" color="#DC6707" holdTime="7.3" isGF="false">
-	<anim name="singLEFT" anim="left0" x="51" y="8" fps="24" loop="false"/>
-	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
-	<anim name="singDOWN" anim="down" x="-6" y="-24" fps="24" loop="false"/>
-	<anim name="singUP" anim="up" x="-7" y="45" fps="24" loop="false"/>
-	<anim name="singRIGHT" anim="right" x="-7" y="30" fps="24" loop="false"/>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="castigado/darwin_castigado" icon="darwinGoAnimate" color="#cb5b00" x="-50" y="150" camy="50" holdTime="2.6" scale="1.3">
+	<anim name="idle" anim="idle0" x="-153.84615384615384" y="-121.53846153846153" loop="true"/>
+	<anim name="singLEFT" anim="left" x="-106.92307692307692" y="-111.53846153846153"/>
+	<anim name="singRIGHT" anim="right" x="-163.84615384615384" y="-92.3076923076923"/>
+	<anim name="singLEFT-loop" anim="left" x="-106.92307692307692" y="-111.53846153846153" loop="true"/>
+	<anim name="singRIGHT-loop" anim="right" x="-163.84615384615384" y="-92.3076923076923" loop="true"/>
+	<anim name="singUP" anim="up" x="-164.6153846153846" y="-77.6923076923077"/>
+	<anim name="singUP-loop" anim="up" x="-164.6153846153846" y="-77.6923076923077" loop="true"/>
+	<anim name="singDOWN" anim="down" x="-133.07692307692307" y="-141.53846153846155"/>
+	<anim name="singDOWN-loop" anim="down" x="-133.07692307692307" y="-141.53846153846155" loop="true"/>
+	<anim name="idle-alt" anim="darwindialogue" x="-285.38461538461536" y="-224.6153846153846" loop="true" indices="0..7"/>
 </character>

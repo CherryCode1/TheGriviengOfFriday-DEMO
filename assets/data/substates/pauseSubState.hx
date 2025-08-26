@@ -100,7 +100,7 @@ function create(event) {
 		bgBackdrop.velocity.set(-40, 40);
 		bgBackdrop.alpha = 0;
 		bgBackdrop.scrollFactor.set();
-		FlxTween.tween(bgBackdrop, {alpha: 0.2}, 0.5, {ease: FlxEase.linear});
+		FlxTween.tween(bgBackdrop, {alpha: 0}, 0.5, {ease: FlxEase.linear});
 		add(bgBackdrop);
 	}
 

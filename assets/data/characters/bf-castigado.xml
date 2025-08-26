@@ -1,12 +1,13 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="bfcastigados" scale="2" isPlayer="true" icon="bfGoAnimate" color="#4A5258" holdTime="7.3" isGF="false">
-	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
-	<anim name="singLEFT" anim="left0" x="36" y="9" fps="24" loop="false"/>
-	<anim name="singDOWN" anim="down0" x="36" y="-6" fps="24" loop="false"/>
-	<anim name="singUP" anim="up0" x="6" y="-22" fps="24" loop="false"/>
-	<anim name="singRIGHT" anim="right0" x="4" y="-20" fps="24" loop="false"/>
-	<anim name="singLEFTmiss" anim="leftmiss" x="46" y="9" fps="24" loop="false"/>
-	<anim name="singDOWNmiss" anim="downmiss" x="24" y="-37" fps="24" loop="false"/>
-	<anim name="singUPmiss" anim="upmiss" x="11" y="9" fps="24" loop="false"/>
-	<anim name="singRIGHTmiss" anim="rightmiss" x="-8" y="-13" fps="24" loop="false"/>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="bfcastigados" icon="bfGoAnimate" color="#666a74" x="50" y="220" camx="150" camy="-150" scale="1.5" isPlayer="true">
+	<anim name="singDOWN" anim="down0" x="30" y="-10"/>
+	<anim name="singLEFT" anim="left0" x="36" y="8.666666666666666"/>
+	<anim name="singUP" anim="up0" x="6" y="-21.333333333333332"/>
+	<anim name="singRIGHT" anim="right0" x="-20" y="-14.666666666666666"/>
+	<anim name="singDOWNmiss" anim="downmiss0" x="26.666666666666668" y="-40"/>
+	<anim name="singRIGHTmiss" anim="rightmiss0" x="-20" y="-6.666666666666667"/>
+	<anim name="singUPmiss" anim="upmiss0" x="13.333333333333334" y="9.333333333333334"/>
+	<anim name="singLEFTmiss" anim="leftmiss0" x="42.666666666666664" y="8.666666666666666"/>
+	<anim name="idle" anim="idle"/>
 </character>

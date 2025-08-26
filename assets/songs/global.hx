@@ -37,16 +37,20 @@ var songLength:Float = 0.0;
 function create() { 
     allowGitaroo = false;
 
-    score_Txt = new FunkinText(0, 0, FlxG.width, "Score: 0 Misses: 0 Accurracy:  % 0 [Fc]", 20, true);
+    score_Txt = new FunkinText(0, 0, FlxG.width, "Score: 0 | Misses: 0 | Accuracy:  % 0 [?]", 20, true);
     score_Txt.alignment = FlxTextAlign.CENTER;
     score_Txt.screenCenter(FlxAxes.X);
     score_Txt.camera = camHUD;
 	score_Txt.font = getFont("Gumball.ttf");
     score_Txt.borderSize = 1.4;
     if (PlayState.SONG.meta.name == "My Amazing Sadness" || PlayState.SONG.meta.name == "my amazing sadness") score_Txt.color = FlxColor.fromRGB(61, 122, 191);
+	if (PlayState.SONG.meta.name == "Punished") {
+		score_Txt.font = getFont("CascadiaMonoPL-Bold.otf");
+		score_Txt.color = FlxColor.BLACK;
+		score_Txt.borderSize = 0;
+		score_Txt.size = 15;
+	}
     add(score_Txt);  
-
-
 
     time_Txt = new FunkinText(0, 20, FlxG.width/2, "0:00", 30, true);
     time_Txt.alignment = FlxTextAlign.CENTER;
@@ -80,10 +84,15 @@ function create() {
 		default: [FlxColor.fromRGB(168, 168, 168),FlxColor.fromRGB(266,266,266)];
 	}
 	timeBarr = new FlxSprite();
-    timeBarr = FlxGradient.createGradientFlxSprite(280, 20, colors,1,90);
-	timeBarr.setPosition(timeBarrBG.x + 10, timeBarrBG.y + 5);
+   
 	timeBarr.camera = camHUD;
-	timeBarrWidth = timeBarr.width;
+
+	 if (PlayState.SONG.meta.name != "Punished") {
+		timeBarrWidth = timeBarr.width;
+		timeBarr = FlxGradient.createGradientFlxSprite(280, 20, colors,1,90);
+		timeBarr.setPosition(timeBarrBG.x + 10, timeBarrBG.y + 5);
+	 }
+
 
     if (PlayState.SONG.meta.name == "Punished" || PlayState.SONG.meta.name == "13 years") healthBarDefault = true;
 
@@ -117,7 +126,7 @@ function onPlayerHit(event){
     if (event.note.isSustainNote) return;
     iconP1.scale.set(1.2,1.2);
 
-	score_Txt.scale.set(1.1,1);
+	if (PlayState.SONG.meta.name != "Punished") score_Txt.scale.set(1.1,1);
 }
 
 function postCreate() {
@@ -164,7 +173,7 @@ function postCreate() {
       
     }
   
-    score_Txt.y = healthBar.y + 35;
+    if (PlayState.SONG.meta.name == "Punished") score_Txt.y = 55; else score_Txt.y = healthBar.y + 35;
     dispHud(false,true,0.1,true);
 
     changePrefix(PlayState.SONG.meta.name + ' - by: ' + creditsArray.get(PlayState.SONG.meta.name.toLowerCase()));
@@ -278,17 +287,20 @@ function postUpdate() {
 	}
 
     if(songScore > 0 || misses > 0 && accuracy != - 100) {
-		score_Txt.scale.set(
-           lerp(score_Txt.scale.x,1,0.1),
-		   lerp(score_Txt.scale.y,1,0.1)
-		);
+		if (PlayState.SONG.meta.name != "Punished") {
+			score_Txt.scale.set(
+			lerp(score_Txt.scale.x,1,0.1),
+			lerp(score_Txt.scale.y,1,0.1)
+			);
+		}
+
 		if (score_Txt != null){
 			if (PlayState.SONG.meta.name == "Miracle" || PlayState.SONG.meta.name == "miracle"){
 				if (curStep >=  2034 && curStep < 2609) score_Txt.text = "句読点: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   失敗: "  + misses + "   失敗: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
-				else score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+				else score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + " | Misses: "  + misses + " | Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
 				
 			}else{
-				score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + "   Misses: "  + misses + "   Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
+				score_Txt.text = "Score: "+ FlxStringUtil.formatMoney(songScore,false,true) + " | Misses: "  + misses + " | Accuracy: "+ CoolUtil.quantize(accuracy * 100, 100) + "% ["+ curRating.rating + "]";
 			}
 
 		}

@@ -2,21 +2,41 @@ import flixel.math.FlxRect;
 
 var healthBar_1:FlxSprite;
 var healthBar_2:FlxSprite;
+
+var timeBarG:FlxSprite;
 var barOffset:Array<Float> = [3, 3];
 
+function create() {
+  noteSkin = "NOTE_assetsGOANIMATE";
+  splashSkin = "default-griv";
+}
 function postCreate() {
   healthBarBG.visible = false;
   healthBar.visible = false;
 
-  healthBar_1 = new FlxSprite(250,600).loadGraphic(Paths.image("healthBars/Punished2"));
+  healthBar_1 = new FlxSprite(250,580).loadGraphic(Paths.image("healthBars/Punished2"));
   healthBar_1.camera = camHUD;
   healthBar_1.scale.set(0.8,0.8);
   insert(members.indexOf(healthBar),healthBar_1);
 
-  healthBar_2 = new FlxSprite(250,600).loadGraphic(Paths.image("healthBars/Punished"));
+  healthBar_2 = new FlxSprite(250,580).loadGraphic(Paths.image("healthBars/Punished"));
   healthBar_2.camera = camHUD;
-   healthBar_2.scale.set(0.8,0.8);
- insert(members.indexOf(healthBar),healthBar_2);
+  healthBar_2.scale.set(0.8,0.8);
+  insert(members.indexOf(healthBar),healthBar_2);
+
+  timeBarG = new FlxSprite(0,0).loadGraphic(Paths.image("timeBarGrounded"));
+  timeBarG.camera = camHUD;
+  timeBarG.setPosition(490 ,25);
+  timeBarG.scale.set(0.8,0.8);
+  insert(1,timeBarG);
+
+  timeBarr.setPosition(timeBarG.x + 35, timeBarG.y+5);
+  timeBarr.makeGraphic(timeBarG.width-70,8,0xFFFF7300);
+  time_Txt.visible = false;
+  timeBarrBG_2.visible = false;
+  timeBarrBG.visible = false;
+
+  add(timeBarr);
 
 
   healthBar_1.clipRect = new FlxRect(0, 3, healthBar_1.width, healthBar_1.height);
@@ -28,13 +48,13 @@ function postUpdate(elapsed:Float) {
 }
 
 function updateValueBars() {
-    for(items in [healthBar_1,healthBar_2]) 
+    for(items in [healthBar_1,healthBar_2,timeBarG]) 
 		items.alpha = healthBar.alpha;
 
     var leftBarWidth = healthBar_1.width;
     var rightBarWidth = healthBar_2.width;
     var barHeight = healthBar_2.height;
-    var percent_ = health * 50; 
+    var percent_ = wrapper.smoothedHealth * 50; 
 
 
     var leftSize:Float = FlxMath.lerp(0, leftBarWidth, 1 - percent_ / 100);

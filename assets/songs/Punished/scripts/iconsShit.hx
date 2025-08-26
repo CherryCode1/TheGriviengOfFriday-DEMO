@@ -3,9 +3,12 @@ var iconDarwi:HealthIcon;
 function postCreate(){
     iconDarwi = new HealthIcon(gf.getIcon(),false);
     iconDarwi.camera = camHUD;
-    iconDarwi.visible = false;
+    iconDarwi.visible = true;
     iconDarwi.active = true;
     insert(members.indexOf(iconP2),iconDarwi);
+
+    iconP2.y -= 60;
+    iconP1.y -= 20;
 }
 function onNoteHit(event){
     if (event.note.isSustainNote) return;
@@ -16,14 +19,10 @@ function onNoteHit(event){
             if (char == gf){
                 iconDarwi.scale.set(1.2,1.2);
 
-                iconDarwi.visible = true;
-                iconP2.visible = false;
                 healthBar.createFilledBar(gf.iconColor, boyfriend.iconColor);
                 healthBar.updateBar();
             }
             if (char == dad){
-                iconDarwi.visible = false;
-                iconP2.visible = true;
                 healthBar.createFilledBar(dad.iconColor, boyfriend.iconColor);
                 healthBar.updateBar();
             }
@@ -37,8 +36,8 @@ function postUpdate(elapsed:Float){
        lerp(iconDarwi.scale.x,1,0.1),
        lerp(iconDarwi.scale.y,1,0.1)
     );
-    iconDarwi.x = iconP2.x;
+    iconDarwi.x = iconP2.x + 5;
     iconDarwi.health = iconP2.health;
-    iconDarwi.y = iconP2.y;
+    iconDarwi.y = iconP2.y + 80;
 	iconDarwi.alpha = iconP2.alpha;
 }

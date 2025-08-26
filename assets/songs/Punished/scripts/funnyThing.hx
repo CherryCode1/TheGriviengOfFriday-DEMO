@@ -1,4 +1,4 @@
-var originalX_GF:Float;
+/*var originalX_GF:Float;
 var originalX_Dad:Float;
 var minX_GF:Float = -400;
 var maxX_GF:Float = 1000;
